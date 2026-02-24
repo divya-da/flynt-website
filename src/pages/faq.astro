@@ -1,0 +1,300 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    group: "Understanding Flynt",
+    items: [
+      {
+        q: "I'm a recruiter — does Flynt help me find candidates?",
+        a: "No. Flynt is not a candidate sourcing tool. Flynt is built for the business development side of recruiting — finding new client companies, not placing candidates. Specifically: Flynt identifies companies that are likely to need your recruiting services, maps the right decision-makers at those companies to approach, and surfaces signals that indicate the timing is right to reach out. Think of it this way: Flynt helps you fill your client pipeline. Once you have the client, you use your existing tools and skills to fill the role. If you are a recruiter whose primary challenge is finding and winning new clients — Flynt is built for you. If your primary challenge is sourcing candidates or managing talent pipelines, Flynt is not the right tool."
+      },
+      {
+        q: "What exactly does Flynt do?",
+        a: "Flynt is an AI-powered client acquisition intelligence system. It handles the research layer behind finding and approaching new clients — continuously and automatically. It maps potential client accounts in your target market, identifies the right decision-makers to contact at each company, detects signals that indicate a business is ready for your services, and structures all of that into a clean, prioritised client prospect flow — with no manual research required. Flynt is for client acquisition. It is not a candidate sourcing tool, not a talent database, and not a recruitment CRM. It does not send outreach. It does not guarantee clients. It builds the client acquisition intelligence foundation that makes every business development conversation more precise, more timely, and more likely to convert."
+      },
+      {
+        q: "How is Flynt different from Apollo, Clay, or Instantly?",
+        a: "Apollo is a contact database with outbound capabilities. Instantly and Reply.io are outreach automation platforms. Clay is a flexible data workflow builder. Flynt is none of those things. Flynt sits before all of them — in the intelligence layer that those tools assume someone else has already handled. Where Apollo gives you a list, Flynt gives you a ranked, signal-filtered, context-rich opportunity briefing. Where Clay requires you to build the workflow, Flynt runs the intelligence system for you. Flynt is not a competitor to your outreach tools. It is the intelligence layer that makes your outreach tools more effective. Most teams use Flynt alongside Apollo, Instantly, or their CRM — not instead of them."
+      },
+      {
+        q: "What is a 'hiring signal' and why does it matter for client acquisition?",
+        a: "A hiring signal is a detectable event or pattern that indicates a company is about to need external recruiting help — making them a strong potential client for your recruitment business. Examples: a company raises a Series A funding round, posts 12 new engineering roles in a single month, appoints a new VP of Sales and begins scaling a commercial team, expands into a new geography, or loses their internal Head of Talent. Each of these signals suggests the company is about to have a significant hiring need — and is therefore a high-potential client acquisition target for a recruiter right now. Flynt detects these client acquisition signals before most recruiters think to look. When you reach out to a company that just triggered a relevant signal, your timing is precise and your relevance is self-evident — instead of cold."
+      },
+      {
+        q: "Do I still need a CRM or outreach tool?",
+        a: "Yes, in most cases. Flynt is not a CRM and does not handle outreach campaigns. Flynt is the intelligence layer. Your CRM manages the relationship. Your outreach platform sends the message. These work together — Flynt keeps structured, signal-driven opportunity flowing into the engagement stack you already use. Think of Flynt as the research engine beneath your existing tools — not a replacement for them."
+      }
+    ]
+  },
+  {
+    group: "Results & Expectations",
+    items: [
+      {
+        q: "Does Flynt guarantee leads or clients?",
+        a: "No. Flynt does not guarantee clients, deals, or revenue. No honest intelligence tool does. What Flynt guarantees is leverage: time reclaimed from manual research, opportunity flow that runs consistently, and intelligence structured for precision. Your results will depend on the quality of your targeting, the clarity of your outreach, and the consistency of your follow-up. Flynt prepares the work. You close the deal."
+      },
+      {
+        q: "How quickly can I expect to feel the impact?",
+        a: "Most users feel the impact within the first week — primarily in time saved and research friction eliminated. If you are already running an active prospecting motion, Flynt accelerates and sharpens it quickly. If you are building from a standing start, Flynt removes the operational burden so you can focus on skill development and outreach consistency. Revenue outcomes depend on your execution — but structured opportunity and reduced friction are felt immediately."
+      },
+      {
+        q: "What if my outreach isn't working right now — will Flynt fix that?",
+        a: "Not on its own. If your targeting is off, your offer is unclear, or your messaging isn't resonating, Flynt will surface better-qualified targets — but it will not repair the execution layer. What it will do is make testing and iteration faster. Better intelligence means faster feedback on what works and what doesn't. Flynt amplifies good execution. It doesn't substitute for it."
+      }
+    ]
+  },
+  {
+    group: "Is Flynt Right For Me?",
+    items: [
+      {
+        q: "Who gets the most out of Flynt?",
+        a: "Operators who understand that revenue comes from consistent, disciplined execution — and who want infrastructure that supports that motion. Specifically: recruiters and recruitment agencies running active outbound, sales and GTM teams responsible for account-level prospecting, agency owners building repeatable client acquisition systems, and revenue leaders who want to remove the research burden from their team's day. Flynt creates the most value when it is paired with consistent outreach, clear targeting, and a genuine commitment to follow-up."
+      },
+      {
+        q: "I've never done business development before — can Flynt help me?",
+        a: "Flynt can reduce the friction and overwhelm of getting started. It gives you a structured system so the operational burden doesn't become a barrier to action. What it does not do is teach you how to sell, position your offer, or handle objections. You will still need to develop those skills. For experienced operators, Flynt increases speed and consistency. For those building their first BD motion, it removes the research complexity so you can focus on learning the craft of selling — not figuring out who to contact each morning."
+      },
+      {
+        q: "Can Flynt work for teams outside of recruiting?",
+        a: "Yes — as long as the use case is client acquisition. Any operator whose growth depends on identifying and winning new clients can use Flynt effectively. Sales teams use Flynt to surface signal-ready prospect accounts before outreach begins. GTM operators use it to identify expansion and partnership opportunities. B2B service agencies use it to maintain a consistent client pipeline without manual research cycles. The common thread across every use case: Flynt is always used to find new clients, never to find candidates, talent, or job seekers."
+      },
+      {
+        q: "What makes the difference between users who succeed with Flynt and those who don't?",
+        a: "Three fundamentals: a clearly defined target market, consistent outreach and follow-up, and willingness to refine messaging over time. Flynt handles the intelligence preparation. The operators who succeed are the ones who show up to act on it — consistently, with discipline, and with a genuine commitment to improving their execution. Flynt provides leverage. Operators provide the will to use it."
+      }
+    ]
+  },
+  {
+    group: "Practical Questions",
+    items: [
+      {
+        q: "What tools does Flynt replace?",
+        a: "Flynt replaces the fragmented manual research layer that most revenue teams currently stitch together using a mix of spreadsheets, scraping tools, enrichment platforms, and tab-heavy research sessions. It is not a CRM. It is not an email sender. It is the continuously operating intelligence system that prepares your opportunity universe — replacing the hours of repetitive groundwork that precede every good outreach conversation."
+      },
+      {
+        q: "What happens if I cancel my subscription?",
+        a: "Your subscription ends at the close of your billing period and your access stops. There is no lock-in beyond your subscription term. That said, most teams find that once their opportunity flow is structured and their research burden is removed, returning to manual processes feels like a significant step backward. The real cost of leaving Flynt is not the subscription price — it is the hours of research time that return to your plate."
+      },
+      {
+        q: "Is Flynt worth it if I only prospect occasionally?",
+        a: "Probably not — at least not yet. Flynt creates the most value for operators who are actively and consistently generating revenue. If you are only reaching out to prospects occasionally, the full leverage of a continuously running intelligence system may be more than your current motion requires. When you are ready to make prospecting a consistent, systemized part of your business — Flynt will be ready for you."
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="FAQ — Flynt AI"
+  description="Every question about Flynt answered clearly. Understand what Flynt is, who it's for, and what results to expect."
+>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="tag">FAQ</div>
+    <h1>Every question. Answered clearly.</h1>
+  </div>
+</section>
+
+<section class="section faq-section">
+  <div class="container">
+    <div class="faq-layout">
+
+      <!-- Sticky group nav -->
+      <aside class="faq-nav">
+        {faqs.map(group => (
+          <a href={`#${group.group.replace(/\s+/g, '-').toLowerCase()}`} class="faq-nav__link">
+            {group.group}
+          </a>
+        ))}
+      </aside>
+
+      <!-- FAQ Groups -->
+      <div class="faq-groups">
+        {faqs.map(group => (
+          <div class="faq-group" id={group.group.replace(/\s+/g, '-').toLowerCase()}>
+            <h2 class="faq-group__title">{group.group}</h2>
+            <div class="faq-items">
+              {group.items.map(item => (
+                <details class="faq-item">
+                  <summary class="faq-item__q">{item.q}</summary>
+                  <div class="faq-item__a">
+                    <p>{item.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- CTA at bottom -->
+    <div class="faq-cta">
+      <p>Still have questions?</p>
+      <a href="mailto:hello@tryflynt.ai" class="btn btn--outline">Contact Us</a>
+      <a href="https://tryflynt.ai/subscription" class="btn btn--primary">Start for Free</a>
+    </div>
+
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.page-hero {
+  padding: 80px 24px 64px;
+}
+
+.page-hero h1 {
+  margin: 12px 0 0;
+  max-width: 600px;
+}
+
+.faq-section {
+  padding-top: 0;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Sticky nav */
+.faq-nav {
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.faq-nav__link {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-400);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+
+.faq-nav__link:hover {
+  color: var(--purple);
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+}
+
+/* FAQ Groups */
+.faq-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.faq-group__title {
+  font-size: 1.2rem;
+  color: var(--gray-800);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Accordion */
+.faq-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.faq-item[open] {
+  border-color: var(--gray-200);
+  background: var(--white);
+}
+
+.faq-item__q {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  cursor: pointer;
+  padding: 18px 20px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-radius: var(--radius-md);
+  transition: background 0.15s;
+}
+
+.faq-item__q::-webkit-details-marker { display: none; }
+
+.faq-item__q::after {
+  content: '+';
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--gray-400);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.faq-item[open] .faq-item__q::after {
+  transform: rotate(45deg);
+  color: var(--purple);
+}
+
+.faq-item__q:hover {
+  background: var(--gray-50);
+}
+
+.faq-item__a {
+  padding: 0 20px 20px;
+}
+
+.faq-item__a p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--gray-600);
+}
+
+/* CTA */
+.faq-cta {
+  margin-top: 72px;
+  padding: 40px;
+  background: var(--purple-bg);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--purple-bg-2);
+}
+
+.faq-cta p {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-nav { display: none; }
+  .faq-cta { flex-direction: column; align-items: flex-start; }
+  .faq-cta p { margin-right: 0; }
+}
+</style>

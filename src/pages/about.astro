@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About — Flynt AI"
+  description="Built by operators who have lived the reality of revenue and client acquisition for over 15 years. We built Flynt because no tool we tried actually solved it."
+>
+
+<div class="about-page">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="tag">About Flynt</div>
+      <h1>Built by operators.<br /><span style="color: var(--purple)">For operators.</span></h1>
+    </div>
+  </section>
+
+  <section class="section about-content">
+    <div class="container">
+      <div class="about-layout">
+
+        <div class="about-story">
+          <p class="about-lead">
+            Flynt was built by people who have lived the reality of revenue and client acquisition for over 15 years — recruiters, business developers, agency founders who know exactly what it takes to generate consistent momentum in this business.
+          </p>
+          <p>We also know what stops it.</p>
+        </div>
+
+        <div class="about-problem">
+          <h2>The problem we lived.</h2>
+          <p>
+            The research burden. The tab-hopping. The rebuilt spreadsheets. The three hours every Monday morning spent trying to figure out who to call — before making a single call.
+          </p>
+          <p>
+            The landscape of client acquisition has changed. Relying on your network, sending generic outreach, and making occasional calls no longer creates the kind of consistent momentum a serious operation requires. Today, winning means knowing more, knowing it faster, and knowing it before your competition does.
+          </p>
+          <p>
+            That requires intelligence infrastructure — not more tools, not better templates, not a bigger list.
+          </p>
+        </div>
+
+        <div class="about-solution">
+          <h2>Why we built Flynt.</h2>
+          <p>
+            We built Flynt because we felt that friction firsthand — and because no tool we tried actually solved it. They gave us data. They gave us outreach automation. They gave us dashboards. None of them gave us intelligence.
+          </p>
+          <p>
+            Flynt is the client acquisition preparation layer revenue teams never had. It operates continuously, surfaces signal-driven client prospects, and delivers structured intelligence so disciplined operators can spend their time on the conversations that generate revenue — not the research that precedes them. For recruiters specifically: Flynt finds the companies that need you. You bring the skill to win them and place the talent they need.
+          </p>
+        </div>
+
+        <div class="about-mission">
+          <blockquote>
+            Our goal is simple: remove the research burden from revenue work. When opportunity flow is consistent and intelligence is structured, disciplined operators compound their results. Flynt exists to make that possible.
+          </blockquote>
+          <p class="about-final">
+            Built for operators who believe in leverage — not shortcuts.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</Layout>
+
+<style>
+.page-hero {
+  padding: 80px 24px 72px;
+}
+
+.page-hero h1 {
+  margin: 12px 0 0;
+  max-width: 600px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px 80px;
+}
+
+.about-story {
+  grid-column: 1 / -1;
+  max-width: 720px;
+}
+
+.about-lead {
+  font-size: 1.2rem;
+  color: var(--gray-700, #374151);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.about-story p:last-child {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+.about-problem h2,
+.about-solution h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.about-problem p,
+.about-solution p {
+  margin-bottom: 16px;
+}
+
+.about-mission {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 48px;
+}
+
+.about-mission blockquote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gray-700, #374151);
+  border-left: 4px solid var(--purple);
+  padding-left: 24px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+
+.about-final {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-story { grid-column: 1; }
+  .about-mission { grid-column: 1; }
+}
+</style>
