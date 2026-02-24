@@ -1,6 +1,6 @@
 /* ── Flynt Global Styles ── */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --purple: #8B5CF6;
@@ -16,10 +16,10 @@
   --gray-400: #9CA3AF;
   --gray-600: #4B5563;
   --gray-800: #1F2937;
-  --black: #0A0A0A;
+  --black: #102830;
 
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Manrope', sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -31,8 +31,8 @@
   --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
   --shadow-purple: 0 4px 24px rgba(139,92,246,0.18);
 
-  --max-width: 1160px;
-  --section-padding: 96px 24px;
+  --max-width: 1200px;
+  --section-padding: 96px 48px;
 }
 
 *, *::before, *::after {
@@ -56,14 +56,14 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-display);
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--black);
   font-weight: 700;
 }
 
-h1 { font-size: clamp(2.4rem, 5vw, 3.75rem); }
-h2 { font-size: clamp(1.8rem, 3.5vw, 2.75rem); }
-h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+h1 { font-size: clamp(2.2rem, 4vw, 3.75rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 3rem); }
+h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); }
 
 p { color: var(--gray-600); line-height: 1.7; }
 
@@ -75,7 +75,7 @@ img { max-width: 100%; height: auto; }
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 .section {
@@ -350,7 +350,11 @@ img { max-width: 100%; height: auto; }
 /* ── Mobile ── */
 @media (max-width: 768px) {
   :root {
-    --section-padding: 64px 20px;
+    --section-padding: 64px 24px;
+  }
+
+  .container {
+    padding: 0 24px;
   }
 
   .nav__links { display: none; }
