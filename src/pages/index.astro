@@ -37,7 +37,10 @@ import Layout from '../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="positioning">
   <div class="container">
-    <p class="positioning__headline">Built for one purpose: winning new clients.</p>
+    <p class="positioning__headline">
+      <span class="positioning__headline-sub">Built for one purpose</span><br />
+      Winning new clients.
+    </p>
     <div class="positioning__grid">
       <div class="positioning__card">
         <span class="positioning__not">Not a database.</span>
@@ -237,7 +240,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
 /* ── Hero ── */
 .hero {
-  padding: 80px 24px 96px;
+  padding: 80px 24px 140px;
   background: var(--white);
 }
 
@@ -279,7 +282,7 @@ import Layout from '../layouts/Layout.astro';
   background-image: url('/images/backgrounds/Group2.svg');
   background-size: cover;
   background-position: center;
-  padding: 120px 24px 96px;
+  padding: 200px 24px 112px;
   clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
   margin-top: -120px;
   z-index: 1;
@@ -295,12 +298,20 @@ import Layout from '../layouts/Layout.astro';
 
 .positioning__headline {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.75rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
   color: #ffffff;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   max-width: 640px;
+}
+
+.positioning__headline-sub {
+  font-size: 0.5em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .positioning__grid {
