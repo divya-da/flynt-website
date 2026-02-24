@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "flynt-website",
     "public": "dist",
     "ignore": [
       "firebase.json",

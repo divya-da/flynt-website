@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "flynt-test"
+  },
+  "targets": {
+    "flynt-test": {
+      "hosting": {
+        "flynt-website": ["flynt-website"]
+      }
+    }
+  }
+}
