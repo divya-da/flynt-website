@@ -337,9 +337,10 @@ import Layout from '../layouts/Layout.astro';
 
 .hero__visual-glow {
   position: absolute;
-  inset: -40px;
-  background: radial-gradient(ellipse at 55% 50%, rgba(139, 92, 246, 0.18) 0%, transparent 68%);
-  border-radius: 40px;
+  inset: -24px;
+  background: rgba(167, 139, 250, 0.35);
+  border-radius: 28px;
+  filter: blur(40px);
   z-index: 0;
   pointer-events: none;
 }
@@ -349,7 +350,10 @@ import Layout from '../layouts/Layout.astro';
   z-index: 1;
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(139, 92, 246, 0.10);
+  box-shadow:
+    0 2px 8px rgba(139, 92, 246, 0.08),
+    0 12px 32px rgba(139, 92, 246, 0.14),
+    0 40px 60px rgba(0, 0, 0, 0.18);
 }
 
 /* ── Positioning Strip ── */
@@ -478,7 +482,6 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .what__body {
-  font-size: 0.95rem;
   color: var(--slate-700);
   line-height: 1.7;
   margin-bottom: 16px;
@@ -511,11 +514,10 @@ import Layout from '../layouts/Layout.astro';
 .capability-list li {
   display: flex;
   gap: 16px;
-  font-size: 0.9rem;
   color: var(--slate-700);
   align-items: flex-start;
   line-height: 1.55;
-  padding: 14px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--gray-100);
 }
 
