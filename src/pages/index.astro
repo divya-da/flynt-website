@@ -62,55 +62,81 @@ import Layout from '../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="section what-flynt-does">
   <div class="container">
+
+    <div class="what__tag-row">
+      <div class="tag what__tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        What Flynt Does
+      </div>
+    </div>
+
     <div class="what__layout">
       <div class="what__left">
-        <div class="tag">What Flynt Does</div>
-        <h2>The intelligence layer between you and your next client.</h2>
-        <p class="what__clarity">
+        <h2 class="what__headline">The intelligence layer <span class="what__headline-accent">between you</span> and your next client.</h2>
+        <blockquote class="what__clarity">
           Flynt is a client acquisition tool. It helps you find new companies to work with — not candidates to place. If you are a recruiter, Flynt finds your next client, not your next hire.
-        </p>
-        <p class="what__intro">
+        </blockquote>
+        <p class="what__body">
           Most operators know which types of companies make great clients. The problem is time. Manual research, rebuilt lists, and scattered signals eat the hours that should go toward client conversations.
         </p>
-        <p>
+        <p class="what__body">
           Flynt eliminates that entirely. From the moment it is configured to your target client market, it begins mapping prospect accounts, identifying the right decision-makers to approach, and monitoring signals that indicate a company is ready to become a client — with no manual input required.
         </p>
-        <p style="margin-top: 16px;">
+        <p class="what__body">
           It does not wait for you to tell it what to research. It runs in the background so that every morning you arrive to a structured, prioritised list of client acquisition opportunities — ready to reach out.
         </p>
       </div>
+
       <div class="what__right">
-        <ul class="capability-list">
-          <li>
-            <span class="capability-dot"></span>
-            Maps and monitors potential client accounts aligned to your ideal client profile
-          </li>
-          <li>
-            <span class="capability-dot"></span>
-            Identifies the right decision-makers at each target company for your business development outreach
-          </li>
-          <li>
-            <span class="capability-dot"></span>
-            Detects hiring signals, growth signals, and company-level triggers that indicate a business is ready for your services
-          </li>
-          <li>
-            <span class="capability-dot"></span>
-            Structures client prospect data into clean, actionable intelligence — not raw, unsorted lists
-          </li>
-          <li>
-            <span class="capability-dot"></span>
-            Maintains a continuously updated pipeline of warm client acquisition opportunities over time
-          </li>
-          <li>
-            <span class="capability-dot"></span>
-            Prepares context so every client outreach conversation can be specific, informed, and timely
-          </li>
-        </ul>
-        <p class="what__closing">
-          Flynt does not source candidates. Flynt does not send outreach. Flynt does not guarantee clients. It builds the client acquisition intelligence foundation that makes every business development conversation you have more likely to convert.
-        </p>
+        <div class="capability-card">
+          <h3 class="capability-card__title">Key Capabilities</h3>
+          <ul class="capability-list">
+            <li>
+              <span class="capability-icon">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </span>
+              <span>Maps and monitors potential client accounts aligned to your ideal client profile</span>
+            </li>
+            <li>
+              <span class="capability-icon">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </span>
+              <span>Identifies the right decision-makers at each target company for your business development outreach</span>
+            </li>
+            <li>
+              <span class="capability-icon">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </span>
+              <span>Detects hiring signals, growth signals, and company-level triggers that indicate a business is ready for your services</span>
+            </li>
+            <li>
+              <span class="capability-icon">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 5v14c0 1.657 4.03 3 9 3s9-1.343 9-3V5M3 12c0 1.657 4.03 3 9 3s9-1.343 9-3"/></svg>
+              </span>
+              <span>Structures client prospect data into clean, actionable intelligence — not raw, unsorted lists</span>
+            </li>
+            <li>
+              <span class="capability-icon">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+              </span>
+              <span>Maintains a continuously updated pipeline of warm client acquisition opportunities over time</span>
+            </li>
+            <li>
+              <span class="capability-icon">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              </span>
+              <span>Prepares context so every client outreach conversation can be specific, informed, and timely</span>
+            </li>
+          </ul>
+          <div class="capability-card__footer">
+            <p class="what__closing">
+              Flynt does not source candidates. Flynt does not send outreach. Flynt does not guarantee clients. It builds the client acquisition intelligence foundation that makes every business development conversation you have more likely to convert.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -349,6 +375,18 @@ import Layout from '../layouts/Layout.astro';
 }
 
 /* ── What Flynt Does ── */
+.what__tag-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.what__tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .what__layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -356,60 +394,102 @@ import Layout from '../layouts/Layout.astro';
   align-items: start;
 }
 
-.what__left h2 {
-  margin: 12px 0 20px;
+.what__headline {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 28px;
+  color: var(--black);
+}
+
+.what__headline-accent {
+  color: var(--purple);
 }
 
 .what__clarity {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--purple);
+  margin: 0 0 24px;
+  padding: 18px 20px;
   background: var(--purple-bg);
-  border: 1px solid var(--purple-bg-2);
-  border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  margin-bottom: 20px;
+  border-left: 3px solid var(--purple);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--purple);
+  line-height: 1.65;
 }
 
-.what__intro {
+.what__body {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.7;
   margin-bottom: 16px;
 }
 
-.what__closing {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: var(--gray-600);
-  font-style: italic;
-  line-height: 1.6;
+.capability-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.capability-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gray-900, #111827);
+  padding: 28px 28px 20px;
+  margin: 0;
 }
 
 .capability-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 32px;
-  background: var(--gray-50);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-200);
+  gap: 0;
+  padding: 0 28px;
 }
 
 .capability-list li {
   display: flex;
-  gap: 14px;
-  font-size: 0.95rem;
+  gap: 16px;
+  font-size: 0.9rem;
   color: var(--gray-700, #374151);
   align-items: flex-start;
-  line-height: 1.5;
+  line-height: 1.55;
+  padding: 14px 0;
+  border-top: 1px solid var(--gray-100);
 }
 
-.capability-dot {
-  width: 8px;
-  height: 8px;
+.capability-list li:first-child {
+  border-top: none;
+}
+
+.capability-icon {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: var(--purple);
+  background: var(--purple-bg);
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  margin-top: 6px;
+  margin-top: 1px;
+}
+
+.capability-card__footer {
+  border-top: 1px solid var(--gray-200);
+  padding: 20px 28px 24px;
+  margin-top: 8px;
+}
+
+.what__closing {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  font-style: italic;
+  line-height: 1.65;
+  margin: 0;
 }
 
 /* ── How It Works ── */
@@ -594,6 +674,7 @@ import Layout from '../layouts/Layout.astro';
 @media (max-width: 900px) {
   .positioning__grid { grid-template-columns: 1fr; }
   .what__layout { grid-template-columns: 1fr; gap: 40px; }
+  .what__tag-row { margin-bottom: 40px; }
   .steps {
     grid-template-columns: 1fr;
     gap: 16px;
