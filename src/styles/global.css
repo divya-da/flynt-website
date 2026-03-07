@@ -173,8 +173,9 @@ img { max-width: 100%; height: auto; }
 }
 
 .btn--lg {
-  padding: 14px 36px;
+  padding: 14px 32px;
   font-size: 1.125rem;
+  border-radius: 12px;
 }
 
 /* ── Section headers ── */
