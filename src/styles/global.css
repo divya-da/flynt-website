@@ -266,7 +266,10 @@ img { max-width: 100%; height: auto; }
 
 /* ── Footer ── */
 .footer {
-  background: var(--black);
+  background-color: var(--black);
+  background-image: url('/images/backgrounds/purple-gradient-background.png');
+  background-size: cover;
+  background-position: center bottom;
   color: rgba(255,255,255,0.6);
   padding: 64px 24px 32px;
 }

@@ -285,7 +285,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
 /* ── Hero ── */
 .hero {
-  padding: 80px 0 120px;
+  padding: 140px 0 180px;
   background: transparent;
   overflow: hidden;
 }
@@ -359,26 +359,16 @@ import Layout from '../layouts/Layout.astro';
 /* ── Positioning Strip ── */
 .positioning {
   position: relative;
-  background: linear-gradient(to bottom right, #4C1D95, #5B21B6, #6D28D9);
+  background-color: #2B1F50;
+  background-image: url('/images/backgrounds/World-Map.svg'), url('/images/backgrounds/purple-gradient-background.png');
+  background-size: 45%, cover;
+  background-position: right top, center;
+  background-repeat: no-repeat, no-repeat;
   padding: 200px 24px 112px;
   clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
   margin-top: -120px;
   z-index: 1;
   overflow: hidden;
-}
-
-.positioning::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent 0,
-    transparent 20px,
-    rgba(255, 255, 255, 0.1) 20px,
-    rgba(255, 255, 255, 0.1) 40px
-  );
-  z-index: 0;
 }
 
 .positioning .container {
@@ -720,7 +710,12 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Final CTA ── */
 .final-cta {
-  background: var(--white);
+  position: relative;
+  background-color: var(--white);
+  background-image: url('/images/backgrounds/World-Map.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
   padding: 96px 24px;
 }
 
@@ -753,7 +748,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .hero { padding: 60px 0 80px; }
+  .hero { padding: 80px 0 100px; }
   .hero__grid { grid-template-columns: 1fr; gap: 48px; }
   .hero__headline { font-size: 2.25rem; }
   .hero__visual { order: -1; }
