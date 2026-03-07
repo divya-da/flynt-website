@@ -72,7 +72,7 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="what__layout">
       <div class="what__left">
-        <h2 class="what__headline">The intelligence layer <span class="what__headline-accent">between you</span> and your next client.</h2>
+        <h2 class="what__headline">The intelligence layer between you and your <span class="what__headline-accent">next client</span>.</h2>
         <blockquote class="what__clarity">
           Flynt is a client acquisition tool. It helps you find new companies to work with — not candidates to place. If you are a recruiter, Flynt finds your next client, not your next hire.
         </blockquote>
@@ -232,7 +232,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="not-for__layout">
       <div class="not-for__left">
         <div class="tag">Honest by design</div>
-        <h2>Flynt is not for everyone.<br /><span style="color: var(--gray-400)">That's intentional.</span></h2>
+        <h2>Flynt is not for everyone.<br /><span style="color: var(--slate-500)">That's intentional.</span></h2>
         <p>Flynt is built to strengthen disciplined operators — not to replace the judgment, strategy, and execution that revenue work requires.</p>
         <blockquote class="not-for__quote">
           Flynt prepares opportunity. Your team converts it. The best results come from operators who understand the difference — and show up to execute.
@@ -272,7 +272,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── Hero ── */
 .hero {
   padding: 80px 24px 140px;
-  background: var(--white);
+  background: transparent;
 }
 
 .hero__content {
@@ -288,10 +288,11 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hero__sub {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   max-width: 620px;
   margin-bottom: 36px;
-  color: var(--gray-600);
+  color: var(--slate-600);
+  line-height: 1.625;
 }
 
 .hero__ctas {
@@ -302,21 +303,33 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hero__social-proof {
-  font-size: 0.85rem;
-  color: var(--gray-400);
+  font-size: 0.875rem;
+  color: var(--slate-500);
 }
 
 /* ── Positioning Strip ── */
 .positioning {
   position: relative;
-  background-color: #2B1F50;
-  background-image: url('/images/backgrounds/Group2.svg');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(to bottom right, #4C1D95, #5B21B6, #6D28D9);
   padding: 200px 24px 112px;
   clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
   margin-top: -120px;
   z-index: 1;
+  overflow: hidden;
+}
+
+.positioning::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 20px,
+    rgba(255, 255, 255, 0.1) 20px,
+    rgba(255, 255, 255, 0.1) 40px
+  );
+  z-index: 0;
 }
 
 .positioning .container {
@@ -340,7 +353,7 @@ import Layout from '../layouts/Layout.astro';
 .positioning__headline-sub {
   font-size: 0.5em;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--purple-300);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -352,11 +365,17 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .positioning__card {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: var(--radius-lg);
   padding: 32px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.3s;
+}
+
+.positioning__card:hover {
+  background: rgba(255, 255, 255, 0.10);
 }
 
 .positioning__not {
@@ -371,7 +390,7 @@ import Layout from '../layouts/Layout.astro';
 .positioning__card p {
   font-size: 1rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--purple-200);
 }
 
 /* ── What Flynt Does ── */
@@ -409,35 +428,35 @@ import Layout from '../layouts/Layout.astro';
 
 .what__clarity {
   margin: 0 0 24px;
-  padding: 18px 20px;
+  padding: 24px;
   background: var(--purple-bg);
-  border-left: 3px solid var(--purple);
+  border-left: 4px solid var(--purple);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   font-weight: 500;
-  color: var(--purple);
-  line-height: 1.65;
+  color: var(--purple-900);
+  line-height: 1.625;
 }
 
 .what__body {
   font-size: 0.95rem;
-  color: var(--gray-600);
+  color: var(--slate-700);
   line-height: 1.7;
   margin-bottom: 16px;
 }
 
 .capability-card {
   background: var(--white);
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow-xl);
 }
 
 .capability-card__title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--gray-900, #111827);
+  color: var(--slate-900);
   padding: 28px 28px 20px;
   margin: 0;
 }
@@ -454,7 +473,7 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   gap: 16px;
   font-size: 0.9rem;
-  color: var(--gray-700, #374151);
+  color: var(--slate-700);
   align-items: flex-start;
   line-height: 1.55;
   padding: 14px 0;
@@ -469,7 +488,7 @@ import Layout from '../layouts/Layout.astro';
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--purple-bg);
+  background: var(--purple-bg-2);
   color: var(--purple);
   display: flex;
   align-items: center;
@@ -479,14 +498,14 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .capability-card__footer {
-  border-top: 1px solid var(--gray-200);
+  border-top: 1px solid var(--slate-200);
   padding: 20px 28px 24px;
   margin-top: 8px;
 }
 
 .what__closing {
   font-size: 0.875rem;
-  color: var(--gray-500);
+  color: var(--slate-500);
   font-style: italic;
   line-height: 1.65;
   margin: 0;
@@ -502,9 +521,10 @@ import Layout from '../layouts/Layout.astro';
 
 .step {
   background: var(--white);
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);
   padding: 32px;
+  box-shadow: var(--shadow-xl);
 }
 
 .step__number {
@@ -524,12 +544,13 @@ import Layout from '../layouts/Layout.astro';
 
 .step p {
   font-size: 0.9rem;
+  color: var(--slate-600);
 }
 
 .step__connector {
   width: 40px;
   height: 1px;
-  background: var(--gray-200);
+  background: var(--slate-200);
   margin-top: 56px;
 }
 
@@ -543,27 +564,34 @@ import Layout from '../layouts/Layout.astro';
 
 .audience-card {
   background: var(--white);
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);
   padding: 28px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow-xl);
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .audience-card:hover {
-  border-color: var(--purple-light);
-  box-shadow: var(--shadow-purple);
+  background-color: var(--purple-bg);
+  border-color: var(--purple-bg-2);
+}
+
+.audience-card:hover .audience-card__icon {
+  background: var(--purple);
+  color: white;
 }
 
 .audience-card__icon {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: var(--purple-bg);
+  background: var(--purple-bg-2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--purple);
   margin-bottom: 16px;
+  transition: background 0.2s, color 0.2s;
 }
 
 .audience-card h3 {
@@ -573,12 +601,13 @@ import Layout from '../layouts/Layout.astro';
 
 .audience-card p {
   font-size: 0.9rem;
+  color: var(--slate-700);
 }
 
 .audience-qualifier {
   text-align: center;
   font-size: 0.95rem;
-  color: var(--gray-600);
+  color: var(--slate-600);
   padding: 20px 32px;
   background: var(--purple-bg);
   border-radius: var(--radius-md);
@@ -600,16 +629,18 @@ import Layout from '../layouts/Layout.astro';
 .not-for__quote {
   margin-top: 24px;
   font-style: italic;
-  color: var(--gray-600);
-  border-left: 3px solid var(--purple);
-  padding-left: 20px;
-  line-height: 1.6;
-  font-size: 0.95rem;
+  border-left: 4px solid var(--purple);
+  padding: 20px 20px 20px 24px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--purple-bg);
+  color: var(--purple-900);
+  font-size: 1.125rem;
+  line-height: 1.625;
 }
 
 .not-for__list-label {
   font-weight: 600;
-  color: var(--gray-800);
+  color: var(--slate-700);
   margin-bottom: 16px;
   font-size: 0.9rem;
 }
@@ -625,14 +656,14 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   gap: 12px;
   font-size: 0.92rem;
-  color: var(--gray-600);
+  color: var(--slate-600);
   align-items: flex-start;
   padding-left: 0;
 }
 
 .not-for__list li::before {
   content: '✕';
-  color: var(--gray-400);
+  color: var(--slate-500);
   font-size: 0.8rem;
   flex-shrink: 0;
   margin-top: 2px;
@@ -660,14 +691,15 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .final-cta__inner p {
-  color: var(--gray-600);
-  font-size: 1.1rem;
+  color: var(--slate-600);
+  font-size: 1.125rem;
   max-width: 480px;
+  line-height: 1.625;
 }
 
 .final-cta__disclaimer {
-  font-size: 0.85rem;
-  color: var(--gray-400);
+  font-size: 0.875rem;
+  color: var(--slate-500);
 }
 
 /* ── Responsive ── */
