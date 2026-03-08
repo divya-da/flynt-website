@@ -253,13 +253,37 @@ import Layout from '../layouts/Layout.astro';
         </blockquote>
       </div>
       <div class="not-for__right">
-        <p class="not-for__list-label">Flynt is not a fit if you are:</p>
         <ul class="not-for__list">
-          <li>Recruiters looking to source candidates or build talent pipelines — Flynt is for client acquisition, not candidate research</li>
-          <li>Teams expecting guaranteed clients, guaranteed revenue, or instant results</li>
-          <li>Operators unwilling to follow up consistently or refine their client targeting over time</li>
-          <li>Anyone looking for AI to replace the skill of selling, positioning, or relationship-building</li>
-          <li>Users who want a fully automated system that removes human judgment from the client acquisition process</li>
+          <li>
+            <span class="not-for__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </span>
+            <span>Recruiters looking to source candidates or build talent pipelines — Flynt is for client acquisition, not candidate research</span>
+          </li>
+          <li>
+            <span class="not-for__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </span>
+            <span>Teams expecting guaranteed clients, guaranteed revenue, or instant results</span>
+          </li>
+          <li>
+            <span class="not-for__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </span>
+            <span>Operators unwilling to follow up consistently or refine their client targeting over time</span>
+          </li>
+          <li>
+            <span class="not-for__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </span>
+            <span>Anyone looking for AI to replace the skill of selling, positioning, or relationship-building</span>
+          </li>
+          <li>
+            <span class="not-for__icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </span>
+            <span>Users who want a fully automated system that removes human judgment from the client acquisition process</span>
+          </li>
         </ul>
       </div>
     </div>
@@ -690,24 +714,31 @@ import Layout from '../layouts/Layout.astro';
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .not-for__list li {
   display: flex;
-  gap: 12px;
-  font-size: 0.92rem;
-  color: var(--slate-600);
-  align-items: flex-start;
-  padding-left: 0;
+  gap: 16px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.06), 0 1px 3px rgba(0,0,0,0.04);
+  color: var(--slate-700);
 }
 
-.not-for__list li::before {
-  content: '✕';
-  color: var(--slate-500);
-  font-size: 0.8rem;
+.not-for__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--purple-bg-2);
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 /* ── Final CTA ── */
