@@ -23,7 +23,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="hero__headline-accent">Client Acquisition</span>
         </h1>
         <p class="hero__sub fade-up fade-up-3">
-          The AI intelligence layer built exclusively for client acquisition. Flynt continuously surfaces structured, signal-driven client opportunities for recruiters, sales teams, and GTM operators — so your team spends time closing new business, not buried in research.
+          Flynt continuously surfaces structured, signal-driven client opportunities for recruiters, sales teams, and GTM operators — so your team spends time closing new business, not buried in research.
         </p>
         <div class="hero__ctas fade-up fade-up-4">
           <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg">Get Started</a>
@@ -46,26 +46,31 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 02 — POSITIONING STRIP
+  SECTION 02 — HOW IT WORKS (dark background)
 ───────────────────────────────────────────── -->
-<section class="positioning">
+<section class="positioning" id="how-it-works">
   <div class="container">
-    <p class="positioning__headline">
-      <span class="positioning__headline-sub">Built for one purpose</span><br />
-      Winning new clients.
-    </p>
-    <div class="positioning__grid">
-      <div class="positioning__card">
-        <span class="positioning__not">Not a database.</span>
-        <p>Flynt is not a contact database and it is not a candidate sourcing tool. It is a continuously running intelligence system that maps potential client accounts to your exact acquisition criteria.</p>
+    <div class="section-header section-header--center positioning__header">
+      <div class="tag positioning__tag">How It Works</div>
+      <h2>Set it up once. Let it run.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step__number">01</div>
+        <h3>Define Your Targets</h3>
+        <p>Industries, company size, job titles, geography. One-time setup — Flynt aligns to your criteria, not just keywords.</p>
       </div>
-      <div class="positioning__card">
-        <span class="positioning__not">Not an outreach tool.</span>
-        <p>Flynt does not send messages or run campaigns. It prepares the intelligence that makes every message you send more precise.</p>
+      <div class="step__connector"></div>
+      <div class="step">
+        <div class="step__number">02</div>
+        <h3>Research Runs Automatically</h3>
+        <p>AI agents work in the background. No list building, no spreadsheet juggling, no manual research sessions.</p>
       </div>
-      <div class="positioning__card">
-        <span class="positioning__not">Not another automation.</span>
-        <p>Flynt is infrastructure — the intelligence layer that sits beneath your stack and makes everything else sharper, faster, and more consistent.</p>
+      <div class="step__connector"></div>
+      <div class="step">
+        <div class="step__number">03</div>
+        <h3>Leads Land in Your Inbox</h3>
+        <p>Every morning: names, titles, emails, and phone numbers — organised and ready to contact.</p>
       </div>
     </div>
   </div>
@@ -154,38 +159,6 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────────
-  SECTION 04 — HOW FLYNT WORKS
-───────────────────────────────────────────── -->
-<section class="section section--gray how-it-works" id="how-it-works">
-  <div class="container">
-    <div class="section-header section-header--center">
-      <div class="tag">How It Works</div>
-      <h2>Intelligence that runs while you build.</h2>
-      <p>Define your ideal client profile once. Flynt handles client acquisition research continuously — delivering structured, signal-rich prospect intelligence so your time stays where it belongs: in conversations that win new business.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step__number">01</div>
-        <h3>Define Your Ideal Client Profile</h3>
-        <p>Tell Flynt what your ideal client looks like — industries, company types, decision-maker roles, geography, company size. Flynt maps your client acquisition targets, not surface-level keyword lists. One-time setup. Continuously refined as your business grows.</p>
-      </div>
-      <div class="step__connector"></div>
-      <div class="step">
-        <div class="step__number">02</div>
-        <h3>Client Intelligence Runs Continuously</h3>
-        <p>Flynt operates in the background — identifying prospect companies, detecting signals that indicate readiness to buy, and structuring your client pipeline into a clean, prioritised daily flow. No manual list building. No repetitive research sessions. No fragile spreadsheets. Just structured client acquisition intelligence, ready every morning.</p>
-      </div>
-      <div class="step__connector"></div>
-      <div class="step">
-        <div class="step__number">03</div>
-        <h3>Reach Out With Precision</h3>
-        <p>Flynt prepares structured client intelligence. Your team activates it through the tools you already use — CRM, email platform, sales engagement system. Every outreach starts with context: who to contact, why the timing is right, and what signal triggered the opportunity. Flynt strengthens your client acquisition stack. It doesn't replace it.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ─────────────────────────────────────────────
   SECTION 05 — WHO FLYNT IS BUILT FOR
@@ -403,57 +376,44 @@ import Layout from '../layouts/Layout.astro';
   z-index: 2;
 }
 
-.positioning__headline {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
-  font-weight: 800;
+.positioning__header h2 {
   color: #ffffff;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  max-width: 640px;
+  -webkit-text-stroke: 0.6px #ffffff;
 }
 
-.positioning__headline-sub {
-  font-size: 0.5em;
-  font-weight: 500;
-  color: var(--purple-300);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.positioning__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.positioning__card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: background 0.3s;
-}
-
-.positioning__card:hover {
-  background: rgba(255, 255, 255, 0.10);
-}
-
-.positioning__not {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ffffff;
-  display: block;
-  margin-bottom: 14px;
-}
-
-.positioning__card p {
-  font-size: 1rem;
-  line-height: 1.7;
+.positioning__header p {
   color: var(--purple-200);
+}
+
+.positioning__tag {
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+}
+
+.positioning .step {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: none;
+}
+
+.positioning .step__number {
+  color: var(--purple-300);
+  opacity: 1;
+}
+
+.positioning .step h3 {
+  color: #ffffff;
+  -webkit-text-stroke: 0.6px #ffffff;
+}
+
+.positioning .step p {
+  color: var(--purple-200);
+}
+
+.positioning .step__connector {
+  background: rgba(255,255,255,0.2);
 }
 
 /* ── What Flynt Does ── */
