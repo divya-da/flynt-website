@@ -97,32 +97,40 @@ import Layout from '../layouts/Layout.astro';
         <div class="audience-card__icon">
           <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11l2 2 4-4"/></svg>
         </div>
-        <h3>Recruiters & Recruitment Agencies</h3>
-        <p>Find the companies that need your services — before your competition does.</p>
+        <div class="audience-card__text">
+          <h3>Recruiters & Recruitment Agencies</h3>
+          <p>Find the companies that need your services — before your competition does.</p>
+        </div>
       </div>
 
       <div class="audience-card">
         <div class="audience-card__icon">
           <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
         </div>
-        <h3>Sales & Go-to-Market Teams</h3>
-        <p>The right accounts, at the right moment, with context — before every outreach.</p>
+        <div class="audience-card__text">
+          <h3>Sales & Go-to-Market Teams</h3>
+          <p>The right accounts, at the right moment, with context — before every outreach.</p>
+        </div>
       </div>
 
       <div class="audience-card">
         <div class="audience-card__icon">
           <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
         </div>
-        <h3>Agency Owners & Operators</h3>
-        <p>Consistent client pipeline — without adding headcount or rebuilding lists.</p>
+        <div class="audience-card__text">
+          <h3>Agency Owners & Operators</h3>
+          <p>Consistent client pipeline — without adding headcount or rebuilding lists.</p>
+        </div>
       </div>
 
       <div class="audience-card">
         <div class="audience-card__icon">
           <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
-        <h3>Revenue Leaders</h3>
-        <p>Replace reactive prospecting with a system that runs whether your team is busy or not.</p>
+        <div class="audience-card__text">
+          <h3>Revenue Leaders</h3>
+          <p>Replace reactive prospecting with a system that runs whether your team is busy or not.</p>
+        </div>
       </div>
     </div>
 
@@ -513,9 +521,13 @@ import Layout from '../layouts/Layout.astro';
   background: var(--white);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);
-  padding: 36px 32px;
+  padding: 32px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.03);
   transition: background-color 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 28px;
 }
 
 .audience-card:hover {
@@ -529,21 +541,27 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .audience-card__icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  width: 80px;
+  align-self: stretch;
+  border-radius: var(--radius-md);
   background: var(--purple-bg-2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--purple);
-  margin-bottom: 28px;
+  flex-shrink: 0;
   transition: background 0.2s, color 0.2s;
+}
+
+.audience-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .audience-card h3 {
   font-size: 1.4rem;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .audience-card p {
