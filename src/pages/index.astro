@@ -561,24 +561,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Not For ── */
 .not-for {
-  background: linear-gradient(135deg, #300E67, #3B0666 50%, #521884 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.not-for__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.not-for .container {
-  position: relative;
-  z-index: 1;
+  background: var(--slate-50);
 }
 
 .not-for__layout {
@@ -590,50 +573,29 @@ import Layout from '../layouts/Layout.astro';
 
 .not-for__left h2 {
   margin: 12px 0 16px;
-  color: #ffffff;
-  -webkit-text-stroke: 0.6px #ffffff;
 }
 
 .not-for__accent {
-  color: var(--purple-light);
-  -webkit-text-stroke: 0.6px var(--purple-light);
+  color: var(--purple);
+  -webkit-text-stroke: 0.6px var(--purple);
 }
 
 .not-for__sub {
-  color: var(--purple-300);
-  -webkit-text-stroke: 0px;
-}
-
-.not-for .tag {
-  background: rgba(255,255,255,0.12);
-  color: #ffffff;
+  color: var(--slate-500);
+  -webkit-text-stroke: 0;
 }
 
 .not-for .not-for__list li {
-  background: rgba(88, 28, 135, 0.35);
-  border-color: rgba(167, 139, 250, 0.2);
-  color: rgba(255,255,255,0.95);
   font-size: 1.15rem;
   gap: 24px;
   transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .not-for .not-for__list li:hover {
-  background: rgba(88, 28, 135, 0.55);
-  border-color: rgba(167, 139, 250, 0.5);
-  box-shadow: 0 4px 24px rgba(139,92,246,0.3);
+  background: var(--purple-bg);
+  border-color: var(--purple-300);
+  box-shadow: 0 4px 24px rgba(139,92,246,0.12);
   transform: translateX(4px);
-}
-
-.not-for .not-for__icon {
-  background: rgba(220, 100, 70, 0.25);
-  color: rgba(233, 211, 211, 0.6);
-}
-
-.not-for .not-for__quote {
-  background: transparent;
-  border-left-color: var(--purple-light);
-  color: rgba(255,255,255,0.7);
 }
 
 .not-for__quote {
