@@ -275,7 +275,7 @@ img { max-width: 100%; height: auto; }
 
 /* ── Footer ── */
 .footer {
-  background: linear-gradient(135deg, #12082e 0%, #2d1060 45%, #4a1d96 100%);
+  background: #25153e;
   color: rgba(255,255,255,0.6);
   padding: 64px 24px 32px;
 }

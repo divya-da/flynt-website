@@ -19,8 +19,7 @@ import Layout from '../layouts/Layout.astro';
           Client Acquisition Intelligence
         </div>
         <h1 class="hero__headline fade-up fade-up-2">
-          Intelligence Engine for<br />
-          <span class="hero__headline-accent">Client Acquisition</span>
+          Your Intelligence Engine for <span class="hero__headline-accent">Client Acquisition</span>
         </h1>
         <p class="hero__sub fade-up fade-up-3">
           Flynt continuously surfaces structured, signal-driven client opportunities for recruiters, sales teams, and GTM operators — so your team spends time closing new business, not buried in research.
@@ -46,12 +45,38 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 02 — HOW IT WORKS (dark background)
+  SECTION 02 — BUILT FOR ONE PURPOSE (dark background)
 ───────────────────────────────────────────── -->
-<section class="positioning" id="how-it-works">
+<section class="positioning">
   <div class="container">
-    <div class="section-header section-header--center positioning__header">
-      <div class="tag positioning__tag">How It Works</div>
+    <p class="positioning__headline">
+      <span class="positioning__headline-sub">Built for one purpose</span><br />
+      Winning new clients.
+    </p>
+    <div class="positioning__grid">
+      <div class="positioning__card">
+        <span class="positioning__not">Not a database.</span>
+        <p>A continuously running research system — not a static list you search once and rebuild every month.</p>
+      </div>
+      <div class="positioning__card">
+        <span class="positioning__not">Not just a sender.</span>
+        <p>Flynt leads with research and intelligence — so when outreach happens, it’s informed, targeted, and timely.</p>
+      </div>
+      <div class="positioning__card">
+        <span class="positioning__not">Not another workflow to manage.</span>
+        <p>Flynt is the intelligence layer beneath your stack. Set it up once — it runs, refines, and delivers without you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 03 — HOW IT WORKS (white background)
+───────────────────────────────────────────── -->
+<section class="section how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <div class="tag">How It Works</div>
       <h2>Set it up once. Let it run.</h2>
     </div>
     <div class="steps">
@@ -81,7 +106,7 @@ import Layout from '../layouts/Layout.astro';
 <!-- ─────────────────────────────────────────────
   SECTION 05 — WHO FLYNT IS BUILT FOR
 ───────────────────────────────────────────── -->
-<section class="section built-for">
+<section class="section built-for built-for--grey">
   <div class="container">
     <div class="section-header section-header--center">
       <div class="tag">
@@ -138,7 +163,33 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 06 — WHO FLYNT IS NOT FOR
+  SECTION 06 — STATS
+───────────────────────────────────────────── -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat__number">250+</div>
+        <div class="stat__label">Agents running daily</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">90%</div>
+        <div class="stat__label">Reduction in manual research time</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">1.5M+</div>
+        <div class="stat__label">Opportunities researched and prepared</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">10 min</div>
+        <div class="stat__label">Average setup time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 07 — WHO FLYNT IS NOT FOR
 ───────────────────────────────────────────── -->
 <section class="section not-for">
   <div class="container">
@@ -284,50 +335,60 @@ import Layout from '../layouts/Layout.astro';
 .positioning .container {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 56px;
   position: relative;
   z-index: 2;
 }
 
-.positioning__header h2 {
+.positioning__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
   color: #ffffff;
-  -webkit-text-stroke: 0.6px #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  max-width: 640px;
+  margin: 0;
 }
 
-.positioning__header p {
-  color: var(--purple-200);
+.positioning__headline-sub {
+  font-size: 0.5em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.positioning__tag {
-  background: rgba(255,255,255,0.12);
-  color: #ffffff;
+.positioning__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.positioning .step {
+.positioning__card {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 32px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: none;
 }
 
-.positioning .step__number {
-  color: var(--purple-300);
-  opacity: 1;
-}
-
-.positioning .step h3 {
+.positioning__not {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #ffffff;
-  -webkit-text-stroke: 0.6px #ffffff;
+  display: block;
+  margin-bottom: 14px;
 }
 
-.positioning .step p {
-  color: var(--purple-200);
+.positioning__card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.positioning .step__connector {
-  background: rgba(255,255,255,0.2);
-}
 
 /* ── What Flynt Does ── */
 .what-flynt-does {
@@ -490,6 +551,49 @@ import Layout from '../layouts/Layout.astro';
   height: 1px;
   background: var(--slate-200);
   margin-top: 56px;
+}
+
+/* ── Built For grey background ── */
+.built-for--grey {
+  background: var(--slate-50);
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  background: linear-gradient(135deg, #4b168c 0%, #320D67 50%, #652cc8 100%);
+  padding: 72px 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat {
+  padding: 0 40px 0 0;
+}
+
+.stat:first-child {
+  padding-left: 0;
+}
+
+.stat__number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  border-left: 5px solid var(--purple);
+  padding-left: 20px;
+}
+
+.stat__label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
 }
 
 /* ── Audience ── */
@@ -692,6 +796,7 @@ import Layout from '../layouts/Layout.astro';
   .hero__headline { font-size: 2.25rem; }
   .hero__visual { order: -1; }
   .positioning__grid { grid-template-columns: 1fr; }
+  .positioning__headline { font-size: 2rem; }
   .what__layout { grid-template-columns: 1fr; gap: 40px; }
   .what__tag-row { margin-bottom: 40px; }
   .steps {
@@ -700,6 +805,8 @@ import Layout from '../layouts/Layout.astro';
   }
   .step__connector { display: none; }
   .audience-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .stat { padding: 0; }
   .not-for__layout { grid-template-columns: 1fr; gap: 40px; }
 }
 </style>
