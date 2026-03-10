@@ -167,6 +167,7 @@ import Layout from '../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="stats-bar">
   <div class="container">
+    <h3 class="stats-bar__headline">Already running for teams across recruiting, sales, and business development.</h3>
     <div class="stats-grid">
       <div class="stat">
         <div class="stat__number">250+</div>
@@ -560,8 +561,20 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Stats Bar ── */
 .stats-bar {
-  background: linear-gradient(135deg, #4b168c 0%, #320D67 50%, #652cc8 100%);
+  background: linear-gradient(135deg, #4c259a 0%, #320D67 50%, #4f1fa2 100%);
   padding: 72px 24px;
+}
+
+.stats-bar__headline {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 56px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  max-width: 640px;
 }
 
 .stats-grid {
