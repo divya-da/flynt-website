@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="tag">Pricing</div>
       <h1>Intelligence at every stage.</h1>
-      <p>Three plans. Every tier includes Flynt's core intelligence system. Upgrade as your operation scales.</p>
+      <p>Four plans. Every tier includes Flynt's core intelligence system. Upgrade as your operation scales.</p>
     </div>
   </section>
 
@@ -83,7 +83,26 @@ import Layout from '../layouts/Layout.astro';
             <li><span class="check">✓</span> Everything in Pro</li>
             <li><span class="check">✓</span> 4 AI agents included</li>
             <li><span class="check">✓</span> Purchase up to 4 extra agents</li>
-            <li><span class="check">✓</span> Priority support & dedicated onboarding</li>
+            <li><span class="check">✓</span> Priority support</li>
+          </ul>
+        </div>
+
+        <!-- Scale -->
+        <div class="plan plan--scale">
+          <div class="plan__header">
+            <h3>Scale</h3>
+            <p class="plan__tagline">For agencies and high-volume operations.</p>
+            <div class="plan__price plan__price--contact">
+              <span class="plan__contact">Contact Sales</span>
+            </div>
+            <a href="mailto:info@tryflynt.ai" class="btn btn--outline plan__cta">Get in Touch</a>
+          </div>
+          <div class="plan__features-label">What's Included</div>
+          <ul class="plan__features">
+            <li><span class="check">✓</span> Everything in Growth</li>
+            <li><span class="check">✓</span> Unlimited AI agents</li>
+            <li><span class="check">✓</span> Priority support</li>
+            <li><span class="check">✓</span> Dedicated onboarding</li>
           </ul>
         </div>
 
@@ -93,15 +112,6 @@ import Layout from '../layouts/Layout.astro';
         Pricing reflects time saved and consistency gained — not guaranteed outcomes. Flynt prepares opportunity. Results depend on your execution.
       </p>
 
-      <div class="enterprise-block">
-        <div class="enterprise-block__inner">
-          <div>
-            <h3>Running a larger team?</h3>
-            <p>Contact us for custom pricing.</p>
-          </div>
-          <a href="mailto:info@tryflynt.ai" class="btn btn--outline">Contact Us</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -119,6 +129,7 @@ import Layout from '../layouts/Layout.astro';
               <th>Starter<br /><span class="th-price">$149/mo</span></th>
               <th class="compare-table__featured">Pro<br /><span class="th-price">$297/mo</span></th>
               <th>Growth<br /><span class="th-price">$529/mo</span></th>
+              <th>Scale<br /><span class="th-price">Contact Sales</span></th>
             </tr>
           </thead>
           <tbody>
@@ -127,11 +138,13 @@ import Layout from '../layouts/Layout.astro';
               <td>1</td>
               <td class="compare-table__featured">2</td>
               <td>4</td>
+              <td>Unlimited</td>
             </tr>
             <tr>
               <td>Active Hiring Signal Detection</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -139,11 +152,13 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
-              <td>Auto Dara Enrichment</td>
+              <td>Auto Data Enrichment</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -151,11 +166,13 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>Advanced AI Targeting</td>
               <td><span class="t-dash">—</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -163,17 +180,27 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-dash">—</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>Add Extra Agents</td>
               <td><span class="t-dash">—</span></td>
               <td class="compare-table__featured">1 Add-on</td>
               <td>4 Add-ons</td>
+              <td>Unlimited</td>
             </tr>
             <tr>
               <td>Priority Support</td>
               <td><span class="t-dash">—</span></td>
               <td class="compare-table__featured"><span class="t-dash">—</span></td>
+              <td><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Dedicated Onboarding</td>
+              <td><span class="t-dash">—</span></td>
+              <td class="compare-table__featured"><span class="t-dash">—</span></td>
+              <td><span class="t-dash">—</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
           </tbody>
@@ -311,7 +338,7 @@ import Layout from '../layouts/Layout.astro';
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   align-items: start;
   margin-bottom: 32px;
@@ -385,6 +412,17 @@ import Layout from '../layouts/Layout.astro';
   color: var(--purple);
 }
 
+.plan__price--contact {
+  margin-bottom: 20px;
+}
+
+.plan__contact {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--slate-700);
+}
+
 .plan__cta {
   width: 100%;
   justify-content: center;
@@ -428,7 +466,7 @@ import Layout from '../layouts/Layout.astro';
   font-size: 0.875rem;
   color: var(--slate-500);
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 0px;
   font-style: italic;
 }
 
@@ -484,7 +522,7 @@ import Layout from '../layouts/Layout.astro';
 
 .compare-table thead th {
   padding: 16px 20px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.95);
   font-weight: 700;
   font-size: 0.95rem;
   text-align: center;
@@ -492,7 +530,7 @@ import Layout from '../layouts/Layout.astro';
 
 .compare-table thead th.compare-table__feature {
   text-align: center;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.7);
 }
 
 .compare-table thead th.compare-table__featured {
@@ -559,6 +597,10 @@ import Layout from '../layouts/Layout.astro';
   color: var(--slate-400);
   margin-top: 16px;
   font-style: italic;
+}
+
+@media (max-width: 1100px) {
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
