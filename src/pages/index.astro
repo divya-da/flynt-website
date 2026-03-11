@@ -45,6 +45,45 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
+  SECTION 06 — STATS
+───────────────────────────────────────────── -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-badge" style="margin-bottom: 72px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      First leads in under 24 hours
+    </div>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat__number">250+</div>
+        <div class="stat__sublabel">AI Agents Running</div>
+        <div class="stat__label">Researching markets right now</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">21 hrs</div>
+        <div class="stat__sublabel">Saved Per User / Week</div>
+        <div class="stat__label">Time back from manual research</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">3000+</div>
+        <div class="stat__sublabel">Leads Delivered Daily</div>
+        <div class="stat__label">Fresh to inboxes every morning</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">100+</div>
+        <div class="stat__sublabel">Teams Active</div>
+        <div class="stat__label">Revenue operators on Flynt</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">600+</div>
+        <div class="stat__sublabel">Markets Monitored</div>
+        <div class="stat__label">Industries & territories tracked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
   SECTION 02 — BUILT FOR ONE PURPOSE (dark background)
 ───────────────────────────────────────────── -->
 <section class="positioning">
@@ -67,6 +106,7 @@ import Layout from '../layouts/Layout.astro';
         <p>Flynt is the intelligence layer beneath your stack. Set it up once — it runs, refines, and delivers without you.</p>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -163,33 +203,6 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 06 — STATS
-───────────────────────────────────────────── -->
-<section class="stats-bar">
-  <div class="container">
-    <h3 class="stats-bar__headline">Already running for teams across recruiting, sales, and business development.</h3>
-    <div class="stats-grid">
-      <div class="stat">
-        <div class="stat__number">250+</div>
-        <div class="stat__label">Agents running daily</div>
-      </div>
-      <div class="stat">
-        <div class="stat__number">90%</div>
-        <div class="stat__label">Reduction in manual research time</div>
-      </div>
-      <div class="stat">
-        <div class="stat__number">1.5M+</div>
-        <div class="stat__label">Opportunities researched and prepared</div>
-      </div>
-      <div class="stat">
-        <div class="stat__number">10 min</div>
-        <div class="stat__label">Average setup time</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────────────
   SECTION 07 — WHO FLYNT IS NOT FOR
 ───────────────────────────────────────────── -->
 <section class="section not-for">
@@ -247,7 +260,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
 /* ── Hero ── */
 .hero {
-  padding: 140px 0 240px;
+  padding: 140px 0 120px;
   background: transparent;
   overflow: hidden;
 }
@@ -321,9 +334,9 @@ import Layout from '../layouts/Layout.astro';
 /* ── Positioning Strip ── */
 .positioning {
   position: relative;
-  background-color: #2B1F50;
-  background-image: url('/images/backgrounds/World-Map.svg'), url('/images/backgrounds/purple-gradient-background2.png');
-  background-size: 45%, cover;
+  background-color: #330E69;
+  background-image: url('/images/backgrounds/World-Map.svg');
+  background-size: 40%, cover;
   background-position: right top, top;
   background-repeat: no-repeat, no-repeat;
   padding: 200px 24px 112px;
@@ -562,14 +575,15 @@ import Layout from '../layouts/Layout.astro';
 /* ── Stats Bar ── */
 .stats-bar {
   background: linear-gradient(135deg, #4c259a 0%, #320D67 50%, #4f1fa2 100%);
-  padding: 72px 24px;
+  padding: 95px 24px 126px;
 }
 
 .stats-bar__headline {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  -webkit-text-stroke: 0;
   margin: 0 0 56px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -579,8 +593,9 @@ import Layout from '../layouts/Layout.astro';
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0;
+  margin: 0 0 40px;
 }
 
 .stat {
@@ -603,10 +618,41 @@ import Layout from '../layouts/Layout.astro';
   padding-left: 20px;
 }
 
-.stat__label {
+.stat__sublabel {
   font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 6px;
+  padding-left: 20px;
+}
+
+.stat__label {
+  font-size: 0.95rem;
+  font-style: italic;
   color: rgba(255, 255, 255, 0.6);
-  line-height: 1.5;
+  line-height: 1.4;
+  padding-left: 20px;
+}
+
+.stats-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 100px;
+}
+
+.stats-badge svg {
+  color: #a78bfa;
+  flex-shrink: 0;
 }
 
 /* ── Audience ── */
@@ -678,7 +724,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Not For ── */
 .not-for {
-  background: var(--slate-50);
+  background: var(--white);
 }
 
 .not-for__layout {
@@ -768,7 +814,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── Final CTA ── */
 .final-cta {
   position: relative;
-  background-color: var(--white);
+  background-color: var(--slate-50);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -818,7 +864,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .step__connector { display: none; }
   .audience-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
   .stat { padding: 0; }
   .not-for__layout { grid-template-columns: 1fr; gap: 40px; }
 }
