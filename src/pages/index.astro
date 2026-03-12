@@ -22,14 +22,14 @@ import Layout from '../layouts/Layout.astro';
           Your Intelligence Engine for <span class="hero__headline-accent">Client Acquisition</span>
         </h1>
         <p class="hero__sub fade-up fade-up-3">
-          Flynt continuously surfaces structured, signal-driven client opportunities for recruiters, sales teams, and GTM operators — so your team spends time closing new business, not buried in research.
+          Flynt’s AI Agents remove the manual research layer behind client acquisition — allowing you to focus on conversations that close.
         </p>
         <div class="hero__ctas fade-up fade-up-4">
           <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg">Get Started</a>
           <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
         </div>
         <p class="hero__social-proof fade-up fade-up-4">
-          Trusted by recruiters, agency operators, and GTM teams.
+          Trusted by Recruiters, Sales Teams and Agencies.
         </p>
       </div>
       <div class="hero__visual fade-up fade-up-3">
@@ -51,7 +51,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <div class="stats-badge" style="margin-bottom: 72px;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      First leads in under 24 hours
+      First leads in under 5 minutes
     </div>
     <div class="stats-grid">
       <div class="stat">
@@ -60,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="stat__label">Researching markets right now</div>
       </div>
       <div class="stat">
-        <div class="stat__number">21 hrs</div>
+        <div class="stat__number">30 hrs</div>
         <div class="stat__sublabel">Saved Per User / Week</div>
         <div class="stat__label">Time back from manual research</div>
       </div>
@@ -90,7 +90,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <p class="positioning__headline">
       <span class="positioning__headline-sub">Built for one purpose</span><br />
-      Winning new clients.
+      <span style="color: #8B5CF6;">Winning new clients.</span>
     </p>
     <div class="positioning__grid">
       <div class="positioning__card">
@@ -116,7 +116,7 @@ import Layout from '../layouts/Layout.astro';
 <section class="section how-it-works" id="how-it-works">
   <div class="container">
     <div class="section-header section-header--center">
-      <div class="tag">How It Works</div>
+      <div class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>How It Works</div>
       <h2>Set it up once. Let it run.</h2>
     </div>
     <div class="steps">
@@ -334,10 +334,10 @@ import Layout from '../layouts/Layout.astro';
 /* ── Positioning Strip ── */
 .positioning {
   position: relative;
-  background-color: #330E69;
+  background-color: #17072d;
   background-image: url('/images/backgrounds/World-Map.svg');
   background-size: 40%, cover;
-  background-position: right top, top;
+  background-position: right top, bottom;
   background-repeat: no-repeat, no-repeat;
   padding: 200px 24px 112px;
   clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
@@ -380,7 +380,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .positioning__card {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
   padding: 32px;
@@ -390,17 +390,18 @@ import Layout from '../layouts/Layout.astro';
 
 .positioning__not {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #ffffff;
+  color: rgb(215, 210, 225);
+
   display: block;
   margin-bottom: 14px;
 }
 
 .positioning__card p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 
@@ -574,7 +575,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Stats Bar ── */
 .stats-bar {
-  background: linear-gradient(135deg, #4c259a 0%, #320D67 50%, #4f1fa2 100%);
+  background: linear-gradient(135deg, #472194 0%, #340e69 35%, #320D67 60%, #4f1fa2 100%);
   padding: 95px 24px 126px;
 }
 
@@ -610,7 +611,7 @@ import Layout from '../layouts/Layout.astro';
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
-  color: #ffffff;
+  color: #dbb6f8;
   line-height: 1;
   margin-bottom: 12px;
   letter-spacing: -0.02em;
@@ -619,15 +620,15 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .stat__sublabel {
-  font-size: 1rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.5rem;
+  font-weight: 650;
+  color: rgb(215, 210, 225);
   margin-bottom: 6px;
   padding-left: 20px;
 }
 
 .stat__label {
-  font-size: 0.95rem;
+  font-size: 1.075rem;
   font-style: italic;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.4;
@@ -640,9 +641,9 @@ import Layout from '../layouts/Layout.astro';
   gap: 8px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.95);
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
