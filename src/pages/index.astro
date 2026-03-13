@@ -699,7 +699,7 @@ import Layout from '../layouts/Layout.astro';
   object-position: center;
   opacity: 0.2;
   display: block;
-  transform: scale(1.15);
+  transform: scale(1.2);
   transform-origin: center center;
   will-change: transform;
 }
@@ -934,11 +934,11 @@ import Layout from '../layouts/Layout.astro';
     const section = document.querySelector('.built-for--grey');
     const img = section && section.querySelector('.audience-image img');
 
-    // Parallax: image moves at 30% of scroll speed relative to section
+    // Parallax: centered on section midpoint, capped at ±50px
     function onScroll() {
       if (!img || !section) return;
       const rect = section.getBoundingClientRect();
-      const offset = -rect.top * 0.3;
+      const offset = -rect.top * 0.13;
       img.style.transform = 'scale(1.15) translateY(' + offset + 'px)';
     }
     window.addEventListener('scroll', onScroll, { passive: true });
