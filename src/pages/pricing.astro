@@ -170,37 +170,37 @@ import Layout from '../layouts/Layout.astro';
             </tr>
             <tr>
               <td>Advanced AI Targeting</td>
-              <td><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>Industry Targeting</td>
-              <td><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>Add Extra Agents</td>
-              <td><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
               <td class="compare-table__featured">1 Add-on</td>
               <td>4 Add-ons</td>
               <td>Unlimited</td>
             </tr>
             <tr>
               <td>Priority Support</td>
-              <td><span class="t-dash">—</span></td>
-              <td class="compare-table__featured"><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td class="compare-table__featured"><span class="t-dash">✕</span></td>
               <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>Dedicated Onboarding</td>
-              <td><span class="t-dash">—</span></td>
-              <td class="compare-table__featured"><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td class="compare-table__featured"><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
           </tbody>
@@ -244,22 +244,22 @@ import Layout from '../layouts/Layout.astro';
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td>Partial</td>
               <td>Partial</td>
-              <td><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
             </tr>
             <tr>
               <td>Automated Daily Leads</td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td>Partial</td>
-              <td><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
             </tr>
             <tr>
               <td>Setup Time</td>
-              <td class="compare-table__featured">~10 min</td>
+              <td class="compare-table__featured">~5 min</td>
               <td>20–40 hrs</td>
               <td>Days–weeks</td>
               <td>Days of config</td>
@@ -270,9 +270,9 @@ import Layout from '../layouts/Layout.astro';
               <td>AI Agents Included</td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td>Partial</td>
-              <td><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
-              <td><span class="t-dash">—</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
               <td>Partial</td>
             </tr>
             <tr>
@@ -295,12 +295,12 @@ import Layout from '../layouts/Layout.astro';
             </tr>
             <tr>
               <td>Technical Skill Required</td>
-              <td class="compare-table__featured"><span class="t-check">No</span></td>
+              <td class="compare-table__featured"><span class="t-check">✕</span></td>
               <td>Yes</td>
               <td>Partial</td>
               <td>Partial</td>
-              <td>No</td>
-              <td>No</td>
+              <td>✕</td>
+              <td>✕</td>
             </tr>
           </tbody>
         </table>
@@ -589,7 +589,7 @@ import Layout from '../layouts/Layout.astro';
 .compare-table tbody td.compare-table__featured {
   background: rgba(124, 58, 237, 0.05);
   font-weight: 600;
-  color: var(--slate-800);
+  color: var(--purple);
   border-left: 1px solid rgba(124,58,237,0.15);
   border-right: 1px solid rgba(124,58,237,0.15);
 }
@@ -601,7 +601,9 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .t-dash {
-  color: var(--slate-300);
+  color: #ef4444;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .table-footnote {
