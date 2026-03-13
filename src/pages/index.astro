@@ -242,7 +242,7 @@ import Layout from '../layouts/Layout.astro';
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__inner">
-      <h2>Stop researching.<br />Start closing.</h2>
+      <h2>Stop researching.<br />Start <span style="color: var(--purple);">closing.</span></h2>
       <p>Your next client is already in the market. Flynt finds them before someone else does.</p>
       <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg">Get Started →</a>
       <span class="final-cta__disclaimer">No credit card required. Cancel anytime.</span>
@@ -329,7 +329,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── Positioning Strip ── */
 .positioning {
   position: relative;
-  background-color: #2d0f5e;
+  background-color: #26153E;
   background-image: url('/images/backgrounds/World-Map.svg');
   background-size: 40%, cover;
   background-position: right top, bottom;
@@ -565,17 +565,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Built For grey background ── */
 .built-for--grey {
-  background-color: var(--slate-50);
-  background-image:
-    radial-gradient(ellipse at top left, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
-    repeating-linear-gradient(
-      45deg,
-      rgba(124, 58, 237, 0.06) 0px,
-      rgba(124, 58, 237, 0.06) 1px,
-      transparent 1px,
-      transparent 12px
-    );
+  background: var(--slate-50);
 }
 
 /* ── Stats Bar ── */
