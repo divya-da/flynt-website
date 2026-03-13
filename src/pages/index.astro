@@ -147,7 +147,7 @@ import Layout from '../layouts/Layout.astro';
   </div>
   <div class="container">
     <div class="section-header section-header--center">
-      <div class="tag">
+      <div class="stats-badge" style="margin-bottom: 16px;">
         <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         Who It's For
       </div>
@@ -663,6 +663,22 @@ import Layout from '../layouts/Layout.astro';
   text-shadow: 0 0 40px rgba(124, 58, 237, 0.25), 0 0 80px rgba(124, 58, 237, 0.12);
 }
 
+.built-for--grey .section-header {
+  position: relative;
+  z-index: 1;
+}
+
+.built-for--grey .section-header h2 {
+  color: var(--slate-900);
+  text-shadow: 0 2px 12px rgba(255,255,255,0.8);
+}
+
+.built-for--grey .section-header p {
+  color: var(--slate-700);
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(255,255,255,0.9);
+}
+
 .audience-layout {
   display: flex;
   align-items: center;
@@ -697,14 +713,14 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .audience-card {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   border-radius: var(--radius-lg);
-  padding: 20px 28px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+  padding: 24px 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .audience-card--s1,
@@ -713,22 +729,24 @@ import Layout from '../layouts/Layout.astro';
 .audience-card--s4 { margin: 0; }
 
 .audience-card:hover {
-  background-color: rgba(250, 245, 255, 0.95);
-  border-color: var(--purple-bg-2);
-  transform: translateX(4px);
+  background-color: rgba(250, 245, 255, 0.98);
+  border-color: var(--purple-300);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(139,92,246,0.15), 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .audience-card h3 {
   font-size: 1.2rem;
-  margin-bottom: 4px;
-  color: var(--slate-700);
-  -webkit-text-stroke: 0.6px var(--slate-700);
+  margin-bottom: 6px;
+  color: var(--slate-900);
+  -webkit-text-stroke: 0.5px var(--slate-900);
 }
 
 .audience-card p {
-  color: var(--slate-600);
+  color: var(--slate-700);
   font-size: 1rem;
   margin: 0;
+  line-height: 1.6;
 }
 
 /* ── Not For ── */
