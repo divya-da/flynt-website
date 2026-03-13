@@ -573,6 +573,8 @@ import Layout from '../layouts/Layout.astro';
 /* ── Built For grey background ── */
 .built-for--grey {
   background: var(--slate-50);
+  border-top: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--slate-200);
 }
 
 /* ── Stats Bar ── */
@@ -681,6 +683,7 @@ import Layout from '../layouts/Layout.astro';
 .audience__headline-accent {
   color: var(--purple);
   -webkit-text-stroke: 0.6px var(--purple);
+  text-shadow: 0 0 40px rgba(124, 58, 237, 0.25), 0 0 80px rgba(124, 58, 237, 0.12);
 }
 
 .audience-card {
@@ -740,6 +743,23 @@ import Layout from '../layouts/Layout.astro';
 /* ── Not For ── */
 .not-for {
   background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.not-for::before {
+  content: '✕';
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  font-size: 420px;
+  font-weight: 900;
+  color: var(--purple);
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-display);
 }
 
 .not-for__layout {
@@ -862,6 +882,10 @@ import Layout from '../layouts/Layout.astro';
 }
 
 /* ── Responsive ── */
+@media (max-width: 1100px) {
+  .audience-card__icon { width: 64px; height: 64px; align-self: flex-start; }
+}
+
 @media (max-width: 900px) {
   .hero { padding: 80px 0 100px; }
   .hero__grid { grid-template-columns: 1fr; gap: 48px; }
@@ -877,6 +901,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .step__connector { display: none; }
   .audience-grid { grid-template-columns: 1fr; }
+  .audience-card__icon { width: 64px; height: 64px; align-self: flex-start; }
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
   .stat { padding: 0; }
   .not-for__layout { grid-template-columns: 1fr; gap: 40px; }
