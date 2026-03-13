@@ -85,7 +85,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <p class="positioning__headline">
       <span class="positioning__headline-sub">Built for one purpose</span><br />
-      <span style="color: #8B5CF6;">Winning new clients.</span>
+      <span style="color: #dbb6f8;">Winning new clients.</span>
     </p>
     <div class="positioning__grid">
       <div class="positioning__card">
@@ -329,7 +329,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── Positioning Strip ── */
 .positioning {
   position: relative;
-  background-color: #17072d;
+  background-color: #2d0f5e;
   background-image: url('/images/backgrounds/World-Map.svg');
   background-size: 40%, cover;
   background-position: right top, bottom;
@@ -580,7 +580,17 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Stats Bar ── */
 .stats-bar {
-  background: linear-gradient(135deg, #4d269a 0%, #340e69 35%, #320D67 60%, #4f1fa2 100%);
+  background-color: var(--slate-50);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(124, 58, 237, 0.06) 0px,
+      rgba(124, 58, 237, 0.06) 1px,
+      transparent 1px,
+      transparent 12px
+    );
   padding: 95px 24px 126px;
 }
 
@@ -588,7 +598,7 @@ import Layout from '../layouts/Layout.astro';
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 1.6vw, 1.25rem);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--slate-500);
   -webkit-text-stroke: 0;
   margin: 0 0 56px;
   letter-spacing: 0.08em;
@@ -616,18 +626,18 @@ import Layout from '../layouts/Layout.astro';
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
-  color: #dbb6f8;
+  color: var(--purple);
   line-height: 1;
   margin-bottom: 12px;
   letter-spacing: -0.02em;
-  border-left: 5px solid var(--purple);
+  border-left: 5px solid var(--purple-200);
   padding-left: 20px;
 }
 
 .stat__sublabel {
-  font-size: 1.3uberem;
-  font-weight: 650;
-  color: rgb(215, 210, 225);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--slate-700);
   margin-bottom: 6px;
   padding-left: 20px;
 }
@@ -635,7 +645,7 @@ import Layout from '../layouts/Layout.astro';
 .stat__label {
   font-size: 1.075rem;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--slate-500);
   line-height: 1.4;
   padding-left: 20px;
 }
@@ -644,9 +654,9 @@ import Layout from '../layouts/Layout.astro';
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.95);
+  background: var(--purple-200);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: var(--purple-900);
   font-family: var(--font-display);
   font-size: 0.9rem;
   font-weight: 600;
@@ -657,8 +667,10 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .stats-badge svg {
-  color: #a78bfa;
+  color: var(--purple-900);
   flex-shrink: 0;
+  width: 16px;
+  height: 16px;
 }
 
 /* ── Audience ── */
