@@ -93,7 +93,7 @@ const faqs = [
 <section class="page-hero">
   <div class="container">
     <div class="tag">FAQ</div>
-    <h1>Every question. Answered clearly.</h1>
+    <h1>Every question. Answered <span class="accent">clearly.</span></h1>
   </div>
 </section>
 
@@ -114,7 +114,7 @@ const faqs = [
       <div class="faq-groups">
         {faqs.map(group => (
           <div class="faq-group" id={group.group.replace(/\s+/g, '-').toLowerCase()}>
-            <h2 class="faq-group__title">{group.group}</h2>
+            <h3 class="faq-group__title">{group.group}</h3>
             <div class="faq-items">
               {group.items.map(item => (
                 <details class="faq-item">
@@ -151,6 +151,12 @@ const faqs = [
 .page-hero h1 {
   margin: 12px 0 0;
   max-width: 600px;
+  font-size: 3rem;
+}
+
+.accent {
+  color: var(--purple);
+  -webkit-text-stroke: 0;
 }
 
 .faq-section {
@@ -175,9 +181,9 @@ const faqs = [
 
 .faq-nav__link {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--gray-400);
+  color: var(--gray-500);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   transition: all 0.15s;
@@ -199,11 +205,10 @@ const faqs = [
 }
 
 .faq-group__title {
-  font-size: 1.2rem;
-  color: var(--gray-800);
+  color: var(--black);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--slate-200);
 }
 
 .faq-items {
