@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout
   title="Flynt AI — Intelligence Engine for Client Acquisition"
-  description="Flynt surfaces client opportunities for recruiters, sales teams, and GTM operators — so your team spends time closing new business, not buried in research."
+  description="Flynt’s AI Agents remove the manual research layer behind client acquisition — allowing you to focus on conversations that close."
 >
 
 <!-- ─────────────────────────────────────────────
@@ -57,27 +57,22 @@ import Layout from '../layouts/Layout.astro';
       <div class="stat">
         <div class="stat__number">250+</div>
         <div class="stat__sublabel">AI Agents Running</div>
-        <div class="stat__label">Researching markets right now</div>
       </div>
       <div class="stat">
         <div class="stat__number">30 hrs</div>
         <div class="stat__sublabel">Saved Per User / Week</div>
-        <div class="stat__label">Time back from manual research</div>
       </div>
       <div class="stat">
         <div class="stat__number">3000+</div>
         <div class="stat__sublabel">Leads Delivered Daily</div>
-        <div class="stat__label">Fresh to inboxes every morning</div>
       </div>
       <div class="stat">
         <div class="stat__number">100+</div>
         <div class="stat__sublabel">Teams Active</div>
-        <div class="stat__label">Revenue operators on Flynt</div>
       </div>
       <div class="stat">
         <div class="stat__number">600+</div>
         <div class="stat__sublabel">Markets Monitored</div>
-        <div class="stat__label">Industries & territories tracked</div>
       </div>
     </div>
   </div>
@@ -570,12 +565,22 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Built For grey background ── */
 .built-for--grey {
-  background: var(--slate-50);
+  background-color: var(--slate-50);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(124, 58, 237, 0.06) 0px,
+      rgba(124, 58, 237, 0.06) 1px,
+      transparent 1px,
+      transparent 12px
+    );
 }
 
 /* ── Stats Bar ── */
 .stats-bar {
-  background: linear-gradient(135deg, #472194 0%, #340e69 35%, #320D67 60%, #4f1fa2 100%);
+  background: linear-gradient(135deg, #4d269a 0%, #340e69 35%, #320D67 60%, #4f1fa2 100%);
   padding: 95px 24px 126px;
 }
 
@@ -620,7 +625,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .stat__sublabel {
-  font-size: 1.5rem;
+  font-size: 1.3uberem;
   font-weight: 650;
   color: rgb(215, 210, 225);
   margin-bottom: 6px;
@@ -815,10 +820,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── Final CTA ── */
 .final-cta {
   position: relative;
-  background-color: var(--slate-50);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70%;
+  background: var(--slate-50);
   padding: 96px 24px;
 }
 
