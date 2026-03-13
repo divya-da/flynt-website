@@ -152,7 +152,7 @@ import Layout from '../layouts/Layout.astro';
         Who It's For
       </div>
       <h2>Built for teams that <span class="audience__headline-accent">own revenue.</span></h2>
-      <p>Designed for professionals who take full ownership of building their client pipeline.</p>
+      <p class="audience__sub">Designed for professionals who take full ownership of building their client pipeline.</p>
     </div>
 
     <div class="audience-layout">
@@ -338,7 +338,7 @@ import Layout from '../layouts/Layout.astro';
 
 .positioning__headline {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: 3rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.02em;
@@ -678,6 +678,10 @@ import Layout from '../layouts/Layout.astro';
 }
 
 /* ── Audience ── */
+.audience__sub {
+  max-width: none;
+}
+
 .audience__headline-accent {
   color: var(--purple);
   -webkit-text-stroke: 0.6px var(--purple);
@@ -910,7 +914,7 @@ import Layout from '../layouts/Layout.astro';
   .hero__headline { font-size: 2.25rem; }
   .hero__visual { order: -1; }
   .positioning__grid { grid-template-columns: 1fr; }
-  .positioning__headline { font-size: 2rem; }
+  .positioning__headline { font-size: 2.25rem; }
   .what__layout { grid-template-columns: 1fr; gap: 40px; }
   .what__tag-row { margin-bottom: 40px; }
   .steps {
