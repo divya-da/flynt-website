@@ -117,38 +117,67 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="hiw-layout">
 
-      <!-- Left: sticky screenshot -->
+      <!-- Left: full-height background column, screenshot sticky inside -->
       <div class="hiw-visual">
-        <div class="hiw-screen">
-          <img class="hiw-img hiw-img--active" src="/images/screenshots/configure.png" data-step="1" alt="Configure your targets" />
-          <img class="hiw-img" src="/images/screenshots/dailyRuns.png" data-step="2" alt="Daily automated runs" />
-          <img class="hiw-img" src="/images/screenshots/leadsZoomed.png" data-step="3" alt="Leads in your inbox" />
+        <!-- Background: gradient + Group.svg overlay, spans full scroll height -->
+        <div class="hiw-bg">
+          <img class="hiw-bg__svg" src="/images/backgrounds/Group.svg" alt="" aria-hidden="true" />
         </div>
-        <!-- Step indicator dots -->
-        <div class="hiw-dots">
-          <button class="hiw-dot hiw-dot--active" data-step="1"></button>
-          <button class="hiw-dot" data-step="2"></button>
-          <button class="hiw-dot" data-step="3"></button>
+        <!-- Sticky inner: screenshot + dots -->
+        <div class="hiw-visual-inner">
+          <div class="hiw-screen">
+            <img class="hiw-img hiw-img--active" src="/images/screenshots/configure.png" data-step="1" alt="Configure your targets" />
+            <img class="hiw-img" src="/images/screenshots/dailyRuns.png" data-step="2" alt="Daily automated runs" />
+            <img class="hiw-img" src="/images/screenshots/leads-page.png" data-step="3" alt="Leads in your inbox" />
+          </div>
+          <div class="hiw-dots">
+            <button class="hiw-dot hiw-dot--active" data-step="1"></button>
+            <button class="hiw-dot" data-step="2"></button>
+            <button class="hiw-dot" data-step="3"></button>
+          </div>
         </div>
       </div>
 
       <!-- Right: scrollable steps -->
       <div class="hiw-steps">
+
         <div class="hiw-step hiw-step--active" data-step="1">
+          <span class="hiw-chip">Setup</span>
           <div class="hiw-step__number">01</div>
           <h3>Define Your Targets</h3>
           <p>Industries, company size, job titles, geography. Flynt aligns to your criteria, not just keywords.</p>
+          <ul class="hiw-features">
+            <li>Industry & geography filters</li>
+            <li>Company size targeting</li>
+            <li>Job title matching</li>
+          </ul>
         </div>
+
         <div class="hiw-step" data-step="2">
+          <span class="hiw-chip">Automation</span>
           <div class="hiw-step__number">02</div>
           <h3>Research Runs Automatically</h3>
           <p>AI agents work in the background. No list building, no spreadsheet juggling, no manual research sessions.</p>
+          <ul class="hiw-features">
+            <li>Runs every day at your schedule</li>
+            <li>No manual intervention needed</li>
+            <li>Learns from your preferences</li>
+          </ul>
         </div>
+
         <div class="hiw-step" data-step="3">
+          <span class="hiw-chip">Results</span>
           <div class="hiw-step__number">03</div>
           <h3>Leads Land in Your Inbox</h3>
           <p>Every morning: names, titles, emails, and phone numbers — organised and ready to contact.</p>
+          <ul class="hiw-features">
+            <li>Decision-maker contacts</li>
+            <li>Verified emails & phone numbers</li>
+            <li>Ready to act on, day one</li>
+          </ul>
+          <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started — Free Trial →</a>
         </div>
+
       </div>
 
     </div>
@@ -550,32 +579,78 @@ import Layout from '../layouts/Layout.astro';
 }
 
 /* ── How It Works ── */
+.how-it-works {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.how-it-works .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.how-it-works .section-header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
 .hiw-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
   align-items: start;
-  margin-top: 64px;
 }
 
-/* Left: sticky visual */
+/* Left: full-height column — background spans entire scroll */
 .hiw-visual {
+  position: relative;
+  background: linear-gradient(160deg, #3b1580 0%, #6d28d9 45%, #7c3aed 100%);
+  min-height: 100%;
+  align-self: stretch;
+}
+
+.hiw-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hiw-bg__svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  will-change: transform;
+}
+
+/* Sticky inner: full-viewport-height, image flex-centered so it tracks each step */
+.hiw-visual-inner {
   position: sticky;
-  top: 112px;
+  top: 0;
+  height: 100vh;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  justify-content: center;
+  gap: 20px;
+  padding: 48px 40px;
 }
 
 .hiw-screen {
-  position: relative;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(100, 60, 200, 0.13), 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.2);
   background: var(--slate-100);
   aspect-ratio: 16 / 10;
+  position: relative;
 }
 
 .hiw-img {
@@ -602,15 +677,16 @@ import Layout from '../layouts/Layout.astro';
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: none;
-  background: var(--slate-200);
+  border: 2px solid rgba(255,255,255,0.5);
+  background: transparent;
   cursor: pointer;
   padding: 0;
-  transition: background 0.3s, transform 0.3s;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 .hiw-dot--active {
-  background: var(--purple);
+  background: #fff;
+  border-color: #fff;
   transform: scale(1.3);
 }
 
@@ -618,10 +694,15 @@ import Layout from '../layouts/Layout.astro';
 .hiw-steps {
   display: flex;
   flex-direction: column;
+  padding: 200px 56px 200px;
 }
 
 .hiw-step {
-  padding: 48px 0;
+  padding: 80px 0;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-bottom: 1px solid var(--slate-100);
   opacity: 0.35;
   transform: translateX(12px);
@@ -629,11 +710,27 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hiw-step:first-child { padding-top: 0; }
-.hiw-step:last-child  { border-bottom: none; }
+.hiw-step:last-child  { border-bottom: none; padding-bottom: 0; }
 
 .hiw-step--active {
   opacity: 1;
   transform: translateX(0);
+}
+
+.hiw-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+  width: fit-content;
 }
 
 .hiw-step__number {
@@ -641,9 +738,10 @@ import Layout from '../layouts/Layout.astro';
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--purple);
-  opacity: 0.25;
+  opacity: 0.2;
   line-height: 1;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  transition: opacity 0.4s ease;
 }
 
 .hiw-step--active .hiw-step__number {
@@ -652,13 +750,50 @@ import Layout from '../layouts/Layout.astro';
 
 .hiw-step h3 {
   margin-bottom: 12px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .hiw-step p {
   font-size: 1.05rem;
   color: var(--slate-600);
   line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.hiw-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hiw-features li {
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hiw-features li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.hiw-step--active .hiw-features li::before {
+  opacity: 1;
+}
+
+.hiw-cta {
+  margin-top: 8px;
+  width: fit-content;
 }
 
 /* ── Built For grey background ── */
@@ -1007,15 +1142,21 @@ import Layout from '../layouts/Layout.astro';
   .what__tag-row { margin-bottom: 40px; }
   .hiw-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
   .hiw-visual {
+    min-height: 320px;
+  }
+  .hiw-visual-inner {
     position: relative;
     top: 0;
+  }
+  .hiw-steps {
+    padding: 0 24px;
   }
   .hiw-step {
     opacity: 1;
     transform: none;
+    min-height: auto;
   }
   .audience-stair { grid-template-columns: 1fr; }
   .audience-image { display: none; }
@@ -1078,17 +1219,53 @@ import Layout from '../layouts/Layout.astro';
     cards.forEach(function(card) { observer.observe(card); });
   })();
 
+  // ── How It Works: Group.svg parallax ──
+  (function () {
+    var svg = document.querySelector('.hiw-bg__svg');
+    var section = document.querySelector('.how-it-works');
+    if (!svg || !section) return;
+    function onScroll() {
+      var rect = section.getBoundingClientRect();
+      var progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, rect.height - window.innerHeight)));
+      var y = (progress - 0.5) * 120;
+      var rotate = progress * 12;
+      svg.style.transform = 'translate(-50%, calc(-50% + ' + y + 'px)) rotate(' + rotate + 'deg)';
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
   // ── How It Works: sticky split scroll ──
   (function () {
     var steps = document.querySelectorAll('.hiw-step');
     var imgs  = document.querySelectorAll('.hiw-img');
     var dots  = document.querySelectorAll('.hiw-dot');
+    var current = '1';
 
     function activate(stepNum) {
+      if (stepNum === current) return;
+      current = stepNum;
       steps.forEach(function(s) { s.classList.toggle('hiw-step--active', s.dataset.step === stepNum); });
       imgs.forEach(function(img) { img.classList.toggle('hiw-img--active', img.dataset.step === stepNum); });
       dots.forEach(function(d) { d.classList.toggle('hiw-dot--active', d.dataset.step === stepNum); });
     }
+
+    // On scroll: activate whichever step center is closest to viewport center
+    function onScroll() {
+      var centerY = window.innerHeight / 2;
+      var closest = null;
+      var closestDist = Infinity;
+      steps.forEach(function(step) {
+        var rect = step.getBoundingClientRect();
+        var stepCenter = rect.top + rect.height / 2;
+        var dist = Math.abs(stepCenter - centerY);
+        if (dist < closestDist) { closestDist = dist; closest = step; }
+      });
+      if (closest) activate(closest.dataset.step);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     // Dot click
     dots.forEach(function(dot) {
@@ -1097,14 +1274,5 @@ import Layout from '../layouts/Layout.astro';
         if (stepEl) stepEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     });
-
-    // IntersectionObserver: trigger when step is in middle 30% of viewport
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) activate(entry.target.dataset.step);
-      });
-    }, { threshold: 0.5, rootMargin: '-15% 0px -15% 0px' });
-
-    steps.forEach(function(step) { observer.observe(step); });
   })();
 </script>
