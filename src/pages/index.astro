@@ -110,24 +110,17 @@ import Layout from '../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="section how-it-works" id="how-it-works">
   <div class="container">
-    <div class="section-header section-header--center">
-      <div class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>How It Works</div>
-      <h2>Set it up <span class="accent-word">once</span>. Let it run.</h2>
-    </div>
-
     <div class="hiw-layout">
 
       <!-- Left: full-height background column, screenshot sticky inside -->
       <div class="hiw-visual">
-        <!-- Background: gradient + Group.svg overlay, spans full scroll height -->
         <div class="hiw-bg">
           <img class="hiw-bg__svg" src="/images/backgrounds/Group.svg" alt="" aria-hidden="true" />
         </div>
-        <!-- Sticky inner: screenshot + dots -->
         <div class="hiw-visual-inner">
           <div class="hiw-screen">
             <img class="hiw-img hiw-img--active" src="/images/screenshots/configure.png" data-step="1" alt="Configure your targets" />
-            <img class="hiw-img" src="/images/screenshots/dailyRuns.png" data-step="2" alt="Daily automated runs" />
+            <img class="hiw-img" src="/images/screenshots/daily-runs.png" data-step="2" alt="Daily automated runs" />
             <img class="hiw-img" src="/images/screenshots/leads-page.png" data-step="3" alt="Leads in your inbox" />
           </div>
           <div class="hiw-dots">
@@ -138,8 +131,14 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Right: scrollable steps -->
+      <!-- Right: headline + scrollable steps -->
       <div class="hiw-steps">
+
+        <!-- Headline moved into right column -->
+        <div class="hiw-headline">
+          <div class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>How It Works</div>
+          <h2>Set it up <span class="accent-word">once</span>. Let it run.</h2>
+        </div>
 
         <div class="hiw-step hiw-step--active" data-step="1">
           <span class="hiw-chip">Setup</span>
@@ -151,6 +150,7 @@ import Layout from '../layouts/Layout.astro';
             <li>Company size targeting</li>
             <li>Job title matching</li>
           </ul>
+          <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
         </div>
 
         <div class="hiw-step" data-step="2">
@@ -163,6 +163,7 @@ import Layout from '../layouts/Layout.astro';
             <li>No manual intervention needed</li>
             <li>Learns from your preferences</li>
           </ul>
+          <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
         </div>
 
         <div class="hiw-step" data-step="3">
@@ -175,7 +176,7 @@ import Layout from '../layouts/Layout.astro';
             <li>Verified emails & phone numbers</li>
             <li>Ready to act on, day one</li>
           </ul>
-          <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started — Free Trial →</a>
+          <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
         </div>
 
       </div>
@@ -580,8 +581,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── How It Works ── */
 .how-it-works {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 }
 
 .how-it-works .container {
@@ -589,10 +589,19 @@ import Layout from '../layouts/Layout.astro';
   padding: 0;
 }
 
-.how-it-works .section-header {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 24px 64px;
+.hiw-headline {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--slate-100);
+  margin-bottom: 0;
+}
+
+.hiw-headline .tag {
+  margin-bottom: 16px;
+}
+
+.hiw-headline h2 {
+  margin: 0;
+  font-size: 2rem;
 }
 
 .hiw-layout {
@@ -694,12 +703,12 @@ import Layout from '../layouts/Layout.astro';
 .hiw-steps {
   display: flex;
   flex-direction: column;
-  padding: 200px 56px 200px;
+  padding: 0 56px 160px;
 }
 
 .hiw-step {
-  padding: 80px 0;
-  min-height: 60vh;
+  padding: 48px 0;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -709,8 +718,8 @@ import Layout from '../layouts/Layout.astro';
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.hiw-step:first-child { padding-top: 0; }
-.hiw-step:last-child  { border-bottom: none; padding-bottom: 0; }
+.hiw-step:first-child { padding-top: 48px; }
+.hiw-step:last-child  { border-bottom: none; padding-bottom: 48px; }
 
 .hiw-step--active {
   opacity: 1;
