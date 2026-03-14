@@ -151,6 +151,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Job title matching</li>
           </ul>
           <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
+          <div class="hiw-step-img">
+            <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
+            <img src="/images/screenshots/configure.png" alt="Configure your targets" />
+          </div>
         </div>
 
         <div class="hiw-step" data-step="2">
@@ -164,6 +168,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Learns from your preferences</li>
           </ul>
           <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
+          <div class="hiw-step-img">
+            <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
+            <img src="/images/screenshots/daily-runs.png" alt="Daily automated runs" />
+          </div>
         </div>
 
         <div class="hiw-step" data-step="3">
@@ -177,6 +185,10 @@ import Layout from '../layouts/Layout.astro';
             <li>Ready to act on, day one</li>
           </ul>
           <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
+          <div class="hiw-step-img">
+            <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
+            <img src="/images/screenshots/leads-page.png" alt="Leads in your inbox" />
+          </div>
         </div>
 
       </div>
@@ -805,6 +817,11 @@ import Layout from '../layouts/Layout.astro';
   width: fit-content;
 }
 
+/* Mobile-only inline screenshot — hidden on desktop */
+.hiw-step-img {
+  display: none;
+}
+
 /* ── Built For grey background ── */
 .built-for--grey {
   background: var(--slate-50);
@@ -1149,23 +1166,52 @@ import Layout from '../layouts/Layout.astro';
   .positioning__headline { font-size: 2.25rem; }
   .what__layout { grid-template-columns: 1fr; gap: 40px; }
   .what__tag-row { margin-bottom: 40px; }
+  /* HIW mobile: hide sticky left column, show inline images per step */
   .hiw-layout {
     grid-template-columns: 1fr;
   }
   .hiw-visual {
-    min-height: 320px;
-  }
-  .hiw-visual-inner {
-    position: relative;
-    top: 0;
+    display: none;
   }
   .hiw-steps {
-    padding: 0 24px;
+    padding: 0 24px 64px;
+    max-width: 100%;
+  }
+  .hiw-headline {
+    padding: 64px 0 40px;
   }
   .hiw-step {
     opacity: 1;
     transform: none;
     min-height: auto;
+    padding: 40px 0;
+  }
+  .hiw-step-img {
+    display: block;
+    position: relative;
+    margin-top: 32px;
+    margin-left: -24px;
+    margin-right: -24px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #3b1580 0%, #6d28d9 45%, #7c3aed 100%);
+    padding: 40px 24px 48px;
+  }
+  .hiw-step-img__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+  }
+  .hiw-step-img img:not(.hiw-step-img__bg) {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    display: block;
   }
   .audience-stair { grid-template-columns: 1fr; }
   .audience-image { display: none; }
