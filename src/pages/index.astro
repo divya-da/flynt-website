@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
 <section class="hero">
   <div class="container">
     <div class="hero__top fade-up fade-up-1">
-      <div class="tag tag--dark">
+      <div class="tag">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
         Client Acquisition Intelligence
       </div>
@@ -39,8 +39,8 @@ import Layout from '../layouts/Layout.astro';
       </p>
       <div class="hero__bottom-right">
         <div class="hero__ctas">
-          <a href="https://tryflynt.ai/" class="btn btn--lg hero__cta-primary">Get Started</a>
-          <a href="#how-it-works" class="btn btn--lg hero__cta-ghost">See How It Works →</a>
+          <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
+          <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
         </div>
         <p class="hero__social-proof">Trusted by Recruiters, Sales Teams and Agencies.</p>
       </div>
@@ -310,7 +310,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── Hero ── */
 .hero {
   padding: 100px 0 80px;
-  background: linear-gradient(135deg, #1e0a3c 0%, #3b1580 50%, #5b21b6 100%);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -318,27 +318,24 @@ import Layout from '../layouts/Layout.astro';
   margin-bottom: 48px;
 }
 
-.tag--dark {
-  background: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.9);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
 .hero__headline {
   font-size: clamp(3rem, 6vw, 5rem);
-  margin: 20px 0 0;
-  color: #ffffff;
+  margin: 16px 0 0;
+  color: var(--black);
   line-height: 1.1;
+}
+
+.hero__headline .hero__headline-accent {
+  -webkit-text-stroke: 0.6px var(--purple);
+}
+
+.accent-word {
+  color: var(--purple);
   -webkit-text-stroke: 0;
 }
 
 .hero__headline-accent {
-  color: var(--purple-light);
-}
-
-.accent-word {
-  color: var(--purple-light);
-  -webkit-text-stroke: 0;
+  color: var(--purple);
 }
 
 .hero__visual {
@@ -376,9 +373,9 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hero__sub {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin: 0;
-  color: rgba(255,255,255,0.7);
+  color: var(--slate-600);
   line-height: 1.7;
 }
 
@@ -396,30 +393,9 @@ import Layout from '../layouts/Layout.astro';
   justify-content: flex-end;
 }
 
-.hero__cta-primary {
-  background: #ffffff;
-  color: var(--purple-900);
-  font-weight: 700;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-}
-
-.hero__cta-primary:hover {
-  background: var(--purple-200);
-}
-
-.hero__cta-ghost {
-  background: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.9);
-  border: 1.5px solid rgba(255,255,255,0.25);
-}
-
-.hero__cta-ghost:hover {
-  background: rgba(255,255,255,0.18);
-}
-
 .hero__social-proof {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.45);
+  font-size: 0.875rem;
+  color: var(--slate-500);
 }
 
 /* ── Positioning Strip ── */
