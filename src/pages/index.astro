@@ -34,11 +34,15 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="hero__visual fade-up fade-up-3">
         <div class="hero__visual-glow"></div>
-        <img
-          src="/images/screenshots/run%20history%20zoomed.png"
-          alt="Flynt Job Run History dashboard"
+        <video
           class="hero__screenshot-img"
-        />
+          controls
+          playsinline
+          controlsList="nodownload noplaybackrate"
+          disablePictureInPicture
+        >
+          <source src="/videos/Flynt Hero Video V1.6.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </div>
@@ -312,7 +316,7 @@ import Layout from '../layouts/Layout.astro';
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   gap: 64px;
   align-items: center;
 }
