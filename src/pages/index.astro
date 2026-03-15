@@ -20,7 +20,10 @@ import Layout from '../layouts/Layout.astro';
       <h1 class="hero__headline fade-up fade-up-2">
         Your Intelligence Engine for <span class="hero__headline-accent">Client Acquisition</span>
       </h1>
-      <div class="hero__visual fade-up fade-up-3">
+      <p class="hero__sub fade-up fade-up-3">
+        Flynt’s AI Agents remove the manual research layer behind client acquisition — allowing you to focus on conversations that close.
+      </p>
+      <div class="hero__visual fade-up fade-up-4">
         <div class="hero__visual-glow"></div>
         <video
           class="hero__screenshot-img"
@@ -32,9 +35,6 @@ import Layout from '../layouts/Layout.astro';
           <source src="/videos/Flynt Hero Video V1.6.mp4" type="video/mp4" />
         </video>
       </div>
-      <p class="hero__sub fade-up fade-up-4">
-        Flynt’s AI Agents remove the manual research layer behind client acquisition — allowing you to focus on conversations that close.
-      </p>
       <div class="hero__ctas fade-up fade-up-4">
         <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
         <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
@@ -323,7 +323,7 @@ import Layout from '../layouts/Layout.astro';
 
 .hero__headline {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  margin: 16px 0 40px;
+  margin: 16px 0 24px;
   color: var(--black);
   max-width: 760px;
 }
@@ -343,8 +343,8 @@ import Layout from '../layouts/Layout.astro';
 
 .hero__sub {
   font-size: 1.15rem;
-  margin-top: 56px;
-  margin-bottom: 32px;
+  margin-top: 0;
+  margin-bottom: 40px;
   color: var(--slate-600);
   line-height: 1.7;
   max-width: 600px;
@@ -366,7 +366,8 @@ import Layout from '../layouts/Layout.astro';
 .hero__visual {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
+  margin-bottom: 48px;
 }
 
 .hero__visual-glow {
