@@ -12,26 +12,14 @@ import Layout from '../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="hero">
   <div class="container">
-    <div class="hero__grid">
-      <div class="hero__content">
-        <div class="tag fade-up fade-up-1">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-          Client Acquisition Intelligence
-        </div>
-        <h1 class="hero__headline fade-up fade-up-2">
-          Your Intelligence Engine for <span class="hero__headline-accent">Client Acquisition</span>
-        </h1>
-        <p class="hero__sub fade-up fade-up-3">
-          Flynt’s AI Agents remove the manual research layer behind client acquisition — allowing you to focus on conversations that close.
-        </p>
-        <div class="hero__ctas fade-up fade-up-4">
-          <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
-          <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
-        </div>
-        <p class="hero__social-proof fade-up fade-up-4">
-          Trusted by Recruiters, Sales Teams and Agencies.
-        </p>
+    <div class="hero__center">
+      <div class="tag fade-up fade-up-1">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        Client Acquisition Intelligence
       </div>
+      <h1 class="hero__headline fade-up fade-up-2">
+        Your Intelligence Engine for <span class="hero__headline-accent">Client Acquisition</span>
+      </h1>
       <div class="hero__visual fade-up fade-up-3">
         <div class="hero__visual-glow"></div>
         <video
@@ -44,6 +32,16 @@ import Layout from '../layouts/Layout.astro';
           <source src="/videos/Flynt Hero Video V1.6.mp4" type="video/mp4" />
         </video>
       </div>
+      <p class="hero__sub fade-up fade-up-4">
+        Flynt’s AI Agents remove the manual research layer behind client acquisition — allowing you to focus on conversations that close.
+      </p>
+      <div class="hero__ctas fade-up fade-up-4">
+        <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
+        <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
+      </div>
+      <p class="hero__social-proof fade-up fade-up-4">
+        Trusted by Recruiters, Sales Teams and Agencies.
+      </p>
     </div>
   </div>
 </section>
@@ -309,22 +307,25 @@ import Layout from '../layouts/Layout.astro';
 <style>
 /* ── Hero ── */
 .hero {
-  padding: 140px 0 120px;
+  padding: 100px 0 80px;
   background: transparent;
   overflow: hidden;
 }
 
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 64px;
+.hero__center {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .hero__headline {
-  font-size: 3rem;
-  margin: 16px 0 28px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 16px 0 40px;
   color: var(--black);
+  max-width: 760px;
 }
 
 .hero__headline .hero__headline-accent {
@@ -338,21 +339,23 @@ import Layout from '../layouts/Layout.astro';
 
 .hero__headline-accent {
   color: var(--purple);
-  display: block;
 }
 
 .hero__sub {
-  font-size: 1.1rem;
-  margin-bottom: 36px;
+  font-size: 1.15rem;
+  margin-top: 56px;
+  margin-bottom: 32px;
   color: var(--slate-600);
   line-height: 1.7;
+  max-width: 600px;
 }
 
 .hero__ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .hero__social-proof {
@@ -362,14 +365,16 @@ import Layout from '../layouts/Layout.astro';
 
 .hero__visual {
   position: relative;
+  width: 100%;
+  max-width: 900px;
 }
 
 .hero__visual-glow {
   position: absolute;
-  inset: -24px;
-  background: rgba(167, 139, 250, 0.35);
+  inset: -32px;
+  background: rgba(167, 139, 250, 0.30);
   border-radius: 28px;
-  filter: blur(40px);
+  filter: blur(48px);
   z-index: 0;
   pointer-events: none;
 }
@@ -1175,10 +1180,10 @@ import Layout from '../layouts/Layout.astro';
 }
 
 @media (max-width: 900px) {
-  .hero { padding: 80px 0 100px; }
-  .hero__grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero__headline { font-size: 2.25rem; }
-  .hero__visual { order: -1; }
+  .hero { padding: 64px 0 72px; }
+  .hero__headline { font-size: 2.25rem; margin-bottom: 32px; }
+  .hero__sub { font-size: 1rem; }
+  .hero__visual { max-width: 100%; }
   .positioning__grid { grid-template-columns: 1fr; }
   .positioning__headline { font-size: 2.25rem; }
   .positioning { background-size: 90%, cover; background-position: right top, bottom; }
