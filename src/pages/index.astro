@@ -137,19 +137,22 @@ import Layout from '../layouts/Layout.astro';
         <!-- Headline moved into right column -->
         <div class="hiw-headline">
           <div class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>How It Works</div>
-          <h2>Set it up <span class="accent-word">once</span>. Let it run.</h2>
+          <h2>Set it up <span class="accent-word">once</span>.</br>Let it run.</h2>
         </div>
 
         <div class="hiw-step hiw-step--active" data-step="1">
           <span class="hiw-chip">Setup</span>
           <div class="hiw-step__number">01</div>
           <h3>Define Your Targets</h3>
-          <p>Industries, company size, job titles, geography. Flynt aligns to your criteria, not just keywords.</p>
+          <p>Tell Flynt exactly who you're going after.</p>
           <ul class="hiw-features">
-            <li>Industry & geography filters</li>
-            <li>Company size targeting</li>
-            <li>Job title matching</li>
+            <li>Industries</li>
+            <li>Company size</li>
+            <li>Job titles</li>
+            <li>Decision-maker roles</li>
+            <li>Geography</li>
           </ul>
+          <p>This is a one-time setup that takes minutes, not hours.</br>Flynt builds its research around your specific business logic, not surface-level keyword matching. As your business evolves, you can refine your criteria at any time, and Flynt will automatically adjust its research accordingly.</p>
           <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
           <div class="hiw-step-img">
             <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
@@ -160,13 +163,14 @@ import Layout from '../layouts/Layout.astro';
         <div class="hiw-step" data-step="2">
           <span class="hiw-chip">Automation</span>
           <div class="hiw-step__number">02</div>
-          <h3>Research Runs Automatically</h3>
-          <p>AI agents work in the background. No list building, no spreadsheet juggling, no manual research sessions.</p>
+          <h3>Research Runs Daily</h3>
+          <p>Once configured, your AI agents get to work — continuously researching accounts, identifying the right people to contact, and organizing everything into a clean, structured format.</p>
           <ul class="hiw-features">
-            <li>Runs every day at your schedule</li>
-            <li>No manual intervention needed</li>
-            <li>Learns from your preferences</li>
+            <li>No list building</li>
+            <li>No spreadsheet juggling</li>
+            <li>No logging back in to start another research run</li>
           </ul>
+          <p>Flynt runs continuously in the background, so your day starts with opportunities already waiting — not a blank screen.</p>
           <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
           <div class="hiw-step-img">
             <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
@@ -178,12 +182,15 @@ import Layout from '../layouts/Layout.astro';
           <span class="hiw-chip">Results</span>
           <div class="hiw-step__number">03</div>
           <h3>Leads Land in Your Inbox</h3>
-          <p>Every morning: names, titles, emails, and phone numbers — organised and ready to contact.</p>
+          <p>Every morning, a fresh list of qualified leads arrives directly in your inbox. Each lead includes:</p>
           <ul class="hiw-features">
-            <li>Decision-maker contacts</li>
-            <li>Verified emails & phone numbers</li>
-            <li>Ready to act on, day one</li>
+            <li>Company name</li>
+            <li>Decision-maker name</li>
+            <li>Job title</li>
+            <li>Direct email</li>
+            <li>Phone number</li>
           </ul>
+          <p>Everything your team needs to start a conversation, organized and ready to act on. No chasing data across tools, no incomplete records — just leads delivered daily, automatically.</p>
           <a href="https://tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
           <div class="hiw-step-img">
             <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
@@ -655,6 +662,9 @@ import Layout from '../layouts/Layout.astro';
   top: 0;
   height: 100vh;
   z-index: 1;
+  max-width: 800px;
+  margin-left: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -665,7 +675,7 @@ import Layout from '../layouts/Layout.astro';
 
 .hiw-screen {
   width: 100%;
-  max-width: 680px;
+  max-width: 800px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.2);
@@ -715,8 +725,8 @@ import Layout from '../layouts/Layout.astro';
 .hiw-steps {
   display: flex;
   flex-direction: column;
-  padding: 0 80px 340px;
-  max-width: 750px;
+  padding: 0 80px 340px 72px;
+  max-width: 680px;
 }
 
 .hiw-step {
@@ -792,7 +802,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hiw-features li {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--slate-600);
   display: flex;
   align-items: center;
