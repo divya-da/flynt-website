@@ -12,46 +12,48 @@ import Layout from '../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="hero">
   <div class="container">
-    <div class="hero__top fade-up fade-up-1">
-      <div class="tag">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-        Client Acquisition Intelligence
+    <div class="hero__layout">
+      <div class="hero__left-top fade-up fade-up-1">
+        <div class="tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+          Client Acquisition Intelligence
+        </div>
+        <h1 class="hero__headline fade-up fade-up-2">
+          Your Intelligence Engine for <span class="hero__headline-accent">Client Acquisition</span>
+        </h1>
       </div>
-      <h1 class="hero__headline fade-up fade-up-2">
-        Your Intelligence Engine<br>for <span class="hero__headline-accent">Client Acquisition</span>
-      </h1>
-    </div>
-    <div class="hero__visual fade-up fade-up-3">
-      <div class="hero__visual-glow"></div>
-      <div class="hero__video-wrap">
-        <video
-          id="heroVideo"
-          class="hero__screenshot-img"
-          controls
-          playsinline
-          controlsList="nodownload noplaybackrate"
-          disablePictureInPicture
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-        <button class="hero__play-btn" id="heroPlayBtn" aria-label="Play video">
-          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="40" fill="rgba(255,255,255,0.18)"/>
-            <circle cx="40" cy="40" r="32" fill="rgba(255,255,255,0.92)"/>
-            <polygon points="32,24 32,56 58,40" fill="#7c3aed"/>
-          </svg>
-        </button>
+      <div class="hero__left-bottom fade-up fade-up-3">
+        <p class="hero__sub">
+          Flynt’s AI Agents own the manual research layer behind client acquisition — allowing you to focus on conversations that close.
+        </p>
+        <div class="hero__ctas fade-up fade-up-4">
+          <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
+          <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
+        </div>
+        <p class="hero__social-proof">Trusted by Recruiters, Sales Teams and Agencies.</p>
       </div>
-    </div>
-    <div class="hero__bottom fade-up fade-up-4">
-      <p class="hero__sub">
-        Flynt’s AI Agents own the manual research layer behind client acquisition — allowing you to focus on conversations that close.
-      </p>
-      <div class="hero__ctas">
-        <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
-        <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
+      <div class="hero__visual fade-up fade-up-3">
+        <div class="hero__visual-glow"></div>
+        <div class="hero__video-wrap">
+          <video
+            id="heroVideo"
+            class="hero__screenshot-img"
+            controls
+            playsinline
+            controlsList="nodownload noplaybackrate"
+            disablePictureInPicture
+          >
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
+          <button class="hero__play-btn" id="heroPlayBtn" aria-label="Play video">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="40" fill="rgba(255,255,255,0.18)"/>
+              <circle cx="40" cy="40" r="32" fill="rgba(255,255,255,0.92)"/>
+              <polygon points="32,24 32,56 58,40" fill="#7c3aed"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      <p class="hero__social-proof">Trusted by Recruiters, Sales Teams and Agencies.</p>
     </div>
   </div>
 </section>
@@ -321,25 +323,45 @@ import Layout from '../layouts/Layout.astro';
 <style>
 /* ── Hero ── */
 .hero {
-  padding: 56px 0 80px;
-  background: transparent;
+  padding: 100px 0 80px;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(140, 85, 235, 0.5) 0%, rgba(185, 114, 240, 0.3) 25%, transparent 40%),
+    #ffffff;
 }
 
-.hero__top {
-  text-align: center;
-  margin-bottom: 48px;
+.hero__layout {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  grid-template-areas:
+    "top visual"
+    "bottom visual";
+  gap: 0 64px;
+  align-items: center;
 }
 
-.hero__top .tag {
-  margin: 0 auto 16px;
+.hero__left-top {
+  grid-area: top;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: end;
+  padding-bottom: 24px;
+}
+
+.hero__left-bottom {
+  grid-area: bottom;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: start;
 }
 
 .hero__headline {
   font-size: clamp(2.25rem, 4vw, 3rem);
-  margin: 16px 0 0;
+  margin: 0;
   color: var(--black);
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.01em;
 }
 
@@ -357,9 +379,8 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hero__visual {
+  grid-area: visual;
   position: relative;
-  max-width: 760px;
-  margin: 0 auto 56px;
 }
 
 .hero__video-wrap {
@@ -413,33 +434,24 @@ import Layout from '../layouts/Layout.astro';
     0 24px 40px rgba(0, 0, 0, 0.14);
 }
 
-.hero__bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  text-align: center;
-}
-
 .hero__sub {
   font-size: 1.15rem;
   font-weight: 500;
   margin: 0;
   color: var(--slate-600);
   line-height: 1.7;
-  max-width: 520px;
 }
 
 .hero__ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .hero__social-proof {
   font-size: 0.875rem;
   color: var(--slate-500);
+  margin: 0;
 }
 
 /* ── Positioning Strip ── */
@@ -1257,10 +1269,17 @@ import Layout from '../layouts/Layout.astro';
 }
 
 @media (max-width: 900px) {
-  .hero { padding: 64px 0 72px; }
-  .hero__headline { font-size: 2.5rem; }
-  .hero__bottom { gap: 20px; }
-  .hero__ctas { flex-direction: column; align-items: center; }
+  .hero { padding: 48px 0 64px; }
+  .hero__layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "top" "visual" "bottom";
+    gap: 32px;
+  }
+  .hero__left-top { padding-bottom: 0; align-self: auto; }
+  .hero__left-bottom { padding-top: 32px; }
+  .hero__headline { font-size: 2.25rem; }
+  .hero__ctas { flex-direction: column; align-items: flex-start; }
+  .hero__ctas .btn { width: auto; }
   .positioning__grid { grid-template-columns: 1fr; }
   .positioning__headline { font-size: 2.25rem; }
   .positioning { background-size: 90%, cover; background-position: right top, bottom; }
