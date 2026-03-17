@@ -153,7 +153,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- Headline moved into right column -->
         <div class="hiw-headline">
           <div class="tag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>How It Works</div>
-          <h2>Set it up <span class="accent-word">once</span>.</br>Let it run.</h2>
+          <h2>Set it up <span class="accent-word">once</span>. Let it run.</h2>
         </div>
 
         <div class="hiw-step hiw-step--active" data-step="1" data-step-label="01">
@@ -326,7 +326,7 @@ import Layout from '../layouts/Layout.astro';
   padding: 100px 0 80px;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 100% 0%, rgba(140, 85, 235, 0.5) 0%, rgba(185, 114, 240, 0.3) 25%, transparent 40%),
+    radial-gradient(ellipse 40% 80% at 100% 0%, rgba(140, 85, 235, 0.5) 0%, transparent 100%),
     #ffffff;
 }
 
@@ -375,7 +375,11 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hero__headline-accent {
-  color: var(--purple);
+  background: linear-gradient(90deg, #4e21b6 0%, #b54ef0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 0;
 }
 
 .hero__visual {
@@ -681,7 +685,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hiw-headline {
-  padding: 120px 0 48px;
+  padding: 120px 0 24px;
   border-bottom: 1px solid var(--slate-100);
   margin-bottom: 0;
 }
