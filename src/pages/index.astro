@@ -47,13 +47,11 @@ import Layout from '../layouts/Layout.astro';
       <p class="hero__sub">
         Flynt’s AI Agents own the manual research layer behind client acquisition — allowing you to focus on conversations that close.
       </p>
-      <div class="hero__bottom-right">
-        <div class="hero__ctas">
-          <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
-          <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
-        </div>
-        <p class="hero__social-proof">Trusted by Recruiters, Sales Teams and Agencies.</p>
+      <div class="hero__ctas">
+        <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
+        <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
       </div>
+      <p class="hero__social-proof">Trusted by Recruiters, Sales Teams and Agencies.</p>
     </div>
   </div>
 </section>
@@ -323,17 +321,22 @@ import Layout from '../layouts/Layout.astro';
 <style>
 /* ── Hero ── */
 .hero {
-  padding: 100px 0 80px;
+  padding: 56px 0 80px;
   background: transparent;
   overflow: hidden;
 }
 
 .hero__top {
+  text-align: center;
   margin-bottom: 48px;
 }
 
+.hero__top .tag {
+  margin: 0 auto 16px;
+}
+
 .hero__headline {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.25rem, 4vw, 3rem);
   margin: 16px 0 0;
   color: var(--black);
   line-height: 1.1;
@@ -355,8 +358,8 @@ import Layout from '../layouts/Layout.astro';
 
 .hero__visual {
   position: relative;
-  width: 100%;
-  margin-bottom: 80px;
+  max-width: 760px;
+  margin: 0 auto 56px;
 }
 
 .hero__video-wrap {
@@ -411,32 +414,27 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .hero__bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
 }
 
 .hero__sub {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 500;
   margin: 0;
-  color: var(--slate-700);
+  color: var(--slate-600);
   line-height: 1.7;
-}
-
-.hero__bottom-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 16px;
+  max-width: 520px;
 }
 
 .hero__ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .hero__social-proof {
@@ -1261,9 +1259,8 @@ import Layout from '../layouts/Layout.astro';
 @media (max-width: 900px) {
   .hero { padding: 64px 0 72px; }
   .hero__headline { font-size: 2.5rem; }
-  .hero__bottom { grid-template-columns: 1fr; gap: 32px; }
-  .hero__bottom-right { align-items: flex-start; }
-  .hero__ctas { justify-content: flex-start; }
+  .hero__bottom { gap: 20px; }
+  .hero__ctas { flex-direction: column; align-items: center; }
   .positioning__grid { grid-template-columns: 1fr; }
   .positioning__headline { font-size: 2.25rem; }
   .positioning { background-size: 90%, cover; background-position: right top, bottom; }
