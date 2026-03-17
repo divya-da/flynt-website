@@ -742,6 +742,7 @@ import Layout from '../layouts/Layout.astro';
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.2);
   background: var(--slate-100);
+  cursor: pointer;
   aspect-ratio: 16 / 10;
   position: relative;
 }
@@ -1460,16 +1461,30 @@ import Layout from '../layouts/Layout.astro';
 
     // Play step-1 video as soon as the HIW section enters the viewport
     var hiwSection = document.querySelector('.how-it-works');
+    var sectionPlayed = false;
     if (hiwSection && 'IntersectionObserver' in window) {
       var sectionObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting && current === null) {
+          if (entry.isIntersecting && !sectionPlayed) {
+            sectionPlayed = true;
             var firstVid = document.querySelector('.hiw-img[data-step="1"]');
             if (firstVid && firstVid.tagName === 'VIDEO') playVideo(firstVid);
           }
         });
       }, { threshold: 0.1 });
       sectionObserver.observe(hiwSection);
+    }
+
+    // Click on screen container to restart active video
+    var hiwScreen = document.querySelector('.hiw-screen');
+    if (hiwScreen) {
+      hiwScreen.addEventListener('click', function() {
+        var activeVid = hiwScreen.querySelector('.hiw-img--active');
+        if (activeVid && activeVid.tagName === 'VIDEO') {
+          activeVid.currentTime = 0;
+          var p = activeVid.play(); if (p && p.catch) p.catch(function(){});
+        }
+      });
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -1481,6 +1496,33 @@ import Layout from '../layouts/Layout.astro';
         var stepEl = document.querySelector('.hiw-step[data-step="' + dot.dataset.step + '"]');
         if (stepEl) stepEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
+    });
+  })();
+
+  // ── HIW mobile inline videos: autoplay on scroll-into-view + tap to replay ──
+  (function () {
+    var mobileVids = document.querySelectorAll('.hiw-step-img video');
+    mobileVids.forEach(function(vid) {
+      // Play when scrolled into view
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              vid.currentTime = 0;
+              var p = vid.play(); if (p && p.catch) p.catch(function(){});
+            } else {
+              vid.pause();
+            }
+          });
+        }, { threshold: 0.5 });
+        obs.observe(vid);
+      }
+      // Tap to replay
+      vid.addEventListener('click', function() {
+        vid.currentTime = 0;
+        var p = vid.play(); if (p && p.catch) p.catch(function(){});
+      });
+      vid.style.cursor = 'pointer';
     });
   })();
 </script>
