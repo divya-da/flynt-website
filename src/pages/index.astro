@@ -32,7 +32,7 @@ import Layout from '../layouts/Layout.astro';
           controlsList="nodownload noplaybackrate"
           disablePictureInPicture
         >
-          <source src="/videos/Flynt Hero Video V1.6.mp4" type="video/mp4" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
         <button class="hero__play-btn" id="heroPlayBtn" aria-label="Play video">
           <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -156,7 +156,7 @@ import Layout from '../layouts/Layout.astro';
           <h2>Set it up <span class="accent-word">once</span>.</br>Let it run.</h2>
         </div>
 
-        <div class="hiw-step hiw-step--active" data-step="1">
+        <div class="hiw-step hiw-step--active" data-step="1" data-step-label="01">
           <span class="hiw-chip">Setup</span>
           <div class="hiw-step__number">01</div>
           <h3>Define Your Targets</h3>
@@ -178,7 +178,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="hiw-step" data-step="2">
+        <div class="hiw-step" data-step="2" data-step-label="02">
           <span class="hiw-chip">Automation</span>
           <div class="hiw-step__number">02</div>
           <h3>Research Runs Daily</h3>
@@ -196,7 +196,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="hiw-step" data-step="3">
+        <div class="hiw-step" data-step="3" data-step-label="03">
           <span class="hiw-chip">Results</span>
           <div class="hiw-step__number">03</div>
           <h3>Leads Land in Your Inbox</h3>
@@ -787,7 +787,10 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   flex-direction: column;
   padding: 0 80px 340px 72px;
-  max-width: 680px;
+  max-width: 760px;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(124, 58, 237, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(124, 58, 237, 0.03) 0%, transparent 45%);
 }
 
 .hiw-step {
@@ -800,6 +803,28 @@ import Layout from '../layouts/Layout.astro';
   opacity: 0.35;
   transform: translateX(12px);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  position: relative;
+}
+
+.hiw-step::after {
+  content: attr(data-step-label);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 14rem;
+  font-weight: 900;
+  color: var(--purple);
+  opacity: 0;
+  line-height: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  letter-spacing: -0.05em;
+}
+
+.hiw-step--active::after {
+  opacity: 0.04;
 }
 
 .hiw-step:first-child { padding-top: 48px; }
@@ -1252,6 +1277,7 @@ import Layout from '../layouts/Layout.astro';
   .hiw-steps {
     padding: 0 24px 64px;
     max-width: 100%;
+    background: none;
   }
   .hiw-headline {
     padding: 64px 0 40px;
