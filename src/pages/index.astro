@@ -28,7 +28,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
         <div class="hero__ctas fade-up fade-up-4">
           <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
-          <a href="#how-it-works" class="btn btn--outline btn--lg">See How Flynt Works →</a>
+          <a href="#how-it-works" class="btn btn--outline btn--lg">Request Demo →</a>
         </div>
         <p class="hero__social-proof">Trusted by Recruiters, Sales Teams and Agencies.</p>
       </div>
@@ -40,6 +40,7 @@ import Layout from '../layouts/Layout.astro';
             class="hero__screenshot-img"
             controls
             playsinline
+            poster="/images/hero-thumbnail.jpg"
             controlsList="nodownload noplaybackrate"
             disablePictureInPicture
           >
@@ -344,6 +345,7 @@ import Layout from '../layouts/Layout.astro';
   grid-area: top;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
   align-self: end;
   padding-bottom: 24px;
