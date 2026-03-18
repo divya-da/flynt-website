@@ -38,7 +38,6 @@ import Layout from '../layouts/Layout.astro';
           <video
             id="heroVideo"
             class="hero__screenshot-img"
-            controls
             playsinline
             poster="/images/hero-thumbnail.jpg"
             controlsList="nodownload noplaybackrate"
@@ -1380,8 +1379,19 @@ import Layout from '../layouts/Layout.astro';
   (function () {
     var video = document.getElementById('heroVideo');
     var btn = document.getElementById('heroPlayBtn');
-    if (!video || !btn) return;
+    var wrap = video ? video.closest('.hero__video-wrap') : null;
+    if (!video || !btn || !wrap) return;
+
+    // Show controls on hover, hide when mouse leaves (unless playing)
+    wrap.addEventListener('mouseenter', function () {
+      video.controls = true;
+    });
+    wrap.addEventListener('mouseleave', function () {
+      if (video.paused) video.controls = false;
+    });
+
     btn.addEventListener('click', function () {
+      video.controls = true;
       video.play();
       btn.classList.add('hidden');
     });
@@ -1390,6 +1400,7 @@ import Layout from '../layouts/Layout.astro';
     });
     video.addEventListener('pause', function () {
       btn.classList.remove('hidden');
+      video.controls = false;
     });
   })();
 
