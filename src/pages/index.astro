@@ -28,7 +28,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
         <div class="hero__ctas fade-up fade-up-4">
           <a href="https://tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started</a>
-          <a href="#how-it-works" class="btn btn--outline btn--lg">Request Demo →</a>
+          <button class="btn btn--outline btn--lg" id="requestDemoBtn">Request Demo →</button>
         </div>
         <p class="hero__social-proof">Trusted by Recruiters, Sales Teams and Agencies.</p>
       </div>
@@ -314,9 +314,79 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
+<!-- Demo modal -->
+<div id="demoModal" class="demo-modal" aria-hidden="true" role="dialog" aria-label="Request Demo">
+  <div class="demo-modal__backdrop"></div>
+  <div class="demo-modal__box">
+    <button class="demo-modal__close" id="demoModalClose" aria-label="Close">✕</button>
+    <iframe src="https://flynt-test.firebaseapp.com/get-in-touch" class="demo-modal__iframe" loading="lazy" title="Request Demo"></iframe>
+  </div>
+</div>
+
 </Layout>
 
 <style>
+/* ── Demo Modal ── */
+.demo-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-modal--open {
+  display: flex;
+}
+
+.demo-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.demo-modal__box {
+  position: relative;
+  z-index: 1;
+  width: min(680px, 95vw);
+  height: min(720px, 92vh);
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+}
+
+.demo-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.08);
+  color: var(--slate-700);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.demo-modal__close:hover {
+  background: rgba(0,0,0,0.15);
+}
+
+.demo-modal__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* ── Hero ── */
 .hero {
   padding: 100px 0 80px;
@@ -1368,6 +1438,31 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script is:inline>
+  // ── Request Demo modal ──
+  (function () {
+    var btn = document.getElementById('requestDemoBtn');
+    var modal = document.getElementById('demoModal');
+    var closeBtn = document.getElementById('demoModalClose');
+    var backdrop = modal ? modal.querySelector('.demo-modal__backdrop') : null;
+    if (!btn || !modal) return;
+
+    function openModal() {
+      modal.classList.add('demo-modal--open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.classList.remove('demo-modal--open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', openModal);
+    closeBtn && closeBtn.addEventListener('click', closeModal);
+    backdrop && backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  })();
+
   // ── Hero play button ──
   (function () {
     var video = document.getElementById('heroVideo');
