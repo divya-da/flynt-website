@@ -471,8 +471,12 @@ import Layout from '../layouts/Layout.astro';
   border: none;
   cursor: pointer;
   z-index: 10;
-  transition: transform 0.2s ease, opacity 0.3s ease;
+  transition: transform 0.2s ease, opacity 0.3s ease, top 0.3s ease;
   pointer-events: all;
+}
+
+.hero__play-btn.at-end {
+  top: 57%;
 }
 
 .hero__play-btn:hover {
@@ -1489,6 +1493,13 @@ import Layout from '../layouts/Layout.astro';
     video.addEventListener('pause', function () {
       btn.classList.remove('hidden');
       video.controls = false;
+    });
+    video.addEventListener('ended', function () {
+      btn.classList.remove('hidden');
+      btn.classList.add('at-end');
+    });
+    video.addEventListener('play', function () {
+      btn.classList.remove('at-end');
     });
   })();
 
