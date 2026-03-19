@@ -70,6 +70,20 @@ npm run preview  # Preview built output
 6. **Not For Everyone** — light background (`var(--slate-50)`)
 7. **Final CTA** — white background
 
+## Video Compression
+
+To compress a video for web (e.g. hero.mp4):
+
+```bash
+ffmpeg -i input.mp4 -vcodec libx264 -crf 28 -preset slow -vf "scale=1280:720" -movflags +faststart -acodec aac -b:a 128k output.mp4
+```
+
+- `-crf 28` — quality (lower = better, 23 is default; 28 is fine for background/hero video)
+- `-preset slow` — better compression at cost of encode time
+- `scale=1280:720` — downscale to 720p
+- `-movflags +faststart` — move metadata to front for faster web playback
+- `-acodec aac -b:a 128k` — re-encode audio to AAC 128kbps
+
 ## Design Notes
 - Dark sections use `clip-path: polygon(0 120px, 100% 0, ...)` with negative `margin-top` to create diagonal transitions from the hero
 - Purple accent: `var(--purple)` (`#7c3aed` range)
