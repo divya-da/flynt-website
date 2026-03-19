@@ -16,7 +16,7 @@ if [ "$ENV" = "test" ]; then
 
 elif [ "$ENV" = "prod" ]; then
   echo "Deploying to prod (tryflynt.ai)..."
-  firebase deploy --only hosting:flynt-website --project flynt-ai
+  firebase deploy --only hosting:flynt-marketing --project flynt-ai
 
 else
   echo "Unknown environment: $ENV. Use 'test' or 'prod'."
