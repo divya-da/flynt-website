@@ -1542,7 +1542,6 @@ import Layout from '../layouts/Layout.astro';
     var imgs  = document.querySelectorAll('.hiw-img');
     var dots  = document.querySelectorAll('.hiw-dot');
     var current = '1';
-    var played = {}; // track which steps have auto-played
 
     function playVideo(vid) {
       if (!vid) return;
@@ -1559,11 +1558,10 @@ import Layout from '../layouts/Layout.astro';
         var isActive = img.dataset.step === stepNum;
         img.classList.toggle('hiw-img--active', isActive);
         if (img.tagName === 'VIDEO') {
-          if (isActive && !played[stepNum]) {
-            played[stepNum] = true;
+          if (isActive) {
             img.currentTime = 0;
             var p = img.play(); if (p && p.catch) p.catch(function(){});
-          } else if (!isActive) {
+          } else {
             img.pause();
           }
         }
@@ -1585,13 +1583,12 @@ import Layout from '../layouts/Layout.astro';
       if (closest) activate(closest.dataset.step);
     }
 
-    // Play step-1 video as soon as the HIW section enters the viewport
+    // Play step-1 video every time the HIW section enters the viewport
     var hiwSection = document.querySelector('.how-it-works');
     if (hiwSection && 'IntersectionObserver' in window) {
       var sectionObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting && !played['1']) {
-            played['1'] = true;
+          if (entry.isIntersecting) {
             var firstVid = document.querySelector('.hiw-img[data-step="1"]');
             if (firstVid && firstVid.tagName === 'VIDEO') playVideo(firstVid);
           }
@@ -1626,14 +1623,11 @@ import Layout from '../layouts/Layout.astro';
     });
   })();
 
-  // ── HIW mobile inline videos: play once on scroll-into-view + tap card to replay ──
+  // ── HIW mobile inline videos: play on scroll-into-view + tap card to replay ──
   (function () {
     var mobileVids = document.querySelectorAll('.hiw-step-img video');
     mobileVids.forEach(function(vid) {
-      var hasPlayed = false;
-
       function replayVid() {
-        hasPlayed = true;
         vid.currentTime = 0;
         var p = vid.play(); if (p && p.catch) p.catch(function(){});
       }
@@ -1641,7 +1635,7 @@ import Layout from '../layouts/Layout.astro';
       if ('IntersectionObserver' in window) {
         var obs = new IntersectionObserver(function(entries) {
           entries.forEach(function(entry) {
-            if (entry.isIntersecting && !hasPlayed) replayVid();
+            if (entry.isIntersecting) replayVid();
           });
         }, { threshold: 0.5 });
         obs.observe(vid);
