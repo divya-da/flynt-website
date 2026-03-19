@@ -319,7 +319,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="demo-modal__backdrop"></div>
   <div class="demo-modal__box">
     <button class="demo-modal__close" id="demoModalClose" aria-label="Close">✕</button>
-    <iframe src="https://tryflynt.ai/get-in-touch" class="demo-modal__iframe" loading="lazy" title="Request Demo"></iframe>
+    <iframe src="https://calendly.com/preston-recruiterschool/30min" class="demo-modal__iframe" loading="lazy" title="Request Demo"></iframe>
   </div>
 </div>
 
@@ -350,8 +350,8 @@ import Layout from '../layouts/Layout.astro';
 .demo-modal__box {
   position: relative;
   z-index: 1;
-  width: min(680px, 95vw);
-  height: min(720px, 92vh);
+  width: min(1080px, 95vw);
+  height: min(860px, 94vh);
   background: white;
   border-radius: 16px;
   overflow: hidden;
@@ -1597,19 +1597,25 @@ import Layout from '../layouts/Layout.astro';
       sectionObserver.observe(hiwSection);
     }
 
-    // Click on screen (left panel) to replay active video
+    // Click on screen (left panel) or step card (right) to replay active video
+    function replayActive(stepNum) {
+      var vid = document.querySelector('.hiw-img[data-step="' + stepNum + '"]');
+      if (vid && vid.tagName === 'VIDEO') {
+        vid.currentTime = 0;
+        var p = vid.play(); if (p && p.catch) p.catch(function(){});
+      }
+    }
+
     var hiwScreen = document.querySelector('.hiw-screen');
     if (hiwScreen) {
       hiwScreen.style.cursor = 'pointer';
-      hiwScreen.addEventListener('click', function() {
-        var activeVid = hiwScreen.querySelector('.hiw-img--active');
-        if (activeVid && activeVid.tagName === 'VIDEO') {
-          played[activeVid.dataset.step] = true;
-          activeVid.currentTime = 0;
-          var p = activeVid.play(); if (p && p.catch) p.catch(function(){});
-        }
-      });
+      hiwScreen.addEventListener('click', function() { replayActive(current); });
     }
+
+    steps.forEach(function(step) {
+      step.style.cursor = 'pointer';
+      step.addEventListener('click', function() { replayActive(step.dataset.step); });
+    });
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
