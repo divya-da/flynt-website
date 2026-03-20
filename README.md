@@ -82,9 +82,9 @@ Blog posts will live in `src/content/blog/` as `.mdx` files. Non-technical edito
 Create a new `.astro` file in `src/pages/`. The filename becomes the URL route automatically (e.g. `src/pages/contact.astro` → `/contact`).
 
 ## CTA URL
-All CTAs point to: `https://tryflynt.ai/`
+All CTAs point to: `https://app.tryflynt.ai/`
 
-To update this, search for `tryflynt.ai/subscription` across all files.
+To update this, search for `tryflynt.ai/` across all files.
 
 ## SEO
 - Meta title and description set per page via `Layout.astro` props
