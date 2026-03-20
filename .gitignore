@@ -5,3 +5,4 @@ dist/
 .env.*
 !.env.example
 .firebase
+**/.DS_Store
