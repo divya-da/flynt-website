@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro'
 import { client } from '../../lib/sanity.js'
 
 const posts = await client.fetch(`
-  *[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
+  *[_type == "post" && !(_id in path("drafts.**")) && defined(publishedAt) && publishedAt <= now()] | order(publishedAt desc) {
     title,
     slug,
     author,
