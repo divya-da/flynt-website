@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { client } from '../../lib/sanity.js'
+
+const posts = await client.fetch(`
+  *[_type == "post"] | order(publishedAt desc) {
+    title,
+    slug,
+    publishedAt,
+    excerpt
+  }
+`)
+---
+
+<Layout title="Blog — Flynt" description="Insights on client acquisition, recruiting, and GTM strategy from the Flynt team.">
+  <section class="blog-index">
+    <div class="container">
+      <div class="section-header">
+        <h1>Blog</h1>
+        <p>Insights on client acquisition, recruiting, and GTM strategy.</p>
+      </div>
+      <div class="post-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug.current}`} class="post-card">
+            <p class="post-date">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}</p>
+            <h2>{post.title}</h2>
+            {post.excerpt && <p class="post-excerpt">{post.excerpt}</p>}
+            <span class="post-link">Read more →</span>
+          </a>
+        ))}
+        {posts.length === 0 && (
+          <p class="no-posts">No posts yet. Check back soon.</p>
+        )}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .blog-index {
+    padding: 80px 0 120px;
+  }
+
+  .blog-index h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .blog-index .section-header p {
+    color: var(--slate-600);
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+  }
+
+  .post-card {
+    display: block;
+    padding: 32px;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .post-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    border-color: var(--purple-200);
+  }
+
+  .post-date {
+    font-size: 0.85rem;
+    color: var(--slate-500);
+    margin-bottom: 10px;
+  }
+
+  .post-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--slate-900);
+  }
+
+  .post-excerpt {
+    font-size: 0.95rem;
+    color: var(--slate-600);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .post-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--purple);
+  }
+
+  .no-posts {
+    color: var(--slate-500);
+    font-size: 1rem;
+  }
+</style>
