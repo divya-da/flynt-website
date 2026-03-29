@@ -1,6 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import { client } from '../../lib/sanity.js'
+import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder(client)
+function urlFor(source) {
+  return builder.image(source)
+}
 
 export async function getStaticPaths() {
   const posts = await client.fetch(`
@@ -14,8 +20,14 @@ export async function getStaticPaths() {
       updatedAt,
       categories,
       excerpt,
-      coverImage { alt, asset },
-      body,
+      coverImage { alt, asset->{ url } },
+      body[] {
+        ...,
+        _type == "image" => {
+          ...,
+          asset->{ url }
+        }
+      },
       seoTitle,
       seoDescription,
       seoTags
@@ -36,6 +48,17 @@ function blocksToHtml(blocks = []) {
 
   while (i < blocks.length) {
     const block = blocks[i]
+
+    if (block._type === 'image' && block.asset?.url) {
+      const alt = block.alt || ''
+      const caption = block.caption || ''
+      html.push(`<figure class="post-image">
+        <img src="${block.asset.url}" alt="${alt}" loading="lazy" />
+        ${caption ? `<figcaption>${caption}</figcaption>` : ''}
+      </figure>`)
+      i++
+      continue
+    }
 
     if (block._type !== 'block' || !block.children) {
       i++
@@ -124,9 +147,7 @@ const jsonLd = {
       url: 'https://tryflynt.ai/images/logo-with-text.svg',
     },
   },
-  ...(post.coverImage?.asset && {
-    image: `https://cdn.sanity.io/images/m90jbgeh/flynt-blog/${post.coverImage.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png').replace('-webp', '.webp')}`,
-  }),
+  ...(post.coverImage?.asset?.url && { image: post.coverImage.asset.url }),
 }
 ---
 
@@ -147,21 +168,15 @@ const jsonLd = {
         {formattedDate && <p class="post-date">{formattedDate}{post.author && ` · ${post.author}`}</p>}
         <h1>{post.title}</h1>
         {post.excerpt && <p class="post-excerpt">{post.excerpt}</p>}
-        {post.authorBio && (
-          <div class="author-bio">
-            <p>
-              {post.authorUrl
-                ? <><strong><a href={post.authorUrl} target="_blank" rel="noopener">{post.author}</a></strong> — {post.authorBio}</>
-                : <><strong>{post.author}</strong> — {post.authorBio}</>
-              }
-            </p>
-          </div>
-        )}
       </header>
 
-      <div class="post-layout">
-        <div class="post-body" set:html={bodyHtml} />
+      {post.coverImage?.asset?.url && (
+        <div class="post-cover">
+          <img src={post.coverImage.asset.url} alt={post.coverImage.alt || post.title} loading="eager" />
+        </div>
+      )}
 
+      <div class="post-layout">
         <aside class="post-sidebar">
           {toc.length > 1 && (
             <div class="sidebar-toc">
@@ -182,7 +197,20 @@ const jsonLd = {
             <a href="https://app.tryflynt.ai" class="btn btn--primary" style="background: var(--black); border-color: var(--black); box-shadow: none;" target="_blank" rel="noopener">Hire AI Agents Now</a>
           </div>
         </aside>
+
+        <div class="post-body" set:html={bodyHtml} />
       </div>
+
+      {post.authorBio && (
+        <div class="author-bio">
+          <p>
+            {post.authorUrl
+              ? <><strong><a href={post.authorUrl} target="_blank" rel="noopener">{post.author}</a></strong> — {post.authorBio}</>
+              : <><strong>{post.author}</strong> — {post.authorBio}</>
+            }
+          </p>
+        </div>
+      )}
     </div>
   </article>
 </Layout>
@@ -216,14 +244,16 @@ const jsonLd = {
 
   /* ── Header ── */
   .post-header {
-    max-width: 720px;
-    margin-bottom: 56px;
+    max-width: 800px;
+    margin: 0 auto 56px;
+    text-align: center;
   }
 
   .post-categories {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 16px;
   }
 
@@ -265,7 +295,7 @@ const jsonLd = {
     color: var(--slate-600);
     border-left: 3px solid var(--purple);
     padding-left: 14px;
-    margin-top: 24px;
+    margin-top: 48px;
     line-height: 1.6;
   }
 
@@ -278,10 +308,24 @@ const jsonLd = {
     text-decoration: underline;
   }
 
+  /* ── Cover image ── */
+  .post-cover {
+    margin-bottom: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .post-cover img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+
   /* ── Two-column layout ── */
   .post-layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 300px 1fr;
     gap: 64px;
     align-items: start;
   }
@@ -357,6 +401,23 @@ const jsonLd = {
   .post-body :global(strong) {
     font-weight: 700;
     color: var(--slate-900);
+  }
+
+  .post-body :global(.post-image) {
+    margin: 32px 0;
+  }
+
+  .post-body :global(.post-image img) {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .post-body :global(.post-image figcaption) {
+    font-size: 0.85rem;
+    color: var(--slate-500);
+    text-align: center;
+    margin-top: 8px;
   }
 
   /* ── Sidebar ── */
@@ -461,6 +522,11 @@ const jsonLd = {
 
     .post-sidebar {
       position: static;
+      order: 2;
+    }
+
+    .post-body {
+      order: 1;
     }
 
     .post-header h1 {
