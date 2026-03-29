@@ -4,7 +4,7 @@ import { client } from '../../lib/sanity.js'
 
 export async function getStaticPaths() {
   const posts = await client.fetch(`
-    *[_type == "post"] {
+    *[_type == "post" && !(_id in path("drafts.**"))] {
       slug,
       title,
       author,
