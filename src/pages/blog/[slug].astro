@@ -7,9 +7,14 @@ export async function getStaticPaths() {
     *[_type == "post"] {
       slug,
       title,
+      author,
       publishedAt,
+      categories,
       excerpt,
-      body
+      coverImage { alt, asset },
+      body,
+      seoTitle,
+      seoDescription
     }
   `)
 
@@ -39,14 +44,22 @@ const bodyHtml = blocksToHtml(post.body)
 const formattedDate = post.publishedAt
   ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   : ''
+
+const seoTitle = post.seoTitle || `${post.title} — Flynt Blog`
+const seoDescription = post.seoDescription || post.excerpt || ''
 ---
 
-<Layout title={`${post.title} — Flynt Blog`} description={post.excerpt}>
+<Layout title={seoTitle} description={seoDescription}>
   <article class="blog-post">
     <div class="container">
       <a href="/blog" class="back-link">← Back to Blog</a>
       <header class="post-header">
-        {formattedDate && <p class="post-date">{formattedDate}</p>}
+        {post.categories && post.categories.length > 0 && (
+          <div class="post-categories">
+            {post.categories.map(cat => <span class="post-category">{cat}</span>)}
+          </div>
+        )}
+        {formattedDate && <p class="post-date">{formattedDate}{post.author && ` · ${post.author}`}</p>}
         <h1>{post.title}</h1>
         {post.excerpt && <p class="post-excerpt">{post.excerpt}</p>}
       </header>
@@ -76,6 +89,24 @@ const formattedDate = post.publishedAt
   .post-header {
     max-width: 720px;
     margin-bottom: 48px;
+  }
+
+  .post-categories {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .post-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--purple);
+    background: var(--purple-bg);
+    padding: 4px 10px;
+    border-radius: 999px;
   }
 
   .post-date {

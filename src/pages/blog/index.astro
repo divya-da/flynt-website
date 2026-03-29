@@ -6,7 +6,9 @@ const posts = await client.fetch(`
   *[_type == "post"] | order(publishedAt desc) {
     title,
     slug,
+    author,
     publishedAt,
+    categories,
     excerpt
   }
 `)
@@ -22,9 +24,17 @@ const posts = await client.fetch(`
       <div class="post-grid">
         {posts.map(post => (
           <a href={`/blog/${post.slug.current}`} class="post-card">
-            <p class="post-date">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}</p>
+            {post.categories && post.categories.length > 0 && (
+              <div class="post-categories">
+                {post.categories.map(cat => <span class="post-category">{cat}</span>)}
+              </div>
+            )}
             <h2>{post.title}</h2>
             {post.excerpt && <p class="post-excerpt">{post.excerpt}</p>}
+            <p class="post-meta">
+              {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
+              {post.author && ` · ${post.author}`}
+            </p>
             <span class="post-link">Read more →</span>
           </a>
         ))}
@@ -75,10 +85,29 @@ const posts = await client.fetch(`
     border-color: var(--purple-200);
   }
 
-  .post-date {
-    font-size: 0.85rem;
-    color: var(--slate-500);
+  .post-categories {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
     margin-bottom: 10px;
+  }
+
+  .post-category {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--purple);
+    background: var(--purple-bg);
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+
+  .post-meta {
+    font-size: 0.82rem;
+    color: var(--slate-500);
+    margin-bottom: 16px;
+    margin-top: auto;
   }
 
   .post-card h2 {
