@@ -17,7 +17,8 @@ export async function getStaticPaths() {
       coverImage { alt, asset },
       body,
       seoTitle,
-      seoDescription
+      seoDescription,
+      seoTags
     }
   `)
 
@@ -83,11 +84,11 @@ function blocksToHtml(blocks = []) {
 
 function buildToc(blocks = []) {
   return (blocks || [])
-    .filter(b => b._type === 'block' && (b.style === 'h2' || b.style === 'h3'))
+    .filter(b => b._type === 'block' && b.style === 'h2')
     .map(b => {
       const text = b.children.map(s => s.text || '').join('')
       const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-')
-      return { text, id, level: b.style }
+      return { text, id }
     })
 }
 
@@ -131,6 +132,9 @@ const jsonLd = {
 
 <Layout title={seoTitle} description={seoDescription}>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+  {post.seoTags && post.seoTags.length > 0 && (
+    <meta name="keywords" content={post.seoTags.join(', ')} slot="head" />
+  )}
   <article class="blog-post">
     <div class="container">
       <a href="/blog" class="back-link">← Back to Blog</a>
@@ -164,7 +168,7 @@ const jsonLd = {
               <p class="sidebar-toc__title">In this article</p>
               <ul>
                 {toc.map(item => (
-                  <li class={item.level === 'h3' ? 'toc-h3' : ''}>
+                  <li>
                     <a href={`#${item.id}`}>{item.text}</a>
                   </li>
                 ))}
@@ -186,10 +190,15 @@ const jsonLd = {
 <style>
   .blog-post {
     padding: 60px 0 120px;
+    background: var(--slate-50);
   }
 
   .blog-post .container {
-    max-width: 1280px;
+    max-width: 1440px;
+    background: white;
+    border-radius: 16px;
+    padding: 56px 64px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
 
   .back-link {
@@ -198,7 +207,7 @@ const jsonLd = {
     font-weight: 600;
     color: var(--purple);
     text-decoration: none;
-    margin-bottom: 40px;
+    margin-bottom: 56px;
   }
 
   .back-link:hover {
@@ -272,7 +281,7 @@ const jsonLd = {
   /* ── Two-column layout ── */
   .post-layout {
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 1fr 340px;
     gap: 64px;
     align-items: start;
   }
@@ -390,9 +399,10 @@ const jsonLd = {
   .sidebar-toc li a {
     display: block;
     font-size: 0.95rem;
-    color: var(--slate-600);
+    font-weight: 500;
+    color: var(--slate-700);
     text-decoration: none;
-    padding: 6px 0;
+    padding: 7px 0;
     border-left: 2px solid transparent;
     padding-left: 12px;
     line-height: 1.45;
@@ -402,12 +412,6 @@ const jsonLd = {
   .sidebar-toc li a:hover {
     color: var(--purple);
     border-left-color: var(--purple);
-  }
-
-  .sidebar-toc li.toc-h3 a {
-    padding-left: 24px;
-    font-size: 0.875rem;
-    color: var(--slate-500);
   }
 
   .sidebar-cta {
