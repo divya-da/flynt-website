@@ -8,7 +8,10 @@ export async function getStaticPaths() {
       slug,
       title,
       author,
+      authorBio,
+      authorUrl,
       publishedAt,
+      updatedAt,
       categories,
       excerpt,
       coverImage { alt, asset },
@@ -47,9 +50,38 @@ const formattedDate = post.publishedAt
 
 const seoTitle = post.seoTitle || `${post.title} — Flynt Blog`
 const seoDescription = post.seoDescription || post.excerpt || ''
+const canonicalUrl = `https://tryflynt.ai/blog/${post.slug.current}`
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: seoDescription,
+  url: canonicalUrl,
+  datePublished: post.publishedAt,
+  dateModified: post.updatedAt || post.publishedAt,
+  author: {
+    '@type': 'Person',
+    name: post.author || 'Flynt',
+    ...(post.authorUrl && { url: post.authorUrl }),
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Flynt',
+    url: 'https://tryflynt.ai',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://tryflynt.ai/images/logo-with-text.svg',
+    },
+  },
+  ...(post.coverImage?.asset && {
+    image: `https://cdn.sanity.io/images/m90jbgeh/flynt-blog/${post.coverImage.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png').replace('-webp', '.webp')}`,
+  }),
+}
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
   <article class="blog-post">
     <div class="container">
       <a href="/blog" class="back-link">← Back to Blog</a>
@@ -62,6 +94,16 @@ const seoDescription = post.seoDescription || post.excerpt || ''
         {formattedDate && <p class="post-date">{formattedDate}{post.author && ` · ${post.author}`}</p>}
         <h1>{post.title}</h1>
         {post.excerpt && <p class="post-excerpt">{post.excerpt}</p>}
+        {post.authorBio && (
+          <div class="author-bio">
+            <p>
+              {post.authorUrl
+                ? <><strong><a href={post.authorUrl} target="_blank" rel="noopener">{post.author}</a></strong> — {post.authorBio}</>
+                : <><strong>{post.author}</strong> — {post.authorBio}</>
+              }
+            </p>
+          </div>
+        )}
       </header>
       <div class="post-body" set:html={bodyHtml} />
     </div>
@@ -128,6 +170,24 @@ const seoDescription = post.seoDescription || post.excerpt || ''
     font-size: 1.15rem;
     color: var(--slate-600);
     line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .author-bio {
+    font-size: 0.9rem;
+    color: var(--slate-600);
+    border-left: 3px solid var(--purple);
+    padding-left: 12px;
+    margin-top: 20px;
+  }
+
+  .author-bio a {
+    color: var(--purple);
+    text-decoration: none;
+  }
+
+  .author-bio a:hover {
+    text-decoration: underline;
   }
 
   .post-body {
