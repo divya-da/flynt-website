@@ -432,7 +432,6 @@ const jsonLd = {
   /* ── Table of Contents ── */
   .sidebar-toc {
     background: var(--slate-50);
-    border: 1px solid var(--slate-200);
     border-radius: 12px;
     padding: 20px 20px 16px;
   }
@@ -450,10 +449,13 @@ const jsonLd = {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .sidebar-toc li {
-    margin-bottom: 0;
+    margin: 0;
     padding: 0;
   }
 
@@ -463,9 +465,8 @@ const jsonLd = {
     font-weight: 500;
     color: var(--slate-700);
     text-decoration: none;
-    padding: 7px 0;
+    padding: 7px 0 7px 12px;
     border-left: 2px solid transparent;
-    padding-left: 12px;
     line-height: 1.45;
     transition: color 0.15s, border-color 0.15s;
   }
@@ -477,7 +478,6 @@ const jsonLd = {
 
   .sidebar-cta {
     background: var(--purple-bg);
-    border: 1px solid var(--purple-200);
     border-radius: 16px;
     padding: 28px 24px;
   }
@@ -508,9 +508,8 @@ const jsonLd = {
   }
 
   .sidebar-cta .btn {
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
   /* ── Mobile ── */
