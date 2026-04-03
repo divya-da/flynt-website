@@ -70,23 +70,31 @@ import Layout from '../layouts/Layout.astro';
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <h3 class="value-props__title">Made for Recruiters</h3>
-        <p class="value-props__body">Built specifically for the recruiting business — not repurposed from a generic sales tool.</p>
+        <p class="value-props__body">Built for recruiting — not repurposed from a generic sales tool.</p>
       </div>
 
       <div class="value-props__card">
         <div class="value-props__icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3 class="value-props__title">Up and Running in 5 Minutes</h3>
-        <p class="value-props__body">No technical setup. No IT required. If you can fill out a simple form, you can launch Flynt.</p>
+        <h3 class="value-props__title">Up in 5 Minutes</h3>
+        <p class="value-props__body">No setup. No IT. Fill out a form and Flynt is running.</p>
       </div>
 
       <div class="value-props__card">
         <div class="value-props__icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         </div>
-        <h3 class="value-props__title">Flat Pricing. No Credit Games.</h3>
-        <p class="value-props__body">Most tools charge per search, per contact, per export. Flynt doesn't. One flat rate per agent.</p>
+        <h3 class="value-props__title">Flat Pricing. No Credits.</h3>
+        <p class="value-props__body">No per-search or per-export fees. One flat rate per agent.</p>
+      </div>
+
+      <div class="value-props__card">
+        <div class="value-props__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2c0 2.5-2 4-2 6.5C11 10.5 12 12 12 12s-1-1.5-3-1.5c-2 0-4 1.5-4 4 0 4 3.5 7.5 7 7.5s7-3.5 7-7.5c0-4-3-6.5-4-7.5-.5 1.5-1 2-2 2 1-1 1-3 0-5z"/></svg>
+        </div>
+        <h3 class="value-props__title">Hot Leads. Not Stale Lists.</h3>
+        <p class="value-props__body">Live signals, not scraped databases. Reach out at the right moment.</p>
       </div>
 
     </div>
@@ -620,62 +628,80 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Value Props ── */
 .value-props {
-  background: var(--slate-50);
-  padding: 56px 0;
+  background: var(--white);
+  padding: 48px 0;
+  border-bottom: 1px solid var(--slate-200);
 }
 
 .value-props__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .value-props__card {
-  background: #ffffff;
-  border: 1px solid var(--slate-200);
-  border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 32px 36px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: box-shadow 0.2s, transform 0.2s;
+  gap: 10px;
+  border-right: 1px solid var(--slate-200);
 }
 
-.value-props__card:hover {
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08);
-  transform: translateY(-3px);
+.value-props__card:last-child {
+  border-right: none;
 }
 
 .value-props__icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: var(--purple-bg);
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--purple);
   flex-shrink: 0;
+  margin-bottom: 4px;
 }
 
 .value-props__title {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--slate-900);
   margin: 0;
 }
 
 .value-props__body {
-  font-size: 1.1rem;
-  line-height: 1.65;
-  color: var(--slate-600);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--slate-500);
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .value-props__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .value-props__card:nth-child(2) {
+    border-right: none;
+  }
+  .value-props__card:nth-child(3) {
+    border-top: 1px solid var(--slate-200);
+  }
+  .value-props__card:nth-child(4) {
+    border-top: 1px solid var(--slate-200);
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
   .value-props__grid {
     grid-template-columns: 1fr;
+  }
+  .value-props__card {
+    border-right: none;
+    border-top: 1px solid var(--slate-200);
+  }
+  .value-props__card:first-child {
+    border-top: none;
   }
 }
 
