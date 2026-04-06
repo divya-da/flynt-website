@@ -1,0 +1,29 @@
+name: Deploy to prod on Sanity publish
+
+on:
+  repository_dispatch:
+    types: [sanity-publish]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          PUBLIC_SANITY_PROJECT_ID: ${{ secrets.PUBLIC_SANITY_PROJECT_ID }}
+          PUBLIC_SANITY_DATASET: ${{ secrets.PUBLIC_SANITY_DATASET }}
+
+      - name: Deploy to Firebase (prod)
+        run: npx firebase-tools deploy --only hosting:flynt-marketing --project flynt-ai --token "${{ secrets.FIREBASE_TOKEN }}"
