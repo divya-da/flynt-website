@@ -24,9 +24,9 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Billing Toggle -->
       <div class="billing-toggle">
-        <button class="toggle-btn toggle-btn--active" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
-        <button class="toggle-btn" id="toggle-annual" onclick="setBilling('annual')">
-          Annual <span class="toggle-badge">2 months free</span>
+        <button class="toggle-btn" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
+        <button class="toggle-btn toggle-btn--active" id="toggle-annual" onclick="setBilling('annual')">
+          Annual <span class="toggle-badge">Save up to $998/yr</span>
         </button>
       </div>
 
@@ -38,14 +38,15 @@ import Layout from '../layouts/Layout.astro';
             <h3>Starter</h3>
             <p class="plan__tagline">For solo operators getting started.</p>
             <div class="plan__price">
-              <span class="plan__amount" data-monthly="$139" data-annual="$116">$139</span>
+              <span class="plan__amount plan__has-tip plan__annual-only" data-monthly="$139" data-annual="$116">$116<span class="plan__tip">$116/mo per agent</span></span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Annual: $116/mo · Save $278/year</div>
+            <div class="plan__annual-teaser">Switch to annual — save $278/yr</div>
             <div class="plan__annual-info">
-              <div class="plan__billed">Billed $1,390/year</div>
-              <div class="plan__per-agent">$116/mo per agent</div>
-              <div class="plan__savings-badge">Save $278/year</div>
+              <div class="plan__billing-row">
+                <span class="plan__billed-inline plan__has-tip">Billed $1,390/yr <span class="plan__tip">$116/mo per agent</span></span>
+                <span class="plan__free-badge plan__has-tip">save $278<span class="plan__tip">≈ 2 months free</span></span>
+              </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start with Starter</a>
           </div>
@@ -67,14 +68,15 @@ import Layout from '../layouts/Layout.astro';
             <h3>Pro</h3>
             <p class="plan__tagline">For active operators running outbound.</p>
             <div class="plan__price">
-              <span class="plan__amount" data-monthly="$267" data-annual="$223">$267</span>
+              <span class="plan__amount plan__has-tip plan__annual-only" data-monthly="$267" data-annual="$223">$223<span class="plan__tip">$111/mo per agent</span></span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Annual: $223/mo · Save $534/year</div>
+            <div class="plan__annual-teaser">Switch to annual — save $534/yr</div>
             <div class="plan__annual-info">
-              <div class="plan__billed">Billed $2,670/year</div>
-              <div class="plan__per-agent">$111/mo per agent</div>
-              <div class="plan__savings-badge">Save $534/year</div>
+              <div class="plan__billing-row">
+                <span class="plan__billed-inline plan__has-tip">Billed $2,670/yr <span class="plan__tip">$111/mo per agent</span></span>
+                <span class="plan__free-badge plan__has-tip">save $534<span class="plan__tip">≈ 2 months free</span></span>
+              </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--primary plan__cta">Start with Pro</a>
           </div>
@@ -96,14 +98,15 @@ import Layout from '../layouts/Layout.astro';
             <h3>Growth</h3>
             <p class="plan__tagline">For teams who need scale and speed.</p>
             <div class="plan__price">
-              <span class="plan__amount" data-monthly="$499" data-annual="$416">$499</span>
+              <span class="plan__amount plan__has-tip plan__annual-only" data-monthly="$499" data-annual="$416">$416<span class="plan__tip">$104/mo per agent</span></span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Annual: $416/mo · Save $998/year</div>
+            <div class="plan__annual-teaser">Switch to annual — save $998/yr</div>
             <div class="plan__annual-info">
-              <div class="plan__billed">Billed $4,990/year</div>
-              <div class="plan__per-agent">$104/mo per agent</div>
-              <div class="plan__savings-badge">Save $998/year</div>
+              <div class="plan__billing-row">
+                <span class="plan__billed-inline plan__has-tip">Billed $4,990/yr <span class="plan__tip">$104/mo per agent</span></span>
+                <span class="plan__free-badge plan__has-tip">save $998<span class="plan__tip">≈ 2 months free</span></span>
+              </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start with Growth</a>
           </div>
@@ -157,9 +160,9 @@ import Layout from '../layouts/Layout.astro';
           <thead>
             <tr>
               <th class="compare-table__feature"></th>
-              <th>Starter<br /><span class="th-price" data-monthly="$139/mo" data-annual="$116/mo">$139/mo</span></th>
-              <th class="compare-table__featured">Pro<br /><span class="th-price" data-monthly="$267/mo" data-annual="$223/mo">$267/mo</span></th>
-              <th>Growth<br /><span class="th-price" data-monthly="$499/mo" data-annual="$416/mo">$499/mo</span></th>
+              <th>Starter<br /><span class="th-price" data-monthly="$139/mo" data-annual="$116/mo">$116/mo</span></th>
+              <th class="compare-table__featured">Pro<br /><span class="th-price" data-monthly="$267/mo" data-annual="$223/mo">$223/mo</span></th>
+              <th>Growth<br /><span class="th-price" data-monthly="$499/mo" data-annual="$416/mo">$416/mo</span></th>
               <th>Scale<br /><span class="th-price">Contact Sales</span></th>
             </tr>
           </thead>
@@ -334,7 +337,7 @@ import Layout from '../layouts/Layout.astro';
           <tbody>
             <tr>
               <td>Starting Price*</td>
-              <td class="compare-table__featured" data-monthly="$139/mo" data-annual="$116/mo">$139/mo</td>
+              <td class="compare-table__featured" data-monthly="$139/mo" data-annual="$116/mo">$116/mo</td>
               <td>$1,000+/mo</td>
               <td>$169–$800/mo</td>
               <td>$150–$400/mo</td>
@@ -432,6 +435,11 @@ import Layout from '../layouts/Layout.astro';
       (el as HTMLElement).style.display = isMonthly ? 'none' : 'block';
     });
 
+    // Enable/disable per-agent tooltip on price when annual
+    document.querySelectorAll('.plan__annual-only').forEach(el => {
+      el.classList.toggle('plan__has-tip', !isMonthly);
+    });
+
     // Show/hide monthly annual teasers
     document.querySelectorAll('.plan__annual-teaser').forEach(el => {
       (el as HTMLElement).style.display = isMonthly ? 'block' : 'none';
@@ -521,40 +529,80 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Annual teaser (shown on monthly view) ── */
 .plan__annual-teaser {
-  font-size: 0.82rem;
+  display: none;
+  font-size: 0.8rem;
   font-weight: 500;
-  color: #16a34a;
+  color: #15803d;
   margin-bottom: 16px;
-  margin-top: -12px;
+  margin-top: -4px;
 }
 
 /* ── Annual billing info ── */
 .plan__annual-info {
-  display: none;
+  display: block;
   margin-bottom: 16px;
-  margin-top: -12px;
+  margin-top: -8px;
 }
 
-.plan__billed {
+.plan__billing-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.plan__billed-inline {
+  position: relative;
   font-size: 0.82rem;
   color: var(--slate-500);
-  margin-bottom: 2px;
+  cursor: default;
+  border-bottom: 1px dashed var(--slate-300);
 }
 
-.plan__per-agent {
-  font-size: 0.82rem;
-  color: var(--slate-500);
-  margin-bottom: 6px;
-}
-
-.plan__savings-badge {
-  display: inline-block;
+.plan__free-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   background: #dcfce7;
-  color: #16a34a;
-  font-size: 0.78rem;
+  color: #15803d;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 2px 10px;
+  padding: 2px 8px;
   border-radius: 100px;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.plan__has-tip .plan__tip {
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e1340;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.plan__has-tip .plan__tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1e1340;
+}
+
+.plan__has-tip:hover .plan__tip {
+  opacity: 1;
 }
 
 .pricing-section {
@@ -619,14 +667,16 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   align-items: baseline;
   gap: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .plan__amount {
+  position: relative;
   font-family: var(--font-display);
   font-size: 2.8rem;
   font-weight: 800;
   color: var(--black);
+  cursor: default;
 }
 
 .plan__period {
