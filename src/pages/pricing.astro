@@ -599,10 +599,10 @@ import Layout from '../layouts/Layout.astro';
 
 .plan__has-tip .plan__tip {
   position: absolute;
-  bottom: calc(100% + 7px);
+  bottom: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%);
-  background: #1e1340;
+  background: rgba(30, 19, 64, 0.82);
   color: #fff;
   font-size: 0.75rem;
   font-weight: 500;
@@ -613,19 +613,11 @@ import Layout from '../layouts/Layout.astro';
   opacity: 0;
   transition: opacity 0.15s;
   z-index: 10;
+  backdrop-filter: blur(4px);
 }
 
 .plan__has-tip .plan__tip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 8px solid #1e1340;
+  display: none;
 }
 
 .plan__has-tip:hover .plan__tip,
@@ -656,6 +648,7 @@ import Layout from '../layouts/Layout.astro';
   flex-direction: column;
   gap: 6px;
   width: max-content;
+  transform: translateX(-20%);
 }
 
 .plan__tip--multi span {
