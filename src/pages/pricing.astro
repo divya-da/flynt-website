@@ -44,8 +44,12 @@ import Layout from '../layouts/Layout.astro';
             <div class="plan__annual-teaser">Switch to annual — save $278/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline plan__has-tip">Billed $1,390/yr <span class="plan__tip">$116/mo per agent</span></span>
-                <span class="plan__free-badge plan__has-tip">save $278<span class="plan__tip">≈ 2 months free</span></span>
+                <span class="plan__billed-inline">Billed $1,390/yr</span>
+                <span class="plan__free-badge">save $278</span>
+                <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
+                  <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
+                  <span class="plan__tip plan__tip--multi"><span>$116/mo per agent</span><span>≈ 2 months free</span></span>
+                </span>
               </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start with Starter</a>
@@ -74,8 +78,12 @@ import Layout from '../layouts/Layout.astro';
             <div class="plan__annual-teaser">Switch to annual — save $534/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline plan__has-tip">Billed $2,670/yr <span class="plan__tip">$111/mo per agent</span></span>
-                <span class="plan__free-badge plan__has-tip">save $534<span class="plan__tip">≈ 2 months free</span></span>
+                <span class="plan__billed-inline">Billed $2,670/yr</span>
+                <span class="plan__free-badge">save $534</span>
+                <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
+                  <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
+                  <span class="plan__tip plan__tip--multi"><span>$111/mo per agent</span><span>≈ 2 months free</span></span>
+                </span>
               </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--primary plan__cta">Start with Pro</a>
@@ -104,8 +112,12 @@ import Layout from '../layouts/Layout.astro';
             <div class="plan__annual-teaser">Switch to annual — save $998/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline plan__has-tip">Billed $4,990/yr <span class="plan__tip">$104/mo per agent</span></span>
-                <span class="plan__free-badge plan__has-tip">save $998<span class="plan__tip">≈ 2 months free</span></span>
+                <span class="plan__billed-inline">Billed $4,990/yr</span>
+                <span class="plan__free-badge">save $998</span>
+                <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
+                  <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
+                  <span class="plan__tip plan__tip--multi"><span>$104/mo per agent</span><span>≈ 2 months free</span></span>
+                </span>
               </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start with Growth</a>
@@ -446,8 +458,23 @@ import Layout from '../layouts/Layout.astro';
     });
   }
 
+  function toggleTip(el) {
+    const isOpen = el.classList.contains('tip--open');
+    // Close any other open tips
+    document.querySelectorAll('.plan__info-btn.tip--open').forEach(b => b.classList.remove('tip--open'));
+    if (!isOpen) el.classList.add('tip--open');
+  }
+
+  // Close tip when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.plan__info-btn')) {
+      document.querySelectorAll('.plan__info-btn.tip--open').forEach(b => b.classList.remove('tip--open'));
+    }
+  });
+
   // Expose globally for onclick handlers
   (window as any).setBilling = setBilling;
+  (window as any).toggleTip = toggleTip;
 </script>
 
 <style>
@@ -552,11 +579,8 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .plan__billed-inline {
-  position: relative;
   font-size: 0.82rem;
   color: var(--slate-500);
-  cursor: default;
-  border-bottom: 1px dashed var(--slate-300);
 }
 
 .plan__free-badge {
@@ -597,12 +621,49 @@ import Layout from '../layouts/Layout.astro';
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: #1e1340;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 8px solid #1e1340;
 }
 
-.plan__has-tip:hover .plan__tip {
+.plan__has-tip:hover .plan__tip,
+.plan__has-tip.tip--open .plan__tip {
   opacity: 1;
+}
+
+.plan__info-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--purple);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.plan__info-btn:hover,
+.plan__info-btn:focus,
+.plan__info-btn.tip--open {
+  opacity: 1;
+  outline: none;
+}
+
+.plan__tip--multi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: max-content;
+}
+
+.plan__tip--multi span {
+  white-space: nowrap;
+}
+
+.plan__tip--multi span:last-child {
+  color: #86efac;
 }
 
 .pricing-section {
