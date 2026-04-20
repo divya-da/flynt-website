@@ -32,13 +32,35 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="pricing-grid">
 
+        <!-- Free -->
+        <div class="plan">
+          <div class="plan__header">
+            <h3>Free</h3>
+            <p class="plan__tagline">Try Flynt at no cost.</p>
+            <div class="plan__price">
+              <span class="plan__dollar">$</span><span class="plan__amount plan__amount--free">0</span>
+              <span class="plan__period">/mo</span>
+            </div>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Get Started Free</a>
+            <p class="plan__sub-cta">No credit card required</p>
+          </div>
+          <div class="plan__features-label">What's Included</div>
+          <ul class="plan__features">
+            <li><span class="check">✓</span> 1 AI Agent</li>
+            <li><span class="check">✓</span> Up to 30 leads</li>
+            <li><span class="check">✓</span> Core Research</li>
+            <li><span class="check">✓</span> Decision-maker Identification</li>
+            <li><span class="check">✓</span> Auto Data Enrichment</li>
+          </ul>
+        </div>
+
         <!-- Starter -->
         <div class="plan">
           <div class="plan__header">
             <h3>Starter</h3>
             <p class="plan__tagline">For solo operators getting started.</p>
             <div class="plan__price">
-              <span class="plan__amount plan__has-tip plan__annual-only" data-monthly="$139" data-annual="$116">$116<span class="plan__tip">$116/mo per agent</span></span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="116">116</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $278/yr</div>
@@ -52,7 +74,8 @@ import Layout from '../layouts/Layout.astro';
                 </span>
               </div>
             </div>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start with Starter</a>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Subscribe</a>
+            <p class="plan__sub-cta">Billed monthly, cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
@@ -61,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
             <li><span class="check">✓</span> Core Research & Lead Delivery</li>
             <li><span class="check">✓</span> Decision-maker Identification</li>
             <li><span class="check">✓</span> Auto Data Enrichment</li>
-            <li><span class="check">✓</span> Basic Support</li>
+            <li><span class="check">✓</span> Email Support</li>
           </ul>
         </div>
 
@@ -72,7 +95,7 @@ import Layout from '../layouts/Layout.astro';
             <h3>Pro</h3>
             <p class="plan__tagline">For active operators running outbound.</p>
             <div class="plan__price">
-              <span class="plan__amount plan__has-tip plan__annual-only" data-monthly="$267" data-annual="$223">$223<span class="plan__tip">$111/mo per agent</span></span>
+              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="223">223</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $534/yr</div>
@@ -86,7 +109,8 @@ import Layout from '../layouts/Layout.astro';
                 </span>
               </div>
             </div>
-            <a href="https://app.tryflynt.ai/" class="btn btn--primary plan__cta">Start with Pro</a>
+            <a href="https://app.tryflynt.ai/" class="btn btn--primary plan__cta">Subscribe</a>
+            <p class="plan__sub-cta">Billed monthly, cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
@@ -96,7 +120,7 @@ import Layout from '../layouts/Layout.astro';
             <li><span class="check">✓</span> Advanced AI Filtering & Targeting</li>
             <li><span class="check">✓</span> Industry Targeting</li>
             <li><span class="check">✓</span> Option to purchase 1 Extra Agent</li>
-            <li><span class="check">✓</span> Basic Support</li>
+            <li><span class="check">✓</span> Email Support</li>
           </ul>
         </div>
 
@@ -106,7 +130,7 @@ import Layout from '../layouts/Layout.astro';
             <h3>Growth</h3>
             <p class="plan__tagline">For teams who need scale and speed.</p>
             <div class="plan__price">
-              <span class="plan__amount plan__has-tip plan__annual-only" data-monthly="$499" data-annual="$416">$416<span class="plan__tip">$104/mo per agent</span></span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="416">416</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $998/yr</div>
@@ -120,7 +144,8 @@ import Layout from '../layouts/Layout.astro';
                 </span>
               </div>
             </div>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start with Growth</a>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Subscribe</a>
+            <p class="plan__sub-cta">Billed monthly, cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
@@ -132,26 +157,18 @@ import Layout from '../layouts/Layout.astro';
           </ul>
         </div>
 
-        <!-- Scale -->
-        <div class="plan plan--scale">
-          <div class="plan__header">
-            <h3>Scale</h3>
-            <p class="plan__tagline">For agencies and high-volume operations.</p>
-            <div class="plan__price plan__price--contact">
-              <span class="plan__contact">Contact Sales</span>
-            </div>
-            <a href="mailto:info@tryflynt.ai" class="btn btn--outline plan__cta">Get in Touch</a>
-          </div>
-          <div class="plan__features-label">What's Included</div>
-          <ul class="plan__features">
-            <li><span class="check">✓</span> Everything in Growth</li>
-            <li><span class="check">✓</span> Unlimited AI Agents</li>
-            <li><span class="check">✓</span> Unlimited leads per day</li>
-            <li><span class="check">✓</span> Priority Support</li>
-            <li><span class="check">✓</span> Dedicated Onboarding</li>
-          </ul>
-        </div>
+      </div>
 
+      <!-- Scale / Enterprise banner -->
+      <div class="enterprise-banner">
+        <div class="enterprise-banner__left">
+          <div class="enterprise-banner__title">
+            <span class="enterprise-banner__name">Scale</span>
+            <span class="enterprise-banner__tag">Enterprise</span>
+          </div>
+          <p class="enterprise-banner__desc">For agencies and high-volume operations. Unlimited agents, custom pricing.</p>
+        </div>
+        <a href="mailto:info@tryflynt.ai" class="btn btn--outline enterprise-banner__cta">Get in Touch</a>
       </div>
 
       <p class="pricing-disclaimer">
@@ -437,19 +454,24 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('toggle-monthly').classList.toggle('toggle-btn--active', isMonthly);
     document.getElementById('toggle-annual').classList.toggle('toggle-btn--active', !isMonthly);
 
-    // Update all price elements with data-monthly / data-annual
-    document.querySelectorAll('[data-monthly][data-annual]').forEach(el => {
+    // Update all price amount elements with data-monthly / data-annual
+    document.querySelectorAll('.plan__annual-only[data-monthly][data-annual]').forEach(el => {
+      el.textContent = isMonthly ? el.dataset.monthly : el.dataset.annual;
+    });
+
+    // Update comparison table th-price elements
+    document.querySelectorAll('.th-price[data-monthly][data-annual]').forEach(el => {
+      el.textContent = isMonthly ? el.dataset.monthly : el.dataset.annual;
+    });
+
+    // Update competitor table starting price cell
+    document.querySelectorAll('[data-monthly][data-annual]:not(.plan__annual-only):not(.th-price)').forEach(el => {
       el.textContent = isMonthly ? el.dataset.monthly : el.dataset.annual;
     });
 
     // Show/hide annual billing info blocks
     document.querySelectorAll('.plan__annual-info').forEach(el => {
       (el as HTMLElement).style.display = isMonthly ? 'none' : 'block';
-    });
-
-    // Enable/disable per-agent tooltip on price when annual
-    document.querySelectorAll('.plan__annual-only').forEach(el => {
-      el.classList.toggle('plan__has-tip', !isMonthly);
     });
 
     // Show/hide monthly annual teasers
@@ -720,8 +742,21 @@ import Layout from '../layouts/Layout.astro';
 .plan__price {
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 2px;
   margin-bottom: 8px;
+}
+
+.plan__dollar {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--black);
+  align-self: flex-start;
+  padding-top: 6px;
+}
+
+.plan__dollar--featured {
+  color: var(--purple);
 }
 
 .plan__amount {
@@ -733,13 +768,25 @@ import Layout from '../layouts/Layout.astro';
   cursor: default;
 }
 
+.plan__amount--free {
+  color: var(--black);
+}
+
+.plan__amount--featured {
+  color: var(--purple);
+}
+
 .plan__period {
   font-size: 1rem;
   color: var(--slate-500);
 }
 
-.plan--featured .plan__amount {
-  color: var(--purple);
+.plan__sub-cta {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 
 .plan__price--contact {
@@ -788,6 +835,60 @@ import Layout from '../layouts/Layout.astro';
 .check {
   color: var(--purple);
   font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Enterprise Banner ── */
+.enterprise-banner {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.enterprise-banner__left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.enterprise-banner__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.enterprise-banner__name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.enterprise-banner__tag {
+  background: var(--slate-100);
+  color: var(--slate-700);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--slate-200);
+}
+
+.enterprise-banner__desc {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  margin: 0;
+}
+
+.enterprise-banner__cta {
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
