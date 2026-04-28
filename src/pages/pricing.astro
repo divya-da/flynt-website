@@ -24,8 +24,8 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Billing Toggle -->
       <div class="billing-toggle">
-        <button class="toggle-btn" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
-        <button class="toggle-btn toggle-btn--active" id="toggle-annual" onclick="setBilling('annual')">
+        <button class="toggle-btn toggle-btn--active" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
+        <button class="toggle-btn" id="toggle-annual" onclick="setBilling('annual')">
           Annual <span class="toggle-badge">Save up to $998/yr</span>
         </button>
       </div>
@@ -47,7 +47,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
             <li><span class="check">✓</span> 1 AI Agent</li>
-            <li><span class="check">✓</span> Up to 30 leads</li>
+            <li><span class="check">✓</span> Up to 10 leads</li>
             <li><span class="check">✓</span> Core Research</li>
             <li><span class="check">✓</span> Decision-maker Identification</li>
             <li><span class="check">✓</span> Auto Data Enrichment</li>
@@ -60,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
             <h3>Starter</h3>
             <p class="plan__tagline">For solo operators getting started.</p>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="116">116</span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="116">139</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $278/yr</div>
@@ -75,7 +75,8 @@ import Layout from '../layouts/Layout.astro';
               </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Subscribe</a>
-            <p class="plan__sub-cta">Billed monthly, cancel anytime</p>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta plan__cta--try">Try Now</a>
+            <p class="plan__sub-cta">7-day trial · Cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
@@ -95,7 +96,7 @@ import Layout from '../layouts/Layout.astro';
             <h3>Pro</h3>
             <p class="plan__tagline">For active operators running outbound.</p>
             <div class="plan__price">
-              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="223">223</span>
+              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="223">267</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $534/yr</div>
@@ -110,7 +111,8 @@ import Layout from '../layouts/Layout.astro';
               </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--primary plan__cta">Subscribe</a>
-            <p class="plan__sub-cta">Billed monthly, cancel anytime</p>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta plan__cta--try">Try Now</a>
+            <p class="plan__sub-cta">7-day trial · Cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
@@ -130,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
             <h3>Growth</h3>
             <p class="plan__tagline">For teams who need scale and speed.</p>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="416">416</span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="416">499</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $998/yr</div>
@@ -145,7 +147,8 @@ import Layout from '../layouts/Layout.astro';
               </div>
             </div>
             <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Subscribe</a>
-            <p class="plan__sub-cta">Billed monthly, cancel anytime</p>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta plan__cta--try">Try Now</a>
+            <p class="plan__sub-cta">7-day trial · Cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
@@ -578,7 +581,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Annual teaser (shown on monthly view) ── */
 .plan__annual-teaser {
-  display: none;
+  display: block;
   font-size: 0.8rem;
   font-weight: 500;
   color: #15803d;
@@ -588,7 +591,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Annual billing info ── */
 .plan__annual-info {
-  display: block;
+  display: none;
   margin-bottom: 16px;
   margin-top: -8px;
 }
@@ -803,6 +806,10 @@ import Layout from '../layouts/Layout.astro';
 .plan__cta {
   width: 100%;
   justify-content: center;
+}
+
+.plan__cta--try {
+  margin-top: 10px;
 }
 
 .plan__features-label {
