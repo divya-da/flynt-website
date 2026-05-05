@@ -24,8 +24,8 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Billing Toggle -->
       <div class="billing-toggle">
-        <button class="toggle-btn toggle-btn--active" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
-        <button class="toggle-btn" id="toggle-annual" onclick="setBilling('annual')">
+        <button class="toggle-btn" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
+        <button class="toggle-btn toggle-btn--active" id="toggle-annual" onclick="setBilling('annual')">
           Annual <span class="toggle-badge">Save up to $998/yr</span>
         </button>
       </div>
@@ -60,17 +60,16 @@ import Layout from '../layouts/Layout.astro';
             <h3>Starter</h3>
             <p class="plan__tagline">For solo operators getting started.</p>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="116">139</span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="116">116</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $278/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
                 <span class="plan__billed-inline">Billed $1,390/yr</span>
-                <span class="plan__free-badge">save $278</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$116/mo per agent</span><span>≈ 2 months free</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$116/mo per agent</span><span>≈ 2 months free</span><span>Save $278/yr</span></span>
                 </span>
               </div>
             </div>
@@ -96,17 +95,16 @@ import Layout from '../layouts/Layout.astro';
             <h3>Pro</h3>
             <p class="plan__tagline">For active operators running outbound.</p>
             <div class="plan__price">
-              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="223">267</span>
+              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="223">223</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $534/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
                 <span class="plan__billed-inline">Billed $2,670/yr</span>
-                <span class="plan__free-badge">save $534</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$111/mo per agent</span><span>≈ 2 months free</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$111/mo per agent</span><span>≈ 2 months free</span><span>Save $534/yr</span></span>
                 </span>
               </div>
             </div>
@@ -132,17 +130,16 @@ import Layout from '../layouts/Layout.astro';
             <h3>Growth</h3>
             <p class="plan__tagline">For teams who need scale and speed.</p>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="416">499</span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="416">416</span>
               <span class="plan__period">/mo</span>
             </div>
             <div class="plan__annual-teaser">Switch to annual — save $998/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
                 <span class="plan__billed-inline">Billed $4,990/yr</span>
-                <span class="plan__free-badge">save $998</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$104/mo per agent</span><span>≈ 2 months free</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$104/mo per agent</span><span>≈ 2 months free</span><span>Save $998/yr</span></span>
                 </span>
               </div>
             </div>
@@ -337,7 +334,7 @@ import Layout from '../layouts/Layout.astro';
               <span class="stack-total-sub">Traditional stack</span>
             </div>
             <div class="stack-col stack-col--flynt">
-              <span class="stack-total-price stack-total-price--flynt">$139<span class="stack-price-period">/mo</span></span>
+              <span class="stack-total-price stack-total-price--flynt">$116<span class="stack-price-period">/mo</span></span>
               <span class="stack-total-sub">With Flynt</span>
             </div>
           </div>
@@ -500,6 +497,8 @@ import Layout from '../layouts/Layout.astro';
   // Expose globally for onclick handlers
   (window as any).setBilling = setBilling;
   (window as any).toggleTip = toggleTip;
+
+  setBilling('annual');
 </script>
 
 <style>
@@ -581,7 +580,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Annual teaser (shown on monthly view) ── */
 .plan__annual-teaser {
-  display: block;
+  display: none;
   font-size: 0.8rem;
   font-weight: 500;
   color: #15803d;
@@ -591,7 +590,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Annual billing info ── */
 .plan__annual-info {
-  display: none;
+  display: block;
   margin-bottom: 16px;
   margin-top: -8px;
 }
@@ -608,19 +607,6 @@ import Layout from '../layouts/Layout.astro';
   color: var(--slate-500);
 }
 
-.plan__free-badge {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  background: #dcfce7;
-  color: #15803d;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 100px;
-  white-space: nowrap;
-  cursor: default;
-}
 
 .plan__has-tip .plan__tip {
   position: absolute;
