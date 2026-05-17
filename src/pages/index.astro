@@ -140,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="new-shift__header">
       <div class="new-shift__header-left">
         <div class="tag">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           The New Shift
         </div>
         <h2 class="new-shift__headline">Your network got you here.<br><span class="new-shift__accent">A system</span> will take you further.</h2>
@@ -1644,7 +1644,7 @@ import Layout from '../layouts/Layout.astro';
 /* ── Compare grid ── */
 .new-shift__compare {
   display: grid;
-  grid-template-columns: 1fr 80px 1fr;
+  grid-template-columns: 1fr 120px 1fr;
   align-items: center;
   margin-bottom: 40px;
 }
@@ -1683,6 +1683,11 @@ import Layout from '../layouts/Layout.astro';
   z-index: 5;
 }
 
+@keyframes shift-ring-grow {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
 .new-shift__shift-btn {
   width: 52px;
   height: 52px;
@@ -1692,10 +1697,19 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   box-shadow:
-    0 0 0 6px rgba(255,255,255,0.7),
-    0 0 0 10px rgba(124,58,237,0.18),
+    0 0 0 6px rgba(255,255,255,0.8),
     0 4px 20px rgba(124,58,237,0.35);
+}
+
+.new-shift__shift-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(124,58,237,0.45);
+  animation: shift-ring-grow 2.5s ease-out infinite;
 }
 
 .new-shift__shift-label {
