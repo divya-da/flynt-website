@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="tag">Pricing</div>
       <h1><span class="accent">AI agents</span> for every stage.</h1>
-      <p>Four plans. Every tier includes Flynt's core intelligence system.</br>Upgrade as your operation scales.</p>
+      <p>Three plans. Every tier includes Flynt's core intelligence system.</br>Upgrade as your operation scales.</p>
     </div>
   </section>
 
@@ -31,28 +31,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="pricing-grid">
-
-        <!-- Free -->
-        <div class="plan">
-          <div class="plan__header">
-            <h3>Free</h3>
-            <p class="plan__tagline">Try Flynt at no cost.</p>
-            <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__amount--free">0</span>
-              <span class="plan__period">/mo</span>
-            </div>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Get Started Free</a>
-            <p class="plan__sub-cta">No credit card required</p>
-          </div>
-          <div class="plan__features-label">What's Included</div>
-          <ul class="plan__features">
-            <li><span class="check">✓</span> 1 AI Agent</li>
-            <li><span class="check">✓</span> Up to 10 leads</li>
-            <li><span class="check">✓</span> Core Research</li>
-            <li><span class="check">✓</span> Decision-maker Identification</li>
-            <li><span class="check">✓</span> Auto Data Enrichment</li>
-          </ul>
-        </div>
 
         <!-- Starter -->
         <div class="plan">
@@ -757,7 +735,7 @@ import Layout from '../layouts/Layout.astro';
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: stretch;
   margin-bottom: 32px;
@@ -835,10 +813,6 @@ import Layout from '../layouts/Layout.astro';
   font-weight: 800;
   color: var(--black);
   cursor: default;
-}
-
-.plan__amount--free {
-  color: var(--black);
 }
 
 .plan__amount--featured {
