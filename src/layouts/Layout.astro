@@ -60,19 +60,30 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         <img src="/images/logo-with-text.svg" alt="Flynt AI" />
       </a>
 
-      <div class="nav__spacer"></div>
       <ul class="nav__links">
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
         <li><a href="/pricing" class={currentPath === '/pricing' ? 'active' : ''}>Pricing</a></li>
-        <li><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a></li>
-        <li><a href="/faq" class={currentPath === '/faq' ? 'active' : ''}>FAQ</a></li>
-        <li><a href="/blog" class={currentPath === '/blog' ? 'active' : ''}>Blog</a></li>
+        <li class="nav__dropdown">
+          <button class={`nav__dropdown-trigger${['/about','/faq','/blog'].includes(currentPath) ? ' active' : ''}`} aria-expanded="false" aria-haspopup="true">
+            Resources
+            <svg class="nav__dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="nav__dropdown-menu">
+            <li><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a></li>
+            <li><a href="/faq" class={currentPath === '/faq' ? 'active' : ''}>FAQ</a></li>
+            <li><a href="/blog" class={currentPath === '/blog' ? 'active' : ''}>Blog</a></li>
+          </ul>
+        </li>
       </ul>
 
+      <div class="nav__spacer"></div>
+
       <div class="nav__actions">
-        <a href="https://app.tryflynt.ai/" class="btn btn--primary">
-          Login
-        </a>
+        <a href="https://app.tryflynt.ai/" class="btn btn--nav">Login</a>
+        <button class="btn btn--nav" data-demo-trigger>Book Demo</button>
+        <a href="https://app.tryflynt.ai/" class="btn btn--primary">Try for Free</a>
         <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -84,11 +95,14 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       <ul>
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
         <li><a href="/pricing" class={currentPath === '/pricing' ? 'active' : ''}>Pricing</a></li>
-        <li><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a></li>
-        <li><a href="/faq" class={currentPath === '/faq' ? 'active' : ''}>FAQ</a></li>
-        <li><a href="/blog" class={currentPath === '/blog' ? 'active' : ''}>Blog</a></li>
+        <li class="nav__mobile-group-label">Resources</li>
+        <li class="nav__mobile-sub"><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a></li>
+        <li class="nav__mobile-sub"><a href="/faq" class={currentPath === '/faq' ? 'active' : ''}>FAQ</a></li>
+        <li class="nav__mobile-sub"><a href="/blog" class={currentPath === '/blog' ? 'active' : ''}>Blog</a></li>
       </ul>
-      <a href="https://app.tryflynt.ai/" class="btn btn--primary">Login</a>
+      <a href="https://app.tryflynt.ai/" class="btn btn--outline">Login</a>
+      <button class="btn btn--outline" data-demo-trigger>Book Demo</button>
+      <a href="https://app.tryflynt.ai/" class="btn btn--primary">Try for Free</a>
     </div>
   </nav>
 
@@ -108,6 +122,41 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         hamburger?.classList.remove('nav__hamburger--open');
       });
     });
+
+    // Dropdown toggle
+    const trigger = document.querySelector('.nav__dropdown-trigger');
+    const dropdown = trigger?.closest('.nav__dropdown');
+    trigger?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', String(!open));
+      dropdown?.classList.toggle('nav__dropdown--open', !open);
+    });
+    document.addEventListener('click', () => {
+      trigger?.setAttribute('aria-expanded', 'false');
+      dropdown?.classList.remove('nav__dropdown--open');
+    });
+
+    // Demo modal
+    const modal = document.getElementById('demoModal');
+    const closeBtn = document.getElementById('demoModalClose');
+    const backdrop = modal?.querySelector('.demo-modal__backdrop');
+    function openDemoModal() {
+      modal?.classList.add('demo-modal--open');
+      modal?.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDemoModal() {
+      modal?.classList.remove('demo-modal--open');
+      modal?.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-demo-trigger]').forEach(el => {
+      el.addEventListener('click', openDemoModal);
+    });
+    closeBtn?.addEventListener('click', closeDemoModal);
+    backdrop?.addEventListener('click', closeDemoModal);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemoModal(); });
   </script>
 
   <!-- ── Page Content ── -->
@@ -157,6 +206,15 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       </div>
     </div>
   </footer>
+
+  <!-- ── Demo Modal ── -->
+  <div id="demoModal" class="demo-modal" aria-hidden="true" role="dialog" aria-label="Request Demo">
+    <div class="demo-modal__backdrop"></div>
+    <div class="demo-modal__box">
+      <button class="demo-modal__close" id="demoModalClose" aria-label="Close">✕</button>
+      <iframe src="https://calendly.com/preston-tryflynt/30min" class="demo-modal__iframe" loading="lazy" title="Request Demo"></iframe>
+    </div>
+  </div>
 
 </body>
 </html>
