@@ -6,3 +6,4 @@ dist/
 !.env.example
 .firebase
 **/.DS_Store
+.DS_Store
