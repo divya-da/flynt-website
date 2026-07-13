@@ -334,7 +334,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="hiw-chip">Setup</span>
           <div class="hiw-step__number">01</div>
           <h3>Define Your Targets</h3>
-          <p>Tell Flynt exactly who you're going after.</p>
+          <p>Tell Flynt exactly who you're going after — once.</p>
           <ul class="hiw-features">
             <li>Industries</li>
             <li>Company size</li>
@@ -342,7 +342,7 @@ import Layout from '../layouts/Layout.astro';
             <li>Decision-maker roles</li>
             <li>Geography</li>
           </ul>
-          <p>This is a one-time setup that takes minutes, not hours.</br>Flynt builds its research around your specific business logic, not surface-level keyword matching. As your business evolves, you can refine your criteria at any time, and Flynt will automatically adjust its research accordingly.</p>
+          <p>Takes minutes, not hours. Flynt builds its entire research, scoring, and personalization engine around your specific criteria, not surface-level keyword matching. As your business evolves, refine your targets at any time and Flynt adjusts automatically.</p>
           <a href="https://app.tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
           <div class="hiw-step-img">
             <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
@@ -354,13 +354,13 @@ import Layout from '../layouts/Layout.astro';
           <span class="hiw-chip">Automation</span>
           <div class="hiw-step__number">02</div>
           <h3>Research Runs Daily</h3>
-          <p>Once configured, your AI agents get to work — continuously researching accounts, identifying the right people to contact, and organizing everything into a clean, structured format.</p>
+          <p>Once configured, your AI agents get to work continuously researching accounts, detecting hiring signals, identifying the right decision-makers, and building a complete intelligence package on every lead.</p>
           <ul class="hiw-features">
             <li>No list building</li>
             <li>No spreadsheet juggling</li>
             <li>No logging back in to start another research run</li>
           </ul>
-          <p>Flynt runs continuously in the background, so your day starts with opportunities already waiting — not a blank screen.</p>
+          <p>Flynt runs continuously in the background so your day starts with scored, matched, and personalized opportunities already waiting. Not a blank screen.</p>
           <a href="https://app.tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
           <div class="hiw-step-img">
             <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
@@ -371,16 +371,39 @@ import Layout from '../layouts/Layout.astro';
         <div class="hiw-step" data-step="3" data-step-label="03">
           <span class="hiw-chip">Results</span>
           <div class="hiw-step__number">03</div>
-          <h3>Leads Land in Your Inbox</h3>
-          <p>Every morning, a fresh list of qualified leads arrives directly in your inbox. Each lead includes:</p>
-          <ul class="hiw-features">
-            <li>Company name</li>
-            <li>Decision-maker name</li>
-            <li>Job title</li>
-            <li>Direct email</li>
-            <li>Phone number</li>
+          <h3>Every Lead Arrives Ready to Action</h3>
+          <p>Everyday, a fresh list of scored, matched leads lands directly in your inbox. Each one isn't just a contact, it's a complete intelligence package built so you can move immediately.</p>
+          <ul class="hiw-features hiw-features--detail">
+            <li>
+              <span class="hiw-detail__label">Match score</span>
+              <span class="hiw-detail__desc">A percentage match against your exact criteria, with a written breakdown of exactly why this lead qualifies</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">Decision-maker details</span>
+              <span class="hiw-detail__desc">Name, job title, seniority level, direct email, LinkedIn profile, and timezone</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">Company context</span>
+              <span class="hiw-detail__desc">Size, industry, background, and what role they're actively hiring for</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">Direct link to the job posting</span>
+              <span class="hiw-detail__desc">See the exact role that triggered the match</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">Recent company signals</span>
+              <span class="hiw-detail__desc">News, funding rounds, partnerships, and people moves surfaced as ready-to-use context</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">AI-written personalization hooks</span>
+              <span class="hiw-detail__desc">Built from the company, the person, the news, and the specific job posting</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">One-click campaign connection</span>
+              <span class="hiw-detail__desc">Add directly to an outreach sequence and Flynt writes each message to fit exactly where it sits in your flow</span>
+            </li>
           </ul>
-          <p>Everything your team needs to start a conversation, organized and ready to act on. No chasing data across tools, no incomplete records — just leads delivered daily, automatically.</p>
+          <p>No chasing data across tools. No incomplete records. No guessing who's worth your time — the score tells you before you even open the lead.</p>
           <a href="https://app.tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
           <div class="hiw-step-img">
             <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
@@ -1256,6 +1279,41 @@ import Layout from '../layouts/Layout.astro';
 
 .hiw-step--active .hiw-features li::before {
   opacity: 1;
+}
+
+.hiw-features--detail {
+  gap: 0;
+}
+
+.hiw-features--detail li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.hiw-features--detail li:last-child {
+  border-bottom: none;
+}
+
+.hiw-features--detail li::before {
+  display: none;
+}
+
+.hiw-detail__label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--purple);
+  letter-spacing: 0.01em;
+}
+
+.hiw-detail__desc {
+  font-size: 0.95rem;
+  color: var(--slate-500);
+  line-height: 1.55;
 }
 
 .hiw-cta {
