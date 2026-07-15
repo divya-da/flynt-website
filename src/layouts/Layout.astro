@@ -62,9 +62,21 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
       <ul class="nav__links">
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
+        <li class="nav__dropdown">
+          <button class={`nav__dropdown-trigger${['/features/signal','/features/pipeline'].some(p => currentPath.startsWith(p)) ? ' active' : ''}`} aria-expanded="false" aria-haspopup="true" data-dropdown="features">
+            Features
+            <svg class="nav__dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="nav__dropdown-menu">
+            <li><a href="/features/signal" class={currentPath.startsWith('/features/signal') ? 'active' : ''}>Signal</a></li>
+            <li><a href="/features/pipeline" class={currentPath.startsWith('/features/pipeline') ? 'active' : ''}>Pipeline</a></li>
+          </ul>
+        </li>
         <li><a href="/pricing" class={currentPath === '/pricing' ? 'active' : ''}>Pricing</a></li>
         <li class="nav__dropdown">
-          <button class={`nav__dropdown-trigger${['/about','/faq','/blog'].includes(currentPath) ? ' active' : ''}`} aria-expanded="false" aria-haspopup="true">
+          <button class={`nav__dropdown-trigger${['/about','/faq','/blog'].includes(currentPath) ? ' active' : ''}`} aria-expanded="false" aria-haspopup="true" data-dropdown="resources">
             Resources
             <svg class="nav__dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -94,6 +106,10 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
       <ul>
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
+        <li class="nav__mobile-group-label">Features</li>
+        <li class="nav__mobile-sub"><a href="/features/signal" class={currentPath.startsWith('/features/signal') ? 'active' : ''}>Signal</a></li>
+        <li class="nav__mobile-sub"><a href="/features/pipeline" class={currentPath.startsWith('/features/pipeline') ? 'active' : ''}>Pipeline</a></li>
+
         <li><a href="/pricing" class={currentPath === '/pricing' ? 'active' : ''}>Pricing</a></li>
         <li class="nav__mobile-group-label">Resources</li>
         <li class="nav__mobile-sub"><a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a></li>
@@ -123,18 +139,28 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       });
     });
 
-    // Dropdown toggle
-    const trigger = document.querySelector('.nav__dropdown-trigger');
-    const dropdown = trigger?.closest('.nav__dropdown');
-    trigger?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = trigger.getAttribute('aria-expanded') === 'true';
-      trigger.setAttribute('aria-expanded', String(!open));
-      dropdown?.classList.toggle('nav__dropdown--open', !open);
+    // Dropdown toggles (supports multiple)
+    document.querySelectorAll('.nav__dropdown-trigger').forEach(trigger => {
+      const dropdown = trigger.closest('.nav__dropdown');
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = trigger.getAttribute('aria-expanded') === 'true';
+        // Close all other dropdowns first
+        document.querySelectorAll('.nav__dropdown-trigger').forEach(t => {
+          if (t !== trigger) {
+            t.setAttribute('aria-expanded', 'false');
+            t.closest('.nav__dropdown')?.classList.remove('nav__dropdown--open');
+          }
+        });
+        trigger.setAttribute('aria-expanded', String(!open));
+        dropdown?.classList.toggle('nav__dropdown--open', !open);
+      });
     });
     document.addEventListener('click', () => {
-      trigger?.setAttribute('aria-expanded', 'false');
-      dropdown?.classList.remove('nav__dropdown--open');
+      document.querySelectorAll('.nav__dropdown-trigger').forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        t.closest('.nav__dropdown')?.classList.remove('nav__dropdown--open');
+      });
     });
 
     // Demo modal
