@@ -146,7 +146,7 @@ import Layout from '../../layouts/Layout.astro';
       <div class="new-shift__close-divider">
         <span class="new-shift__close-line"></span>
         <div class="new-shift__close-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--purple)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5 19.79 19.79 0 0 1 1.61 2.84 2 2 0 0 1 3.6.67h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 15.6v1.32z"/></svg>
+          <img src="/images/logo-mark.svg" alt="" width="28" height="28" />
         </div>
         <span class="new-shift__close-line new-shift__close-line--right"></span>
       </div>
@@ -163,7 +163,7 @@ import Layout from '../../layouts/Layout.astro';
 <section class="section fp-inbox-section">
   <div class="container">
     <div class="section-header section-header--center">
-      <div class="stats-badge" style="margin: 0 auto 16px;">Inbox Setup</div>
+      <div class="tag" style="margin: 0 auto 16px;">Inbox Setup</div>
       <h2>Send from what you have. Or let Flynt build it for you.</h2>
       <p>Before your first email goes out, you need a place to send from. Connect your existing inbox in one click, have Flynt set up a brand new domain and mailbox from scratch, or launch instantly with a pre-warmed account — all without leaving the platform.</p>
     </div>
@@ -204,7 +204,7 @@ import Layout from '../../layouts/Layout.astro';
 <section class="section fp-inbox-detail">
   <div class="container">
     <div class="section-header">
-      <div class="stats-badge">No Domain Headaches</div>
+      <div class="tag">No Domain Headaches</div>
       <h2>No separate tools. No domain headaches.</h2>
       <p>Most outreach tools make you configure sending infrastructure somewhere else, then try to connect everything. In Flynt, connect your existing email inbox with one click or create a brand new inbox and domain directly inside the platform, warmed and ready to send. Everything in one place before you write a single message.</p>
     </div>
@@ -402,7 +402,7 @@ import Layout from '../../layouts/Layout.astro';
 /* ────────────────────────────────────────────
    NEW SHIFT — BEFORE / AFTER
 ──────────────────────────────────────────── */
-.new-shift { background: var(--white); }
+.new-shift { background: var(--slate-50); padding-bottom: 120px; }
 
 .new-shift__header {
   display: grid;
@@ -440,58 +440,60 @@ import Layout from '../../layouts/Layout.astro';
   margin: 0 0 8px;
 }
 
-.new-shift__body {
-  font-size: 1rem;
-  color: var(--slate-500);
-  line-height: 1.7;
-  margin: 0;
-}
-
 .new-shift__compare {
   display: grid;
-  grid-template-columns: 1fr 48px 1fr;
-  gap: 0;
-  align-items: stretch;
+  grid-template-columns: 1fr 120px 1fr;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .new-shift__card {
   border-radius: 16px;
-  padding: 32px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .new-shift__card--old {
-  background: #fff8f8;
-  border: 1px solid #fecaca;
+  background: var(--white);
+  border: 1px dashed #b0bec9;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
 .new-shift__card--new {
-  background: #f5f3ff;
-  border: 1px solid var(--purple-200);
+  background:
+    linear-gradient(to bottom, rgba(199,182,250,0.13) 0%, transparent 38%),
+    radial-gradient(ellipse at 100% 0%, rgba(139,92,246,0.12) 0%, transparent 35%),
+    var(--white);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.16), 0 6px 24px rgba(0,0,0,0.09);
+  align-self: start;
 }
 
 .ns-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: 100px;
-  padding: 6px 14px 6px 6px;
+  padding: 5px 12px 5px 5px;
+  margin-bottom: 20px;
   width: fit-content;
 }
 
 .ns-badge--old {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--slate-100);
+  color: var(--slate-500);
 }
 
 .ns-badge--new {
-  background: var(--purple-200);
+  background: var(--purple-bg-2);
   color: var(--purple-900);
 }
 
@@ -506,30 +508,29 @@ import Layout from '../../layouts/Layout.astro';
 }
 
 .ns-badge-icon--x {
-  background: #ef4444;
-  color: #fff;
+  background: var(--slate-200);
+  color: var(--slate-500);
 }
 
 .ns-badge-icon--check {
-  background: var(--purple);
-  color: #fff;
+  background: var(--purple-bg);
+  color: var(--purple);
 }
 
 .ns-card-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 10px;
   line-height: 1.3;
+  color: var(--slate-900);
+  -webkit-text-stroke: 0.4px var(--slate-900);
 }
-
-.new-shift__card--old .ns-card-title { color: #7f1d1d; }
-.new-shift__card--new .ns-card-title { color: var(--purple-900); }
 
 .ns-divider {
   border: none;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  margin: 0;
+  border-top: 1px solid var(--slate-200);
+  margin: 0 0 24px;
 }
 
 .ns-list {
@@ -544,17 +545,17 @@ import Layout from '../../layouts/Layout.astro';
 .ns-list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   font-size: 0.95rem;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
-.ns-list--old li { color: var(--slate-700); }
-.ns-list--new li { color: var(--slate-700); }
+.ns-list--old li { color: var(--slate-600); }
+.ns-list--new li { color: var(--slate-700); font-weight: 500; }
 
 .ns-item-icon {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -563,75 +564,96 @@ import Layout from '../../layouts/Layout.astro';
   margin-top: 1px;
 }
 
-.ns-item-icon--x { background: #fee2e2; color: #ef4444; }
-.ns-item-icon--check { background: var(--purple-200); color: var(--purple); }
+.ns-item-icon--x { border: 1px solid var(--slate-200); background: var(--white); color: var(--slate-400); }
+.ns-item-icon--check { background: var(--purple); color: var(--white); }
+
+@keyframes shift-ring-grow {
+  0%   { transform: scale(1);    opacity: 0.7; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
 
 .new-shift__shift-col {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
+  position: relative;
+  z-index: 5;
 }
 
 .new-shift__shift-btn {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--white);
   flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.8), 0 4px 20px rgba(124,58,237,0.35);
+}
+
+.new-shift__shift-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(124,58,237,0.45);
+  animation: shift-ring-grow 2.5s ease-out infinite;
 }
 
 .new-shift__shift-label {
-  font-size: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--slate-500);
-  writing-mode: vertical-lr;
+  color: var(--purple-900);
+  writing-mode: horizontal-tb;
 }
 
 .new-shift__close {
-  margin-top: 56px;
+  max-width: 680px;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .new-shift__close-divider {
   display: flex;
   align-items: center;
-  gap: 16px;
   width: 100%;
-  max-width: 600px;
+  max-width: 480px;
+  margin-bottom: 4px;
 }
 
 .new-shift__close-line {
   flex: 1;
   height: 1px;
-  background: var(--slate-200);
+  background: linear-gradient(to right, transparent, rgba(124,58,237,0.25));
+}
+
+.new-shift__close-line--right {
+  background: linear-gradient(to left, transparent, rgba(124,58,237,0.25));
 }
 
 .new-shift__close-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--purple-200);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin: 0 20px;
 }
 
 .new-shift__close p {
   font-size: 1rem;
-  color: var(--slate-600);
+  color: var(--slate-500);
   max-width: 600px;
   line-height: 1.7;
   margin: 0;
@@ -639,9 +661,13 @@ import Layout from '../../layouts/Layout.astro';
 
 .new-shift__close-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
   font-weight: 800;
-  color: var(--slate-900);
+  color: var(--black);
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 0;
+  line-height: 1.4;
+  display: block;
 }
 
 /* ────────────────────────────────────────────
@@ -1009,10 +1035,6 @@ import Layout from '../../layouts/Layout.astro';
 
   .new-shift__shift-col {
     flex-direction: row;
-  }
-
-  .new-shift__shift-label {
-    writing-mode: horizontal-tb;
   }
 
   .fp-inbox-grid {
