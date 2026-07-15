@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found — Flynt AI" description="The page you're looking for doesn't exist.">
+  <section class="not-found">
+    <div class="not-found__inner">
+      <p class="not-found__code">404</p>
+      <h1 class="not-found__heading">Page not found</h1>
+      <p class="not-found__sub">The page you're looking for doesn't exist or has been moved.</p>
+      <div class="not-found__actions">
+        <a href="/" class="btn btn--primary">Go to Homepage</a>
+        <a href="/pricing" class="btn btn--outline">View Pricing</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    background: var(--white);
+  }
+
+  .not-found__inner {
+    text-align: center;
+    max-width: 480px;
+  }
+
+  .not-found__code {
+    font-size: clamp(5rem, 16vw, 9rem);
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 16px;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--purple);
+    letter-spacing: -4px;
+  }
+
+  .not-found__heading {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: var(--slate-900);
+    margin: 0 0 16px;
+  }
+
+  .not-found__sub {
+    font-size: 1.05rem;
+    color: var(--slate-600);
+    line-height: 1.7;
+    margin: 0 0 40px;
+  }
+
+  .not-found__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
