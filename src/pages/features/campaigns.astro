@@ -49,9 +49,10 @@ import Layout from '../../layouts/Layout.astro';
           Before &amp; After
         </div>
         <h2 class="new-shift__headline">Scale or personalize. Every outreach tool makes you choose. <span class="new-shift__accent">Flynt doesn't.</span></h2>
+      </div>
+      <div class="new-shift__header-right">
         <p class="new-shift__lead">Here's what BD outreach has always looked like. And what it looks like now.</p>
       </div>
-      <div class="new-shift__header-right"></div>
     </div>
 
     <div class="new-shift__compare">
@@ -162,10 +163,14 @@ import Layout from '../../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="section fp-inbox-section">
   <div class="container">
-    <div class="section-header section-header--center">
-      <div class="tag" style="margin: 0 auto 16px;">Inbox Setup</div>
-      <h2>Send from what you have. Or let Flynt build it for you.</h2>
-      <p>Before your first email goes out, you need a place to send from. Connect your existing inbox in one click, have Flynt set up a brand new domain and mailbox from scratch, or launch instantly with a pre-warmed account — all without leaving the platform.</p>
+    <div class="fp-header-split">
+      <div class="fp-header-split__left">
+        <div class="tag">Inbox Setup</div>
+        <h2>Send from what you have. Or let Flynt build it for you.</h2>
+      </div>
+      <div class="fp-header-split__right">
+        <p>Before your first email goes out, you need a place to send from. Connect your existing inbox in one click, have Flynt set up a brand new domain and mailbox from scratch, or launch instantly with a pre-warmed account — all without leaving the platform.</p>
+      </div>
     </div>
     <div class="fp-inbox-grid">
 
@@ -203,10 +208,14 @@ import Layout from '../../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="section fp-inbox-detail">
   <div class="container">
-    <div class="section-header">
-      <div class="tag">No Domain Headaches</div>
-      <h2>No separate tools. No domain headaches.</h2>
-      <p>Most outreach tools make you configure sending infrastructure somewhere else, then try to connect everything. In Flynt, connect your existing email inbox with one click or create a brand new inbox and domain directly inside the platform, warmed and ready to send. Everything in one place before you write a single message.</p>
+    <div class="fp-header-split">
+      <div class="fp-header-split__left">
+        <div class="tag">Inbox Setup</div>
+        <h2>No separate tools. No domain headaches.</h2>
+      </div>
+      <div class="fp-header-split__right">
+        <p>Most outreach tools make you configure sending infrastructure somewhere else, then try to connect everything. In Flynt, connect your existing email inbox with one click or create a brand new inbox and domain directly inside the platform, warmed and ready to send. Everything in one place before you write a single message.</p>
+      </div>
     </div>
     <div class="fp-features-grid">
       <div class="fp-feat-item">
@@ -233,16 +242,16 @@ import Layout from '../../layouts/Layout.astro';
   SECTION 4 — SEQUENCE BUILDER
 ───────────────────────────────────────────── -->
 <section class="section fp-seq-section">
-  <div class="container">
-    <div class="section-header section-header--center">
-      <div class="tag" style="margin: 0 auto 16px;">
+  <div class="container fp-seq-layout">
+    <div class="fp-seq-text">
+      <div class="tag">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         Sequence Builder
       </div>
       <h2>Build your own. Or use one Flynt already built.</h2>
       <p>Start from a prebuilt sequence – 6 emails, pre-written copy, proven timing – and launch in minutes. Or build from scratch with full control over every message, stage count, timing, and condition. Either way, Flynt personalizes every message before it sends.</p>
     </div>
-    <div class="fp-seq-grid">
+    <div class="fp-seq-cards">
       <div class="fp-seq-card fp-seq-card--prebuilt">
         <h3 class="fp-seq-card__title">Prebuilt Sequences</h3>
         <p class="fp-seq-card__body">6-email sequences with pre-written copy. Pick one, connect your leads, launch. Done. No writing required.</p>
@@ -289,10 +298,14 @@ import Layout from '../../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="positioning fp-one-system">
   <div class="container">
-    <div class="fp-one-system__header">
-      <div class="tag fp-dark-tag">Research to Reply</div>
-      <h2 class="fp-dark-h2">The intelligence that found the lead powers the message that reaches them.</h2>
-      <p class="fp-dark-sub">Signal surfaces the lead, scores the fit, and writes the personalization hooks. Campaigns takes those hooks and builds them into a sequence that sends – with every message adjusted so it reads naturally from start to finish. You never move intelligence from one tool to another. It flows through the same system, from the first scan to the sent confirmation.</p>
+    <div class="fp-header-split fp-one-system__header">
+      <div class="fp-header-split__left">
+        <div class="tag fp-dark-tag">Research to Reply</div>
+        <h2 class="fp-dark-h2">The intelligence that found the lead powers the message that reaches them.</h2>
+      </div>
+      <div class="fp-header-split__right">
+        <p class="fp-dark-sub">Signal surfaces the lead, scores the fit, and writes the personalization hooks. Campaigns takes those hooks and builds them into a sequence that sends – with every message adjusted so it reads naturally from start to finish. You never move intelligence from one tool to another. It flows through the same system, from the first scan to the sent confirmation.</p>
+      </div>
     </div>
     <div class="fp-flow">
       <div class="fp-flow__step">
@@ -416,6 +429,13 @@ import Layout from '../../layouts/Layout.astro';
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.new-shift__header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 92px;
 }
 
 .new-shift__headline {
@@ -773,19 +793,38 @@ import Layout from '../../layouts/Layout.astro';
   background: var(--white);
 }
 
-.fp-seq-grid {
+.fp-seq-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 48px;
+  gap: 32px 64px;
+  align-items: center;
+}
+
+.fp-seq-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fp-seq-text p {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  color: var(--slate-600);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.fp-seq-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .fp-seq-card {
   border-radius: 16px;
-  padding: 36px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .fp-seq-card--prebuilt { background: var(--purple); }
@@ -793,9 +832,10 @@ import Layout from '../../layouts/Layout.astro';
 
 .fp-seq-card__title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
   margin: 0;
+  -webkit-text-stroke: 0;
 }
 
 .fp-seq-card--prebuilt .fp-seq-card__title { color: white; }
@@ -814,6 +854,7 @@ import Layout from '../../layouts/Layout.astro';
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
+  margin-top: 4px;
 }
 
 .fp-seq-card--prebuilt .fp-seq-card__link { color: rgba(255,255,255,0.9); }
@@ -884,11 +925,42 @@ import Layout from '../../layouts/Layout.astro';
 }
 
 /* ────────────────────────────────────────────
+   SPLIT SECTION HEADER (left headline / right body)
+──────────────────────────────────────────── */
+.fp-header-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 64px;
+  margin-bottom: 56px;
+  align-items: start;
+}
+
+.fp-header-split__left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fp-header-split__right {
+  padding-top: 80px;
+}
+
+.fp-header-split__right p {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  color: var(--slate-600);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.fp-one-system__header .fp-header-split__right p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ────────────────────────────────────────────
    ONE SYSTEM (dark — .positioning)
 ──────────────────────────────────────────── */
 .fp-one-system__header {
   margin-bottom: 48px;
-  max-width: 720px;
 }
 
 .fp-dark-tag {
@@ -1025,8 +1097,13 @@ import Layout from '../../layouts/Layout.astro';
     gap: 10px;
   }
 
-  .new-shift__header {
+  .new-shift__header,
+  .fp-header-split {
     grid-template-columns: 1fr;
+  }
+
+  .fp-header-split__right {
+    padding-top: 0;
   }
 
   .new-shift__compare {
