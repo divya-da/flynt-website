@@ -63,15 +63,15 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       <ul class="nav__links">
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
         <li class="nav__dropdown">
-          <button class={`nav__dropdown-trigger${['/features/signal','/features/pipeline'].some(p => currentPath.startsWith(p)) ? ' active' : ''}`} aria-expanded="false" aria-haspopup="true" data-dropdown="features">
+          <button class={`nav__dropdown-trigger${['/features/agent','/features/crm'].some(p => currentPath.startsWith(p)) ? ' active' : ''}`} aria-expanded="false" aria-haspopup="true" data-dropdown="features">
             Features
             <svg class="nav__dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <ul class="nav__dropdown-menu">
-            <li><a href="/features/signal" class={currentPath.startsWith('/features/signal') ? 'active' : ''}>Signal</a></li>
-            <li><a href="/features/pipeline" class={currentPath.startsWith('/features/pipeline') ? 'active' : ''}>Pipeline</a></li>
+            <li><a href="/features/agent" class={currentPath.startsWith('/features/agent') ? 'active' : ''}>Agent</a></li>
+            <li><a href="/features/crm" class={currentPath.startsWith('/features/crm') ? 'active' : ''}>CRM</a></li>
           </ul>
         </li>
         <li><a href="/pricing" class={currentPath === '/pricing' ? 'active' : ''}>Pricing</a></li>
@@ -107,8 +107,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       <ul>
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
         <li class="nav__mobile-group-label">Features</li>
-        <li class="nav__mobile-sub"><a href="/features/signal" class={currentPath.startsWith('/features/signal') ? 'active' : ''}>Signal</a></li>
-        <li class="nav__mobile-sub"><a href="/features/pipeline" class={currentPath.startsWith('/features/pipeline') ? 'active' : ''}>Pipeline</a></li>
+        <li class="nav__mobile-sub"><a href="/features/agent" class={currentPath.startsWith('/features/agent') ? 'active' : ''}>Agent</a></li>
+        <li class="nav__mobile-sub"><a href="/features/crm" class={currentPath.startsWith('/features/crm') ? 'active' : ''}>CRM</a></li>
 
         <li><a href="/pricing" class={currentPath === '/pricing' ? 'active' : ''}>Pricing</a></li>
         <li class="nav__mobile-group-label">Resources</li>
