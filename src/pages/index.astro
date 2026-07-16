@@ -43,7 +43,8 @@ import Layout from '../layouts/Layout.astro';
             controlsList="nodownload noplaybackrate"
             disablePictureInPicture
           >
-            <source src="/videos/hero.mp4" type="video/mp4" />
+            <source src="/videos/hero.mp4" type='video/mp4; codecs="hvc1"' />
+            <source src="/videos/hero-h264.mp4" type="video/mp4" />
           </video>
           <button class="hero__play-btn" id="heroPlayBtn" aria-label="Play video">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
