@@ -60,6 +60,34 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
+  SECTION — LEAD FINDER WIDGET
+───────────────────────────────────────────── -->
+<section class="lead-finder">
+  <div class="container">
+    <div class="lead-finder__bar" id="lfBar">
+      <span class="lead-finder__icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+      </span>
+      <span class="lead-finder__divider"></span>
+      <div class="lead-finder__text">
+        <span class="lead-finder__overlay" id="lfOverlay" aria-hidden="true">
+          <span id="lfTyped" class="lead-finder__typed"></span><span class="lead-finder__cursor"></span>
+        </span>
+        <input
+          type="text"
+          class="lead-finder__input"
+          id="lfInput"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Search for leads"
+        />
+      </div>
+      <a href="https://app.tryflynt.ai/" class="lead-finder__btn">Find Leads</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
   SECTION — SOCIAL PROOF BAR
 ───────────────────────────────────────────── -->
 
@@ -311,7 +339,7 @@ import Layout from '../layouts/Layout.astro';
           <h2>Set it up <span class="accent-word">once</span>. Let it run.</h2>
         </div>
 
-        <div class="hiw-step hiw-step--active" data-step="1" data-step-label="01">
+        <div class="hiw-step hiw-step--active" data-step="1" data-step-label="01" id="hiw-step-1">
           <span class="hiw-chip">Setup</span>
           <div class="hiw-step__number">01</div>
           <h3>Define Your Targets</h3>
@@ -498,6 +526,157 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+/* ── Lead Finder Widget ── */
+.lead-finder {
+  padding: 10px 0;
+  margin-top: -32px;
+  position: sticky;
+  top: 64px;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 1;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lead-finder--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.lead-finder__bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1.5px solid rgba(139, 92, 246, 0.22);
+  border-radius: 100px;
+  padding: 10px 10px 10px 22px;
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.09), 0 1px 4px rgba(0, 0, 0, 0.05);
+  cursor: text;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.lead-finder__bar:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 6px 32px rgba(139, 92, 246, 0.16), 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.lead-finder__icon {
+  flex-shrink: 0;
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+}
+
+.lead-finder__divider {
+  width: 1px;
+  height: 22px;
+  background: var(--slate-200);
+  flex-shrink: 0;
+}
+
+.lead-finder__text {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.lead-finder__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 1rem;
+  color: var(--slate-700);
+  font-weight: 500;
+}
+
+.lead-finder__typed {
+  flex-shrink: 0;
+}
+
+.lead-finder__overlay--hidden,
+.lead-finder--hidden-overlay {
+  display: none;
+}
+
+.lead-finder__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--slate-700);
+  font-family: var(--font-body);
+  caret-color: var(--purple);
+  padding: 6px 0;
+}
+
+.lead-finder__cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--purple);
+  vertical-align: text-bottom;
+  flex-shrink: 0;
+  animation: lf-blink 0.85s step-end infinite;
+}
+
+@keyframes lf-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+.lead-finder__btn {
+  flex-shrink: 0;
+  background: var(--purple-dark);
+  color: #ffffff;
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.lead-finder__bar:hover .lead-finder__btn {
+  background: var(--purple-800);
+}
+
+@media (max-width: 640px) {
+  .lead-finder {
+    margin-top: -16px;
+    padding: 8px 0;
+  }
+  .lead-finder__bar {
+    border-radius: 20px;
+    padding: 12px 12px 12px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .lead-finder__text { min-width: 0; }
+  .lead-finder__btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
 /* ── Hero ── */
 .hero {
   padding: 100px 0 80px;
@@ -2293,5 +2472,121 @@ import Layout from '../layouts/Layout.astro';
         card.addEventListener('click', replayVid);
       }
     });
+  })();
+</script>
+
+<script is:inline>
+  (function () {
+    const queries = [
+      "Hiring managers hiring for Software Engineers in San Francisco · <1,000 employees",
+      "Hiring managers hiring for Nurses in Washington · Healthcare",
+      "VPs of Engineering in NYC at Series B startups hiring for DevOps",
+      "Heads of Sales in London hiring for Account Executives · Financial Services",
+      "Hiring managers in Chicago hiring for Accountants · Manufacturing",
+    ];
+
+    const typedEl = document.getElementById('lfTyped');
+    const overlayEl = document.getElementById('lfOverlay');
+    const inputEl = document.getElementById('lfInput');
+    const barEl = document.getElementById('lfBar');
+    if (!typedEl) return;
+
+    let qi = 0, ci = 0, deleting = false, animPaused = false, pendingTimer = null;
+
+    function pauseAnim() {
+      animPaused = true;
+      clearTimeout(pendingTimer);
+    }
+
+    function resumeAnim() {
+      animPaused = false;
+      tick();
+    }
+
+    function showOverlay() {
+      if (overlayEl) overlayEl.classList.remove('lead-finder--hidden-overlay');
+    }
+
+    function hideOverlay() {
+      if (overlayEl) overlayEl.classList.add('lead-finder--hidden-overlay');
+    }
+
+    // Clicking anywhere on the bar focuses the input
+    if (barEl && inputEl) {
+      barEl.addEventListener('click', function (e) {
+        if (!e.target.closest('.lead-finder__btn')) {
+          inputEl.focus();
+        }
+      });
+
+      inputEl.addEventListener('focus', function () {
+        hideOverlay();
+        pauseAnim();
+      });
+
+      inputEl.addEventListener('blur', function () {
+        if (!inputEl.value.trim()) {
+          showOverlay();
+          resumeAnim();
+        }
+      });
+    }
+
+    function tick() {
+      if (animPaused) return;
+      const q = queries[qi];
+      if (!deleting) {
+        ci++;
+        typedEl.textContent = q.slice(0, ci);
+        if (ci === q.length) {
+          deleting = true;
+          pendingTimer = setTimeout(tick, 2200);
+        } else {
+          pendingTimer = setTimeout(tick, 48);
+        }
+      } else {
+        ci--;
+        typedEl.textContent = q.slice(0, ci);
+        if (ci === 0) {
+          deleting = false;
+          qi = (qi + 1) % queries.length;
+          pendingTimer = setTimeout(tick, 450);
+        } else {
+          pendingTimer = setTimeout(tick, 22);
+        }
+      }
+    }
+
+    var heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+      heroVideo.addEventListener('play', function () {
+        animPaused = true;
+        clearTimeout(pendingTimer);
+      });
+      heroVideo.addEventListener('pause', function () {
+        animPaused = false;
+        tick();
+      });
+      heroVideo.addEventListener('ended', function () {
+        animPaused = false;
+        tick();
+      });
+    }
+
+    pendingTimer = setTimeout(tick, 800);
+
+    // Hide sticky bar when "how-it-works" section reaches the viewport
+    const leadFinderEl = document.querySelector('.lead-finder');
+    const defineTargetsEl = document.getElementById('hiw-step-1');
+    if (leadFinderEl && defineTargetsEl) {
+      new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          leadFinderEl.classList.add('lead-finder--hidden');
+        } else if (entry.boundingClientRect.top > 0) {
+          leadFinderEl.classList.remove('lead-finder--hidden');
+        }
+      }, { threshold: 0 }).observe(defineTargetsEl);
+    }
   })();
 </script>
