@@ -72,6 +72,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="lead-finder__text">
         <span class="lead-finder__overlay" id="lfOverlay" aria-hidden="true">
           <span id="lfTyped" class="lead-finder__typed"></span><span class="lead-finder__cursor"></span>
+          <span class="lead-finder__hint">← click to type your own</span>  
         </span>
         <input
           type="text"
@@ -638,6 +639,15 @@ import Layout from '../layouts/Layout.astro';
   50% { opacity: 0; }
 }
 
+.lead-finder__hint {                                                                                     
+      color: var(--gray-400);                                                                                
+      font-size: 0.9rem;                                                                                     
+      ont-weight: 400;                                                                                      
+      flex-shrink: 1;                                                                                        
+      min-width: 0;                                                                                          
+      overflow: hidden;                                                                                      
+      text-overflow: ellipsis;                                                                               
+      }     
 
 .lead-finder__btn {
   flex-shrink: 0;
