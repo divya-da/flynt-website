@@ -322,11 +322,15 @@ import Layout from '../layouts/Layout.astro';
             <video class="hiw-img hiw-img--active" data-step="1" src="/videos/configure.mp4" muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>
             <video class="hiw-img" data-step="2" src="/videos/daily-runs.mp4" muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>
             <video class="hiw-img" data-step="3" src="/videos/leads.mp4" muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>
+            <video class="hiw-img" data-step="4" src="/videos/campaigns.mp4" muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>
+            <video class="hiw-img" data-step="5" src="/videos/pipeline.mp4" muted playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>
           </div>
           <div class="hiw-dots">
             <button class="hiw-dot hiw-dot--active" data-step="1"></button>
             <button class="hiw-dot" data-step="2"></button>
             <button class="hiw-dot" data-step="3"></button>
+            <button class="hiw-dot" data-step="4"></button>
+            <button class="hiw-dot" data-step="5"></button>
           </div>
         </div>
       </div>
@@ -418,6 +422,64 @@ import Layout from '../layouts/Layout.astro';
           <div class="hiw-step-img">
             <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
             <video src="/videos/leads.mp4" muted playsinline preload="auto" style="width:100%;border-radius:8px;"></video>
+          </div>
+        </div>
+
+        <div class="hiw-step" data-step="4" data-step-label="04">
+          <span class="hiw-chip">Outreach</span>
+          <div class="hiw-step__number">04</div>
+          <h3>Accounts and Outreach</h3>
+          <p>Before your first campaign goes out, connect the inbox you'll send from. Flynt gives you three options:</p>
+          <ul class="hiw-features">
+            <li>Pre-warmed accounts ready to send immediately, no setup required</li>
+            <li>Buy domains and email accounts — purchase however many you need directly inside Flynt</li>
+            <li>Connect your existing inbox — link your Gmail, Outlook, or current email in seconds</li>
+          </ul>
+          <p>Once connected, build your campaign from two choices in under 5 minutes:</p>
+          <ul class="hiw-features hiw-features--detail">
+            <li>
+              <span class="hiw-detail__label">Start from scratch</span>
+              <span class="hiw-detail__desc">Write every message yourself with full control over copy, timing, and tone. A blank canvas built around your voice.</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">Start with a pre-built sequence</span>
+              <span class="hiw-detail__desc">Six recruiter-specific emails, pre-written and structured across multiple touchpoints, ready to go.</span>
+            </li>
+          </ul>
+          <p>Either way, Flynt automatically personalises every email using the intelligence it already gathered on each lead — company context, career signals, news hooks, and job-specific angles.</p>
+          <p class="hiw-step__closing">Every message lands feeling like it was written specifically for them because the research powers the outreach.</p>
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
+          <div class="hiw-step-img">
+            <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
+            <video src="/videos/campaigns.mp4" muted playsinline preload="auto" style="width:100%;border-radius:8px;"></video>
+          </div>
+        </div>
+
+        <div class="hiw-step" data-step="5" data-step-label="05">
+          <span class="hiw-chip">Pipeline</span>
+          <div class="hiw-step__number">05</div>
+          <h3>Manage and Track</h3>
+          <p class="hiw-step__sub">Your Entire Pipeline, One Place</p>
+          <p>Flynt keeps your entire pipeline organized so nothing gets lost. No more digging through email threads, juggling spreadsheets, or wondering what happened to a conversation from two weeks ago.</p>
+          <ul class="hiw-features hiw-features--detail">
+            <li>
+              <span class="hiw-detail__label">Unified Inbox</span>
+              <span class="hiw-detail__desc">Every reply from every lead lands in one consolidated view. See responses, track conversations, and stay on top of every active thread across all your campaigns without switching accounts or tools.</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">CRM</span>
+              <span class="hiw-detail__desc">Search, filter, and organize every lead by pipeline stage. Move contacts from new to active conversation to closed, and always know exactly where each opportunity stands at a glance.</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">Dashboard</span>
+              <span class="hiw-detail__desc">A high-level view of everything running under the hood. Agent activity, campaign performance, open rates, reply rates — the numbers that tell you what's working and where to focus next.</span>
+            </li>
+          </ul>
+          <p class="hiw-step__closing">One login. Full control. Every lead tracked from first signal to closed client.</p>
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary hiw-cta">Get Started →</a>
+          <div class="hiw-step-img">
+            <img src="/images/backgrounds/Group.svg" class="hiw-step-img__bg" alt="" aria-hidden="true" />
+            <video src="/videos/pipeline.mp4" muted playsinline preload="auto" style="width:100%;border-radius:8px;"></video>
           </div>
         </div>
 
@@ -1425,6 +1487,19 @@ import Layout from '../layouts/Layout.astro';
 .hiw-step h3 {
   margin-bottom: 12px;
   font-size: 1.4rem;
+}
+
+.hiw-step__sub {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 12px !important;
+  margin-top: -4px;
+}
+
+.hiw-step__closing {
+  font-style: italic;
+  color: var(--slate-600);
 }
 
 .hiw-step p {
