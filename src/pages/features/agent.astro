@@ -41,7 +41,174 @@ import Layout from '../../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 2 — BEFORE / AFTER
+  SECTION 2 — THE TIME YOU GET BACK
+───────────────────────────────────────────── -->
+<section class="section fp-time-section">
+  <div class="container">
+
+    <div class="section-header section-header--center">
+      <div class="tag" style="margin: 0 auto 16px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        The Time You Get Back
+      </div>
+      <h2>This used to take 2.5 hours.<br />Now it takes <span style="color: var(--purple);">zero</span>.</h2>
+      <p>Every piece of intelligence in your lead package would need four separate tools and a full morning of research to gather manually. Flynt does it overnight.</p>
+    </div>
+
+    <div class="fp-time-compare">
+
+      <!-- WITHOUT FLYNT -->
+      <div class="fp-time-col fp-time-col--without">
+        <div class="fp-time-col-header">
+          <span class="fp-time-dot fp-time-dot--off"></span>
+          <span class="fp-time-col-label">Without Flynt</span>
+        </div>
+        <ul class="fp-time-list">
+          <li>
+            <div class="fp-time-tool">
+              <div class="fp-time-tool-icon">in</div>
+              <div>
+                <div class="fp-time-tool-name">LinkedIn Sales Navigator</div>
+                <div class="fp-time-tool-sub">Hiring patterns · leadership changes</div>
+              </div>
+            </div>
+            <span class="fp-time-badge">45 min</span>
+          </li>
+          <li>
+            <div class="fp-time-tool">
+              <div class="fp-time-tool-icon">CB</div>
+              <div>
+                <div class="fp-time-tool-name">Crunchbase Pro</div>
+                <div class="fp-time-tool-sub">Funding rounds · company data</div>
+              </div>
+            </div>
+            <span class="fp-time-badge">20 min</span>
+          </li>
+          <li>
+            <div class="fp-time-tool">
+              <div class="fp-time-tool-icon">G</div>
+              <div>
+                <div class="fp-time-tool-name">Google Alerts</div>
+                <div class="fp-time-tool-sub">Contract wins · company news</div>
+              </div>
+            </div>
+            <span class="fp-time-badge">25 min</span>
+          </li>
+          <li>
+            <div class="fp-time-tool">
+              <div class="fp-time-tool-icon">JB</div>
+              <div>
+                <div class="fp-time-tool-name">Job Boards</div>
+                <div class="fp-time-tool-sub">Burst hiring · open role tracking</div>
+              </div>
+            </div>
+            <span class="fp-time-badge">40 min</span>
+          </li>
+          <li>
+            <div class="fp-time-tool">
+              <div class="fp-time-tool-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+              </div>
+              <div>
+                <div class="fp-time-tool-name">Manual outreach research</div>
+                <div class="fp-time-tool-sub">Writing personalisation angles per lead</div>
+              </div>
+            </div>
+            <span class="fp-time-badge">40 min</span>
+          </li>
+        </ul>
+        <div class="fp-time-total fp-time-total--without">
+          <span class="fp-time-total-label">Daily Total</span>
+          <div class="fp-time-total-right">
+            <span class="fp-time-total-num">2.5 hrs</span>
+            <div class="fp-time-total-sub">before your first call</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VS -->
+      <div class="fp-time-vs" aria-hidden="true">
+        <div class="fp-time-vs-btn">VS</div>
+      </div>
+
+      <!-- WITH FLYNT -->
+      <div class="fp-time-col fp-time-col--with">
+        <div class="fp-time-col-header">
+          <span class="fp-time-dot fp-time-dot--on"></span>
+          <span class="fp-time-col-label">With Flynt</span>
+        </div>
+        <ul class="fp-time-leads">
+          <li>
+            <div class="fp-time-score">99%</div>
+            <div>
+              <div class="fp-time-lead-name">Meridian Capital</div>
+              <div class="fp-time-lead-meta"><span class="fp-time-signal">Burst hire</span> · 4 data roles · 18 days · sarah@meridian.com</div>
+            </div>
+          </li>
+          <li>
+            <div class="fp-time-score">94%</div>
+            <div>
+              <div class="fp-time-lead-name">Veritas Growth</div>
+              <div class="fp-time-lead-meta"><span class="fp-time-signal">Funding</span> · Series B $22M · james@veritas.io</div>
+            </div>
+          </li>
+          <li>
+            <div class="fp-time-score">91%</div>
+            <div>
+              <div class="fp-time-lead-name">Athos Consulting</div>
+              <div class="fp-time-lead-meta"><span class="fp-time-signal">Leadership</span> · New CTO joined 3 weeks ago</div>
+            </div>
+          </li>
+          <li>
+            <div class="fp-time-score">88%</div>
+            <div>
+              <div class="fp-time-lead-name">Nova Systems</div>
+              <div class="fp-time-lead-meta"><span class="fp-time-signal">Contract win</span> · £4M gov contract · AI hooks ready</div>
+            </div>
+          </li>
+          <li class="fp-time-lead--muted">
+            <div class="fp-time-score fp-time-score--muted">···</div>
+            <div>
+              <div class="fp-time-lead-name fp-time-lead-name--muted">More leads waiting</div>
+              <div class="fp-time-lead-meta">Delivered before 9am</div>
+            </div>
+          </li>
+        </ul>
+        <div class="fp-time-total fp-time-total--with">
+          <span class="fp-time-total-label">Daily Total</span>
+          <div class="fp-time-total-right">
+            <span class="fp-time-total-num fp-time-total-num--accent">0 min</span>
+            <div class="fp-time-total-sub fp-time-total-sub--accent">runs overnight while you sleep</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STAT CARDS -->
+    <div class="fp-time-stats">
+      <div class="fp-time-stat">
+        <div class="fp-time-stat-num fp-time-stat-num--accent">2.5 hrs</div>
+        <div class="fp-time-stat-title">Back every morning</div>
+        <div class="fp-time-stat-desc">Spend your time on calls, not research.</div>
+      </div>
+      <div class="fp-time-stat">
+        <div class="fp-time-stat-num">4 → 1</div>
+        <div class="fp-time-stat-title">Tools replaced</div>
+        <div class="fp-time-stat-desc">LinkedIn, Crunchbase, Alerts, and job boards — in one agent.</div>
+      </div>
+      <div class="fp-time-stat">
+        <div class="fp-time-stat-num fp-time-stat-num--accent">$500<sup>+</sup></div>
+        <div class="fp-time-stat-title">Saved per month</div>
+        <div class="fp-time-stat-desc">vs. paying for each tool separately.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 3 — BEFORE / AFTER
 ───────────────────────────────────────────── -->
 <section class="section new-shift">
   <div class="container">
@@ -153,7 +320,7 @@ import Layout from '../../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 3 — CONFIGURATION (dark)
+  SECTION 4 — CONFIGURATION (dark)
 ───────────────────────────────────────────── -->
 <section class="positioning fp-config">
   <div class="container">
@@ -882,7 +1049,6 @@ import Layout from '../../layouts/Layout.astro';
 .new-shift__card--new {
   background:
     linear-gradient(to bottom, rgba(199, 182, 250, 0.13) 0%, transparent 38%),
-    radial-gradient(ellipse at 100% 0%, rgba(139, 92, 246, 0.12) 0%, transparent 35%),
     var(--white);
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16), 0 6px 24px rgba(0, 0, 0, 0.09);
   align-self: start;
@@ -1106,6 +1272,379 @@ import Layout from '../../layouts/Layout.astro';
 }
 
 /* ────────────────────────────────────────────
+   THE TIME YOU GET BACK
+──────────────────────────────────────────── */
+.fp-time-section {
+  background: var(--slate-50);
+}
+
+.fp-time-compare {
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  gap: 0;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+/* VS divider — matches .new-shift__shift-col */
+.fp-time-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 5;
+}
+
+.fp-time-vs-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  position: relative;
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.8),
+    0 4px 20px rgba(124, 58, 237, 0.35);
+}
+
+.fp-time-vs-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(124, 58, 237, 0.45);
+  animation: shift-ring-grow 2.5s ease-out infinite;
+}
+
+.fp-time-vs-label {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple-900);
+}
+
+/* Column headers */
+.fp-time-col-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.fp-time-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fp-time-dot--off {
+  background: var(--slate-300);
+}
+
+.fp-time-dot--on {
+  background: var(--purple);
+}
+
+.fp-time-col--without .fp-time-col-label {
+  color: var(--slate-500);
+}
+
+.fp-time-col--with .fp-time-col-label {
+  color: var(--purple-900);
+}
+
+/* Without Flynt column — matches .new-shift__card--old */
+.fp-time-col--without {
+  background: var(--white);
+  border: 1px dashed #b0bec9;
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.fp-time-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fp-time-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.fp-time-list li:last-child {
+  border-bottom: none;
+}
+
+.fp-time-tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.fp-time-tool-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--slate-100);
+  color: var(--slate-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.fp-time-tool-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--slate-800);
+  line-height: 1.3;
+}
+
+.fp-time-tool-sub {
+  font-size: 0.8rem;
+  color: var(--slate-400);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.fp-time-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  background: var(--slate-100);
+  border-radius: 6px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* With Flynt column — matches .new-shift__card--new, purple shading, no left border */
+.fp-time-col--with {
+  background:
+    linear-gradient(to bottom, rgba(199, 182, 250, 0.13) 0%, transparent 38%),
+    var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16), 0 6px 24px rgba(0, 0, 0, 0.09);
+  align-self: start;
+}
+
+.fp-time-leads {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fp-time-leads li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.fp-time-leads li:last-child {
+  border-bottom: none;
+}
+
+.fp-time-lead--muted {
+  opacity: 0.45;
+}
+
+.fp-time-score {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--purple);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: -0.01em;
+}
+
+.fp-time-score--muted {
+  background: var(--slate-200);
+  color: var(--slate-500);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.fp-time-lead-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  line-height: 1.3;
+}
+
+.fp-time-lead-name--muted {
+  color: var(--slate-400);
+  font-weight: 500;
+}
+
+.fp-time-lead-meta {
+  font-size: 0.78rem;
+  color: var(--slate-500);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.fp-time-signal {
+  display: inline;
+  font-weight: 600;
+  color: var(--purple-900);
+  background: var(--purple-bg-2);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.72rem;
+}
+
+/* Daily totals */
+.fp-time-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 4px;
+}
+
+.fp-time-total--without {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+}
+
+.fp-time-total--with {
+  background: var(--purple-bg-2);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.fp-time-total-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+
+.fp-time-total--with .fp-time-total-label {
+  color: var(--purple-900);
+}
+
+.fp-time-total-right {
+  text-align: right;
+}
+
+.fp-time-total-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--slate-700);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: block;
+}
+
+.fp-time-total-num--accent {
+  color: var(--purple);
+}
+
+.fp-time-total-sub {
+  font-size: 0.72rem;
+  color: var(--slate-400);
+  margin-top: 3px;
+}
+
+.fp-time-total-sub--accent {
+  color: var(--purple-900);
+  opacity: 0.7;
+}
+
+/* Stat cards */
+.fp-time-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.fp-time-stat {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  text-align: center;
+  border-top: 3px solid var(--purple-200);
+}
+
+.fp-time-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--slate-900);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.fp-time-stat-num--accent {
+  color: var(--purple);
+}
+
+.fp-time-stat-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 6px;
+}
+
+.fp-time-stat-desc {
+  font-size: 0.875rem;
+  color: var(--slate-500);
+  line-height: 1.55;
+}
+
+/* ────────────────────────────────────────────
    RESPONSIVE
 ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
@@ -1124,6 +1663,36 @@ import Layout from '../../layouts/Layout.astro';
 }
 
 @media (max-width: 768px) {
+  /* Time You Get Back */
+  .fp-time-compare {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .fp-time-vs {
+    flex-direction: row;
+    gap: 10px;
+    padding: 14px 24px;
+    background: var(--purple-bg-2);
+    justify-content: center;
+  }
+  .fp-time-col--without {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-style: solid;
+    border-bottom: none;
+  }
+  .fp-time-col--with {
+    align-self: stretch;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+  .fp-time-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .fp-time-stat {
+    padding: 24px 28px;
+  }
+
   .fp-hero {
     padding: 64px 0 56px;
   }
