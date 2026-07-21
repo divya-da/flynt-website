@@ -1121,11 +1121,11 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Comparison Tables ── */
 .comparison-section {
-  background: var(--slate-50);
+  background: var(--white);
 }
 
 .competitor-section {
-  background: var(--slate-50);
+  background: var(--white);
 }
 
 .table-wrap {
@@ -1223,12 +1223,13 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Stack Section ── */
 .stack-section {
-  background: var(--white);
+  background: var(--slate-50);
 }
 
 .stack-card {
   max-width: 780px;
   margin: 40px auto 0;
+  background: var(--white);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -1369,7 +1370,7 @@ import Layout from '../layouts/Layout.astro';
 
 /* ── Add-ons Section ── */
 .addons-section {
-  background: var(--white);
+  background: var(--slate-50);
 }
 
 .addon-card {
@@ -1491,19 +1492,27 @@ import Layout from '../layouts/Layout.astro';
   background: var(--white);
 }
 
+
 .signals-table thead th {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 14px 20px;
+  text-align: left;
 }
 
 .signals-table thead th.compare-table__feature {
   text-align: left;
+  vertical-align: middle;
+  color: rgba(255,255,255,0.95);
 }
 
-.signals-table .compare-table__feature {
+.signals-table thead th.compare-table__featured {
+  text-align: center;
+}
+
+.signals-table tbody .compare-table__feature {
   vertical-align: top;
   padding-top: 20px;
 }
@@ -1616,7 +1625,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .signals-total-row {
-  background: var(--slate-50) !important;
+  background: var(--slate-100) !important;
   border-top: 2px solid var(--slate-200) !important;
 }
 
