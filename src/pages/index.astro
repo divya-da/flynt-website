@@ -492,6 +492,159 @@ import Layout from '../layouts/Layout.astro';
 
 
 <!-- ─────────────────────────────────────────────
+  SECTION — AI AGENTS
+───────────────────────────────────────────── -->
+<section class="section agent-capabilities">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <div class="stats-badge" style="margin-bottom: 16px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        AI Agents
+      </div>
+      <h2>Your Agent. <span class="agent-cap__accent">Always Working.</span><br />Always Improving.</h2>
+    </div>
+
+    <!-- UI mockup panel -->
+    <div class="agent-panel">
+
+      <!-- col 1 / row 1: lead sourcing widget -->
+      <div class="agent-widget ap--widget-top">
+        <div class="agent-widget__icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/><circle cx="11" cy="11" r="3"/></svg>
+        </div>
+        <div>
+          <div class="agent-widget__name">Lead sourcing agent</div>
+          <div class="agent-widget__status"><span class="agent-widget__dot"></span>Running 24/7 in background</div>
+        </div>
+      </div>
+
+      <!-- col 3 / row 1: score gauge -->
+      <div class="agent-score ap--score">
+        <div class="agent-score__gauge">
+          <svg width="58" height="58" viewBox="0 0 84 84">
+            <circle cx="42" cy="42" r="34" fill="none" stroke="#ede9fe" stroke-width="7"/>
+            <circle cx="42" cy="42" r="34" fill="none" stroke="#7c3aed" stroke-width="7" stroke-dasharray="213.6" stroke-dashoffset="6.4" stroke-linecap="round" transform="rotate(-90 42 42)"/>
+          </svg>
+          <span class="agent-score__pct">97%</span>
+        </div>
+        <div class="agent-score__label">Strong match</div>
+        <div class="agent-score__sub">Scored against your criteria</div>
+      </div>
+
+      <!-- col 2 / row 2: leads card -->
+      <div class="agent-leads ap--leads">
+        <div class="agent-leads__header">Leads Ready for Review <span class="agent-leads__count">(42)</span></div>
+        <div class="agent-lead">
+          <div class="agent-lead__avatar" style="background:#7c3aed">MC</div>
+          <div class="agent-lead__info">
+            <div class="agent-lead__name">Maya Chen · VP Sales &amp; Marketing</div>
+            <div class="agent-lead__company">Northwind Analytics · Austin, TX</div>
+          </div>
+          <div class="agent-lead__actions">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.88 13.5 19.79 19.79 0 0 1 1.81 4.83 2 2 0 0 1 3.81 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          </div>
+          <div class="agent-lead__score">97% match</div>
+        </div>
+        <div class="agent-lead">
+          <div class="agent-lead__avatar" style="background:#0ea5e9">DR</div>
+          <div class="agent-lead__info">
+            <div class="agent-lead__name">Derek Ruiz · Engineering Manager</div>
+            <div class="agent-lead__company">Brightfield Co · Denver, CO</div>
+          </div>
+          <div class="agent-lead__actions">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div class="agent-lead__score">95% match</div>
+        </div>
+        <div class="agent-lead">
+          <div class="agent-lead__avatar" style="background:#f97316">PN</div>
+          <div class="agent-lead__info">
+            <div class="agent-lead__name">Priya Nair · Head of Growth</div>
+            <div class="agent-lead__company">Vantage Systems · Remote</div>
+          </div>
+          <div class="agent-lead__actions">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.88 13.5 19.79 19.79 0 0 1 1.81 4.83 2 2 0 0 1 3.81 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          </div>
+          <div class="agent-lead__score">93% match</div>
+        </div>
+      </div>
+
+      <!-- col 1 / row 2: personalization (lead) -->
+      <div class="agent-perso-card ap--perso-lead">
+        <div class="agent-perso-card__eyebrow">✦ Personalization <span class="agent-perso__tag agent-perso__tag--lead">Lead</span></div>
+        <p>Your deep expertise in lifecycle marketing, built at the Kennedy Center, gives you a sharp standard for the kind of VP who can move the needle.</p>
+      </div>
+
+      <!-- col 3 / row 2: personalization (news) -->
+      <div class="agent-perso-card ap--perso-news">
+        <div class="agent-perso-card__eyebrow">✦ Personalization <span class="agent-perso__tag agent-perso__tag--news">News</span></div>
+        <p>Northwind just closed a $40M Series C — the kind of growth surge that makes a first VP of Sales hire urgent, not optional.</p>
+      </div>
+
+      <!-- col 3 / row 3: personalization (job) — overlaps news card -->
+      <div class="agent-perso-card ap--perso-job">
+        <div class="agent-perso-card__eyebrow">✦ Personalization <span class="agent-perso__tag agent-perso__tag--job">Job</span></div>
+        <p>The posting's focus on building a team from scratch signals a leadership-first search, not a quota-filler.</p>
+      </div>
+
+      <!-- col 1 / row 3: outreach widget -->
+      <div class="agent-widget ap--widget-bottom">
+        <div class="agent-widget__icon agent-widget__icon--indigo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div class="agent-widget__name">Outreach</div>
+          <div class="agent-widget__status">42 messages drafted today</div>
+        </div>
+      </div>
+
+      <!-- col 2 / row 3: stats bar -->
+      <div class="agent-stats-bar ap--stats">
+        <div class="agent-stat-item">
+          <div class="agent-stat-item__num">210</div>
+          <div class="agent-stat-item__lbl">Jobs Found</div>
+        </div>
+        <div class="agent-stat-item">
+          <div class="agent-stat-item__num">172</div>
+          <div class="agent-stat-item__lbl">Companies</div>
+        </div>
+        <div class="agent-stat-item agent-stat-item--purple">
+          <div class="agent-stat-item__num">68</div>
+          <div class="agent-stat-item__lbl">Qualified</div>
+        </div>
+        <div class="agent-stat-item agent-stat-item--purple">
+          <div class="agent-stat-item__num">32</div>
+          <div class="agent-stat-item__lbl">Leads Added</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Feature cards -->
+    <div class="agent-cap__grid">
+      <div class="agent-cap__card">
+        <div class="agent-cap__eyebrow">Scale</div>
+        <h3 class="agent-cap__title">Searches at Scale</h3>
+        <p class="agent-cap__body">Flynt's AI Agents scan <strong>250 million profiles</strong> and <strong>30 million companies</strong> globally — cutting through the noise to surface only the leads that match your exact criteria, scored and ready to action.</p>
+      </div>
+      <div class="agent-cap__card">
+        <div class="agent-cap__eyebrow">Daily Output</div>
+        <h3 class="agent-cap__title">Up to 30 Leads a Day. Every Day.</h3>
+        <p class="agent-cap__body">Each agent delivers up to <strong>30 qualified, scored leads</strong> daily — that's roughly 1,000 new opportunities added to your pipeline every month, automatically, without lifting a finger.</p>
+      </div>
+<div class="agent-cap__card">
+        <div class="agent-cap__eyebrow">Personalization</div>
+        <h3 class="agent-cap__title">Outreach That Feels Personal</h3>
+        <p class="agent-cap__body">Flynt generates AI-written hooks for every lead — built from company &amp; news signals, the individual's background, and the specific job they're hiring for. Every message stands out instead of blending in.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
   SECTION 05 — WHO FLYNT IS BUILT FOR
 ───────────────────────────────────────────── -->
 <section class="built-for built-for--grey">
@@ -512,19 +665,19 @@ import Layout from '../layouts/Layout.astro';
       <div class="audience-stair">
         <div class="audience-card audience-card--s1">
           <h3>Recruiters & Recruitment Agencies</h3>
-          <p>Find the companies that need your services — before your competition does.</p>
+          <p>Find the right companies, reach the right decision-makers, and start more conversations before your competition does.</p>
         </div>
         <div class="audience-card audience-card--s2">
           <h3>Agency Owners & Operators</h3>
-          <p>Consistent client pipeline — without adding headcount.</p>
+          <p>A complete client acquisition system — research, outreach, and pipeline tracking without adding headcount.</p>
         </div>
         <div class="audience-card audience-card--s3">
           <h3>Sales & Go-to-Market Teams</h3>
-          <p>The right accounts, at the right moment, with context — before every outreach.</p>
+          <p>The right accounts, scored and researched, with personalized angles ready before every outreach.</p>
         </div>
         <div class="audience-card audience-card--s4">
           <h3>Revenue Leaders</h3>
-          <p>Replace reactive prospecting with a system that runs whether your team is busy or not.</p>
+          <p>Replace reactive prospecting with an end-to-end system that researches, reaches out, and tracks results — whether your team is busy or not.</p>
         </div>
       </div>
     </div>
@@ -577,8 +730,8 @@ import Layout from '../layouts/Layout.astro';
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__inner">
-      <h2>Stop researching.<br />Start <span style="color: var(--purple); -webkit-text-stroke: 0;">closing.</span></h2>
-      <p>Your next client is already in the market. Flynt finds them before someone else does.</p>
+      <h2>From Signal to <span style="color: var(--purple); -webkit-text-stroke: 0;">Signed.</span><br />Starting Now.</h2>
+      <p>Your next client is already in the market. Flynt finds them, scores the fit, and starts the conversation before someone else does.</p>
       <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started →</a>
       <span class="final-cta__disclaimer">5 min set up time.</span>
     </div>
@@ -1693,6 +1846,372 @@ import Layout from '../layouts/Layout.astro';
   flex-shrink: 0;
   width: 16px;
   height: 16px;
+}
+
+/* ── Agent Capabilities ── */
+.agent-capabilities {
+  background: var(--white);
+}
+
+.agent-cap__accent {
+  color: var(--purple);
+  -webkit-text-stroke: 0.6px var(--purple);
+}
+
+/* ── Panel ── */
+.agent-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  gap: 16px;
+  padding: 28px;
+  background: radial-gradient(ellipse at 65% 35%, #5b21b6 0%, #3b0d8c 100%);
+  border-radius: 20px;
+  margin-top: 48px;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.agent-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.agent-panel > * { position: relative; z-index: 1; }
+
+/* Collage placement — perso cards overlap the leads card via negative margins */
+.ap--widget-top    { grid-column: 1; grid-row: 1; align-self: start; }
+.ap--score         { grid-column: 3; grid-row: 1; align-self: start; }
+.ap--perso-lead    { grid-column: 1; grid-row: 2; align-self: center; position: relative; z-index: 3; margin-right: -32px; }
+.ap--leads         { grid-column: 2; grid-row: 2; position: relative; z-index: 1; }
+.ap--perso-news    { grid-column: 3; grid-row: 2; align-self: start; position: relative; z-index: 3; margin-left: -32px; }
+.ap--perso-job     { grid-column: 3; grid-row: 3; align-self: start; position: relative; z-index: 2; margin-left: -32px; margin-top: -40px; }
+.ap--widget-bottom { grid-column: 1; grid-row: 3; align-self: end; }
+.ap--stats         { grid-column: 2; grid-row: 3; align-self: end; }
+
+/* Widget cards */
+.agent-widget {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+}
+
+.agent-widget__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #ede9fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+.agent-widget__icon--indigo {
+  background: #e0e7ff;
+  color: #4f46e5;
+}
+
+.agent-widget__name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.agent-widget__status {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.agent-widget__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* (center column is now placed directly via grid) */
+
+.agent-leads {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+}
+
+.agent-leads__header {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--slate-800);
+  margin-bottom: 14px;
+}
+
+.agent-leads__count {
+  color: var(--slate-400);
+  font-weight: 500;
+}
+
+.agent-lead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.agent-lead:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.agent-lead__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.agent-lead__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.agent-lead__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--slate-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.agent-lead__company {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+  margin-top: 1px;
+}
+
+.agent-lead__actions {
+  display: flex;
+  gap: 8px;
+  color: var(--slate-400);
+  flex-shrink: 0;
+}
+
+.agent-lead__score {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #dcfce7;
+  color: #15803d;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Stats bar */
+.agent-stats-bar {
+  background: rgba(0,0,0,0.22);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.agent-stat-item__num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.agent-stat-item--purple .agent-stat-item__num {
+  color: #a78bfa;
+}
+
+.agent-stat-item__lbl {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+}
+
+/* (right column is now placed directly via grid) */
+
+.agent-score {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: start;
+}
+
+.agent-score__gauge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.agent-score__pct {
+  position: absolute;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--slate-900);
+}
+
+.agent-score__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--slate-800);
+}
+
+.agent-score__sub {
+  font-size: 0.65rem;
+  color: var(--slate-500);
+  margin-top: 2px;
+}
+
+.agent-perso-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+}
+
+.agent-perso-card__eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-perso-card p {
+  font-size: 0.75rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.agent-perso__tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.agent-perso__tag--news { background: #e0f2fe; color: #0369a1; }
+.agent-perso__tag--lead { background: #fef3c7; color: #92400e; }
+.agent-perso__tag--job  { background: #dcfce7; color: #15803d; }
+
+/* ── Feature cards (bottom row) ── */
+.agent-cap__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
+}
+
+.agent-cap__card {
+  padding: 28px 24px;
+  border-right: 1px solid var(--slate-200);
+}
+
+.agent-cap__card:last-child { border-right: none; }
+
+.agent-cap__eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  background: var(--purple-200);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.agent-cap__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.agent-cap__title--purple { color: var(--purple); }
+
+.agent-cap__body {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.agent-cap__body strong {
+  color: var(--slate-800);
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .agent-panel {
+    grid-template-columns: 1fr;
+  }
+  .agent-panel__left {
+    flex-direction: row;
+  }
+  .agent-cap__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .agent-cap__grid { grid-template-columns: 1fr; }
+  .agent-cap__card { border-right: none; border-bottom: 1px solid var(--slate-200); }
+  .agent-cap__card:last-child { border-bottom: none; }
 }
 
 /* ── Audience ── */
