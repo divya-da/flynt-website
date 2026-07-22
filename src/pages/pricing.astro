@@ -256,9 +256,9 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
-            <!-- Pipeline & Inbox -->
+            <!-- CRM & Inbox -->
             <tr class="compare-table__section-header">
-              <td colspan="5">Pipeline &amp; Inbox</td>
+              <td colspan="5">CRM &amp; Inbox</td>
             </tr>
             <tr>
               <td>Flynt CRM / Pipeline</td>
@@ -1277,8 +1277,8 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .compare-table tbody tr.compare-table__section-header td {
-  background: #2d1f5e;
-  color: rgba(255,255,255,0.75);
+  background: #ede9fa;
+  color: #5b21b6;
   font-family: var(--font-display);
   font-size: 0.68rem;
   font-weight: 700;
@@ -1566,7 +1566,6 @@ import Layout from '../layouts/Layout.astro';
   background: var(--white);
 }
 
-
 .signals-table thead th {
   font-size: 0.72rem;
   font-weight: 700;
@@ -1574,6 +1573,7 @@ import Layout from '../layouts/Layout.astro';
   text-transform: uppercase;
   padding: 14px 20px;
   text-align: left;
+  vertical-align: middle;
 }
 
 .signals-table thead th.compare-table__feature {
@@ -1584,6 +1584,14 @@ import Layout from '../layouts/Layout.astro';
 
 .signals-table thead th.compare-table__featured {
   text-align: center;
+}
+
+.signals-table thead th:nth-child(1) {
+  width: 300px;
+}
+
+.signals-table thead th:nth-child(2) {
+  width: 260px;
 }
 
 .signals-table tbody .compare-table__feature {
@@ -1614,26 +1622,31 @@ import Layout from '../layouts/Layout.astro';
 
 .signal-tools {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 240px;
 }
 
 .signal-tool-tag {
   display: inline-block;
-  background: var(--slate-100);
+  background: transparent;
   color: var(--slate-600);
-  border: 1px solid var(--slate-200);
-  border-radius: 6px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 3px 9px;
-  white-space: nowrap;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0;
+}
+
+.signal-tools .signal-tool-tag::before {
+  content: '· ';
+  color: var(--slate-400);
 }
 
 .signal-tool-tag--warn {
-  background: #fef2f2;
+  background: transparent;
   color: #dc2626;
-  border-color: #fecaca;
+  border: none;
+  font-weight: 500;
 }
 
 .signals-td--cost,
