@@ -72,17 +72,29 @@ npm run preview  # Preview built output
 
 ## Video Compression
 
-To compress a video for web (e.g. hero.mp4):
+Hero videos are served in two formats (HEVC first, H.264 fallback) at **960×540** — optimised for the embedded player size on the site. **Audio must be retained.**
+
+> **Note:** A migration to a YouTube player embed is planned, which will replace this self-hosted video setup and handle resolution automatically.
 
 ```bash
-ffmpeg -i input.mp4 -vcodec libx264 -crf 28 -preset slow -vf "scale=1280:720" -movflags +faststart -acodec aac -b:a 128k output.mp4
+# HEVC/H.265 — primary (Safari/Chrome modern)
+ffmpeg -i input.mp4 -vcodec libx265 -crf 28 -preset slow -tag:v hvc1 -vf "scale=960:540" -movflags +faststart -acodec aac -b:a 128k hero.mp4
+
+# H.264 — fallback (broad compatibility)
+ffmpeg -i input.mp4 -vcodec libx264 -crf 28 -preset slow -vf "scale=960:540" -movflags +faststart -acodec aac -b:a 128k hero-h264.mp4
 ```
 
-- `-crf 28` — quality (lower = better, 23 is default; 28 is fine for background/hero video)
-- `-preset slow` — better compression at cost of encode time
-- `scale=1280:720` — downscale to 720p
+- `-crf 28` — good quality at small file size (lower = better quality)
+- `-tag:v hvc1` — required for HEVC to play in Safari/iOS
+- `scale=960:540` — matches max embedded display width on the site
 - `-movflags +faststart` — move metadata to front for faster web playback
-- `-acodec aac -b:a 128k` — re-encode audio to AAC 128kbps
+- `-acodec aac -b:a 128k` — audio is required, encode to AAC 128kbps
+
+In `index.astro` (and feature pages), the `<source>` order is:
+```html
+<source src="/videos/hero.mp4" type='video/mp4; codecs="hvc1"' />
+<source src="/videos/hero-h264.mp4" type="video/mp4" />
+```
 
 ## Design Notes
 - Dark sections use `clip-path: polygon(0 120px, 100% 0, ...)` with negative `margin-top` to create diagonal transitions from the hero
