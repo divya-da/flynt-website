@@ -34,18 +34,15 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="hero__visual fade-up fade-up-3">
         <div class="hero__visual-glow"></div>
-        <div class="hero__video-wrap">
-          <video
-            id="heroVideo"
+        <div class="hero__video-wrap" id="heroVideoWrap" data-yt-id="8NxhhINXkak">
+          <img
+            id="heroThumbnail"
             class="hero__screenshot-img"
-            playsinline
-            poster="/images/hero-thumbnail.jpg"
-            controlsList="nodownload noplaybackrate"
-            disablePictureInPicture
-          >
-            <source src="/videos/hero.mp4" type='video/mp4; codecs="hvc1"' />
-            <source src="/videos/hero-h264.mp4" type="video/mp4" />
-          </video>
+            src="/images/hero-thumbnail.jpg"
+            alt="Flynt product demo"
+            width="1920"
+            height="1080"
+          />
           <button class="hero__play-btn" id="heroPlayBtn" aria-label="Play video">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="40" cy="40" r="40" fill="rgba(124,58,237,0.2)"/>
@@ -990,10 +987,6 @@ import Layout from '../layouts/Layout.astro';
   pointer-events: all;
 }
 
-.hero__play-btn.at-end {
-  top: 57%;
-}
-
 .hero__play-btn:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
@@ -1017,12 +1010,18 @@ import Layout from '../layouts/Layout.astro';
   position: relative;
   z-index: 1;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 12px;
   display: block;
   box-shadow:
     0 2px 8px rgba(139, 92, 246, 0.08),
     0 12px 32px rgba(139, 92, 246, 0.14),
     0 24px 40px rgba(0, 0, 0, 0.14);
+}
+
+.hero__video-wrap iframe.hero__screenshot-img {
+  border: none;
 }
 
 .hero__sub {
@@ -2884,40 +2883,40 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script is:inline>
-  // ── Hero play button ──
+  // ── Hero play button — loads YouTube iframe on click ──
   (function () {
-    var video = document.getElementById('heroVideo');
+    var wrap = document.getElementById('heroVideoWrap');
+    var thumb = document.getElementById('heroThumbnail');
     var btn = document.getElementById('heroPlayBtn');
-    var wrap = video ? video.closest('.hero__video-wrap') : null;
-    if (!video || !btn || !wrap) return;
+    if (!wrap || !thumb || !btn) return;
 
-    // Show controls on hover, hide when mouse leaves (unless playing)
-    wrap.addEventListener('mouseenter', function () {
-      video.controls = true;
-    });
-    wrap.addEventListener('mouseleave', function () {
-      if (video.paused) video.controls = false;
-    });
+    var ytId = wrap.getAttribute('data-yt-id');
 
-    btn.addEventListener('click', function () {
-      video.controls = true;
-      video.play();
+    function loadVideo() {
+      var iframe = document.createElement('iframe');
+      iframe.className = 'hero__screenshot-img';
+      iframe.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0';
+      iframe.title = 'Flynt product demo';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      // Astro's scoped-CSS attribute is only added to elements present at build
+      // time, so it must be copied onto this JS-created node for styles to apply.
+      for (var i = 0; i < wrap.attributes.length; i++) {
+        var attr = wrap.attributes[i];
+        if (attr.name.indexOf('data-astro-cid') === 0) iframe.setAttribute(attr.name, '');
+      }
+      iframe.style.cssText =
+        'position:relative;z-index:1;width:100%;aspect-ratio:16/9;object-fit:cover;' +
+        'border-radius:12px;display:block;border:none;box-shadow:0 2px 8px rgba(139,92,246,0.08),' +
+        '0 12px 32px rgba(139,92,246,0.14),0 24px 40px rgba(0,0,0,0.14);';
+      wrap.replaceChild(iframe, thumb);
       btn.classList.add('hidden');
-    });
-    video.addEventListener('play', function () {
-      btn.classList.add('hidden');
-    });
-    video.addEventListener('pause', function () {
-      btn.classList.remove('hidden');
-      video.controls = false;
-    });
-    video.addEventListener('ended', function () {
-      btn.classList.remove('hidden');
-      btn.classList.add('at-end');
-    });
-    video.addEventListener('play', function () {
-      btn.classList.remove('at-end');
-    });
+      document.dispatchEvent(new Event('heroVideoPlay'));
+    }
+
+    btn.addEventListener('click', loadVideo);
+    thumb.addEventListener('click', loadVideo);
   })();
 
   (function () {
@@ -3167,21 +3166,10 @@ import Layout from '../layouts/Layout.astro';
       }
     }
 
-    var heroVideo = document.getElementById('heroVideo');
-    if (heroVideo) {
-      heroVideo.addEventListener('play', function () {
-        animPaused = true;
-        clearTimeout(pendingTimer);
-      });
-      heroVideo.addEventListener('pause', function () {
-        animPaused = false;
-        tick();
-      });
-      heroVideo.addEventListener('ended', function () {
-        animPaused = false;
-        tick();
-      });
-    }
+    document.addEventListener('heroVideoPlay', function () {
+      animPaused = true;
+      clearTimeout(pendingTimer);
+    });
 
     pendingTimer = setTimeout(tick, 800);
 
