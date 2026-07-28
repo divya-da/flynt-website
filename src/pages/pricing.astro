@@ -26,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="billing-toggle">
         <button class="toggle-btn" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
         <button class="toggle-btn toggle-btn--active" id="toggle-annual" onclick="setBilling('annual')">
-          Annual <span class="toggle-badge">Save up to $998/yr</span>
+          Annual <span class="toggle-badge">Save up to $1,200/yr</span>
         </button>
       </div>
 
@@ -38,16 +38,16 @@ import Layout from '../layouts/Layout.astro';
             <h3>Starter</h3>
             <p class="plan__tagline">For solo recruiters building their first automated BD pipeline.</p>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="116">116</span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="99">99</span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Switch to annual — save $278/yr</div>
+            <div class="plan__annual-teaser">Switch to annual — save $480/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline">Billed $1,390/yr</span>
+                <span class="plan__billed-inline">Billed $1,188/yr</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$116/mo per agent</span><span>≈ 2 months free</span><span>Save $278/yr</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$99/mo per agent</span><span>≈ 3 months free</span><span>Save $480/yr</span></span>
                 </span>
               </div>
             </div>
@@ -77,16 +77,16 @@ import Layout from '../layouts/Layout.astro';
             <h3>Pro</h3>
             <p class="plan__tagline">For recruitment agencies running research and outreach in one place.</p>
             <div class="plan__price">
-              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="223">223</span>
+              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="199">199</span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Switch to annual — save $534/yr</div>
+            <div class="plan__annual-teaser">Switch to annual — save $816/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline">Billed $2,670/yr</span>
+                <span class="plan__billed-inline">Billed $2,388/yr</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$111/mo per agent</span><span>≈ 2 months free</span><span>Save $534/yr</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$99/mo per agent</span><span>≈ 3 months free</span><span>Save $816/yr</span></span>
                 </span>
               </div>
             </div>
@@ -112,16 +112,16 @@ import Layout from '../layouts/Layout.astro';
             <h3>Growth</h3>
             <p class="plan__tagline">For agencies and teams scaling across multiple markets.</p>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="416">416</span>
+              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="399">399</span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Switch to annual — save $998/yr</div>
+            <div class="plan__annual-teaser">Switch to annual — save $1,200/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline">Billed $4,990/yr</span>
+                <span class="plan__billed-inline">Billed $4,788/yr</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$104/mo per agent</span><span>≈ 2 months free</span><span>Save $998/yr</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$99/mo per agent</span><span>≈ 2 months free</span><span>Save $1,200/yr</span></span>
                 </span>
               </div>
             </div>
@@ -171,9 +171,9 @@ import Layout from '../layouts/Layout.astro';
           <thead>
             <tr>
               <th class="compare-table__feature"></th>
-              <th>Starter<br /><span class="th-price" data-monthly="$139/mo" data-annual="$116/mo">$116/mo</span></th>
-              <th class="compare-table__featured">Pro<br /><span class="th-price" data-monthly="$267/mo" data-annual="$223/mo">$223/mo</span></th>
-              <th>Growth<br /><span class="th-price" data-monthly="$499/mo" data-annual="$416/mo">$416/mo</span></th>
+              <th>Starter<br /><span class="th-price" data-monthly="$139/mo" data-annual="$99/mo">$99/mo</span></th>
+              <th class="compare-table__featured">Pro<br /><span class="th-price" data-monthly="$267/mo" data-annual="$199/mo">$199/mo</span></th>
+              <th>Growth<br /><span class="th-price" data-monthly="$499/mo" data-annual="$399/mo">$399/mo</span></th>
               <th>Scale<br /><span class="th-price">Contact Sales</span></th>
             </tr>
           </thead>
@@ -527,7 +527,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="signal-time-note">With Flynt — runs overnight</span>
               </td>
               <td class="compare-table__featured signals-td--flynt">
-                <span class="signal-total-price">$116<span class="signal-total-period">/mo</span></span>
+                <span class="signal-total-price"><span data-monthly="$139" data-annual="$99">$99</span><span class="signal-total-period">/mo</span></span>
                 <span class="signal-total-sub">With Flynt</span>
               </td>
             </tr>
@@ -592,7 +592,7 @@ import Layout from '../layouts/Layout.astro';
               <span class="stack-total-sub">Traditional stack</span>
             </div>
             <div class="stack-col stack-col--flynt">
-              <span class="stack-total-price stack-total-price--flynt">$116<span class="stack-price-period">/mo</span></span>
+              <span class="stack-total-price stack-total-price--flynt"><span data-monthly="$139" data-annual="$99">$99</span><span class="stack-price-period">/mo</span></span>
               <span class="stack-total-sub">With Flynt</span>
             </div>
           </div>
@@ -624,7 +624,7 @@ import Layout from '../layouts/Layout.astro';
           <tbody>
             <tr>
               <td>Starting Price*</td>
-              <td class="compare-table__featured" data-monthly="$139/mo" data-annual="$116/mo">$116/mo</td>
+              <td class="compare-table__featured" data-monthly="$139/mo" data-annual="$99/mo">$99/mo</td>
               <td>$1,000+/mo</td>
               <td>$169–$800/mo</td>
               <td>$150–$400/mo</td>
