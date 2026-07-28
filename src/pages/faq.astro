@@ -11,11 +11,11 @@ const faqs = [
       },
       {
         q: "What exactly does Flynt do?",
-        a: "Flynt is an AI-powered client acquisition intelligence system. It handles the research layer behind finding and approaching new clients — continuously and automatically. It maps potential client accounts in your target market, identifies the right decision-makers to contact at each company, detects signals that indicate a business is ready for your services, and structures all of that into a clean, prioritised client prospect flow — with no manual research required. Flynt is for client acquisition. It is not a candidate sourcing tool, not a talent database, and not a recruitment CRM. It does not send outreach. It does not guarantee clients. It builds the client acquisition intelligence foundation that makes every business development conversation more precise, more timely, and more likely to convert."
+        a: `Flynt is an AI-powered business development engine built specifically for recruiters and recruiting agencies. It handles the entire research and outreach layer behind finding new clients — continuously and automatically.\n\nEvery day, Flynt's AI Agent surfaces companies that posted a new job in the last 24 hours, identifies the hiring manager, enriches their contact details, and generates personalised outreach angles based on real signals — recent company news, job posting data, and company context. It then sends your outreach automatically through built-in campaign sequences, tracks every reply in a unified inbox, and manages your entire prospect pipeline through a built-in CRM.\n\nFlynt is not a candidate sourcing tool, a talent database, or a generic contact list. It is purpose-built for one job: making sure recruiters always know which companies are actively hiring, have everything they need to reach out intelligently, and never lose track of a conversation. The intelligence runs automatically. The outreach runs automatically. You focus on the relationships.`
       },
       {
         q: "How is Flynt different from Apollo, Clay, or Instantly?",
-        a: "Apollo is a contact database with outbound capabilities. Instantly and Reply.io are outreach automation platforms. Clay is a flexible data workflow builder. Flynt is none of those things. Flynt sits before all of them — in the intelligence layer that those tools assume someone else has already handled. Where Apollo gives you a list, Flynt gives you a ranked, signal-filtered, context-rich opportunity briefing. Where Clay requires you to build the workflow, Flynt runs the intelligence system for you. Flynt is not a competitor to your outreach tools. It is the intelligence layer that makes your outreach tools more effective. Most teams use Flynt alongside Apollo, Instantly, or their CRM — not instead of them."
+        a: `Apollo is a contact database. Instantly and Reply.io are outreach automation platforms. Clay is a flexible data workflow builder. Each of those tools solves one part of the problem — and requires you to connect the rest yourself.\n\nFlynt is the only platform built end-to-end for recruiting business development. It finds the signal — companies actively hiring right now — enriches the contact, generates a personalized outreach angle based on that specific company's news and job activity, sends the campaign, tracks the reply, and manages the pipeline. All in one place, purpose-built for recruiters.\n\nWhere Apollo gives you a list, Flynt gives you a daily ranked feed of companies in active hiring mode with the context to know exactly why and what to say. Where Clay requires you to build the workflow yourself, Flynt runs the intelligence system for you out of the box. Where Instantly sends your outreach, Flynt decides who gets it, why, and with what angle — then sends it automatically.\n\nFlynt is not a competitor to those tools. It is the intelligence and execution layer that sits where those tools assume you've already done the work. Most recruiters who use Flynt replace hours of daily manual research — not their existing stack.`
       },
       {
         q: "What is a 'hiring signal' and why does it matter for client acquisition?",
@@ -32,11 +32,11 @@ const faqs = [
     items: [
       {
         q: "Does Flynt guarantee leads or clients?",
-        a: "No. Flynt does not guarantee clients, deals, or revenue. No honest intelligence tool does. What Flynt guarantees is leverage: time reclaimed from manual research, opportunity flow that runs consistently, and intelligence structured for precision. Your results will depend on the quality of your targeting, the clarity of your outreach, and the consistency of your follow-up. Flynt prepares the work. You close the deal."
+        a: "No. Flynt does not guarantee clients, deals, or revenue. No honest intelligence tool does. What Flynt guarantees is leverage: time reclaimed from manual research, a pipeline of active hiring signals that runs consistently, and the intelligence to know who to reach out to and why. Your results will depend on the quality of your targeting, the clarity of your outreach, and the consistency of your follow-up. Flynt prepares the work. You close the deal."
       },
       {
         q: "How quickly can I expect to feel the impact?",
-        a: "Most users feel the impact within the first week — primarily in time saved and research friction eliminated. If you are already running an active prospecting motion, Flynt accelerates and sharpens it quickly. If you are building from a standing start, Flynt removes the operational burden so you can focus on skill development and outreach consistency. Revenue outcomes depend on your execution — but structured opportunity and reduced friction are felt immediately."
+        a: `Immediately. Set up your agent in under 5 minutes and your first leads arrive the same day — active hiring managers at companies that posted jobs in the last 24 hours, enriched and ready to reach out to. The manual research layer is gone from day one.\n\nGetting responses and converting leads into client relationships is a different timeline. Like any business development motion, consistent daily and weekly outreach over two to three months is typically when recruiters start seeing meaningful activity — replies, conversations, and new opportunities coming through. Some see it sooner, some later — it depends on your niche, your outreach quality, and how consistently you work the leads Flynt delivers.\n\nFlynt removes the groundwork so your effort goes further. The results depend on showing up every day.`
       },
       {
         q: "What if my outreach isn't working right now — will Flynt fix that?",
@@ -120,7 +120,7 @@ const faqs = [
                 <details class="faq-item">
                   <summary class="faq-item__q">{item.q}</summary>
                   <div class="faq-item__a">
-                    <p>{item.a}</p>
+                    {item.a.split('\n\n').map(para => <p>{para}</p>)}
                   </div>
                 </details>
               ))}
@@ -274,6 +274,11 @@ const faqs = [
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--gray-600);
+  margin: 0 0 12px;
+}
+
+.faq-item__a p:last-child {
+  margin-bottom: 0;
 }
 
 /* CTA */
