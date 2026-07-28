@@ -46,13 +46,17 @@ import Layout from '../../layouts/Layout.astro';
 <section class="section fp-time-section">
   <div class="container">
 
-    <div class="section-header section-header--center">
-      <div class="tag" style="margin: 0 auto 16px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        The Time You Get Back
+    <div class="fp-time-header">
+      <div class="fp-time-header__left">
+        <div class="tag" style="margin-bottom: 16px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          The Time You Get Back
+        </div>
+        <h2>This used to take 4 hours.<br />Now it takes <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">zero</span>.</h2>
       </div>
-      <h2>This used to take 4 hours.<br />Now it takes <span style="color: var(--purple);">zero</span>.</h2>
-      <p>Every piece of intelligence in your lead package would need four separate tools and a full morning of research to gather manually. Flynt does it overnight.</p>
+      <div class="fp-time-header__right">
+        <p>Every piece of intelligence in your lead package would need four separate tools and a full morning of research to gather manually. Flynt does it overnight.</p>
+      </div>
     </div>
 
     <div class="fp-time-compare">
@@ -219,7 +223,7 @@ import Layout from '../../layouts/Layout.astro';
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           Before &amp; After
         </div>
-        <h2 class="new-shift__headline">Hours of research every day.<br /><span class="new-shift__accent">Or none at all.</span></h2>
+        <h2 class="new-shift__headline">Hours of research every day. <span class="new-shift__accent">Or none at all.</span></h2>
       </div>
       <div class="new-shift__header-right">
         <p class="new-shift__lead">This is how most recruiters find clients. And this is how Flynt changes it.</p>
@@ -326,7 +330,7 @@ import Layout from '../../layouts/Layout.astro';
   <div class="container">
     <div class="fp-config__header">
       <div class="tag fp-dark-tag">One Setup</div>
-      <h2 class="fp-dark-h2">One setup. Runs forever.</h2>
+      <h2 class="fp-dark-h2">One setup. Runs <span style="color: #dbb6f8; -webkit-text-stroke: 0;">forever.</span></h2>
       <p class="fp-dark-sub">Under 5 minutes to configure. Fresh leads every day after that.</p>
     </div>
     <div class="fp-steps">
@@ -359,8 +363,8 @@ import Layout from '../../layouts/Layout.astro';
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
         The Intelligence Package
       </div>
-      <h2>Every lead arrives ready to action.</h2>
-      <p>Everything you need to reach out with confidence. No extra research required.</p>
+      <h2>Every lead arrives <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">ready to action.</span></h2>
+      <p style="max-width: 780px;">Everything you need to reach out with confidence. No extra research required.</p>
     </div>
     <div class="fp-cards">
       <div class="fp-card">
@@ -396,13 +400,17 @@ import Layout from '../../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="section fp-scoring" style="background: var(--slate-50);">
   <div class="container">
-    <div class="section-header">
-      <div class="tag">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Match Scoring
+    <div class="fp-scoring__header">
+      <div class="fp-scoring__header-left">
+        <div class="tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Match Scoring
+        </div>
+        <h2>Stop guessing who's worth your time. <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">The score</span> tells you.</h2>
       </div>
-      <h2>Stop guessing who's worth your time. The score tells you.</h2>
-      <p>Every lead arrives with a percentage match and a written breakdown of exactly why it qualifies or where it falls short. In seconds, you know which leads to prioritize and which to skip.</p>
+      <div class="fp-scoring__header-right">
+        <p>Every lead arrives with a percentage match and a written breakdown of exactly why it qualifies or where it falls short. In seconds, you know which leads to prioritize and which to skip.</p>
+      </div>
     </div>
     <div class="fp-score">
       <div class="fp-score__left">
@@ -450,8 +458,8 @@ import Layout from '../../layouts/Layout.astro';
 <section class="section fp-hooks-section">
   <div class="container">
     <div class="section-header section-header--center">
-      <h2>A unique hook for every lead. Stand out in every inbox.</h2>
-      <p>Generic outreach gets ignored. Flynt writes a personalised angle for every lead – pulled from real signals about the company, the person, and the job.</p>
+      <h2>A <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">unique hook</span> for every lead. Stand out in every inbox.</h2>
+      <p style="max-width: none;">Generic outreach gets ignored. Flynt writes a personalised angle for every lead – pulled from real signals about the company, the person, and the job.</p>
     </div>
     <div class="fp-hooks">
       <div class="fp-hook-card">
@@ -483,10 +491,14 @@ import Layout from '../../layouts/Layout.astro';
 ───────────────────────────────────────────── -->
 <section class="positioning fp-agent-section">
   <div class="container">
-    <div class="fp-config__header">
-      <div class="tag fp-dark-tag">Inside the Intelligence Agent</div>
-      <h2 class="fp-dark-h2">This is what's running in the background while you're closing.</h2>
-      <p class="fp-dark-sub">Set it up once. Your AI agents run continuously, surfacing the right leads, scoring every fit, and writing your outreach angles before you open your laptop.</p>
+    <div class="fp-agent-header">
+      <div class="fp-agent-header__left">
+        <div class="tag fp-dark-tag">Inside the Intelligence Agent</div>
+        <h2 class="fp-dark-h2">While you're working, so is Flynt.</h2>
+      </div>
+      <div class="fp-agent-header__right">
+        <p class="fp-dark-sub">Set it up once. Your AI agents run continuously, surfacing the right leads, scoring every fit, and writing your outreach angles before you open your laptop.</p>
+      </div>
     </div>
     <div class="fp-agent-cards">
       <div class="fp-agent-card">
@@ -529,8 +541,8 @@ import Layout from '../../layouts/Layout.astro';
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__inner">
-      <h2>Your next client is already out there.</h2>
-      <p>Flynt is already scanning. Set up your agent in 5 minutes and wake up to qualified leads tomorrow morning.</p>
+      <h2>Right now, someone is posting a job you should know about.</h2>
+      <p>Set up your agent in 5 minutes and Flynt makes sure you're first to know.</p>
       <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Start Free Trial →</a>
       <span class="final-cta__disclaimer">Cancel anytime.</span>
     </div>
@@ -579,6 +591,7 @@ import Layout from '../../layouts/Layout.astro';
 .final-cta__inner h2 {
   color: var(--black);
   font-size: clamp(2rem, 4vw, 3.2rem);
+  max-width: 680px;
 }
 
 .final-cta__inner p {
@@ -657,6 +670,26 @@ import Layout from '../../layouts/Layout.astro';
   margin-bottom: 56px;
 }
 
+.fp-agent-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.fp-agent-header__left .tag {
+  margin-bottom: 20px;
+}
+
+.fp-agent-header__left .fp-dark-h2 {
+  margin: 0;
+}
+
+.fp-agent-header__right .fp-dark-sub {
+  margin: 0;
+}
+
 .fp-dark-tag {
   background: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.9);
@@ -671,7 +704,7 @@ import Layout from '../../layouts/Layout.astro';
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin: 0 0 16px;
-  -webkit-text-stroke: 0;
+  -webkit-text-stroke: 0.6px #ffffff;
   max-width: 680px;
 }
 
@@ -782,8 +815,27 @@ import Layout from '../../layouts/Layout.astro';
 /* ────────────────────────────────────────────
    MATCH SCORING
 ──────────────────────────────────────────── */
-.fp-scoring .section-header {
+.fp-scoring__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
   margin-bottom: 48px;
+}
+
+.fp-scoring__header-left .tag {
+  margin-bottom: 16px;
+}
+
+.fp-scoring__header-left h2 {
+  margin: 0;
+}
+
+.fp-scoring__header-right p {
+  font-size: 1.15rem;
+  color: var(--slate-600);
+  line-height: 1.625;
+  margin: 0;
 }
 
 .fp-score {
@@ -1278,6 +1330,25 @@ import Layout from '../../layouts/Layout.astro';
   background: var(--slate-50);
 }
 
+.fp-time-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.fp-time-header__left h2 {
+  margin: 0;
+}
+
+.fp-time-header__right p {
+  font-size: 1.15rem;
+  color: var(--slate-600);
+  line-height: 1.625;
+  margin: 0;
+}
+
 .fp-time-compare {
   display: grid;
   grid-template-columns: 1fr 120px 1fr;
@@ -1663,6 +1734,21 @@ import Layout from '../../layouts/Layout.astro';
 }
 
 @media (max-width: 768px) {
+  .fp-time-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fp-scoring__header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fp-agent-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   /* Time You Get Back */
   .fp-time-compare {
     grid-template-columns: 1fr;
