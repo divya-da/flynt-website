@@ -57,6 +57,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     gtag('config', 'G-PG0Q1JWPK8');
   </script>
 
+  <!-- Channel attribution: forwards utm_* onto app-bound links (FD-700) -->
+  <script is:inline src="/utm-forwarding.js"></script>
+
   <!-- Page-level head injection (e.g. JSON-LD) -->
   <slot name="head" />
 </head>
