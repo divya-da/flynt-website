@@ -10,6 +10,20 @@
       ],
       "rewrites": [
         {
+          "source": "/go",
+          "function": {
+            "functionId": "shortLinkRedirect",
+            "region": "us-central1"
+          }
+        },
+        {
+          "source": "/go/**",
+          "function": {
+            "functionId": "shortLinkRedirect",
+            "region": "us-central1"
+          }
+        },
+        {
           "source": "**",
           "destination": "/404.html"
         }
@@ -44,6 +58,20 @@
         "**/node_modules/**"
       ],
       "rewrites": [
+        {
+          "source": "/go",
+          "function": {
+            "functionId": "shortLinkRedirect",
+            "region": "us-central1"
+          }
+        },
+        {
+          "source": "/go/**",
+          "function": {
+            "functionId": "shortLinkRedirect",
+            "region": "us-central1"
+          }
+        },
         {
           "source": "**",
           "destination": "/404.html"

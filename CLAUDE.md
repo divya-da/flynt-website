@@ -96,6 +96,21 @@ In `index.astro` (and feature pages), the `<source>` order is:
 <source src="/videos/hero-h264.mp4" type="video/mp4" />
 ```
 
+## Short Links (/go/…)
+
+`tryflynt.ai/go/insta`, `/go/li`, `/go/yt` … are **not** configured in this repo.
+
+- `firebase.json` rewrites `/go` and `/go/**` to the `shortLinkRedirect` Cloud
+  Function. That function lives in the **app repo**
+  (`functions/src/app_backend/shortLinks.js`) and resolves the slug against the
+  `channel_links` Firestore collection.
+- Links are created and repointed in the app's admin console → Channel links.
+  No deploy is involved; do not add link data here.
+- ⚠️ **Never put a `/go` rule in `redirects`.** Redirects are evaluated before
+  rewrites and would shadow the function, freezing every short link.
+- The function must be deployed (from the app repo) before a hosting deploy that
+  references it.
+
 ## Design Notes
 - Dark sections use `clip-path: polygon(0 120px, 100% 0, ...)` with negative `margin-top` to create diagonal transitions from the hero
 - Purple accent: `var(--purple)` (`#7c3aed` range)

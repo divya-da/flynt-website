@@ -34,6 +34,7 @@ flynt-website/
 │   └── images/
 │       ├── logo-mark.svg
 │       └── logo-with-text.svg
+├── tests/                      # node --test (npm test)
 ├── .env                        # Sanity credentials (gitignored)
 ├── astro.config.mjs
 ├── firebase.json
@@ -99,6 +100,42 @@ Blog content is managed in a separate Sanity Studio: [divya-da/flynt-blog](https
 | `excerpt` | Short summary shown on the blog index |
 | `coverImage` | Optional cover image |
 | `body` | Rich text body — supports headings, images, blockquotes |
+
+## Short Links
+
+Campaign links are shortened to `tryflynt.ai/go/<slug>` — short enough for a
+social bio, a video description, or reading aloud.
+
+**These are not configured in this repo.** `/go/**` is rewritten to the
+`shortLinkRedirect` Cloud Function, which lives in the app repo
+(`functions/src/app_backend/shortLinks.js`) and looks the slug up in the
+`channel_links` Firestore collection. Both hosting sites and that function are
+in the same Firebase project, which is what makes the rewrite possible.
+
+The only thing this repo owns is the rewrite in [firebase.json](firebase.json):
+
+```json
+{ "source": "/go/**", "function": { "functionId": "shortLinkRedirect", "region": "us-central1" } }
+```
+
+⚠️ **Never add a `/go` entry to `redirects`.** Firebase evaluates redirects
+before rewrites, so a redirect would shadow the function and silently freeze
+every short link at whatever that redirect said.
+
+### Adding or changing a link
+
+In the app's admin console → **Channel links**. Enter the partner, channel and
+campaign, and the short link you want (`insta`). The console generates the
+tracking URL and serves `/go/insta` immediately — no deploy, no engineer.
+
+A slug is permanent once shared: changing it keeps the old one working forever,
+and a slug is never handed to a different campaign. Retiring a link (archiving
+it) stops it attributing but still lands the visitor on the site — the bio it
+was printed in cannot be edited retroactively.
+
+The parameters land on the marketing site, and
+[public/utm-forwarding.js](public/utm-forwarding.js) carries them across to the
+app so the sign-up is attributed to the channel rather than to Direct.
 
 ## Making Changes
 
