@@ -127,6 +127,14 @@ import Layout from '../layouts/Layout.astro';
         <p class="value-props__body">Live signals, not scraped databases. Reach out at the right moment.</p>
       </div>
 
+      <div class="value-props__card">
+        <div class="value-props__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
+        </div>
+        <h3 class="value-props__title">Two Channels. One Sequence.</h3>
+        <p class="value-props__body">Email and LinkedIn outreach run in the same campaign — same intelligence powering both. No separate tool, no switching.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -211,6 +219,10 @@ import Layout from '../layouts/Layout.astro';
           </li>
           <li>
             <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+            LinkedIn outreach means logging into a separate tool, finding the profile, writing the message by hand. Every lead. Every time.
+          </li>
+          <li>
+            <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
             Every lead hand-sourced. Every email hand-written. Every day.
           </li>
         </ul>
@@ -248,6 +260,10 @@ import Layout from '../layouts/Layout.astro';
           <li>
             <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             Automated outreach sequences with a built-in CRM to track every conversation
+          </li>
+          <li>
+            <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Email and LinkedIn steps in the same sequence — same intelligence, both channels, automatically sent
           </li>
           <li>
             <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -290,7 +306,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="positioning__card">
         <span class="positioning__not">Not just a sender.</span>
-        <p>Flynt’s outreach is powered by the same intelligence that found the lead. Every message is built from real signals — scored fit, company context, and the specific job posting. Not another template blaster.</p>
+        <p>Flynt’s outreach is powered by the same intelligence that found the lead. Every message — email or LinkedIn — is built from real signals: scored fit, company context, and the specific job posting. Not another template blaster. Not another channel to manage separately.</p>
       </div>
       <div class="positioning__card">
         <span class="positioning__not">Not another tool to manage.</span>
@@ -440,6 +456,10 @@ import Layout from '../layouts/Layout.astro';
             <li>
               <span class="hiw-detail__label">Start with a pre-built sequence</span>
               <span class="hiw-detail__desc">Six recruiter-specific emails, pre-written and structured across multiple touchpoints, ready to go.</span>
+            </li>
+            <li>
+              <span class="hiw-detail__label">Add LinkedIn to any campaign</span>
+              <span class="hiw-detail__desc">Connect your LinkedIn account and Flynt adds LinkedIn steps alongside your email sequence — connection requests, messages, and follow-ups — timed and personalised using the same intelligence that built the email. One sequence, both channels, zero manual effort.</span>
             </li>
           </ul>
           <p>Either way, Flynt automatically personalises every email using the intelligence it already gathered on each lead — company context, career signals, news hooks, and job-specific angles.</p>
@@ -633,7 +653,7 @@ import Layout from '../layouts/Layout.astro';
 <div class="agent-cap__card">
         <div class="agent-cap__eyebrow">Personalization</div>
         <h3 class="agent-cap__title">Outreach That Feels Personal</h3>
-        <p class="agent-cap__body">Flynt generates AI-written hooks for every lead — built from company &amp; news signals, the individual's background, and the specific job they're hiring for. Every message stands out instead of blending in.</p>
+        <p class="agent-cap__body">Flynt generates AI-written hooks for every lead — built from company &amp; news signals, the individual's background, and the specific job they're hiring for. The same intelligence powers both your email and LinkedIn messages. Every message stands out instead of blending in, on every channel.</p>
       </div>
     </div>
 
@@ -1198,17 +1218,18 @@ import Layout from '../layouts/Layout.astro';
 
 .value-props__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .value-props__card {
-  padding: 32px 36px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   border-right: 1px solid var(--slate-200);
 }
 
+.value-props__card:nth-child(5n),
 .value-props__card:last-child {
   border-right: none;
 }
@@ -1243,15 +1264,16 @@ import Layout from '../layouts/Layout.astro';
   .value-props__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .value-props__card:nth-child(2) {
+  .value-props__card:nth-child(2n),
+  .value-props__card:last-child {
     border-right: none;
   }
-  .value-props__card:nth-child(3) {
+  .value-props__card:nth-child(n+3) {
     border-top: 1px solid var(--slate-200);
   }
-  .value-props__card:nth-child(4) {
-    border-top: 1px solid var(--slate-200);
-    border-right: none;
+  /* Odd card out fills its row rather than leaving a hole beside it */
+  .value-props__card:nth-child(5) {
+    grid-column: 1 / -1;
   }
 }
 

@@ -31,6 +31,8 @@ import Layout from '../../layouts/Layout.astro';
         <span>✓ AI personalization for every lead</span>
         <span>·</span>
         <span>✓ 5 min set up time</span>
+        <span>·</span>
+        <span>✓ LinkedIn and email outreach in one sequence</span>
       </div>
     </div>
   </div>
@@ -90,6 +92,10 @@ import Layout from '../../layouts/Layout.astro';
           </li>
           <li>
             <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+            LinkedIn outreach means logging in, finding the profile, writing a message by hand. Per lead. Every time.
+          </li>
+          <li>
+            <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
             20 good emails. Or 200 generic ones. That's the choice.
           </li>
         </ul>
@@ -133,6 +139,10 @@ import Layout from '../../layouts/Layout.astro';
           <li>
             <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             Scale up – personalization stays. Every message still reads like you wrote it specifically for them.
+          </li>
+          <li>
+            <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            LinkedIn steps fire automatically alongside email. One sequence, both channels, zero manual work.
           </li>
           <li>
             <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -239,6 +249,43 @@ import Layout from '../../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
+  SECTION 3B — MULTICHANNEL OUTREACH
+───────────────────────────────────────────── -->
+<section class="section fp-multi-section">
+  <div class="container">
+    <div class="fp-header-split">
+      <div class="fp-header-split__left">
+        <div class="tag">Multichannel Outreach</div>
+        <h2>Email gets you in. <span class="hl">LinkedIn keeps you visible.</span></h2>
+      </div>
+      <div class="fp-header-split__right">
+        <p>Most hiring managers need more than one touchpoint before they respond. Flynt lets you combine email and LinkedIn in the same sequence — connection requests, messages, and follow-ups — so every lead sees you in their inbox and their LinkedIn notifications. No switching between tools. One sequence, both channels, the same AI personalization applied to every message on every step.</p>
+      </div>
+    </div>
+    <div class="fp-inbox-grid fp-multi-grid">
+
+      <div class="fp-inbox-card">
+        <div class="fp-inbox-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <h3 class="fp-inbox-card__title">LinkedIn Connection Requests</h3>
+        <p class="fp-inbox-card__body">Send a connection request as part of any sequence step. When they accept, Flynt picks up the thread automatically with a follow-up message — timed exactly how you set it.</p>
+      </div>
+
+      <div class="fp-inbox-card">
+        <div class="fp-inbox-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 class="fp-inbox-card__title">LinkedIn Messages</h3>
+        <p class="fp-inbox-card__body">Send direct messages and InMail alongside your email steps. Flynt writes the LinkedIn message around the same signal that powered the email — same context, different channel, same natural tone.</p>
+      </div>
+
+    </div>
+    <p class="fp-inbox-bottom">Each LinkedIn add-on covers one agent, up to 30 leads per day. $24/month per agent.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
   SECTION 4 — SEQUENCE BUILDER
 ───────────────────────────────────────────── -->
 <section class="section fp-seq-section">
@@ -317,12 +364,12 @@ import Layout from '../../layouts/Layout.astro';
       <div class="fp-flow__arrow" aria-hidden="true">→</div>
       <div class="fp-flow__step">
         <div class="fp-flow__step-label">Step 2</div>
-        <div class="fp-flow__step-title">Campaigns sends it</div>
+        <div class="fp-flow__step-title">Campaigns sends email and LinkedIn</div>
       </div>
       <div class="fp-flow__arrow" aria-hidden="true">→</div>
       <div class="fp-flow__step">
         <div class="fp-flow__step-label">Step 3</div>
-        <div class="fp-flow__step-title">CRM tracks it</div>
+        <div class="fp-flow__step-title">CRM tracks every reply</div>
       </div>
     </div>
   </div>
@@ -791,6 +838,14 @@ import Layout from '../../layouts/Layout.astro';
 /* ────────────────────────────────────────────
    SEQUENCE BUILDER
 ──────────────────────────────────────────── */
+.fp-multi-section {
+  background: var(--purple-bg);
+}
+
+.fp-multi-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .fp-seq-section {
   background: var(--white);
 }
@@ -1031,7 +1086,7 @@ import Layout from '../../layouts/Layout.astro';
 
 .fp-flow {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 0;
   margin-top: 0;
   justify-content: center;
@@ -1044,7 +1099,10 @@ import Layout from '../../layouts/Layout.astro';
   padding: 20px 28px;
   text-align: center;
   flex: 1;
-  max-width: 200px;
+  max-width: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .fp-flow__step-label {
@@ -1067,6 +1125,9 @@ import Layout from '../../layouts/Layout.astro';
   color: rgba(255,255,255,0.4);
   font-size: 1.5rem;
   padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ────────────────────────────────────────────
@@ -1147,6 +1208,10 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .fp-inbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fp-multi-grid {
     grid-template-columns: 1fr;
   }
 

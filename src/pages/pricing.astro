@@ -389,6 +389,85 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+
+      <div class="addon-card">
+        <div class="addon-card__header">
+          <div class="addon-card__title-row">
+            <h3 class="addon-card__name">LinkedIn Messaging</h3>
+            <span class="addon-badge">New</span>
+          </div>
+          <p class="addon-card__value">Your agent finds the hiring manager — now it reaches them on LinkedIn too. Connection requests, messages, and follow-ups run automatically in the same sequence as your emails, powered by the same intelligence that found the lead. No separate tool, no manual outreach, no switching between platforms. Every LinkedIn touch is timed, personalised, and sent for you.</p>
+        </div>
+
+        <div class="addon-compare table-wrap">
+          <table class="compare-table compare-table--competitors">
+            <thead>
+              <tr>
+                <th class="compare-table__feature"></th>
+                <th class="compare-table__featured">Flynt Add-on</th>
+                <th>Expandi</th>
+                <th>Dripify</th>
+                <th>Meet Alfred</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="compare-table__feature">Channels</td>
+                <td class="compare-table__featured"><strong>Email + LinkedIn</strong></td>
+                <td>LinkedIn only</td>
+                <td>LinkedIn only</td>
+                <td>LinkedIn + email</td>
+              </tr>
+              <tr>
+                <td class="compare-table__feature">Lead sourcing included</td>
+                <td class="compare-table__featured"><span class="t-check">Yes</span></td>
+                <td><span class="t-dash">No</span></td>
+                <td><span class="t-dash">No</span></td>
+                <td><span class="t-dash">No</span></td>
+              </tr>
+              <tr>
+                <td class="compare-table__feature">AI personalisation</td>
+                <td class="compare-table__featured"><span class="t-check">Yes</span> — same signal as the email</td>
+                <td><span class="t-dash">No</span></td>
+                <td><span class="t-dash">No</span></td>
+                <td><span class="t-dash">No</span></td>
+              </tr>
+              <tr>
+                <td class="compare-table__feature">Cost</td>
+                <td class="compare-table__featured"><strong>See below</strong></td>
+                <td>$99/mo</td>
+                <td>$79/mo</td>
+                <td>$59/mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="addon-card__note">Every competitor requires you to source your own leads, write your own messages, and manage a separate tool. Flynt does all three in one sequence.</p>
+
+        <div class="addon-plan-pricing">
+          <div class="addon-plan-pricing__label">Add-on pricing by plan</div>
+          <div class="addon-plan-pricing__chips">
+            <div class="addon-chip">
+              <span class="addon-chip__plan">Starter</span>
+              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
+            </div>
+            <div class="addon-chip">
+              <span class="addon-chip__plan">Pro</span>
+              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
+            </div>
+            <div class="addon-chip">
+              <span class="addon-chip__plan">Growth</span>
+              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
+            </div>
+            <div class="addon-chip">
+              <span class="addon-chip__plan">Scale</span>
+              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
+            </div>
+          </div>
+          <div class="plan__annual-teaser addon-annual-note">Switch to annual and save $60/year per agent.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1495,6 +1574,22 @@ import Layout from '../layouts/Layout.astro';
 .addon-card__highlight {
   color: var(--purple);
   font-size: 1.05rem;
+}
+
+.addon-card__note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--slate-500);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 32px 24px;
+}
+
+/* Rides the page billing toggle via .plan__annual-teaser: the nudge only
+   shows while monthly is selected. */
+.addon-annual-note {
+  margin: 14px 0 0;
+  font-weight: 600;
 }
 
 /* Comparison table inside addon card */
