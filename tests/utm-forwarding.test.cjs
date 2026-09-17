@@ -408,3 +408,22 @@ test('a script that loads before DOMContentLoaded waits for it', () => {
   win.listeners.DOMContentLoaded[0]();
   assert.match(win.document.hrefs()[0], /utm_source=agency_xyz/);
 });
+
+// FD-854 — a link may carry a checkout coupon; losing it at the handoff is
+// losing the visitor their discount.
+test('FD-854: the coupon code parameter is read and forwarded', () => {
+  const found = utm.readParams('?utm_source=rs&code=fw3&gclid=ignored');
+  assert.deepStrictEqual(found, { utm_source: 'rs', code: 'fw3' });
+
+  const next = utm.withForwardedParams(APP, found, SITE);
+  const url = new URL(next);
+  assert.strictEqual(url.searchParams.get('code'), 'fw3');
+  assert.strictEqual(url.searchParams.get('utm_source'), 'rs');
+});
+
+test('FD-854: the legacy coupon parameter name forwards too', () => {
+  const found = utm.readParams('?coupon=FW3');
+  assert.deepStrictEqual(found, { coupon: 'FW3' });
+  const url = new URL(utm.withForwardedParams(APP, found, SITE));
+  assert.strictEqual(url.searchParams.get('coupon'), 'FW3');
+});

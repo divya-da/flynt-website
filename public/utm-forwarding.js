@@ -46,11 +46,20 @@
   'use strict';
 
   /**
-   * The only parameters the app reads — mirrors
-   * `AcquisitionAttribution.utmParameterNames`. Forwarding anything else would
-   * be noise the app discards.
+   * The only parameters the app reads — the UTM set mirrors
+   * `AcquisitionAttribution.utmParameterNames`, and `code` / `coupon` mirror
+   * `CouponLink.parameterNames` (FD-854: a link may carry a checkout coupon,
+   * and dropping it at this handoff is losing the visitor their discount).
+   * Forwarding anything else would be noise the app discards.
    */
-  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var UTM_KEYS = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_content',
+    'code',
+    'coupon',
+  ];
 
   /** Hosts a link may be rewritten onto. Nothing else is ever touched. */
   var APP_HOSTS = ['app.tryflynt.ai', 'flynt-test.web.app'];
