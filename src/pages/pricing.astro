@@ -58,6 +58,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
             <li><span class="check">✓</span> 1 AI Agent</li>
+            <li><span class="check">✓</span> Funding &amp; M&amp;A opportunities (Signal Agent)</li>
+            <li><span class="check">✓</span> LinkedIn outreach included</li>
             <li><span class="check">✓</span> Up to 30 scored, researched leads daily (~900/mo)</li>
             <li><span class="check">✓</span> Match scoring + written fit breakdown per lead</li>
             <li><span class="check">✓</span> Decision-maker contacts + company signals</li>
@@ -96,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
-            <li><span class="check">✓</span> Everything in Starter</li>
+            <li><span class="check">✓</span> Everything in Starter, including Signal Agent and LinkedIn</li>
             <li><span class="check">✓</span> 2 AI Agents</li>
             <li><span class="check">✓</span> Up to 60 scored, researched leads daily (~1,800/mo)</li>
             <li><span class="check">✓</span> 8 AI-written personalization hooks per lead</li>
@@ -131,7 +133,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
-            <li><span class="check">✓</span> Everything in Pro</li>
+            <li><span class="check">✓</span> Everything in Pro, including Signal Agent and LinkedIn</li>
             <li><span class="check">✓</span> 4 AI Agents</li>
             <li><span class="check">✓</span> Up to 120 scored, researched leads daily (~3,600/mo)</li>
             <li><span class="check">✓</span> Option to purchase up to 4 Extra Agents</li>
@@ -204,6 +206,13 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
+              <td>Funding &amp; M&amp;A Signals <em class="compare-new">(NEW)</em></td>
+              <td><span class="t-check">✓</span></td>
+              <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
+            </tr>
+            <tr>
               <td>AI Match Scoring</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
@@ -243,6 +252,13 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
+              <td>LinkedIn Outreach (Connection Requests + Messages)</td>
+              <td><span class="t-check">✓</span></td>
+              <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
+            </tr>
+            <tr>
               <td>Prebuilt 6-Email Sequences</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
@@ -250,7 +266,7 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
-              <td>AI-Written Outreach Personalization</td>
+              <td>AI-Written Outreach Personalization (Email + LinkedIn)</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
@@ -390,84 +406,6 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="addon-card">
-        <div class="addon-card__header">
-          <div class="addon-card__title-row">
-            <h3 class="addon-card__name">LinkedIn Messaging</h3>
-            <span class="addon-badge">New</span>
-          </div>
-          <p class="addon-card__value">Your agent finds the hiring manager — now it reaches them on LinkedIn too. Connection requests, messages, and follow-ups run automatically in the same sequence as your emails, powered by the same intelligence that found the lead. No separate tool, no manual outreach, no switching between platforms. Every LinkedIn touch is timed, personalised, and sent for you.</p>
-        </div>
-
-        <div class="addon-compare table-wrap">
-          <table class="compare-table compare-table--competitors">
-            <thead>
-              <tr>
-                <th class="compare-table__feature"></th>
-                <th class="compare-table__featured">Flynt Add-on</th>
-                <th>Expandi</th>
-                <th>Dripify</th>
-                <th>Meet Alfred</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="compare-table__feature">Channels</td>
-                <td class="compare-table__featured"><strong>Email + LinkedIn</strong></td>
-                <td>LinkedIn only</td>
-                <td>LinkedIn only</td>
-                <td>LinkedIn + email</td>
-              </tr>
-              <tr>
-                <td class="compare-table__feature">Lead sourcing included</td>
-                <td class="compare-table__featured"><span class="t-check">Yes</span></td>
-                <td><span class="t-dash">No</span></td>
-                <td><span class="t-dash">No</span></td>
-                <td><span class="t-dash">No</span></td>
-              </tr>
-              <tr>
-                <td class="compare-table__feature">AI personalisation</td>
-                <td class="compare-table__featured"><span class="t-check">Yes</span> — same signal as the email</td>
-                <td><span class="t-dash">No</span></td>
-                <td><span class="t-dash">No</span></td>
-                <td><span class="t-dash">No</span></td>
-              </tr>
-              <tr>
-                <td class="compare-table__feature">Cost</td>
-                <td class="compare-table__featured"><strong>See below</strong></td>
-                <td>$99/mo</td>
-                <td>$79/mo</td>
-                <td>$59/mo</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="addon-card__note">Every competitor requires you to source your own leads, write your own messages, and manage a separate tool. Flynt does all three in one sequence.</p>
-
-        <div class="addon-plan-pricing">
-          <div class="addon-plan-pricing__label">Add-on pricing by plan</div>
-          <div class="addon-plan-pricing__chips">
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Starter</span>
-              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Pro</span>
-              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Growth</span>
-              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Scale</span>
-              <span class="addon-chip__price">+$<span data-monthly="24" data-annual="19">19</span><span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-          </div>
-          <div class="plan__annual-teaser addon-annual-note">Switch to annual and save $60/year per agent.</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1372,6 +1310,11 @@ import Layout from '../layouts/Layout.astro';
   font-size: 0.78rem;
   font-weight: 400;
   color: var(--slate-500);
+}
+
+.compare-new {
+  color: var(--purple);
+  font-weight: 700;
 }
 
 /* ── Stack Section ── */

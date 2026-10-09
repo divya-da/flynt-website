@@ -1,0 +1,654 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Signal Agent | Find Funded and Acquired Companies | Flynt"
+  description="Flynt's Signal Agent finds companies that just raised funding or completed an M&A deal, scores the fit, and writes your outreach. Get in early."
+  ogTitle="New from Flynt: an agent that finds companies that just raised funding or just got acquired, so you reach them first."
+>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 1 — HERO
+───────────────────────────────────────────── -->
+<section class="sa-hero">
+  <div class="container">
+    <div class="sa-hero__layout">
+      <div class="sa-hero__copy">
+        <div class="tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+          New: Signal Agent
+        </div>
+        <h1 class="sa-hero__h1">Funding and M&amp;A, turned into your <span class="hl">next client conversation.</span></h1>
+        <p class="sa-hero__sub">Most recruiters chase the same open roles at the same time. Signal Agent finds companies that just raised funding or just completed a merger or acquisition, scores the fit for your niche, finds the decision maker, and writes the outreach. You start the conversation while everyone else is still waiting for a posting.</p>
+        <div class="sa-hero__ctas">
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg">Try Signal Agent</a>
+          <a href="#how" class="btn btn--outline btn--lg">See how it works →</a>
+        </div>
+        <div class="sa-hero__trust">7-day trial. Cancel anytime.</div>
+      </div>
+
+      <div class="sa-hero__visual">
+        <div class="sa-lead">
+          <div class="sa-lead__top">
+            <span class="sa-pill sa-pill--funding">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              Just raised funding
+            </span>
+            <span class="sa-pill sa-pill--fit">Strong fit</span>
+          </div>
+          <div>
+            <div class="sa-lead__name">[Company name]</div>
+            <div class="sa-lead__meta">[Niche] · [Location] · [Round and size]</div>
+          </div>
+          <div class="sa-lead__dm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            [Decision maker] · [Title]
+          </div>
+          <div class="sa-lead__quote">“Saw the announcement. Teams at this stage usually add fast. Want help staffing the next phase?”</div>
+        </div>
+
+        <div class="sa-lead">
+          <div class="sa-lead__top">
+            <span class="sa-pill sa-pill--ma">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v3a6 6 0 0 0 6 6h3"/></svg>
+              Just acquired
+            </span>
+            <span class="sa-pill sa-pill--fit">Strong fit</span>
+          </div>
+          <div>
+            <div class="sa-lead__name">[Company name]</div>
+            <div class="sa-lead__meta">[Niche] · [Location] · [Deal type]</div>
+          </div>
+          <div class="sa-lead__dm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            [Decision maker] · [Title]
+          </div>
+        </div>
+
+        <div class="sa-hero__note">Sample lead cards for illustration. Names and details are placeholders.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 2 — THE PROBLEM
+───────────────────────────────────────────── -->
+<section class="section sa-problem">
+  <div class="container">
+    <div class="sa-split">
+      <div class="sa-split__head">
+        <div class="tag">Why early wins</div>
+        <h2 class="sa-h2">Everyone is fishing in <span class="hl">the same pond.</span></h2>
+      </div>
+      <div class="sa-split__body">
+        <p>When you only chase posted jobs, you compete with every recruiter, every job board, and the company's own team, all reaching the same hiring manager in the same week. By the time the posting is live, the conversation is crowded.</p>
+        <p>A funding round or an acquisition changes what a company needs. New money means new headcount. A merger means new structure, backfills, and leadership changes. Those needs often show up before a job description does, and the recruiter who reaches out with something relevant gets heard.</p>
+      </div>
+    </div>
+
+    <div class="sa-benefits">
+      <div class="sa-benefit">
+        <div class="sa-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M17 5.5a3.2 3.2 0 0 1 0 6M21.5 20c0-2.6-1.4-4.5-3.5-5.4"/></svg>
+        </div>
+        <h3>Less crowded</h3>
+        <p>You reach companies at a moment most recruiters are not watching for.</p>
+      </div>
+      <div class="sa-benefit">
+        <div class="sa-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.7 7L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg>
+        </div>
+        <h3>A real reason to reach out</h3>
+        <p>You open with something specific that just happened, not a generic pitch.</p>
+      </div>
+      <div class="sa-benefit">
+        <div class="sa-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v5c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V7l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>More leverage</h3>
+        <p>You are a partner who noticed their news, not another agency answering a job ad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 3 — HOW IT WORKS (dark)
+───────────────────────────────────────────── -->
+<section class="sa-how" id="how">
+  <div class="container">
+    <div class="sa-split">
+      <div class="sa-split__head">
+        <div class="tag tag--dark">How it works</div>
+        <h2 class="sa-h2">From the announcement to the inbox in <span class="sa-how__accent">one system.</span></h2>
+      </div>
+      <div class="sa-split__body">
+        <p>You define your market. Signal Agent does the watching, the research, and the writing. You approve and send.</p>
+      </div>
+    </div>
+
+    <div class="sa-steps">
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 1</div>
+        <h3>Signal Agent finds the event</h3>
+        <p>It surfaces companies in your niche and market that just raised funding or just completed a merger or acquisition.</p>
+      </div>
+      <div class="sa-step__arrow" aria-hidden="true">→</div>
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 2</div>
+        <h3>It scores the fit and finds the decision maker</h3>
+        <p>Each lead gets a match score with a written breakdown, plus the person most likely to own the hire.</p>
+      </div>
+      <div class="sa-step__arrow" aria-hidden="true">→</div>
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 3</div>
+        <h3>It writes the hook around the event</h3>
+        <p>The personalization is built from what actually happened, then the whole message is adjusted so it reads as one note.</p>
+      </div>
+      <div class="sa-step__arrow" aria-hidden="true">→</div>
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 4</div>
+        <h3>Campaigns sends it on email and LinkedIn</h3>
+        <p>One sequence, both channels, and the CRM tracks every reply.</p>
+      </div>
+    </div>
+
+    <p class="sa-how__close">You never move information between tools. The event that found the lead is the reason you reach out.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 4 — TWO TRIGGERS
+───────────────────────────────────────────── -->
+<section class="section sa-triggers">
+  <div class="container">
+    <div class="sa-split sa-split--end">
+      <div class="sa-split__head">
+        <div class="tag">What it finds</div>
+        <h2 class="sa-h2">Two moments when hiring needs <span class="hl">change fast.</span></h2>
+      </div>
+      <div class="sa-split__body">
+        <p>Each event gives you a specific, timely reason to start the conversation.</p>
+      </div>
+    </div>
+
+    <div class="sa-trigger-grid">
+      <div class="sa-trigger">
+        <div class="sa-trigger__head">
+          <div class="sa-icon sa-icon--lg">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </div>
+          <h3>Just raised funding</h3>
+        </div>
+        <p><strong>What Signal Agent finds:</strong> companies in your niche that recently announced a funding round.</p>
+        <p><strong>Why it creates an opening:</strong> new capital usually means new headcount, new leadership, and a plan to hit the next milestone.</p>
+        <div class="sa-example">
+          <div class="sa-example__label">Example opening</div>
+          <div class="sa-example__text">“Saw the announcement. Teams at this stage usually add engineering fast. Want help staffing it?”</div>
+        </div>
+      </div>
+
+      <div class="sa-trigger sa-trigger--ma">
+        <div class="sa-trigger__head">
+          <div class="sa-icon sa-icon--lg sa-icon--amber">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v3a6 6 0 0 0 6 6h3"/></svg>
+          </div>
+          <h3>Just merged or acquired</h3>
+        </div>
+        <p><strong>What Signal Agent finds:</strong> companies that recently completed or announced a merger or acquisition.</p>
+        <p><strong>Why it creates an opening:</strong> integration often means org changes, backfills, new leadership layers, and consolidation work.</p>
+        <div class="sa-example">
+          <div class="sa-example__label">Example opening</div>
+          <div class="sa-example__text">“Congrats on the deal. Integrations tend to open roles you did not plan for. Open to a quick conversation?”</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="sa-footnote">Signal Agent works from publicly announced events.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 5 — WHAT YOU GET ON EVERY LEAD
+───────────────────────────────────────────── -->
+<section class="section sa-detail">
+  <div class="container">
+    <div class="sa-detail__layout">
+      <div class="sa-detail__copy">
+        <div class="tag">Every lead</div>
+        <h2 class="sa-h2">Not a name on a list. <span class="hl">A reason to reach out.</span></h2>
+        <ul class="sa-checks">
+          <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>The event itself.</strong> What happened and when, so your opening line is specific.</span></li>
+          <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Match scoring with a written fit breakdown.</strong> You see why a company fits your niche before you spend a send on it.</span></li>
+          <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>The decision maker.</strong> The person most likely to own the hire, with contact details, not a generic inbox.</span></li>
+          <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>AI-written personalization hooks.</strong> Built around the event, then the surrounding copy is adjusted so the whole message reads as one note, not a template with something pasted in.</span></li>
+          <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Ready to launch.</strong> One click from lead to sequence in Flynt Campaigns.</span></li>
+        </ul>
+      </div>
+
+      <div class="sa-detail__visual">
+        <div class="sa-record">
+          <div class="sa-lead__top">
+            <span class="sa-pill sa-pill--funding">Just raised funding</span>
+            <span class="sa-record__date">[Date announced]</span>
+          </div>
+          <div>
+            <div class="sa-lead__name">[Company name]</div>
+            <div class="sa-lead__meta">[Niche] · [Location] · [Round and size]</div>
+          </div>
+          <div class="sa-record__block">
+            <div class="sa-record__label">Fit breakdown</div>
+            <div>[Written reason this company matches your niche, market, and role types.]</div>
+          </div>
+          <div class="sa-record__block">
+            <div class="sa-record__label">Decision maker</div>
+            <div>[Name] · [Title] · [Email] · [LinkedIn]</div>
+          </div>
+          <div class="sa-record__block sa-record__block--hook">
+            <div class="sa-record__label">Personalization hook</div>
+            <div class="sa-record__hook">“[Opening line written around the event.]”</div>
+          </div>
+          <div class="sa-record__cta">Add to campaign</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 6 — TWO AGENTS, ONE MISSION
+───────────────────────────────────────────── -->
+<section class="section sa-compare">
+  <div class="container">
+    <div class="sa-compare__head">
+      <div class="tag">All opportunities</div>
+      <h2 class="sa-h2">Hiring signals show who needs someone now. <span class="hl">Signal Agent shows who is about to.</span></h2>
+    </div>
+
+    <div class="sa-compare__grid">
+      <div class="sa-agent-card">
+        <div class="sa-agent-card__title">Hiring-signal agent</div>
+        <dl>
+          <dt>Finds</dt><dd>Companies actively hiring in your market</dd>
+          <dt>Best for</dt><dd>Reaching live demand</dd>
+          <dt>Competition</dt><dd>Higher, since every recruiter sees the same postings</dd>
+          <dt>Opening line</dt><dd class="sa-italic">“I saw you are hiring for…”</dd>
+        </dl>
+      </div>
+      <div class="sa-agent-card sa-agent-card--new">
+        <div class="sa-agent-card__title">Signal Agent <span class="sa-new">NEW</span></div>
+        <dl>
+          <dt>Finds</dt><dd>Companies that just raised funding or just completed a merger or acquisition</dd>
+          <dt>Best for</dt><dd>Getting in early, before the role is posted</dd>
+          <dt>Competition</dt><dd>Typically lower, since fewer recruiters track these events</dd>
+          <dt>Opening line</dt><dd class="sa-italic">“Congrats on the news…”</dd>
+        </dl>
+      </div>
+    </div>
+
+    <p class="sa-compare__close">Run one or both. Together they cover the opportunities in your market from every angle, which is what Flynt is built to do: help you find all opportunities, in all ways.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 7 — BUILT INTO THE WHOLE SYSTEM
+───────────────────────────────────────────── -->
+<section class="section sa-system">
+  <div class="container">
+    <div class="sa-split sa-split--end">
+      <div class="sa-split__head">
+        <div class="tag">One system</div>
+        <h2 class="sa-h2">Finding the lead is half the job. <span class="hl">Flynt does the other half too.</span></h2>
+      </div>
+      <div class="sa-split__body">
+        <p>Signal Agent is not a standalone list. Every lead flows straight into the tools you already use in Flynt.</p>
+      </div>
+    </div>
+
+    <div class="sa-system__grid">
+      <a href="/features/campaigns" class="sa-system__card">
+        <h3>Flynt Campaigns</h3>
+        <p>Prebuilt or custom sequences, with AI personalization on every message.</p>
+      </a>
+      <a href="/features/crm" class="sa-system__card">
+        <h3>Flynt Pipeline (CRM)</h3>
+        <p>Every reply tracked from first touch to placement.</p>
+      </a>
+      <div class="sa-system__card">
+        <h3>Unified Inbox</h3>
+        <p>All your conversations in one place.</p>
+      </div>
+      <div class="sa-system__card">
+        <h3>Performance Dashboard</h3>
+        <p>See what is working, by agent and by market.</p>
+      </div>
+      <div class="sa-system__card">
+        <h3>Slack integration</h3>
+        <p>Share an agent's results and updates with your team in Slack.</p>
+      </div>
+      <div class="sa-system__card sa-system__card--li">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          Email and LinkedIn together
+        </h3>
+        <p>LinkedIn messaging is included on every plan, in the same sequence as email.</p>
+      </div>
+    </div>
+
+    <p class="sa-compare__close">From the first scan to the sent confirmation, the intelligence that found the lead powers the message that reaches them.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 8 — WHO IT IS FOR + FAQ
+───────────────────────────────────────────── -->
+<section class="section sa-who">
+  <div class="container">
+    <div class="sa-who__head">
+      <div class="tag">Who it is for</div>
+      <h2 class="sa-h2">Built for recruiters who want <span class="hl">the first call, not the fifth.</span></h2>
+    </div>
+
+    <div class="sa-who__grid">
+      <div class="sa-who__card">
+        <h3>Solo recruiters</h3>
+        <p>Build a pipeline without a research team.</p>
+      </div>
+      <div class="sa-who__card">
+        <h3>Agency owners</h3>
+        <p>Add a second source of leads beside job-posting outreach.</p>
+      </div>
+      <div class="sa-who__card">
+        <h3>Teams scaling across markets</h3>
+        <p>Get early access to growing and restructuring companies.</p>
+      </div>
+    </div>
+
+    <div class="sa-faq">
+      <h3 class="sa-faq__title">Questions</h3>
+      <div class="sa-faq__grid">
+        <div class="sa-faq__item">
+          <h4>What counts as a trigger event?</h4>
+          <p>A company announcing a funding round, or completing or announcing a merger or acquisition. Signal Agent works from publicly announced events.</p>
+        </div>
+        <div class="sa-faq__item">
+          <h4>Does it work with LinkedIn?</h4>
+          <p>Yes. LinkedIn messaging is included on every plan, and Signal Agent leads can be reached on email and LinkedIn in one sequence.</p>
+        </div>
+        <div class="sa-faq__item">
+          <h4>Does Signal Agent replace the hiring-signal agent?</h4>
+          <p>No. They find different opportunities. Use one or both.</p>
+        </div>
+        <div class="sa-faq__item">
+          <h4>Will funded or acquired companies actually hire through recruiters?</h4>
+          <p>Many do, and a trigger event gives you a relevant reason to ask. We cannot promise replies or placements, and results depend on your niche, offer, and follow-up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 9 — FINAL CTA
+───────────────────────────────────────────── -->
+<section class="sa-cta">
+  <div class="container">
+    <div class="sa-cta__inner">
+      <h2>Be early on the opportunities <span class="sa-how__accent">everyone else reads about.</span></h2>
+      <p>Signal Agent finds the companies, scores the fit, and writes the outreach. You start the conversation.</p>
+      <div class="sa-cta__btns">
+        <a href="https://app.tryflynt.ai/" class="btn btn--lg sa-cta__primary">Try Signal Agent</a>
+        <a href="/pricing" class="btn btn--lg sa-cta__secondary">See pricing</a>
+      </div>
+      <span class="sa-cta__note">7-day trial. Cancel anytime.</span>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.hl { color: var(--purple); -webkit-text-stroke: 0; }
+
+.sa-h2 {
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ── Shared two-column header ── */
+.sa-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 80px; align-items: start; margin-bottom: 56px; }
+.sa-split--end { align-items: end; }
+.sa-split__head { display: flex; flex-direction: column; }
+.sa-split__body { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+.sa-split__body p { margin: 0; font-size: 1.1rem; }
+
+.sa-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--purple-bg-2); color: var(--purple-dark);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.sa-icon--lg { width: 52px; height: 52px; border-radius: 14px; }
+.sa-icon--amber { background: #fdf0dc; color: #7a4400; }
+
+/* ── Hero ── */
+.sa-hero {
+  padding: 96px 0 88px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 40% 100% at 100% 0%, rgba(140, 85, 235, 0.35) 0%, transparent 100%),
+    #ffffff;
+}
+.sa-hero__layout { display: grid; grid-template-columns: 1fr 520px; gap: 72px; align-items: center; }
+.sa-hero__copy { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+.sa-hero__copy .tag { margin-bottom: 0; }
+.sa-hero__h1 { font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 1.06; letter-spacing: -0.025em; margin: 0; }
+.sa-hero__sub { margin: 0; font-size: 1.2rem; max-width: 600px; }
+.sa-hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.sa-hero__trust { font-size: 0.95rem; color: var(--slate-500); font-weight: 500; }
+
+.sa-hero__visual {
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, #f4ecff, #e8defa);
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.sa-lead, .sa-record {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 18px;
+  padding: 22px 24px;
+  display: flex; flex-direction: column; gap: 14px;
+  box-shadow: 0 8px 24px rgba(60, 40, 120, 0.08);
+}
+.sa-lead__top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.sa-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 0.8rem; font-weight: 700;
+}
+.sa-pill--funding { background: var(--purple-bg-2); color: var(--purple-900); }
+.sa-pill--ma { background: #fdf0dc; color: #7a4400; }
+.sa-pill--fit { background: #e3f5ec; color: #1f6b4a; }
+.sa-lead__name { font-size: 1.25rem; font-weight: 800; color: var(--black); }
+.sa-lead__meta { font-size: 0.875rem; color: var(--slate-500); margin-top: 2px; }
+.sa-lead__dm { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--slate-700); }
+.sa-lead__dm svg { color: var(--purple); }
+.sa-lead__quote {
+  background: var(--purple-bg); border-radius: 12px; padding: 14px 16px;
+  font-size: 0.875rem; line-height: 1.55; color: var(--slate-700); font-style: italic;
+}
+.sa-hero__note { font-size: 0.8rem; color: #5a4a86; text-align: center; }
+
+/* ── Problem ── */
+.sa-problem { background: var(--purple-bg); }
+.sa-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.sa-benefit {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-top: 4px solid var(--purple);
+  border-radius: 18px;
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.sa-benefit h3 { font-size: 1.35rem; font-weight: 800; margin: 0; }
+.sa-benefit p { margin: 0; font-size: 1rem; }
+
+/* ── How it works (dark) ── */
+.sa-how {
+  background: linear-gradient(160deg, #4c2aa0 0%, #35197a 55%, #24104f 100%);
+  padding: 88px 0;
+}
+.sa-how .sa-h2 { color: var(--white); -webkit-text-stroke: 0; }
+.sa-how__accent { color: #dcc2ff; -webkit-text-stroke: 0; }
+.sa-how .sa-split__body p { color: #e6dcfa; font-size: 1.15rem; }
+.tag--dark { background: rgba(255, 255, 255, 0.14); color: var(--white); }
+.sa-steps { display: flex; align-items: stretch; gap: 12px; }
+.sa-step {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.sa-step__num { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; color: #dcc2ff; }
+.sa-step h3 { color: var(--white); -webkit-text-stroke: 0; font-size: 1.3rem; font-weight: 800; line-height: 1.25; margin: 0; }
+.sa-step p { color: #e6dcfa; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+.sa-how__close { color: #e6dcfa; text-align: center; max-width: 760px; margin: 40px auto 0; }
+.sa-footnote { font-size: 0.9rem; color: var(--slate-500); margin: 20px 0 0; }
+.sa-step__arrow { display: flex; align-items: center; color: #dcc2ff; font-size: 1.5rem; }
+
+/* ── Triggers ── */
+.sa-triggers { background: var(--slate-50); }
+.sa-trigger-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.sa-trigger {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  padding: 36px;
+  display: flex; flex-direction: column; gap: 20px;
+  box-shadow: 0 8px 24px rgba(60, 40, 120, 0.06);
+}
+.sa-trigger__head { display: flex; align-items: center; gap: 14px; }
+.sa-trigger__head h3 { font-size: 1.6rem; font-weight: 800; margin: 0; }
+.sa-trigger p { margin: 0; font-size: 1rem; }
+.sa-trigger strong { color: var(--black); }
+.sa-example { margin-top: auto; background: var(--purple-bg); border-radius: 14px; padding: 18px 20px; }
+.sa-trigger--ma .sa-example { background: #fdf6ea; }
+.sa-example__label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple-dark); margin-bottom: 6px; }
+.sa-trigger--ma .sa-example__label { color: #7a4400; }
+.sa-example__text { font-size: 1rem; line-height: 1.6; color: var(--slate-700); font-style: italic; }
+
+/* ── Lead detail ── */
+.sa-detail { background: var(--white); }
+.sa-detail__layout { display: grid; grid-template-columns: 1fr 520px; gap: 80px; align-items: center; }
+.sa-detail__copy { display: flex; flex-direction: column; align-items: flex-start; }
+.sa-detail__copy .sa-h2 { margin-bottom: 32px; }
+.sa-checks { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.sa-checks li { display: flex; gap: 14px; align-items: flex-start; font-size: 1.05rem; line-height: 1.55; color: var(--slate-600); font-weight: 500; }
+.sa-checks strong { color: var(--black); }
+.sa-check {
+  flex: none; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--purple); color: var(--white);
+  display: flex; align-items: center; justify-content: center; margin-top: 1px;
+}
+.sa-detail__visual { border-radius: var(--radius-xl); background: linear-gradient(145deg, #f4ecff, #e8defa); padding: 32px; }
+.sa-record { gap: 16px; }
+.sa-record__date { font-size: 0.8rem; color: var(--slate-500); font-weight: 600; }
+.sa-record__block { border-top: 1px solid var(--slate-200); padding-top: 14px; font-size: 0.9rem; color: var(--slate-700); line-height: 1.55; }
+.sa-record__block--hook { background: var(--purple-bg); border-top: none; border-radius: 12px; padding: 14px 16px; }
+.sa-record__label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple-dark); margin-bottom: 4px; }
+.sa-record__hook { font-style: italic; }
+.sa-record__cta {
+  align-self: flex-start;
+  background: var(--purple); color: var(--white);
+  font-size: 0.9rem; font-weight: 700;
+  padding: 10px 18px; border-radius: 10px;
+}
+
+/* ── Compare ── */
+.sa-compare { background: var(--purple-bg); }
+.sa-compare__head { max-width: 900px; margin-bottom: 48px; display: flex; flex-direction: column; }
+.sa-compare__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.sa-agent-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  padding: 32px 36px;
+}
+.sa-agent-card--new { border: 2px solid var(--purple); box-shadow: var(--shadow-purple); }
+.sa-agent-card__title { font-size: 1.5rem; font-weight: 800; color: var(--black); display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.sa-new { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; background: var(--purple); color: var(--white); padding: 4px 9px; border-radius: 999px; }
+.sa-agent-card dl { display: flex; flex-direction: column; }
+.sa-agent-card dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-500); border-top: 1px solid var(--slate-200); padding-top: 14px; }
+.sa-agent-card dt:first-child { border-top: none; padding-top: 0; }
+.sa-agent-card dd { font-size: 1.05rem; font-weight: 600; color: var(--slate-900); margin: 4px 0 14px; }
+.sa-agent-card dd:last-child { margin-bottom: 0; }
+.sa-italic { font-style: italic; }
+.sa-compare__close { text-align: center; max-width: 760px; margin: 40px auto 0; }
+
+/* ── System ── */
+.sa-system { background: var(--white); }
+.sa-system__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.sa-system__card {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+a.sa-system__card:hover { border-color: var(--purple-300); box-shadow: var(--shadow-purple); }
+.sa-system__card h3 { font-size: 1.2rem; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 8px; }
+.sa-system__card p { margin: 0; font-size: 1rem; }
+.sa-system__card--li { background: var(--purple-bg-2); border-color: var(--purple-300); }
+.sa-system__card--li svg { color: #0a66c2; }
+
+/* ── Who + FAQ ── */
+.sa-who { background: var(--slate-50); }
+.sa-who__head { max-width: 860px; margin-bottom: 40px; display: flex; flex-direction: column; }
+.sa-who__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 64px; }
+.sa-who__card { background: var(--white); border: 1px solid var(--slate-200); border-radius: 16px; padding: 28px; }
+.sa-who__card h3 { font-size: 1.2rem; font-weight: 800; margin: 0 0 8px; }
+.sa-who__card p { margin: 0; font-size: 1rem; }
+.sa-faq__title { font-size: 1.6rem; font-weight: 800; margin-bottom: 24px; }
+.sa-faq__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.sa-faq__item { background: var(--white); border: 1px solid var(--slate-200); border-radius: 16px; padding: 24px 28px; }
+.sa-faq__item h4 { font-size: 1.05rem; margin: 0 0 8px; -webkit-text-stroke: 0; }
+.sa-faq__item p { margin: 0; font-size: 0.98rem; }
+
+/* ── Final CTA ── */
+.sa-cta {
+  background: linear-gradient(160deg, #4c2aa0 0%, #35197a 55%, #24104f 100%);
+  padding: 96px 0;
+}
+.sa-cta__inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.sa-cta__inner h2 { color: var(--white); -webkit-text-stroke: 0; font-size: clamp(2rem, 4vw, 3.2rem); max-width: 860px; line-height: 1.1; }
+.sa-cta__inner p { color: #e6dcfa; max-width: 560px; }
+.sa-cta__btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.sa-cta__primary { background: var(--white); color: var(--purple-900); border-color: var(--white); }
+.sa-cta__secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255, 255, 255, 0.5); }
+.sa-cta__note { font-size: 0.875rem; color: #cbbcf0; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .sa-hero__layout, .sa-detail__layout { grid-template-columns: 1fr; gap: 48px; }
+  .sa-steps { flex-direction: column; }
+  .sa-step__arrow { justify-content: center; transform: rotate(90deg); }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .sa-split, .sa-trigger-grid, .sa-compare__grid, .sa-faq__grid { grid-template-columns: 1fr; }
+  .sa-split { gap: 16px; margin-bottom: 40px; }
+  .sa-benefits, .sa-system__grid, .sa-who__grid { grid-template-columns: 1fr; }
+  .sa-hero { padding: 64px 0; }
+  .sa-hero__visual, .sa-detail__visual { padding: 20px; border-radius: 24px; }
+  .sa-trigger, .sa-agent-card { padding: 24px; }
+  .sa-how, .sa-cta { padding: 64px 0; }
+}
+</style>

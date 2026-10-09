@@ -358,6 +358,22 @@ img { max-width: 100%; height: auto; }
   font-weight: 700;
 }
 
+.nav__dropdown-menu a { white-space: nowrap; }
+
+.nav__new {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
 .nav__actions {
   display: flex;
   align-items: center;
