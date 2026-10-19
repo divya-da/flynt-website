@@ -1,0 +1,807 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="MPC Campaigns | Pitch One Candidate to Every Company Hiring | Flynt"
+  description="Upload a resume and Flynt finds the companies hiring for that profile, then writes a different pitch for each one from their own job posting. MPC outreach, finally at scale."
+  ogTitle="New from Flynt: upload one resume and pitch it to every company hiring for that profile, with a different message for each."
+>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 1 — HERO
+───────────────────────────────────────────── -->
+<section class="mpc-hero">
+  <div class="container">
+    <div class="mpc-hero__layout">
+      <div class="mpc-hero__copy">
+        <div class="tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          New: MPC Campaigns
+        </div>
+        <h1 class="mpc-hero__h1">One resume. A different pitch to <span class="hl">every company hiring for it.</span></h1>
+        <p class="mpc-hero__sub">MPC outreach has always earned replies, and has always stalled at the personalization step. Upload a candidate. Flynt finds the companies hiring for that profile, then writes every pitch around what that company's own job posting asks for.</p>
+        <div class="mpc-hero__ctas">
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg">Run an MPC campaign</a>
+          <a href="#how" class="btn btn--outline btn--lg">See how it works →</a>
+        </div>
+        <div class="mpc-hero__trust">7-day trial · Cancel anytime · Email and LinkedIn in one sequence</div>
+      </div>
+
+      <div class="mpc-hero__visual">
+        <div class="mpc-resume">
+          <div class="mpc-resume__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          </div>
+          <div>
+            <div class="mpc-resume__label">Resume uploaded</div>
+            <div class="mpc-resume__name">Rafael Nunes · Senior Backend Engineer</div>
+            <div class="mpc-resume__meta">8 years · Payments · Austin, TX or remote</div>
+          </div>
+        </div>
+
+        <div class="mpc-hero__found">Flynt found 42 companies hiring for this profile</div>
+
+        <div class="mpc-fit">
+          <div class="mpc-fit__top">
+            <span class="mpc-fit__name">Larkfield Payments</span>
+            <span class="mpc-pill mpc-pill--fit">Strong fit</span>
+          </div>
+          <div class="mpc-fit__role">Hiring: Senior Backend Engineer, Payments</div>
+          <p class="mpc-fit__led"><strong>Led with: three years on the ledger rebuild</strong>, settlement cut from two days to same day.</p>
+        </div>
+
+        <div class="mpc-fit">
+          <div class="mpc-fit__top">
+            <span class="mpc-fit__name">Hartwell Health</span>
+            <span class="mpc-pill mpc-pill--fit">Strong fit</span>
+          </div>
+          <div class="mpc-fit__role">Hiring: Senior Platform Engineer, Clinical Data</div>
+          <p class="mpc-fit__led"><strong>Led with: compliant data pipelines and a SOC 2 audit</strong> carried end to end.</p>
+        </div>
+
+        <div class="mpc-hero__note">Same resume, two different arguments. Companies and people shown are fictional.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 2 — THE OLD TRADEOFF
+───────────────────────────────────────────── -->
+<section class="section mpc-tradeoff">
+  <div class="container">
+    <div class="mpc-center">
+      <div class="tag">The old tradeoff</div>
+      <h2 class="mpc-h2">Scale or relevance. Until now you had to <span class="hl">pick one.</span></h2>
+    </div>
+
+    <div class="mpc-tradeoff__grid">
+      <div class="mpc-card">
+        <span class="mpc-pill mpc-pill--grey">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Outreach at scale
+        </span>
+        <h3 class="mpc-card__title">The same message, 900 times</h3>
+        <p>Easy to automate, easy to delete. You are the ninth recruiter this month telling a hiring manager you specialize in their space. Nothing in the email could not have been sent to anyone else.</p>
+        <div class="mpc-generic">
+          <span>Hi [First name], we specialize in your space...</span>
+          <span>Hi [First name], we specialize in your space...</span>
+          <span>Hi [First name], we specialize in your space...</span>
+        </div>
+      </div>
+
+      <div class="mpc-card">
+        <span class="mpc-pill mpc-pill--amber">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          MPC, one at a time
+        </span>
+        <h3 class="mpc-card__title">A real person, hand-pitched</h3>
+        <p>Lead with a specific candidate and people reply, because you are offering something instead of asking for something. But each one means reading the posting, deciding which parts of the background matter here, and rewriting the email.</p>
+        <div class="mpc-cost">
+          <span class="mpc-cost__num">20</span>
+          <span class="mpc-cost__text"><strong>minutes per company.</strong><br />So you send ten and go back to your desk.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="mpc-tradeoff__close">Both are rational. Neither fills a pipeline.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 3 — HOW IT WORKS
+───────────────────────────────────────────── -->
+<section class="section mpc-how" id="how">
+  <div class="container">
+    <div class="mpc-split">
+      <div class="mpc-split__head">
+        <div class="tag">How it works</div>
+        <h2 class="mpc-h2">From one resume to a <span class="hl">running campaign.</span></h2>
+      </div>
+      <div class="mpc-split__body">
+        <p>You do the first step. Flynt does the rest, and shows you its work before anything sends.</p>
+      </div>
+    </div>
+
+    <div class="mpc-steps">
+      <div class="mpc-step">
+        <div class="mpc-step__num">01</div>
+        <div class="mpc-step__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg>
+        </div>
+        <h3>Upload the candidate</h3>
+        <p>Drop in a resume or paste a profile. Flynt reads the titles, seniority, industries, tools, locations and what the person actually shipped.</p>
+      </div>
+
+      <div class="mpc-step">
+        <div class="mpc-step__num">02</div>
+        <div class="mpc-step__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3>Flynt finds who is hiring for them</h3>
+        <p>It searches live postings for roles that fit that background in your markets, and scores each company on how well your candidate answers it.</p>
+      </div>
+
+      <div class="mpc-step mpc-step--active">
+        <div class="mpc-step__num">03</div>
+        <div class="mpc-step__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        </div>
+        <h3>Every pitch written for that company</h3>
+        <p>For each company, Flynt reads the posting and leads with the part of the background that matters there. Same candidate, a different case each time.</p>
+      </div>
+
+      <div class="mpc-step">
+        <div class="mpc-step__num">04</div>
+        <div class="mpc-step__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+        </div>
+        <h3>Launch, then handle replies</h3>
+        <p>Email and LinkedIn run in one sequence. A reply on either channel stops it and lands in your unified inbox, where you take over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 4 — A DIFFERENT PITCH FOR EVERY COMPANY
+───────────────────────────────────────────── -->
+<section class="section mpc-pitch">
+  <div class="container">
+    <div class="mpc-split mpc-split--end">
+      <div class="mpc-split__head">
+        <div class="tag">The part that never scaled</div>
+        <h2 class="mpc-h2">One candidate. Two companies. <span class="hl">Two different arguments.</span></h2>
+      </div>
+      <div class="mpc-split__body">
+        <p>A payments company and a health system can both be hiring a senior backend engineer, and not for the same reasons. Flynt reads each posting and leads with the part of the background that answers it. You wrote none of these.</p>
+      </div>
+    </div>
+
+    <div class="mpc-mails">
+      <div class="mpc-mail">
+        <div class="mpc-mail__top">
+          <span class="mpc-mail__company">Larkfield Payments</span>
+          <span class="mpc-pill mpc-pill--match">94 match</span>
+        </div>
+        <div class="mpc-mail__posting"><strong>Their posting:</strong> Senior Backend Engineer, Payments</div>
+        <div class="mpc-mail__label">Subject</div>
+        <div class="mpc-mail__subject">Payments engineer, available this month</div>
+        <p class="mpc-mail__body">I saw you are hiring a <mark class="mpc-mark">senior backend engineer for payments</mark>. I am working with someone who spent three years on the <mark class="mpc-mark">payments platform at Oakhart Systems</mark>, including the ledger rebuild that moved settlement from two days to same day. Open to Austin or remote, and free to talk this week. Want the profile?</p>
+      </div>
+
+      <div class="mpc-mail">
+        <div class="mpc-mail__top">
+          <span class="mpc-mail__company">Hartwell Health</span>
+          <span class="mpc-pill mpc-pill--match">91 match</span>
+        </div>
+        <div class="mpc-mail__posting"><strong>Their posting:</strong> Senior Platform Engineer, Clinical Data</div>
+        <div class="mpc-mail__label">Subject</div>
+        <div class="mpc-mail__subject">Platform engineer who has been through a HIPAA audit</div>
+        <p class="mpc-mail__body">Your posting for a <mark class="mpc-mark">senior platform engineer on clinical data</mark> stood out. The engineer I am working with built the <mark class="mpc-mark">compliant data pipelines at Oakhart Systems</mark> and carried a SOC 2 audit end to end, which is usually the part that slows these hires down. Worth an introduction?</p>
+      </div>
+    </div>
+
+    <p class="mpc-mails__note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      Both written from the same uploaded resume. The highlighted phrases came from each company's own posting.
+    </p>
+
+    <div class="mpc-pitch__grid">
+      <div class="mpc-mini">
+        <h3>Written from their posting</h3>
+        <p>Each message names the role they are actually trying to fill.</p>
+      </div>
+      <div class="mpc-mini">
+        <h3>The right part of the background</h3>
+        <p>A resume holds a dozen selling points. Flynt picks the ones that fit this company.</p>
+      </div>
+      <div class="mpc-mini">
+        <h3>You stay in the draft</h3>
+        <p>Review, edit or approve before anything sends. Thumbs up what works and Flynt learns your voice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 5 — WHAT FLYNT MATCHES ON
+───────────────────────────────────────────── -->
+<section class="section mpc-match">
+  <div class="container">
+    <div class="mpc-match__layout">
+      <div class="mpc-match__visual">
+        <div class="mpc-company">
+          <div class="mpc-company__top">
+            <div>
+              <div class="mpc-company__name">Larkfield Payments</div>
+              <div class="mpc-company__meta">Payments · 180 employees · Austin, TX</div>
+            </div>
+            <div class="mpc-company__score">
+              <span class="mpc-company__num">94</span>
+              <span class="mpc-company__lbl">Match</span>
+            </div>
+          </div>
+
+          <div class="mpc-company__posting"><strong>Live posting:</strong> Senior Backend Engineer, Payments · posted 2 days ago</div>
+
+          <div class="mpc-company__block">
+            <div class="mpc-company__label mpc-company__label--yes">What lines up</div>
+            <ul class="mpc-company__list mpc-company__list--yes">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Three years on a payments platform, ledger and settlement
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Go and AWS, the stack named in the posting
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Already in Austin, no relocation to negotiate
+              </li>
+            </ul>
+          </div>
+
+          <div class="mpc-company__block">
+            <div class="mpc-company__label mpc-company__label--no">What does not</div>
+            <ul class="mpc-company__list mpc-company__list--no">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                No team lead experience, and the posting asks for two years
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                Kubernetes listed as required, not on the resume
+              </li>
+            </ul>
+          </div>
+
+          <div class="mpc-company__dm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            <span><strong>Elena Marsh</strong> · VP of Engineering · email and LinkedIn found</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mpc-match__copy">
+        <div class="tag">The match</div>
+        <h2 class="mpc-h2">Why this company, <span class="hl">in writing.</span></h2>
+        <p class="mpc-match__sub">Every matched company arrives with its reasoning attached, so you can judge it in a few seconds instead of trusting a score.</p>
+
+        <div class="mpc-match__grid">
+          <div class="mpc-match__item">
+            <h3>The live posting</h3>
+            <p>The role it matched, the title, and when it went up.</p>
+          </div>
+          <div class="mpc-match__item">
+            <h3>What lines up</h3>
+            <p>The parts of the background that answer the requirements they listed.</p>
+          </div>
+          <div class="mpc-match__item">
+            <h3>What does not</h3>
+            <p>The requirements your candidate misses, so nothing surprises you on the call.</p>
+          </div>
+          <div class="mpc-match__item">
+            <h3>Company context</h3>
+            <p>Size, stage, recent news, and whether they are hiring elsewhere too.</p>
+          </div>
+          <div class="mpc-match__item">
+            <h3>Who to reach</h3>
+            <p>The hiring manager or talent lead, with contact details.</p>
+          </div>
+          <div class="mpc-match__item">
+            <h3>Match score</h3>
+            <p>How closely this candidate answers this posting.</p>
+          </div>
+        </div>
+
+        <div class="mpc-match__callout">Not a fit? Thumbs down and Flynt stops bringing you that kind of company.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 6 — THREE WAYS IN
+───────────────────────────────────────────── -->
+<section class="section mpc-ways">
+  <div class="container">
+    <div class="mpc-center">
+      <div class="tag">One system</div>
+      <h2 class="mpc-h2">Three ways in. <span class="hl">One pipeline.</span></h2>
+    </div>
+
+    <div class="mpc-ways__grid">
+      <div class="mpc-way mpc-way--current">
+        <span class="mpc-way__flag">This page</span>
+        <div class="mpc-way__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 11h3"/></svg>
+        </div>
+        <h3>MPC Campaigns</h3>
+        <dl>
+          <dt>Starts with</dt>
+          <dd>A candidate you want to place</dd>
+          <dt>You arrive</dt>
+          <dd>With a person they can hire today</dd>
+        </dl>
+      </div>
+
+      <a href="/features/agent" class="mpc-way">
+        <div class="mpc-way__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Hiring Signal Agent</h3>
+        <dl>
+          <dt>Starts with</dt>
+          <dd>A role they just posted</dd>
+          <dt>You arrive</dt>
+          <dd>Early, while the posting is fresh</dd>
+        </dl>
+      </a>
+
+      <a href="/features/signal-agent" class="mpc-way">
+        <div class="mpc-way__icon mpc-way__icon--amber">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+        </div>
+        <h3>Signal Agent</h3>
+        <dl>
+          <dt>Starts with</dt>
+          <dd>Funding closed or a deal announced</dd>
+          <dt>You arrive</dt>
+          <dd>Before the role is written</dd>
+        </dl>
+      </a>
+    </div>
+
+    <p class="mpc-ways__close">Run them together. Leads, replies and deals land in the same inbox, the same CRM and the same dashboard.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 7 — WHO IT IS FOR + FAQ
+───────────────────────────────────────────── -->
+<section class="section mpc-who">
+  <div class="container">
+    <div class="mpc-who__head">
+      <div class="tag">Who it is for</div>
+      <h2 class="mpc-h2">Built for recruiters with <span class="hl">someone worth placing.</span></h2>
+    </div>
+
+    <div class="mpc-who__grid">
+      <div class="mpc-who__card">
+        <h3>Agencies with a bench</h3>
+        <p>Every candidate sitting idle is a campaign you have not run.</p>
+      </div>
+      <div class="mpc-who__card">
+        <h3>Solo and boutique owners</h3>
+        <p>You do not have an evening to write twelve tailored pitches, and now you do not need one.</p>
+      </div>
+      <div class="mpc-who__card">
+        <h3>Niche and specialist firms</h3>
+        <p>When one profile fits forty companies, this is the whole job.</p>
+      </div>
+      <div class="mpc-who__card">
+        <h3>Teams that hate sounding automated</h3>
+        <p>Volume that still reads like you wrote it.</p>
+      </div>
+    </div>
+
+    <div class="mpc-faq">
+      <h3 class="mpc-faq__title">Questions recruiters ask</h3>
+      <div class="mpc-faq__grid">
+        <div class="mpc-faq__item">
+          <h4>What is an MPC campaign?</h4>
+          <p>Most Placeable Candidate. Instead of asking a company whether they need hiring help, you lead with a specific strong candidate and reach the companies hiring for that profile. Recruiters have used the play for decades, because offering something beats asking for something.</p>
+        </div>
+        <div class="mpc-faq__item">
+          <h4>Can I pitch a candidate without naming them?</h4>
+          <p>Many recruiters keep a candidate unnamed until a client engages.</p>
+        </div>
+        <div class="mpc-faq__item">
+          <h4>How many companies will it find?</h4>
+          <p>Up to 30 a day, the same daily limit as your other agents, as long as the market is big enough to fill it. A narrow niche or a small city returns fewer, and Flynt would rather send you ten real matches than thirty padded ones.</p>
+        </div>
+        <div class="mpc-faq__item">
+          <h4>What if the matches are wrong?</h4>
+          <p>Thumbs down the ones that miss, change one criterion, and run it again. Flynt learns from the ones you keep.</p>
+        </div>
+        <div class="mpc-faq__item">
+          <h4>Can I run MPC alongside my other campaigns?</h4>
+          <p>Yes. MPC runs as its own campaign and does not interrupt the agents you already have going.</p>
+        </div>
+        <div class="mpc-faq__item">
+          <h4>Is MPC included in the trial?</h4>
+          <p>Upload a resume on day one and see the matches for yourself.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 8 — FINAL CTA
+───────────────────────────────────────────── -->
+<section class="mpc-cta">
+  <div class="container">
+    <div class="mpc-cta__inner">
+      <h2>Your best candidate deserves <span class="mpc-cta__accent">more than one email.</span></h2>
+      <p>Upload a resume and see which companies are hiring for them right now.</p>
+      <div class="mpc-cta__btns">
+        <a href="https://app.tryflynt.ai/" class="btn btn--lg mpc-cta__primary">Run an MPC campaign</a>
+        <a href="/pricing" class="btn btn--lg mpc-cta__secondary">See pricing</a>
+      </div>
+      <span class="mpc-cta__note">7-day trial · Cancel anytime</span>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.hl { color: var(--purple); -webkit-text-stroke: 0; }
+
+.mpc-h2 {
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ── Shared layout helpers ── */
+.mpc-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.mpc-center .tag { align-self: center; }
+.mpc-center .mpc-h2 { max-width: 900px; }
+
+.mpc-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 80px; align-items: start; margin-bottom: 56px; }
+.mpc-split--end { align-items: end; }
+.mpc-split__head { display: flex; flex-direction: column; }
+.mpc-split__body { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+.mpc-split__body p { margin: 0; font-size: 1.1rem; }
+
+.mpc-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 0.8rem; font-weight: 700;
+  align-self: flex-start;
+}
+.mpc-pill--fit { background: #e3f5ec; color: #1f6b4a; }
+.mpc-pill--match { background: #e3f5ec; color: #1f6b4a; }
+.mpc-pill--grey { background: var(--slate-50); border: 1px solid var(--slate-200); color: var(--slate-700); }
+.mpc-pill--amber { background: #fdf0dc; color: #7a4400; }
+
+/* ── Hero ── */
+.mpc-hero {
+  padding: 96px 0 88px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 40% 100% at 100% 0%, rgba(140, 85, 235, 0.35) 0%, transparent 100%),
+    #ffffff;
+}
+.mpc-hero__layout { display: grid; grid-template-columns: 1fr 560px; gap: 72px; align-items: center; }
+.mpc-hero__copy { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+.mpc-hero__copy .tag { margin-bottom: 0; }
+.mpc-hero__h1 { font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 1.06; letter-spacing: -0.025em; margin: 0; }
+.mpc-hero__sub { margin: 0; font-size: 1.2rem; max-width: 600px; }
+.mpc-hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.mpc-hero__trust { font-size: 0.95rem; color: var(--slate-500); font-weight: 500; }
+
+.mpc-hero__visual {
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, #f0e8ff, #ddd1f7);
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.mpc-hero__found {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--purple-900);
+}
+.mpc-hero__note { font-size: 0.8rem; color: #5a4a86; text-align: center; }
+
+.mpc-resume, .mpc-fit {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 24px rgba(60, 40, 120, 0.08);
+}
+.mpc-resume { display: flex; align-items: center; gap: 16px; }
+.mpc-resume__icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--purple-bg-2); color: var(--purple-dark);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.mpc-resume__label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple-dark); }
+.mpc-resume__name { font-size: 1.1rem; font-weight: 800; color: var(--black); margin-top: 4px; }
+.mpc-resume__meta { font-size: 0.875rem; color: var(--slate-500); margin-top: 2px; }
+
+.mpc-fit { display: flex; flex-direction: column; gap: 10px; }
+.mpc-fit__top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.mpc-fit__name { font-size: 1.15rem; font-weight: 800; color: var(--black); }
+.mpc-fit__role { font-size: 0.9rem; color: var(--slate-500); }
+.mpc-fit__led {
+  background: var(--purple-bg);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--slate-700);
+}
+.mpc-fit__led strong { color: var(--slate-900); }
+
+/* ── The old tradeoff ── */
+.mpc-tradeoff { background: var(--purple-bg); }
+.mpc-tradeoff__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.mpc-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.mpc-card__title { font-size: 1.5rem; font-weight: 800; color: var(--black); margin: 0; }
+.mpc-card p { margin: 0; font-size: 1rem; }
+
+.mpc-generic { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.mpc-generic span {
+  background: var(--slate-50);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  color: var(--slate-500);
+}
+.mpc-cost {
+  display: flex; align-items: center; gap: 16px;
+  background: #fff8ee;
+  border: 1px solid #f5e3c6;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-top: 4px;
+}
+.mpc-cost__num { font-size: 2.4rem; font-weight: 800; color: #7a4400; line-height: 1; }
+.mpc-cost__text { font-size: 0.95rem; color: #7a4400; line-height: 1.5; }
+.mpc-tradeoff__close { text-align: center; margin: 40px auto 0; font-size: 1.15rem; font-weight: 700; color: var(--black); }
+
+/* ── How it works ── */
+.mpc-how { background: var(--white); }
+.mpc-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.mpc-step {
+  background: var(--purple-bg);
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.mpc-step__num {
+  font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em;
+  color: var(--purple-dark);
+  border-bottom: 1px solid var(--slate-200);
+  padding-bottom: 12px;
+}
+.mpc-step__icon { color: var(--purple-dark); }
+.mpc-step h3 { font-size: 1.2rem; font-weight: 800; line-height: 1.25; margin: 0; }
+.mpc-step p { margin: 0; font-size: 0.95rem; line-height: 1.6; }
+.mpc-step--active { background: var(--purple-bg-2); border-color: var(--purple-300); }
+.mpc-step--active p { color: var(--purple-900); }
+.mpc-step--active .mpc-step__num { border-bottom-color: var(--purple-300); }
+
+/* ── A different pitch ── */
+.mpc-pitch { background: linear-gradient(180deg, var(--white) 0%, var(--purple-bg) 100%); }
+.mpc-mails { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.mpc-mail {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  box-shadow: 0 8px 24px rgba(60, 40, 120, 0.06);
+}
+.mpc-mail__top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.mpc-mail__company { font-size: 1.3rem; font-weight: 800; color: var(--black); }
+.mpc-mail__posting {
+  background: var(--slate-50);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: var(--slate-600);
+}
+.mpc-mail__posting strong { color: var(--slate-900); }
+.mpc-mail__label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--slate-500);
+  border-top: 1px solid var(--slate-200);
+  padding-top: 16px;
+}
+.mpc-mail__subject { font-size: 1.05rem; font-weight: 800; color: var(--black); }
+.mpc-mail__body { margin: 0; font-size: 1rem; line-height: 1.65; }
+.mpc-mark { background: var(--purple-bg-2); color: var(--slate-900); font-weight: 600; border-radius: 4px; padding: 1px 3px; }
+
+.mpc-mails__note {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  text-align: center;
+  margin: 24px 0 0;
+  font-size: 0.9rem;
+  color: #5a4a86;
+}
+.mpc-mails__note svg { flex-shrink: 0; }
+
+.mpc-pitch__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.mpc-mini {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  padding: 24px 28px;
+}
+.mpc-mini h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 8px; }
+.mpc-mini p { margin: 0; font-size: 0.95rem; }
+
+/* ── What Flynt matches on ── */
+.mpc-match { background: var(--white); }
+.mpc-match__layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.mpc-match__copy { display: flex; flex-direction: column; align-items: flex-start; }
+.mpc-match__copy .tag { margin-bottom: 0; }
+.mpc-match__copy .mpc-h2 { margin-top: 16px; }
+.mpc-match__sub { margin: 16px 0 0; font-size: 1.1rem; }
+.mpc-match__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-top: 32px; width: 100%; }
+.mpc-match__item h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 6px; }
+.mpc-match__item p { margin: 0; font-size: 0.95rem; }
+.mpc-match__callout {
+  background: var(--purple-bg-2);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-top: 32px;
+  font-size: 1rem;
+  color: var(--purple-900);
+  width: 100%;
+}
+
+.mpc-company {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex; flex-direction: column; gap: 20px;
+  box-shadow: 0 12px 32px rgba(60, 40, 120, 0.10);
+}
+.mpc-company__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.mpc-company__name { font-size: 1.4rem; font-weight: 800; color: var(--black); }
+.mpc-company__meta { font-size: 0.9rem; color: var(--slate-500); margin-top: 2px; }
+.mpc-company__score { text-align: right; flex-shrink: 0; }
+.mpc-company__num { display: block; font-size: 1.9rem; font-weight: 800; color: #1f6b4a; line-height: 1; }
+.mpc-company__lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-500); }
+.mpc-company__posting {
+  background: var(--slate-50);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: var(--slate-600);
+}
+.mpc-company__posting strong { color: var(--slate-900); }
+.mpc-company__label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.mpc-company__label--yes { color: #1f6b4a; }
+.mpc-company__label--no { color: #7a4400; }
+.mpc-company__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.mpc-company__list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: var(--slate-700); }
+.mpc-company__list svg { flex-shrink: 0; margin-top: 2px; }
+.mpc-company__list--yes svg { color: #1f6b4a; }
+.mpc-company__list--no svg { color: #b4791a; }
+.mpc-company__dm {
+  display: flex; align-items: center; gap: 10px;
+  border-top: 1px solid var(--slate-200);
+  padding-top: 18px;
+  font-size: 0.95rem;
+  color: var(--slate-600);
+}
+.mpc-company__dm svg { color: var(--purple); flex-shrink: 0; }
+.mpc-company__dm strong { color: var(--black); }
+
+/* ── Three ways in ── */
+.mpc-ways { background: var(--purple-bg); }
+.mpc-ways__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.mpc-way {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+a.mpc-way:hover { border-color: var(--purple-300); box-shadow: var(--shadow-purple); }
+.mpc-way--current { border: 2px solid var(--purple); box-shadow: var(--shadow-purple); }
+.mpc-way__flag {
+  position: absolute;
+  top: -12px; left: 24px;
+  background: var(--purple); color: var(--white);
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+}
+.mpc-way__icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--purple-bg-2); color: var(--purple-dark);
+  display: flex; align-items: center; justify-content: center;
+}
+.mpc-way__icon--amber { background: #fdf0dc; color: #7a4400; }
+.mpc-way h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin: 0; }
+.mpc-way dl { margin: 0; display: flex; flex-direction: column; }
+.mpc-way dt { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-500); }
+.mpc-way dd { font-size: 1.05rem; font-weight: 600; color: var(--slate-900); margin: 4px 0 16px; }
+.mpc-way dd:last-child { margin-bottom: 0; }
+.mpc-ways__close { text-align: center; max-width: 720px; margin: 40px auto 0; }
+
+/* ── Who + FAQ ── */
+.mpc-who { background: var(--white); }
+.mpc-who__head { max-width: 900px; margin-bottom: 40px; display: flex; flex-direction: column; }
+.mpc-who__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 64px; }
+.mpc-who__card { background: var(--purple-bg); border: 1px solid var(--slate-200); border-radius: 16px; padding: 26px; }
+.mpc-who__card h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 8px; }
+.mpc-who__card p { margin: 0; font-size: 0.95rem; }
+.mpc-faq__title { font-size: 1.9rem; font-weight: 800; margin-bottom: 28px; }
+.mpc-faq__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; }
+.mpc-faq__item h4 { font-size: 1.05rem; margin: 0 0 8px; -webkit-text-stroke: 0; }
+.mpc-faq__item p { margin: 0; font-size: 0.98rem; }
+
+/* ── Final CTA ── */
+.mpc-cta {
+  background: linear-gradient(160deg, #4c2aa0 0%, #35197a 55%, #24104f 100%);
+  padding: 96px 0;
+}
+.mpc-cta__inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.mpc-cta__inner h2 { color: var(--white); -webkit-text-stroke: 0; font-size: clamp(2rem, 4vw, 3.2rem); max-width: 900px; line-height: 1.1; }
+.mpc-cta__accent { color: #dcc2ff; -webkit-text-stroke: 0; }
+.mpc-cta__inner p { color: #e6dcfa; max-width: 600px; }
+.mpc-cta__btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.mpc-cta__primary { background: var(--white); color: var(--purple-900); border-color: var(--white); }
+.mpc-cta__secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255, 255, 255, 0.5); }
+.mpc-cta__note { font-size: 0.875rem; color: #cbbcf0; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .mpc-hero__layout, .mpc-match__layout { grid-template-columns: 1fr; gap: 48px; }
+  .mpc-steps { grid-template-columns: repeat(2, 1fr); }
+  .mpc-who__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .mpc-split, .mpc-tradeoff__grid, .mpc-mails, .mpc-faq__grid, .mpc-match__grid { grid-template-columns: 1fr; }
+  .mpc-split { gap: 16px; margin-bottom: 40px; }
+  .mpc-steps, .mpc-ways__grid, .mpc-pitch__grid, .mpc-who__grid { grid-template-columns: 1fr; }
+  .mpc-hero { padding: 64px 0; }
+  .mpc-hero__visual { padding: 20px; border-radius: 24px; }
+  .mpc-card, .mpc-mail, .mpc-company, .mpc-way { padding: 24px; }
+  .mpc-cta { padding: 64px 0; }
+}
+</style>

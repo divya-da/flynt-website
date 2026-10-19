@@ -24,6 +24,12 @@ flynt-website/
 │   │   ├── pricing.astro       # Pricing page
 │   │   ├── about.astro         # About page
 │   │   ├── faq.astro           # FAQ page
+│   │   ├── features/
+│   │   │   ├── agent.astro         # Hiring Agent feature page
+│   │   │   ├── signal-agent.astro  # Signal Agent feature page
+│   │   │   ├── campaigns.astro     # Campaigns feature page
+│   │   │   ├── mpc-campaigns.astro # MPC Campaigns feature page
+│   │   │   └── crm.astro           # CRM feature page
 │   │   ├── blog/
 │   │   │   ├── index.astro     # Blog listing page (/blog)
 │   │   │   └── [slug].astro    # Individual blog post (/blog/[slug])
