@@ -13,6 +13,8 @@
   --purple-200: #E9D5FF;
   --purple-bg: #FAF5FF;     /* purple-50 */
   --purple-bg-2: #F3E8FF;   /* purple-100 */
+  --purple-tint: #F5F1F9;   /* FD-1110 — the design's --flynt-purple-tint */
+  --purple-ink: #521E8A;    /* FD-1110 — the design's --flynt-purple-ink */
 
   --white: #ffffff;
 
@@ -392,6 +394,47 @@ img { max-width: 100%; height: auto; }
   background: transparent;
 }
 
+/* ── Free BD Playbook pill (FD-1110) ── */
+.nav__playbook {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: var(--purple-tint);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple-ink);
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.nav__links .nav__playbook {
+  color: var(--purple-ink);
+  font-weight: 700;
+}
+
+.nav__playbook:hover {
+  color: var(--purple-ink);
+  background: var(--purple-bg-2);
+}
+
+.nav__playbook-icon {
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+/* The phone version, in the bar beside the menu button. */
+.nav__playbook--mobile {
+  display: none;
+  gap: 6px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+
 /* ── Footer ── */
 .footer {
   background: #25153e;
@@ -685,6 +728,7 @@ img { max-width: 100%; height: auto; }
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }
   .nav__actions a { display: none; }
+  .nav__actions .nav__playbook--mobile { display: inline-flex; }
 
   .footer__top {
     grid-template-columns: 1fr;
