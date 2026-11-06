@@ -28,17 +28,13 @@ test('the playbook link is the app sign-up page with the free_resource campaign'
   );
 });
 
-test('the nav (desktop and phone) and the homepage banner all use that one link', () => {
+test('the playbook is offered from the nav only (desktop and phone), never as a homepage banner', () => {
   const layout = read('src/layouts/Layout.astro');
   const home = read('src/pages/index.astro');
   const navLinks = layout.match(/href=\{PLAYBOOK_SIGNUP_URL\}[^>]*data-playbook-link/g) || [];
-  const bannerLinks = home.match(/href=\{PLAYBOOK_SIGNUP_URL\}[^>]*data-playbook-link/g) || [];
   assert.strictEqual(navLinks.length, 2, 'desktop pill + phone pill');
-  assert.strictEqual(bannerLinks.length, 1, 'the banner button');
-  // The banner points at nothing else — the download is the app's.
-  const banner = home.slice(home.indexOf('<section class="playbook"'), home.indexOf('SECTION — SOCIAL PROOF BAR'));
-  assert.doesNotMatch(banner, /\.pdf/i);
-  assert.strictEqual((banner.match(/href=/g) || []).length, 1, 'one link in the banner');
+  // Removed after QA (FD-1110): the banner under the hero did not look right.
+  assert.doesNotMatch(home, /playbook/i);
 });
 
 test('the copy is the ticket\'s', () => {

@@ -168,9 +168,9 @@ All CTAs point to: `https://app.tryflynt.ai/`
 
 ## Free BD Playbook (FD-1110)
 
-The "Free BD Playbook" pill in the nav and the banner under the homepage hero
-send the visitor to the app's sign-up page with `?utm_campaign=free_resource`
+The "Free BD Playbook" pill in the nav (desktop and phone) sends the visitor to the app's sign-up page with `?utm_campaign=free_resource`
 (`src/lib/playbook.js` — the one place the link and copy live). Nothing
 downloads on the website: the app shows the playbook through sign-up and
 onboarding and offers the PDF before the plan picker. `tests/free-playbook-links.test.cjs`
-pins the three links to that one URL.
+pins both links to that one URL. The banner under the homepage hero was
+removed after QA; only the nav carries the playbook.
