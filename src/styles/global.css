@@ -715,6 +715,26 @@ img { max-width: 100%; height: auto; }
   display: flex;
 }
 
+/* ── Narrow desktop nav (FD-1110) ──
+   With the Free BD Playbook pill the full nav (five links, the pill and three
+   buttons) needs about 1,240px; below that it ran off the right edge and the
+   page scrolled sideways. So below 1,240px the bar takes the phone layout —
+   logo, the compact pill and the menu button — and Login, Book Demo and Try
+   for Free sit in the menu, as they already do on a phone. */
+@media (max-width: 1239px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: flex; }
+  .nav__actions .btn { display: none; }
+  .nav__actions .nav__playbook--mobile { display: inline-flex; }
+}
+
+/* The smallest phones (375–420px): tighter gaps and no book icon, so the pill
+   and the menu button both fit beside the logo. */
+@media (max-width: 420px) {
+  .nav__inner { gap: 12px; }
+  .nav__playbook--mobile .nav__playbook-icon { display: none; }
+}
+
 /* ── Mobile ── */
 @media (max-width: 768px) {
   :root {
