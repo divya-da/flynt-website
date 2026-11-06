@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 import { client } from '../../lib/sanity.js'
 import { createImageUrlBuilder } from '@sanity/image-url'
+import { spansToHtml } from '../../lib/blogSpans.mjs'
 
 const builder = createImageUrlBuilder(client)
 function urlFor(source) {
@@ -65,25 +66,14 @@ function blocksToHtml(blocks = []) {
       continue
     }
 
-    const text = block.children.map(span => {
-      let t = span.text || ''
-      if (span.marks?.includes('strong')) t = `<strong>${t}</strong>`
-      if (span.marks?.includes('em')) t = `<em>${t}</em>`
-      if (span.marks?.includes('code')) t = `<code>${t}</code>`
-      return t
-    }).join('')
+    const text = spansToHtml(block.children, block.markDefs)
 
     // Collect consecutive list items of the same type
     if (block.listItem === 'bullet' || block.listItem === 'number') {
       const tag = block.listItem === 'bullet' ? 'ul' : 'ol'
       const items = []
       while (i < blocks.length && blocks[i].listItem === block.listItem) {
-        const itemText = blocks[i].children.map(span => {
-          let t = span.text || ''
-          if (span.marks?.includes('strong')) t = `<strong>${t}</strong>`
-          if (span.marks?.includes('em')) t = `<em>${t}</em>`
-          return t
-        }).join('')
+        const itemText = spansToHtml(blocks[i].children, blocks[i].markDefs)
         items.push(`<li>${itemText}</li>`)
         i++
       }
@@ -396,6 +386,12 @@ const jsonLd = {
     padding: 2px 6px;
     font-size: 0.9em;
     font-family: monospace;
+  }
+
+  .post-body :global(a) {
+    color: var(--purple);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .post-body :global(strong) {
