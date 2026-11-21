@@ -99,37 +99,50 @@ import Layout from '../layouts/Layout.astro';
         <div class="value-props__icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3 class="value-props__title">Made for Recruiters</h3>
-        <p class="value-props__body">Built for recruiting, not repurposed from a generic sales tool.</p>
+        <div class="value-props__card__text">
+          <h3 class="value-props__title">Made for Recruiters</h3>
+          <p class="value-props__body">Built for recruiting, not repurposed from a generic sales tool.</p>
+        </div>
       </div>
 
       <div class="value-props__card">
         <div class="value-props__icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3 class="value-props__title">Results in 5 Minutes</h3>
-        <p class="value-props__body">No setup, no IT. Share who you are after and see real companies and decision makers on the first search.</p>
+        <div class="value-props__card__text">
+          <h3 class="value-props__title">Results in 5 Minutes</h3>
+          <p class="value-props__body">Share who you are after and see real companies and decision makers on the first search.</p>
+        </div>
       </div>
 
       <div class="value-props__card">
         <div class="value-props__icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         </div>
-        <h3 class="value-props__title">One Balance. Not Five Invoices.</h3>
-        <p class="value-props__body">Leads, campaigns, AI writing and LinkedIn all run on the same credits. No per-export fee, no separate LinkedIn tool, no per-seat charge.</p>
+        <div class="value-props__card__text">
+          <h3 class="value-props__title">One Balance. Not Five Invoices.</h3>
+          <p class="value-props__body">Leads, campaigns, AI writing and LinkedIn all run on the same credits. No per-export fee, no separate LinkedIn tool.</p>
+        </div>
       </div>
 
       <div class="value-props__card">
         <div class="value-props__icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
         </div>
-        <h3 class="value-props__title">Live Signals. Not Stale Lists.</h3>
-        <p class="value-props__body">Hiring, funding and M&amp;A events as they happen, not a scraped database.</p>
+        <div class="value-props__card__text">
+          <h3 class="value-props__title">Live Signals. Not Stale Lists.</h3>
+          <p class="value-props__body">Hiring, funding and M&amp;A events as they happen, not a scraped database.</p>
+        </div>
       </div>
 
       <div class="value-props__card value-props__card--dark">
-        <h3 class="value-props__title">Email and LinkedIn. One Sequence. One Balance.</h3>
-        <p class="value-props__body">Both channels run in the same campaign, powered by the same intelligence. No separate tool, no add-on.</p>
+        <div class="value-props__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="value-props__card__text">
+          <h3 class="value-props__title">Email and LinkedIn. One Sequence. One Balance.</h3>
+          <p class="value-props__body">Both channels run in the same campaign, powered by the same intelligence. No separate tool, no add-on.</p>
+        </div>
       </div>
 
     </div>
@@ -654,9 +667,9 @@ import Layout from '../layouts/Layout.astro';
         <p class="agent-cap__body">Flynt's agents watch job boards, funding announcements and deal news across your market around the clock. Every company that matches your criteria is scored against it and surfaced with the reason attached, so you review leads instead of hunting for them.</p>
       </div>
       <div class="agent-cap__card">
-        <div class="agent-cap__eyebrow">Daily Output</div>
-        <h3 class="agent-cap__title">Up to 30 Leads a Day, Per Agent</h3>
-        <p class="agent-cap__body">Each agent delivers up to 30 qualified, scored leads daily, around 900 new opportunities a month, without you lifting a finger. Volume on funding and M&amp;A depends on how many events hit your market.</p>
+        <div class="agent-cap__eyebrow">Volume</div>
+        <h3 class="agent-cap__title">Up to 30 Leads per Agent Run</h3>
+        <p class="agent-cap__body">Each scheduled run delivers up to 30 qualified, scored leads, around 900 opportunities a month per agent. And if you want more, run it again. There's no daily run limit. What you can pull is set by your credit balance.</p>
       </div>
       <div class="agent-cap__card">
         <div class="agent-cap__eyebrow">Personalization</div>
@@ -754,10 +767,13 @@ import Layout from '../layouts/Layout.astro';
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__inner">
-      <h2>Your Pipeline Runs. Even When You Don't.</h2>
-      <p>Companies in your market are posting jobs, raising funding and getting acquired right now. Flynt finds them, writes the outreach and sends it while you are doing something else. Upload a candidate and it works in reverse too.</p>
-      <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Get Started →</a>
-      <span class="final-cta__disclaimer">5 min set up time.</span>
+      <h2>Go Look at Your Market.<br>Right Now.</h2>
+      <p>Companies in your market posted jobs this morning. Some of them just raised. Some just got acquired. Search for them, see the decision makers, and read the outreach Flynt writes from their own posting. Then decide whether you want it running every morning.</p>
+      <div class="fp-hero__ctas">
+        <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background: var(--black); border-color: var(--black);">Search Your Market Free →</a>
+        <button class="btn btn--outline btn--lg" data-demo-trigger>Request Demo</button>
+      </div>
+      <span class="final-cta__disclaimer">500 credits included. 5 min setup time.</span>
     </div>
   </div>
 </section>
@@ -1231,27 +1247,26 @@ import Layout from '../layouts/Layout.astro';
 
 .value-props__card:nth-child(5) {
   grid-column: 1 / -1;
-  background: #25153e !important;
-  border-color: #25153e !important;
-}
-
-.value-props__card:nth-child(5) .value-props__title {
-  color: var(--white);
-  -webkit-text-stroke: 0;
-}
-
-.value-props__card:nth-child(5) .value-props__body {
-  color: rgba(255, 255, 255, 0.65);
+  background: var(--purple-bg-2) !important;
+  border-color: var(--purple-bg-2) !important;
 }
 
 .value-props__card {
-  padding: 28px 24px;
+  padding: 20px 24px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
   background: var(--white);
   border: 1px solid var(--slate-200);
   border-radius: 12px;
+}
+
+.value-props__card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
 }
 
 .value-props__icon {
@@ -1262,7 +1277,6 @@ import Layout from '../layouts/Layout.astro';
   justify-content: center;
   color: var(--purple);
   flex-shrink: 0;
-  margin-bottom: 4px;
 }
 
 .value-props__title {
@@ -2492,7 +2506,7 @@ a.agent-widget--new:hover { box-shadow: 0 6px 24px rgba(124,58,237,0.35); }
 }
 
 .final-cta__inner {
-  max-width: var(--max-width);
+  max-width: var(--max-width); 
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -2509,7 +2523,7 @@ a.agent-widget--new:hover { box-shadow: 0 6px 24px rgba(124,58,237,0.35); }
 .final-cta__inner p {
   color: var(--slate-600);
   font-size: 1.125rem;
-  max-width: 480px;
+  max-width: 720px;
   line-height: 1.625;
 }
 
