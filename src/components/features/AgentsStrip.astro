@@ -1,0 +1,45 @@
+---
+// One-line bridge from a search page to the Agents page. The search-vs-agent
+// comparison lives only on /features/agents; keep this strip to one idea.
+---
+
+<section class="section fx-agents-strip">
+  <div class="container">
+    <div class="fx-agents-strip__inner">
+      <div>
+        <h3>Found a search that works? Run it daily with an agent.</h3>
+        <p>An agent runs the same search every day and adds the new leads to your campaign, so they are already contacted before you open your laptop.</p>
+      </div>
+      <a href="/features/agents" class="btn btn--primary">How agents work →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.fx-agents-strip { background: var(--white); }
+.fx-agents-strip__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  padding: 32px 36px;
+  border-radius: 16px;
+  background: var(--purple-bg-2);
+  border: 1px solid var(--purple-300);
+}
+.fx-agents-strip__inner > div { flex: 999 1 420px; min-width: 0; }
+.fx-agents-strip h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+.fx-agents-strip p { margin: 0; font-size: 1rem; color: var(--slate-700); }
+
+@media (max-width: 768px) {
+  .fx-agents-strip__inner { padding: 24px; }
+}
+</style>

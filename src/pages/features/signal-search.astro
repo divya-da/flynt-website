@@ -1,11 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FlyntSystem from '../../components/features/FlyntSystem.astro';
+import SearchWays from '../../components/features/SearchWays.astro';
+import CreditsBlock from '../../components/features/CreditsBlock.astro';
+import AgentsStrip from '../../components/features/AgentsStrip.astro';
 ---
 
 <Layout
-  title="Signal Agent | Find Funded and Acquired Companies | Flynt"
-  description="Flynt's Signal Agent finds companies that just raised funding or completed an M&A deal, scores the fit, and writes your outreach. Get in early."
-  ogTitle="New from Flynt: an agent that finds companies that just raised funding or just got acquired, so you reach them first."
+  title="Signal Search | Find Funded and Acquired Companies | Flynt"
+  description="Flynt's signal search finds companies that just raised funding or completed an M&A deal, scores the fit, and writes your outreach. Get in early."
+  ogTitle="New from Flynt: a search that finds companies that just raised funding or just got acquired, so you reach them first."
 >
 
 <!-- ─────────────────────────────────────────────
@@ -17,12 +21,12 @@ import Layout from '../../layouts/Layout.astro';
       <div class="sa-hero__copy">
         <div class="tag">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
-          New: Signal Agent
+          Signal Search
         </div>
         <h1 class="sa-hero__h1">Funding and M&amp;A, turned into your <span class="hl">next client conversation.</span></h1>
-        <p class="sa-hero__sub">Most recruiters chase the same open roles at the same time. Signal Agent finds companies that just raised funding or just completed a merger or acquisition, scores the fit for your niche, finds the decision maker, and writes the outreach. You start the conversation while everyone else is still waiting for a posting.</p>
+        <p class="sa-hero__sub">Most recruiters chase the same open roles at the same time. Signal search finds companies that just raised funding or just completed a merger or acquisition, scores the fit for your niche, finds the decision maker, and writes the outreach. You start the conversation while everyone else is still waiting for a posting.</p>
         <div class="sa-hero__ctas">
-          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg">Try Signal Agent</a>
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg">Try Signal Search</a>
           <a href="#how" class="btn btn--outline btn--lg">See how it works →</a>
         </div>
         <div class="sa-hero__trust">7-day trial. Cancel anytime.</div>
@@ -115,52 +119,7 @@ import Layout from '../../layouts/Layout.astro';
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 3 — HOW IT WORKS (dark)
-───────────────────────────────────────────── -->
-<section class="sa-how" id="how">
-  <div class="container">
-    <div class="sa-split">
-      <div class="sa-split__head">
-        <div class="tag tag--dark">How it works</div>
-        <h2 class="sa-h2">From the announcement to the inbox in <span class="sa-how__accent">one system.</span></h2>
-      </div>
-      <div class="sa-split__body">
-        <p>You define your market. Signal Agent does the watching, the research, and the writing. You approve and send.</p>
-      </div>
-    </div>
-
-    <div class="sa-steps">
-      <div class="sa-step">
-        <div class="sa-step__num">STEP 1</div>
-        <h3>Signal Agent finds the event</h3>
-        <p>It surfaces companies in your niche and market that just raised funding or just completed a merger or acquisition.</p>
-      </div>
-      <div class="sa-step__arrow" aria-hidden="true">→</div>
-      <div class="sa-step">
-        <div class="sa-step__num">STEP 2</div>
-        <h3>It scores the fit and finds the decision maker</h3>
-        <p>Each lead gets a match score with a written breakdown, plus the person most likely to own the hire.</p>
-      </div>
-      <div class="sa-step__arrow" aria-hidden="true">→</div>
-      <div class="sa-step">
-        <div class="sa-step__num">STEP 3</div>
-        <h3>It writes the hook around the event</h3>
-        <p>The personalization is built from what actually happened, then the whole message is adjusted so it reads as one note.</p>
-      </div>
-      <div class="sa-step__arrow" aria-hidden="true">→</div>
-      <div class="sa-step">
-        <div class="sa-step__num">STEP 4</div>
-        <h3>Campaigns sends it on email and LinkedIn</h3>
-        <p>One sequence, both channels, and the CRM tracks every reply.</p>
-      </div>
-    </div>
-
-    <p class="sa-how__close">You never move information between tools. The event that found the lead is the reason you reach out.</p>
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────────────
-  SECTION 4 — TWO TRIGGERS
+  SECTION 3 — TWO TRIGGERS
 ───────────────────────────────────────────── -->
 <section class="section sa-triggers">
   <div class="container">
@@ -182,7 +141,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
           <h3>Just raised funding</h3>
         </div>
-        <p><strong>What Signal Agent finds:</strong> companies in your niche that recently announced a funding round.</p>
+        <p><strong>What signal search finds:</strong> companies in your niche that recently announced a funding round.</p>
         <p><strong>Why it creates an opening:</strong> new capital usually means new headcount, new leadership, and a plan to hit the next milestone.</p>
         <div class="sa-example">
           <div class="sa-example__label">Example opening</div>
@@ -197,7 +156,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
           <h3>Just merged or acquired</h3>
         </div>
-        <p><strong>What Signal Agent finds:</strong> companies that recently completed or announced a merger or acquisition.</p>
+        <p><strong>What signal search finds:</strong> companies that recently completed or announced a merger or acquisition.</p>
         <p><strong>Why it creates an opening:</strong> integration often means org changes, backfills, new leadership layers, and consolidation work.</p>
         <div class="sa-example">
           <div class="sa-example__label">Example opening</div>
@@ -206,7 +165,52 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
 
-    <p class="sa-footnote">Signal Agent works from publicly announced events.</p>
+    <p class="sa-footnote">Signal search works from publicly announced events.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 4 — HOW IT WORKS (dark)
+───────────────────────────────────────────── -->
+<section class="sa-how" id="how">
+  <div class="container">
+    <div class="sa-split">
+      <div class="sa-split__head">
+        <div class="tag tag--dark">How it works</div>
+        <h2 class="sa-h2">From the announcement to the inbox in <span class="sa-how__accent">one system.</span></h2>
+      </div>
+      <div class="sa-split__body">
+        <p>You define your market. Flynt does the searching, the research, and the writing. You choose who to contact and send.</p>
+      </div>
+    </div>
+
+    <div class="sa-steps">
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 1</div>
+        <h3>Find the event</h3>
+        <p>Flynt surfaces companies in your niche and market that just raised funding or just completed a merger or acquisition.</p>
+      </div>
+      <div class="sa-step__arrow" aria-hidden="true">→</div>
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 2</div>
+        <h3>Score the fit and find the decision maker</h3>
+        <p>Each lead gets a match score with a written breakdown, plus the person most likely to own the hire.</p>
+      </div>
+      <div class="sa-step__arrow" aria-hidden="true">→</div>
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 3</div>
+        <h3>Write the hook around the event</h3>
+        <p>The personalization is built from what actually happened, then the whole message is adjusted so it reads as one note.</p>
+      </div>
+      <div class="sa-step__arrow" aria-hidden="true">→</div>
+      <div class="sa-step">
+        <div class="sa-step__num">STEP 4</div>
+        <h3>Send it on email and LinkedIn</h3>
+        <p>One sequence, both channels, and the CRM tracks every reply.</p>
+      </div>
+    </div>
+
+    <p class="sa-how__close">You never move information between tools. The event that found the lead is the reason you reach out.</p>
   </div>
 </section>
 
@@ -225,6 +229,7 @@ import Layout from '../../layouts/Layout.astro';
           <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>The decision maker.</strong> The person most likely to own the hire, with contact details, not a generic inbox.</span></li>
           <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>AI-written personalization hooks.</strong> Built around the event, then the surrounding copy is adjusted so the whole message reads as one note, not a template with something pasted in.</span></li>
           <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Ready to launch.</strong> One click from lead to sequence in Flynt Campaigns.</span></li>
+          <li><span class="sa-check" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>No repeat outreach.</strong> Companies you've already contacted are skipped, so you never approach the same company twice.</span></li>
         </ul>
       </div>
 
@@ -257,89 +262,11 @@ import Layout from '../../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────────
-  SECTION 6 — TWO AGENTS, ONE MISSION
-───────────────────────────────────────────── -->
-<section class="section sa-compare">
-  <div class="container">
-    <div class="sa-compare__head">
-      <div class="tag">All opportunities</div>
-      <h2 class="sa-h2">Hiring signals show who needs someone now. <span class="hl">Signal Agent shows who is about to.</span></h2>
-    </div>
+<!-- SECTION 6 — THREE WAYS IN (shared) -->
+<SearchWays current="signal" />
 
-    <div class="sa-compare__grid">
-      <div class="sa-agent-card">
-        <div class="sa-agent-card__title">Hiring-signal agent</div>
-        <dl>
-          <dt>Finds</dt><dd>Companies actively hiring in your market</dd>
-          <dt>Best for</dt><dd>Reaching live demand</dd>
-          <dt>Competition</dt><dd>Higher, since every recruiter sees the same postings</dd>
-          <dt>Opening line</dt><dd class="sa-italic">“I saw you are hiring for…”</dd>
-        </dl>
-      </div>
-      <div class="sa-agent-card sa-agent-card--new">
-        <div class="sa-agent-card__title">Signal Agent <span class="sa-new">NEW</span></div>
-        <dl>
-          <dt>Finds</dt><dd>Companies that just raised funding or just completed a merger or acquisition</dd>
-          <dt>Best for</dt><dd>Getting in early, before the role is posted</dd>
-          <dt>Competition</dt><dd>Typically lower, since fewer recruiters track these events</dd>
-          <dt>Opening line</dt><dd class="sa-italic">“Congrats on the news…”</dd>
-        </dl>
-      </div>
-    </div>
-
-    <p class="sa-compare__close">Run one or both. Together they cover the opportunities in your market from every angle, which is what Flynt is built to do: help you find all opportunities, in all ways.</p>
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────────────
-  SECTION 7 — BUILT INTO THE WHOLE SYSTEM
-───────────────────────────────────────────── -->
-<section class="section sa-system">
-  <div class="container">
-    <div class="sa-split sa-split--end">
-      <div class="sa-split__head">
-        <div class="tag">One system</div>
-        <h2 class="sa-h2">Finding the lead is half the job. <span class="hl">Flynt does the other half too.</span></h2>
-      </div>
-      <div class="sa-split__body">
-        <p>Signal Agent is not a standalone list. Every lead flows straight into the tools you already use in Flynt.</p>
-      </div>
-    </div>
-
-    <div class="sa-system__grid">
-      <a href="/features/campaigns" class="sa-system__card">
-        <h3>Flynt Campaigns</h3>
-        <p>Prebuilt or custom sequences, with AI personalization on every message.</p>
-      </a>
-      <a href="/features/crm" class="sa-system__card">
-        <h3>Flynt Pipeline (CRM)</h3>
-        <p>Every reply tracked from first touch to placement.</p>
-      </a>
-      <div class="sa-system__card">
-        <h3>Unified Inbox</h3>
-        <p>All your conversations in one place.</p>
-      </div>
-      <div class="sa-system__card">
-        <h3>Performance Dashboard</h3>
-        <p>See what is working, by agent and by market.</p>
-      </div>
-      <div class="sa-system__card">
-        <h3>Slack integration</h3>
-        <p>Share an agent's results and updates with your team in Slack.</p>
-      </div>
-      <div class="sa-system__card sa-system__card--li">
-        <h3>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          Email and LinkedIn together
-        </h3>
-        <p>LinkedIn messaging is included on every plan, in the same sequence as email.</p>
-      </div>
-    </div>
-
-    <p class="sa-compare__close">From the first scan to the sent confirmation, the intelligence that found the lead powers the message that reaches them.</p>
-  </div>
-</section>
+<!-- SECTION 7 — BUILT INTO THE WHOLE SYSTEM (shared) -->
+<FlyntSystem intro="A signal search is not a standalone list. Every lead you keep flows straight into the tools you already use in Flynt." />
 
 <!-- ─────────────────────────────────────────────
   SECTION 8 — WHO IT IS FOR + FAQ
@@ -371,35 +298,52 @@ import Layout from '../../layouts/Layout.astro';
       <div class="sa-faq__grid">
         <div class="sa-faq__item">
           <h4>What counts as a trigger event?</h4>
-          <p>A company announcing a funding round, or completing or announcing a merger or acquisition. Signal Agent works from publicly announced events.</p>
+          <p>A company announcing a funding round, or completing or announcing a merger or acquisition. Signal search works from publicly announced events.</p>
         </div>
         <div class="sa-faq__item">
           <h4>Does it work with LinkedIn?</h4>
-          <p>Yes. LinkedIn messaging is included on every plan, and Signal Agent leads can be reached on email and LinkedIn in one sequence.</p>
+          <p>Yes. LinkedIn messaging is included on every plan, and signal search leads can be reached on email and LinkedIn in one sequence.</p>
         </div>
         <div class="sa-faq__item">
-          <h4>Does Signal Agent replace the hiring-signal agent?</h4>
+          <h4>Does signal search replace hiring search?</h4>
           <p>No. They find different opportunities. Use one or both.</p>
         </div>
         <div class="sa-faq__item">
           <h4>Will funded or acquired companies actually hire through recruiters?</h4>
           <p>Many do, and a trigger event gives you a relevant reason to ask. We cannot promise replies or placements, and results depend on your niche, offer, and follow-up.</p>
         </div>
+        <div class="sa-faq__item">
+          <h4>Can it run automatically?</h4>
+          <p>Yes. Once a signal search is finding companies you'd call, run it daily with an agent. The Agents page explains how.</p>
+        </div>
+        <div class="sa-faq__item">
+          <h4>Which plans include signal search?</h4>
+          <p>Every paid plan.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SECTION 9 — CREDITS -->
+<CreditsBlock
+  title="Pay only for the companies<br />you choose to pursue."
+  body="Every plan comes with a monthly credit balance. Each step shows its cost before you spend it, so you only pay for the companies and people you keep, and you can top up any time."
+/>
+
+<!-- SECTION 10 — RUN IT DAILY (shared) -->
+<AgentsStrip />
+
 <!-- ─────────────────────────────────────────────
-  SECTION 9 — FINAL CTA
+  SECTION 11 — FINAL CTA
 ───────────────────────────────────────────── -->
 <section class="sa-cta">
   <div class="container">
     <div class="sa-cta__inner">
       <h2>Be early on the opportunities <span class="sa-how__accent">everyone else reads about.</span></h2>
-      <p>Signal Agent finds the companies, scores the fit, and writes the outreach. You start the conversation.</p>
+      <p>Signal search finds the companies, scores the fit, and writes the outreach. You start the conversation.</p>
       <div class="sa-cta__btns">
-        <a href="https://app.tryflynt.ai/" class="btn btn--lg sa-cta__primary">Try Signal Agent</a>
+        <a href="https://app.tryflynt.ai/" class="btn btn--lg sa-cta__primary">Try Signal Search</a>
         <a href="/pricing" class="btn btn--lg sa-cta__secondary">See pricing</a>
       </div>
       <span class="sa-cta__note">7-day trial. Cancel anytime.</span>
@@ -570,43 +514,7 @@ import Layout from '../../layouts/Layout.astro';
   padding: 10px 18px; border-radius: 10px;
 }
 
-/* ── Compare ── */
-.sa-compare { background: var(--purple-bg); }
-.sa-compare__head { max-width: 900px; margin-bottom: 48px; display: flex; flex-direction: column; }
-.sa-compare__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.sa-agent-card {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-radius: 20px;
-  padding: 32px 36px;
-}
-.sa-agent-card--new { border: 2px solid var(--purple); box-shadow: var(--shadow-purple); }
-.sa-agent-card__title { font-size: 1.5rem; font-weight: 800; color: var(--black); display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-.sa-new { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; background: var(--purple); color: var(--white); padding: 4px 9px; border-radius: 999px; }
-.sa-agent-card dl { display: flex; flex-direction: column; }
-.sa-agent-card dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-500); border-top: 1px solid var(--slate-200); padding-top: 14px; }
-.sa-agent-card dt:first-child { border-top: none; padding-top: 0; }
-.sa-agent-card dd { font-size: 1.05rem; font-weight: 600; color: var(--slate-900); margin: 4px 0 14px; }
-.sa-agent-card dd:last-child { margin-bottom: 0; }
-.sa-italic { font-style: italic; }
-.sa-compare__close { text-align: center; max-width: 760px; margin: 40px auto 0; }
 
-/* ── System ── */
-.sa-system { background: var(--white); }
-.sa-system__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.sa-system__card {
-  background: var(--slate-50);
-  border: 1px solid var(--slate-200);
-  border-radius: 16px;
-  padding: 28px;
-  display: flex; flex-direction: column; gap: 8px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-a.sa-system__card:hover { border-color: var(--purple-300); box-shadow: var(--shadow-purple); }
-.sa-system__card h3 { font-size: 1.2rem; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 8px; }
-.sa-system__card p { margin: 0; font-size: 1rem; }
-.sa-system__card--li { background: var(--purple-bg-2); border-color: var(--purple-300); }
-.sa-system__card--li svg { color: #0a66c2; }
 
 /* ── Who + FAQ ── */
 .sa-who { background: var(--slate-50); }
@@ -643,12 +551,12 @@ a.sa-system__card:hover { border-color: var(--purple-300); box-shadow: var(--sha
 
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
-  .sa-split, .sa-trigger-grid, .sa-compare__grid, .sa-faq__grid { grid-template-columns: 1fr; }
+  .sa-split, .sa-trigger-grid, .sa-faq__grid { grid-template-columns: 1fr; }
   .sa-split { gap: 16px; margin-bottom: 40px; }
-  .sa-benefits, .sa-system__grid, .sa-who__grid { grid-template-columns: 1fr; }
+  .sa-benefits, .sa-who__grid { grid-template-columns: 1fr; }
   .sa-hero { padding: 64px 0; }
   .sa-hero__visual, .sa-detail__visual { padding: 20px; border-radius: 24px; }
-  .sa-trigger, .sa-agent-card { padding: 24px; }
+  .sa-trigger { padding: 24px; }
   .sa-how, .sa-cta { padding: 64px 0; }
 }
 </style>

@@ -1,10 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import WhoFaq from '../../components/features/WhoFaq.astro';
+import CreditsBlock from '../../components/features/CreditsBlock.astro';
+
+const personas = [
+  { title: 'Solo recruiters', body: 'Keep prospecting while you are busy placing.' },
+  { title: 'Agency owners', body: 'Cover every market your team works, every single day.' },
+  { title: 'Teams scaling across markets', body: "Run one agent per market and see what's working on one dashboard." },
+];
+
+const faqs = [
+  { title: 'Does an agent find different leads from a search?', body: 'No. An agent runs the search you built, with the same scoring and the same written outreach, on the days you are not thinking about it.' },
+  { title: 'Do I have to search first?', body: 'No. You can set up an agent from scratch and Flynt saves the search behind it for you. Most recruiters search first, then run the search that works.' },
+  { title: 'Can I change what an agent looks for?', body: "Yes. Open the agent, see the search behind it and change a filter. Tomorrow's leads change with it." },
+  { title: 'Are the leads contacted automatically?', body: 'When the agent is connected to a campaign, yes. New leads go into your sequence on email and LinkedIn as soon as they are found.' },
+  { title: 'Which kinds of agent are there?', body: 'One for each kind of search: hiring, signal and MPC. Run as many as your plan allows, each on its own market.' },
+  { title: 'Which plans include agents?', body: 'Starter and above. Search is on every plan, including Lite.' },
+];
 ---
 
 <Layout
-  title="Hiring Agent — Core Research & Lead Delivery | Flynt AI"
-  description="Set your criteria once. Flynt's agents scan 250 million profiles and 30 million companies, scoring every fit and delivering a complete intelligence package to your inbox every day."
+  title="Agents — Your Search, Run Every Day | Flynt AI"
+  description="An agent takes a search you trust and runs it every day with all of your filters and settings. Before you open your laptop, fresh leads are scored, personalised and already contacted."
 >
 
 <!-- ─────────────────────────────────────────────
@@ -15,24 +32,24 @@ import Layout from '../../layouts/Layout.astro';
     <div class="fp-hero__inner fade-up fade-up-1">
       <div class="tag">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-        Hiring Agent — Core Research &amp; Lead Delivery
+        Agents
       </div>
       <h1 class="fp-hero__headline fade-up fade-up-2">
-        Clients you want, found and delivered.<br />Every single day.
+        Your search, run every day.<br /><span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">Fresh leads, already contacted.</span>
       </h1>
       <p class="fp-hero__sub fade-up fade-up-3">
-        Set your criteria once. Flynt's agents scan 250 million profiles and 30 million companies finding the exact clients you're targeting, scoring every fit, and delivering a complete intelligence package to your inbox before you open your laptop.
+        An agent takes a search you trust and runs it for you every day, with all of your filters and settings. You don't have to be at your desk. Before you open your laptop, the new leads are scored, personalised and already in your campaign.
       </p>
       <div class="fp-hero__ctas fade-up fade-up-4">
         <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Start Free Trial →</a>
         <button class="btn btn--outline btn--lg" data-demo-trigger>See It In Action →</button>
       </div>
       <div class="fp-trust fade-up fade-up-4">
-        <span>✓ 250M+ profiles</span>
+        <span>✓ Runs every day</span>
         <span class="fp-trust__dot">·</span>
-        <span>✓ 30M+ companies</span>
+        <span>✓ Every agent is a saved search</span>
         <span class="fp-trust__dot">·</span>
-        <span>✓ 30 leads/day per agent</span>
+        <span>✓ Leads contacted automatically</span>
         <span class="fp-trust__dot">·</span>
         <span>✓ 5 min set up time</span>
       </div>
@@ -323,226 +340,242 @@ import Layout from '../../layouts/Layout.astro';
   </div>
 </section>
 
+
 <!-- ─────────────────────────────────────────────
-  SECTION 4 — CONFIGURATION (dark)
+  SECTION 4 — WHY NOT JUST LET IT RUN
 ───────────────────────────────────────────── -->
-<section class="positioning fp-config">
+<section class="section fs-problem">
+  <div class="container">
+    <div class="fs-problem__inner">
+      <div class="tag" style="margin-bottom: 20px;">Search First, Then Automate</div>
+      <h2>Nobody wants to configure<br />a robot on faith.</h2>
+      <div class="fs-problem__body">
+        <p>Every automated prospecting tool asks for the same leap: tell it what you want, trust it to go find it, come back tomorrow. If you've been burned by a data vendor, that's a lot to ask before you've seen a single company.</p>
+        <p>So Flynt lets you do it by hand first. Search your market, look at what comes back, change the filters, search again. When it's returning companies you'd actually call, run it daily with an agent. <strong>The automation is the reward, not the entry fee.</strong></p>
+        <p>That's what makes the agent trustworthy. It runs the search you already tuned by hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 5 — SEARCH vs AGENT
+───────────────────────────────────────────── -->
+<section class="section fs-compare-section">
+  <div class="container">
+    <div class="section-header section-header--center" style="margin-bottom: 40px;">
+      <div class="tag" style="margin: 0 auto 16px;">Search and Agents</div>
+      <h2>An agent is a search<br />you've stopped running by hand.</h2>
+      <p style="max-width: 720px;">They are not two products. They are the same engine, with you holding the controls or not. Most recruiters use both: Search when they want to look, agents for markets they already know work.</p>
+    </div>
+
+    <div class="fs-compare">
+
+      <div class="fs-compare__card fs-compare__card--light">
+        <div class="fs-compare__card-header">
+          <div class="fs-compare__icon fs-compare__icon--purple">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.4" stroke="#ffffff" stroke-width="1.8"/><path d="M12.2 12.2L16 16" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="fs-compare__card-title">Search</div>
+            <div class="fs-compare__card-sub">You run it</div>
+          </div>
+        </div>
+        <dl class="fs-compare__list">
+          <div class="fs-compare__row">
+            <dt>When it runs</dt>
+            <dd>Whenever you start a search. Results in minutes.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>Who decides</dt>
+            <dd>You, at every step: which companies, which hiring managers, which messages go out.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>You see</dt>
+            <dd>Results live. Change the filters and run it again as many times as you want.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>Best for</dt>
+            <dd>A market you haven't tried, a client who calls at 4pm, a job title you've never recruited for.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>Available on</dt>
+            <dd><strong>Every plan, including Lite</strong></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="fs-compare__card fs-compare__card--dark">
+        <div class="fs-compare__card-header">
+          <div class="fs-compare__icon fs-compare__icon--ghost">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6.6" stroke="#ffffff" stroke-width="1.8"/><path d="M9 5.3V9l2.6 1.7" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="fs-compare__card-title fs-compare__card-title--white">Agent</div>
+            <div class="fs-compare__card-sub fs-compare__card-sub--green">It runs itself</div>
+          </div>
+        </div>
+        <dl class="fs-compare__list fs-compare__list--dark">
+          <div class="fs-compare__row">
+            <dt>When it runs</dt>
+            <dd>Every day on a schedule, plus any time you hit Run now. No daily run limit.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>Who decides</dt>
+            <dd>You set what it looks for. It picks within those rules and shows its reasoning on every lead.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>You see</dt>
+            <dd>A finished list waiting before you open your laptop, already added to your campaign.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>Best for</dt>
+            <dd>A market you have already proved by hand and want covered every single day.</dd>
+          </div>
+          <div class="fs-compare__row">
+            <dt>Available on</dt>
+            <dd><strong>Starter and above</strong></dd>
+          </div>
+        </dl>
+      </div>
+
+    </div>
+
+    <div class="fs-compare__note">
+      <p><strong>Same engine, same results, same scoring.</strong> An agent does not find different companies from a search. It runs the search you built, on the days you are not thinking about it.</p>
+      <p>Which is why you can open any agent and see the exact search behind it, change one filter, and watch tomorrow's list change with it.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 6 — FROM SEARCH TO AGENT (dark)
+───────────────────────────────────────────── -->
+<section class="positioning fs-to-agent">
   <div class="container">
     <div class="fp-config__header">
-      <div class="tag fp-dark-tag">One Setup</div>
-      <h2 class="fp-dark-h2">One setup. Runs <span style="color: #dbb6f8; -webkit-text-stroke: 0;">forever.</span></h2>
-      <p class="fp-dark-sub">Under 5 minutes to configure. Fresh leads every day after that.</p>
+      <div class="tag fp-dark-tag">From Search to Agent</div>
+      <h2 class="fp-dark-h2">Find a search that works.<br /><span style="-webkit-text-stroke:0; color: #dbb6f8;">Then stop doing it.</span></h2>
+      <p class="fp-dark-sub">Once a search is returning companies you'd actually call, there's no reason to keep running it by hand. Run it daily with an agent, and everything keeps working the same way.</p>
     </div>
     <div class="fp-steps">
       <div class="fp-step">
         <div class="fp-step__num">01</div>
-        <h3 class="fp-step__title">Define Your Market</h3>
-        <p class="fp-step__body">Pick your target industries, job titles, company size, and geography. Flynt builds its search logic around your exact criteria.</p>
+        <h3 class="fp-step__title">Search</h3>
+        <p class="fp-step__body">Set what you're after. Adjust industries, titles, company size, geography. Run it again as many times as you want.</p>
       </div>
       <div class="fp-step">
         <div class="fp-step__num">02</div>
-        <h3 class="fp-step__title">Your Agent Activates</h3>
-        <p class="fp-step__body">Your AI agent runs in the background — scanning for companies actively hiring, finding the right decision-makers, and building an intelligence package on each one. Automatically.</p>
+        <h3 class="fp-step__title">Save it</h3>
+        <p class="fp-step__body">Keep any search you want to come back to. Fine-tune it later as your market shifts.</p>
       </div>
       <div class="fp-step">
         <div class="fp-step__num">03</div>
-        <h3 class="fp-step__title">Leads Land Everyday</h3>
-        <p class="fp-step__body">Before you open your laptop, a fresh list of scored, matched, and personalised leads is already waiting. Every single day. All you do is show up.</p>
+        <h3 class="fp-step__title">Run daily with an agent</h3>
+        <p class="fp-step__body">One click and that saved search runs every day, scoring, personalising and adding new leads to your campaign. You can still open it and change it whenever you like.</p>
       </div>
     </div>
+    <p class="fs-agent-note">Every agent in Flynt is a saved search. Prefer to start from scratch? Set up an agent directly and Flynt saves the search behind it for you.</p>
   </div>
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 4 — INTELLIGENCE PACKAGE
+  SECTION 7 — AN AGENT FOR EVERY SEARCH
 ───────────────────────────────────────────── -->
 <section class="section fp-intel">
   <div class="container">
     <div class="section-header section-header--center">
-      <div class="tag" style="margin: 0 auto 16px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        The Intelligence Package
-      </div>
-      <h2>Every lead arrives <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">ready to action.</span></h2>
-      <p style="max-width: 780px;">Everything you need to reach out with confidence. No extra research required.</p>
+      <div class="tag" style="margin: 0 auto 16px;">Every Kind of Search</div>
+      <h2>Any search can <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">run daily.</span></h2>
+      <p style="max-width: 780px;">Whichever way you find clients, there is an agent that keeps doing it for you.</p>
     </div>
     <div class="fp-cards">
-      <div class="fp-card">
-        <h3 class="fp-card__title">Match Score</h3>
-        <p class="fp-card__desc">A percentage match against your criteria — with a written breakdown of exactly why this lead qualifies.</p>
-      </div>
-      <div class="fp-card">
-        <h3 class="fp-card__title">Decision-Maker Contact</h3>
-        <p class="fp-card__desc">Name, job title, direct email, LinkedIn, and timezone. Everything in one place, ready to go.</p>
-      </div>
-      <div class="fp-card">
-        <h3 class="fp-card__title">Company Context</h3>
-        <p class="fp-card__desc">Industry, size, background, and a direct link to the live job posting that triggered the match.</p>
-      </div>
-      <div class="fp-card">
-        <h3 class="fp-card__title">Fit Score Breakdown</h3>
-        <p class="fp-card__desc">See exactly which criteria were met — role, location, seniority, company size, and funding status.</p>
-      </div>
-      <div class="fp-card">
-        <h3 class="fp-card__title">Recent Company Signals</h3>
-        <p class="fp-card__desc">News, funding rounds, leadership changes, and partnerships — surfaced as personalisation context.</p>
-      </div>
-      <div class="fp-card">
-        <h3 class="fp-card__title">AI Personalization Hooks</h3>
-        <p class="fp-card__desc">AI-written angles pulled from the company, the contact, recent news, and the job posting. Drop straight into your outreach.</p>
-      </div>
+      <a href="/features/hiring-search" class="fp-card fp-card--link">
+        <h3 class="fp-card__title">Hiring agent</h3>
+        <p class="fp-card__desc">Runs your hiring search every day and brings in the companies that posted matching roles in the last 24 hours, up to 30 scored leads per run.</p>
+        <span class="fp-card__more">About hiring search →</span>
+      </a>
+      <a href="/features/signal-search" class="fp-card fp-card--link">
+        <h3 class="fp-card__title">Signal agent</h3>
+        <p class="fp-card__desc">Runs your signal search on the day and time you choose, and brings in companies that just raised funding or just got acquired.</p>
+        <span class="fp-card__more">About signal search →</span>
+      </a>
+      <a href="/features/mpc-search" class="fp-card fp-card--link">
+        <h3 class="fp-card__title">MPC agent</h3>
+        <p class="fp-card__desc">Runs your MPC search for a candidate and keeps finding new companies hiring for that profile, each with its own pitch.</p>
+        <span class="fp-card__more">About MPC search →</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 5 — MATCH SCORING
-───────────────────────────────────────────── -->
-<section class="section fp-scoring" style="background: var(--slate-50);">
-  <div class="container">
-    <div class="fp-scoring__header">
-      <div class="fp-scoring__header-left">
-        <div class="tag">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Match Scoring
-        </div>
-        <h2>Stop guessing who's worth your time. <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">The score</span> tells you.</h2>
-      </div>
-      <div class="fp-scoring__header-right">
-        <p>Every lead arrives with a percentage match and a written breakdown of exactly why it qualifies or where it falls short. In seconds, you know which leads to prioritize and which to skip.</p>
-      </div>
-    </div>
-    <div class="fp-score">
-      <div class="fp-score__left">
-        <ul class="fp-score__list">
-          <li>
-            <span class="fp-score__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><strong>Role match</strong> — Does the active job posting match your target title?</span>
-          </li>
-          <li>
-            <span class="fp-score__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><strong>Hiring manager location</strong> — Is the decision-maker in your target geography?</span>
-          </li>
-          <li>
-            <span class="fp-score__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><strong>Hiring manager seniority</strong> — Do they have the authority to hire a recruiter?</span>
-          </li>
-          <li>
-            <span class="fp-score__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><strong>Company size</strong> — Does headcount fall within your defined range?</span>
-          </li>
-          <li>
-            <span class="fp-score__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><strong>Recently funded</strong> — Has the company raised funding signalling an active budget?</span>
-          </li>
-          <li>
-            <span class="fp-score__check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span><strong>Company industry</strong> — Does the sector align with your target market?</span>
-          </li>
-        </ul>
-      </div>
-      <div class="fp-score__right">
-        <div class="fp-callout">
-          <div class="fp-callout__score">99% Match</div>
-          <p class="fp-callout__name">Athena Yasaman, Director of Business Operations at Suno.</p>
-          <p class="fp-callout__reason">Senior Graphic Designer role fully matches target title. New York location aligns. Series D funding confirms active hiring budget. All criteria satisfied.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────────────
-  SECTION 6 — AI PERSONALIZATION HOOKS
-───────────────────────────────────────────── -->
-<section class="section fp-hooks-section">
-  <div class="container">
-    <div class="section-header section-header--center">
-      <h2>A <span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">unique hook</span> for every lead. Stand out in every inbox.</h2>
-      <p style="max-width: none;">Generic outreach gets ignored. Flynt writes a personalised angle for every lead – pulled from real signals about the company, the person, and the job.</p>
-    </div>
-    <div class="fp-hooks">
-      <div class="fp-hook-card">
-        <h3 class="fp-hook-card__title">Company Hook</h3>
-        <p class="fp-hook-card__desc">What's happening at this company right now that makes your timing relevant.</p>
-      </div>
-      <div class="fp-hook-card">
-        <h3 class="fp-hook-card__title">Lead Hook</h3>
-        <p class="fp-hook-card__desc">What the decision-maker's background signals about how they hire and what they value.</p>
-      </div>
-      <div class="fp-hook-card">
-        <h3 class="fp-hook-card__title">Job Hook</h3>
-        <p class="fp-hook-card__desc">What the specific job posting reveals about company priorities.</p>
-      </div>
-      <div class="fp-hook-card">
-        <h3 class="fp-hook-card__title">News Hook</h3>
-        <p class="fp-hook-card__desc">The most timely, specific angle available – based on the latest signal Flynt detected.</p>
-      </div>
-      <div class="fp-hook-card fp-hook-card--wide">
-        <h3 class="fp-hook-card__title">Campaign Connection</h3>
-        <p class="fp-hook-card__desc">Connect your agent to a campaign and Flynt tailors each hook to fit exactly where it appears in your sequence — so every touchpoint feels personal, not automated.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────────────
-  SECTION 7 — AGENT CAPABILITIES (dark)
+  SECTION 8 — WHAT IT DOES WHILE YOU'RE AWAY (dark)
 ───────────────────────────────────────────── -->
 <section class="positioning fp-agent-section">
   <div class="container">
     <div class="fp-agent-header">
       <div class="fp-agent-header__left">
-        <div class="tag fp-dark-tag">Inside the Intelligence Agent</div>
+        <div class="tag fp-dark-tag">Inside an Agent</div>
         <h2 class="fp-dark-h2">While you're working, so is Flynt.</h2>
       </div>
       <div class="fp-agent-header__right">
-        <p class="fp-dark-sub">Set it up once. Your AI agents run continuously, surfacing the right leads, scoring every fit, and writing your outreach angles before you open your laptop.</p>
+        <p class="fp-dark-sub">Set it up once. Your agents run every day, surfacing the right leads, scoring every fit, writing your outreach and sending it before you open your laptop.</p>
       </div>
     </div>
     <div class="fp-agent-cards">
       <div class="fp-agent-card">
         <h3 class="fp-agent-card__title">Continuous Market Scanning</h3>
         <p class="fp-agent-card__tagline">250M+ profiles. 30M+ companies. No days off.</p>
-        <p class="fp-agent-card__body">Your agent monitors your target market around the clock, tracking hiring activity and surfacing leads the moment a signal appears. Your pipeline moves even when you don't.</p>
+        <p class="fp-agent-card__body">Your agent watches your target market every day, surfacing leads the moment a signal appears. Your pipeline moves even when you don't.</p>
       </div>
       <div class="fp-agent-card">
         <h3 class="fp-agent-card__title">Signal-Based Triggering</h3>
         <p class="fp-agent-card__tagline">Reach out when it matters. Not after.</p>
-        <p class="fp-agent-card__body">Leads are triggered by real hiring activity, not pulled from a static list. When a company posts a role matching your criteria, your agent flags it, researches it, and delivers it.</p>
+        <p class="fp-agent-card__body">Leads are triggered by real events, not pulled from a static list. When a company posts a matching role, raises a round or completes a deal, your agent flags it, researches it, and delivers it.</p>
       </div>
       <div class="fp-agent-card">
-        <h3 class="fp-agent-card__title">Transparent Match Scoring</h3>
-        <p class="fp-agent-card__tagline">A score with nothing hidden.</p>
-        <p class="fp-agent-card__body">6 criteria. A percentage. A written explanation for every point. You see exactly why a lead scored 99% and where a 74% fell short. No guessing, no wasted calls on weak fits.</p>
+        <h3 class="fp-agent-card__title">Contacted Before You Arrive</h3>
+        <p class="fp-agent-card__tagline">Replies to read, not research to do.</p>
+        <p class="fp-agent-card__body">Connect an agent to a campaign and every new lead goes straight into your sequence on email and LinkedIn, with personalisation fitted to each touchpoint.</p>
       </div>
       <div class="fp-agent-card">
-        <h3 class="fp-agent-card__title">Ready-to-Use Personalization</h3>
-        <p class="fp-agent-card__tagline">Unique angles per lead. Written. Already there.</p>
-        <p class="fp-agent-card__body">Flynt writes personalised outreach hooks for every lead pulled from company news, the decision-maker's career, the active job posting, and the latest signal. Already waiting when you arrive.</p>
+        <h3 class="fp-agent-card__title">A Daily Summary</h3>
+        <p class="fp-agent-card__tagline">Know what happened without logging in.</p>
+        <p class="fp-agent-card__body">One email at the end of the day with what your agents found, who was contacted and who replied.</p>
       </div>
       <div class="fp-agent-card">
         <h3 class="fp-agent-card__title">Multiply Your Reach</h3>
         <p class="fp-agent-card__tagline">Different markets. Same output. No extra effort.</p>
-        <p class="fp-agent-card__body">Each agent covers one market. Run multiple agents across industries, cities, or job titles, each delivering up to 30 scored leads per day. More reach, same workload.</p>
+        <p class="fp-agent-card__body">Each agent covers one market. Run agents across industries, cities, job titles or candidates, each running its own search every day. More reach, same workload.</p>
       </div>
       <div class="fp-agent-card">
         <h3 class="fp-agent-card__title">End-to-End From Signal to Send</h3>
         <p class="fp-agent-card__tagline">One system from detection to delivery.</p>
-        <p class="fp-agent-card__body">Your agent finds the lead, scores it, researches it, and writes the outreach hooks. Connect it to a campaign and those leads flow straight into your sequence with personalisation already fitted to each touchpoint.</p>
+        <p class="fp-agent-card__body">Your agent finds the lead, scores it, researches it, writes the outreach and sends it. Replies land in your unified inbox and every deal is tracked in the CRM.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SECTION 9 — CREDITS -->
+<CreditsBlock
+  title="Run it every day.<br />Run it again any time."
+  body="An agent spends credits from the same monthly balance as your searches. There is no daily run limit: hit Run now whenever you want a fresh batch, and you can top up any time."
+/>
+
+<!-- SECTION 10 — WHO IT IS FOR + FAQ -->
+<WhoFaq heading="Built for recruiters who want" accent="a pipeline that never stops." personas={personas} faqs={faqs} />
+
 <!-- ─────────────────────────────────────────────
-  SECTION 8 — FINAL CTA
+  SECTION 11 — FINAL CTA
 ───────────────────────────────────────────── -->
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__inner">
       <h2>Right now, someone is posting a job you should know about.</h2>
-      <p>Set up your agent in 5 minutes and Flynt makes sure you're first to know.</p>
+      <p>Run your search daily with an agent and Flynt makes sure you're first to know, and first to reach out.</p>
       <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Start Free Trial →</a>
       <span class="final-cta__disclaimer">Cancel anytime.</span>
     </div>
@@ -550,6 +583,7 @@ import Layout from '../../layouts/Layout.astro';
 </section>
 
 </Layout>
+
 
 <style>
 /* ────────────────────────────────────────────
@@ -805,158 +839,6 @@ import Layout from '../../layouts/Layout.astro';
 }
 
 .fp-card__desc {
-  font-size: 0.975rem;
-  color: var(--slate-600);
-  line-height: 1.65;
-  margin: 0;
-  font-weight: 400;
-}
-
-/* ────────────────────────────────────────────
-   MATCH SCORING
-──────────────────────────────────────────── */
-.fp-scoring__header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-  margin-bottom: 48px;
-}
-
-.fp-scoring__header-left .tag {
-  margin-bottom: 16px;
-}
-
-.fp-scoring__header-left h2 {
-  margin: 0;
-}
-
-.fp-scoring__header-right p {
-  font-size: 1.15rem;
-  color: var(--slate-600);
-  line-height: 1.625;
-  margin: 0;
-}
-
-.fp-score {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: center;
-}
-
-.fp-score__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.fp-score__list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 1.05rem;
-  color: var(--slate-700);
-  line-height: 1.6;
-}
-
-.fp-score__list li strong {
-  color: var(--slate-900);
-  font-weight: 700;
-}
-
-.fp-score__check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--purple);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.fp-callout {
-  background: #ffffff;
-  border: 1px solid var(--slate-200);
-  border-left: 5px solid var(--purple);
-  border-radius: var(--radius-lg);
-  padding: 36px 40px;
-  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.fp-callout__score {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--purple);
-  line-height: 1;
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
-}
-
-.fp-callout__name {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--slate-900);
-  margin: 0 0 14px;
-  line-height: 1.5;
-}
-
-.fp-callout__reason {
-  font-size: 0.975rem;
-  color: var(--slate-600);
-  line-height: 1.7;
-  margin: 0;
-  font-weight: 400;
-}
-
-/* ────────────────────────────────────────────
-   AI PERSONALIZATION HOOKS
-──────────────────────────────────────────── */
-.fp-hooks-section {
-  background: #ffffff;
-}
-
-.fp-hooks {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.fp-hook-card {
-  background: rgba(124, 58, 237, 0.05);
-  border: 1px solid rgba(124, 58, 237, 0.12);
-  border-radius: var(--radius-lg);
-  padding: 28px 28px;
-  transition: background 0.2s, border-color 0.2s, transform 0.2s;
-}
-
-.fp-hook-card:hover {
-  background: rgba(124, 58, 237, 0.08);
-  border-color: rgba(124, 58, 237, 0.2);
-  transform: translateY(-3px);
-}
-
-.fp-hook-card--wide {
-  grid-column: 1 / -1;
-}
-
-.fp-hook-card__title {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--purple-900);
-  margin: 0 0 10px;
-  -webkit-text-stroke: 0;
-}
-
-.fp-hook-card__desc {
   font-size: 0.975rem;
   color: var(--slate-600);
   line-height: 1.65;
@@ -1716,17 +1598,218 @@ import Layout from '../../layouts/Layout.astro';
 }
 
 /* ────────────────────────────────────────────
+/* ────────────────────────────────────────────
+   HONEST PROBLEM
+──────────────────────────────────────────── */
+.fs-problem {
+  background: var(--slate-50);
+}
+
+.fs-problem__inner {
+  max-width: 760px;
+}
+
+.fs-problem__inner h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0 0 28px;
+}
+
+.fs-problem__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fs-problem__body p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--slate-600);
+  margin: 0;
+}
+
+.fs-problem__body strong {
+  color: var(--slate-900);
+}
+
+/* ────────────────────────────────────────────
+   SEARCH vs AGENT COMPARE
+──────────────────────────────────────────── */
+.fs-compare-section {
+  background: #fff;
+}
+
+.fs-compare {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.fs-compare__card {
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fs-compare__card--light {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+}
+
+.fs-compare__card--dark {
+  background: #25153e;
+  border: 1px solid #25153e;
+}
+
+.fs-compare__card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fs-compare__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fs-compare__icon--purple {
+  background: var(--purple);
+}
+
+.fs-compare__icon--ghost {
+  background: rgba(255,255,255,0.16);
+}
+
+.fs-compare__card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  letter-spacing: -0.015em;
+  -webkit-text-stroke: 0;
+}
+
+.fs-compare__card-title--white {
+  color: #fff;
+}
+
+.fs-compare__card-sub {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--purple-900);
+  margin-top: 2px;
+}
+
+.fs-compare__card-sub--green {
+  color: #4ade80;
+}
+
+.fs-compare__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+}
+
+.fs-compare__row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fs-compare__list dt {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+
+.fs-compare__list dd {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--slate-700);
+  margin: 0;
+}
+
+.fs-compare__list--dark dt {
+  color: rgba(255,255,255,0.45);
+}
+
+.fs-compare__list--dark dd {
+  color: rgba(255,255,255,0.8);
+}
+
+.fs-compare__list--dark strong {
+  color: #fff;
+}
+
+.fs-compare__note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 28px;
+  border-radius: 13px;
+  background: var(--purple-bg);
+  border: 1px solid var(--purple-bg-2);
+}
+
+.fs-compare__note p {
+  flex: 999 1 380px;
+  min-width: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--slate-700);
+}
+
+.fs-compare__note p strong {
+  color: var(--slate-900);
+}
+
+/* ────────────────────────────────────────────
+   FROM SEARCH TO AGENT
+──────────────────────────────────────────── */
+.fs-agent-note {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+.fp-card--link {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+
+.fp-card__more {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+/* ────────────────────────────────────────────
    RESPONSIVE
 ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .fp-cards {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .fp-hooks {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .fp-hook-card--wide {
-    grid-column: 1 / -1;
   }
   .fp-agent-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -1735,11 +1818,6 @@ import Layout from '../../layouts/Layout.astro';
 
 @media (max-width: 768px) {
   .fp-time-header {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .fp-scoring__header {
     grid-template-columns: 1fr;
     gap: 16px;
   }
@@ -1836,23 +1914,13 @@ import Layout from '../../layouts/Layout.astro';
     gap: 16px;
   }
 
+  .fs-compare {
+    grid-template-columns: 1fr;
+  }
+
   /* Intel cards */
   .fp-cards {
     grid-template-columns: 1fr;
-  }
-
-  /* Scoring */
-  .fp-score {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  /* Hooks */
-  .fp-hooks {
-    grid-template-columns: 1fr;
-  }
-  .fp-hook-card--wide {
-    grid-column: 1;
   }
 
   /* Agent cards */
@@ -1863,10 +1931,6 @@ import Layout from '../../layouts/Layout.astro';
 
   .fp-dark-h2 {
     font-size: 1.85rem;
-  }
-
-  .fp-callout__score {
-    font-size: 2.25rem;
   }
 }
 </style>

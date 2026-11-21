@@ -1,0 +1,128 @@
+---
+// "Three ways in" — the three search types side by side. Shown on every
+// search page; `current` marks the page the visitor is on.
+interface Props {
+  current: 'hiring' | 'signal' | 'mpc';
+}
+const { current } = Astro.props;
+
+const ways = [
+  {
+    key: 'hiring',
+    title: 'Hiring search',
+    href: '/features/hiring-search',
+    icon: 'hiring',
+    startsWith: 'A role they just posted',
+    arrive: 'Early, while the posting is fresh',
+    opening: '“I saw you are hiring for…”',
+  },
+  {
+    key: 'signal',
+    title: 'Signal search',
+    href: '/features/signal-search',
+    icon: 'signal',
+    startsWith: 'Funding closed or a deal announced',
+    arrive: 'Before the role is written',
+    opening: '“Congrats on the news…”',
+  },
+  {
+    key: 'mpc',
+    title: 'MPC search',
+    href: '/features/mpc-search',
+    icon: 'mpc',
+    startsWith: 'A candidate you want to place',
+    arrive: 'With a person they can hire today',
+    opening: '“I am working with someone who…”',
+  },
+];
+---
+
+<section class="section fx-ways">
+  <div class="container">
+    <div class="fx-ways__head">
+      <div class="tag">All opportunities</div>
+      <h2 class="fx-ways__h2">Three ways in. <span class="fx-hl">One pipeline.</span></h2>
+    </div>
+
+    <div class="fx-ways__grid">
+      {ways.map((way) => {
+        const isCurrent = way.key === current;
+        const Tag = isCurrent ? 'div' : 'a';
+        return (
+          <Tag href={isCurrent ? undefined : way.href} class={`fx-way${isCurrent ? ' fx-way--current' : ''}`}>
+            {isCurrent && <span class="fx-way__flag">This page</span>}
+            <div class={`fx-way__icon${way.icon === 'signal' ? ' fx-way__icon--amber' : ''}`}>
+              {way.icon === 'hiring' && (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              )}
+              {way.icon === 'signal' && (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+              )}
+              {way.icon === 'mpc' && (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 11h3"/></svg>
+              )}
+            </div>
+            <h3>{way.title}</h3>
+            <dl>
+              <dt>Starts with</dt>
+              <dd>{way.startsWith}</dd>
+              <dt>You arrive</dt>
+              <dd>{way.arrive}</dd>
+              <dt>Opening line</dt>
+              <dd class="fx-way__quote">{way.opening}</dd>
+            </dl>
+          </Tag>
+        );
+      })}
+    </div>
+
+    <p class="fx-ways__close">Run one, two or all three. Together they cover the opportunities in your market from every angle, and every lead, reply and deal lands in the same inbox, the same CRM and the same dashboard.</p>
+  </div>
+</section>
+
+<style>
+.fx-ways { background: var(--purple-bg); }
+.fx-ways__head { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 48px; }
+.fx-ways__head .tag { align-self: center; }
+.fx-ways__h2 { font-size: clamp(2rem, 3.6vw, 3.25rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0; max-width: 900px; }
+.fx-hl { color: var(--purple); -webkit-text-stroke: 0; }
+.fx-ways__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.fx-way {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+a.fx-way:hover { border-color: var(--purple-300); box-shadow: var(--shadow-purple); }
+.fx-way--current { border: 2px solid var(--purple); box-shadow: var(--shadow-purple); }
+.fx-way__flag {
+  position: absolute;
+  top: -12px; left: 24px;
+  background: var(--purple); color: var(--white);
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+}
+.fx-way__icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--purple-bg-2); color: var(--purple-dark);
+  display: flex; align-items: center; justify-content: center;
+}
+.fx-way__icon--amber { background: #fdf0dc; color: #7a4400; }
+.fx-way h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin: 0; }
+.fx-way dl { margin: 0; display: flex; flex-direction: column; }
+.fx-way dt { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-500); }
+.fx-way dd { font-size: 1.05rem; font-weight: 600; color: var(--slate-900); margin: 4px 0 16px; }
+.fx-way dd:last-child { margin-bottom: 0; }
+.fx-way__quote { font-style: italic; font-weight: 500; }
+.fx-ways__close { text-align: center; max-width: 760px; margin: 40px auto 0; }
+
+@media (max-width: 768px) {
+  .fx-ways__grid { grid-template-columns: 1fr; }
+  .fx-way { padding: 24px; }
+}
+</style>

@@ -1,9 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FlyntSystem from '../../components/features/FlyntSystem.astro';
+import SearchWays from '../../components/features/SearchWays.astro';
+import CreditsBlock from '../../components/features/CreditsBlock.astro';
+import AgentsStrip from '../../components/features/AgentsStrip.astro';
 ---
 
 <Layout
-  title="MPC Campaigns | Pitch One Candidate to Every Company Hiring | Flynt"
+  title="MPC Search | Pitch One Candidate to Every Company Hiring | Flynt"
   description="Upload a resume and Flynt finds the companies hiring for that profile, then writes a different pitch for each one from their own job posting. MPC outreach, finally at scale."
   ogTitle="New from Flynt: upload one resume and pitch it to every company hiring for that profile, with a different message for each."
 >
@@ -17,12 +21,12 @@ import Layout from '../../layouts/Layout.astro';
       <div class="mpc-hero__copy">
         <div class="tag">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-          New: MPC Campaigns
+          MPC Search
         </div>
         <h1 class="mpc-hero__h1">One resume. A different pitch to <span class="hl">every company hiring for it.</span></h1>
         <p class="mpc-hero__sub">MPC outreach has always earned replies, and has always stalled at the personalization step. Upload a candidate. Flynt finds the companies hiring for that profile, then writes every pitch around what that company's own job posting asks for.</p>
         <div class="mpc-hero__ctas">
-          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg">Run an MPC campaign</a>
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg">Run an MPC search</a>
           <a href="#how" class="btn btn--outline btn--lg">See how it works →</a>
         </div>
         <div class="mpc-hero__trust">7-day trial · Cancel anytime · Email and LinkedIn in one sequence</div>
@@ -219,7 +223,7 @@ import Layout from '../../layouts/Layout.astro';
       </div>
       <div class="mpc-mini">
         <h3>You stay in the draft</h3>
-        <p>Review, edit or approve before anything sends. Thumbs up what works and Flynt learns your voice.</p>
+        <p>Review, edit or approve before anything sends.</p>
       </div>
     </div>
   </div>
@@ -317,70 +321,20 @@ import Layout from '../../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="mpc-match__callout">Not a fit? Thumbs down and Flynt stops bringing you that kind of company.</div>
+        <div class="mpc-match__callout">Not a fit? Untick it and it stays out of your campaign. Companies you've already contacted are skipped.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────────────────────────
-  SECTION 6 — THREE WAYS IN
-───────────────────────────────────────────── -->
-<section class="section mpc-ways">
-  <div class="container">
-    <div class="mpc-center">
-      <div class="tag">One system</div>
-      <h2 class="mpc-h2">Three ways in. <span class="hl">One pipeline.</span></h2>
-    </div>
+<!-- SECTION 6 — THREE WAYS IN (shared) -->
+<SearchWays current="mpc" />
 
-    <div class="mpc-ways__grid">
-      <div class="mpc-way mpc-way--current">
-        <span class="mpc-way__flag">This page</span>
-        <div class="mpc-way__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 11h3"/></svg>
-        </div>
-        <h3>MPC Campaigns</h3>
-        <dl>
-          <dt>Starts with</dt>
-          <dd>A candidate you want to place</dd>
-          <dt>You arrive</dt>
-          <dd>With a person they can hire today</dd>
-        </dl>
-      </div>
-
-      <a href="/features/agent" class="mpc-way">
-        <div class="mpc-way__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        </div>
-        <h3>Hiring Signal Agent</h3>
-        <dl>
-          <dt>Starts with</dt>
-          <dd>A role they just posted</dd>
-          <dt>You arrive</dt>
-          <dd>Early, while the posting is fresh</dd>
-        </dl>
-      </a>
-
-      <a href="/features/signal-agent" class="mpc-way">
-        <div class="mpc-way__icon mpc-way__icon--amber">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
-        </div>
-        <h3>Signal Agent</h3>
-        <dl>
-          <dt>Starts with</dt>
-          <dd>Funding closed or a deal announced</dd>
-          <dt>You arrive</dt>
-          <dd>Before the role is written</dd>
-        </dl>
-      </a>
-    </div>
-
-    <p class="mpc-ways__close">Run them together. Leads, replies and deals land in the same inbox, the same CRM and the same dashboard.</p>
-  </div>
-</section>
+<!-- SECTION 7 — BUILT INTO THE WHOLE SYSTEM (shared) -->
+<FlyntSystem intro="An MPC search is not a standalone list. Every company you pitch flows straight into the tools you already use in Flynt." />
 
 <!-- ─────────────────────────────────────────────
-  SECTION 7 — WHO IT IS FOR + FAQ
+  SECTION 8 — WHO IT IS FOR + FAQ
 ───────────────────────────────────────────── -->
 <section class="section mpc-who">
   <div class="container">
@@ -412,7 +366,7 @@ import Layout from '../../layouts/Layout.astro';
       <h3 class="mpc-faq__title">Questions recruiters ask</h3>
       <div class="mpc-faq__grid">
         <div class="mpc-faq__item">
-          <h4>What is an MPC campaign?</h4>
+          <h4>What is an MPC search?</h4>
           <p>Most Placeable Candidate. Instead of asking a company whether they need hiring help, you lead with a specific strong candidate and reach the companies hiring for that profile. Recruiters have used the play for decades, because offering something beats asking for something.</p>
         </div>
         <div class="mpc-faq__item">
@@ -421,27 +375,44 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         <div class="mpc-faq__item">
           <h4>How many companies will it find?</h4>
-          <p>Up to 30 a day, the same daily limit as your other agents, as long as the market is big enough to fill it. A narrow niche or a small city returns fewer, and Flynt would rather send you ten real matches than thirty padded ones.</p>
+          <p>Every company in your market hiring for that profile right now, as long as the market is big enough. A narrow niche or a small city returns fewer, and Flynt would rather show you ten real matches than thirty padded ones.</p>
         </div>
         <div class="mpc-faq__item">
           <h4>What if the matches are wrong?</h4>
-          <p>Thumbs down the ones that miss, change one criterion, and run it again. Flynt learns from the ones you keep.</p>
+          <p>Untick the ones that miss, change a filter and search again. Every search is saved, so you can come back and fine-tune it any time.</p>
         </div>
         <div class="mpc-faq__item">
-          <h4>Can I run MPC alongside my other campaigns?</h4>
-          <p>Yes. MPC runs as its own campaign and does not interrupt the agents you already have going.</p>
+          <h4>Can I run MPC alongside my other searches?</h4>
+          <p>Yes. Each MPC search runs on its own and does not interrupt your other searches, agents or campaigns.</p>
         </div>
         <div class="mpc-faq__item">
           <h4>Is MPC included in the trial?</h4>
           <p>Upload a resume on day one and see the matches for yourself.</p>
+        </div>
+        <div class="mpc-faq__item">
+          <h4>Will I pitch the same company twice?</h4>
+          <p>No. Companies you've already contacted are skipped on every search.</p>
+        </div>
+        <div class="mpc-faq__item">
+          <h4>Can it run automatically?</h4>
+          <p>Yes. Run your MPC search daily with an agent and Flynt keeps finding new companies hiring for that candidate. The Agents page explains how.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SECTION 9 — CREDITS -->
+<CreditsBlock
+  title="Pay only for the companies<br />you choose to pitch."
+  body="Every plan comes with a monthly credit balance. Each step shows its cost before you spend it, so you only pay for the companies and people you keep, and you can top up any time."
+/>
+
+<!-- SECTION 10 — RUN IT DAILY (shared) -->
+<AgentsStrip />
+
 <!-- ─────────────────────────────────────────────
-  SECTION 8 — FINAL CTA
+  SECTION 11 — FINAL CTA
 ───────────────────────────────────────────── -->
 <section class="mpc-cta">
   <div class="container">
@@ -449,7 +420,7 @@ import Layout from '../../layouts/Layout.astro';
       <h2>Your best candidate deserves <span class="mpc-cta__accent">more than one email.</span></h2>
       <p>Upload a resume and see which companies are hiring for them right now.</p>
       <div class="mpc-cta__btns">
-        <a href="https://app.tryflynt.ai/" class="btn btn--lg mpc-cta__primary">Run an MPC campaign</a>
+        <a href="https://app.tryflynt.ai/" class="btn btn--lg mpc-cta__primary">Run an MPC search</a>
         <a href="/pricing" class="btn btn--lg mpc-cta__secondary">See pricing</a>
       </div>
       <span class="mpc-cta__note">7-day trial · Cancel anytime</span>
@@ -727,39 +698,6 @@ import Layout from '../../layouts/Layout.astro';
 .mpc-company__dm svg { color: var(--purple); flex-shrink: 0; }
 .mpc-company__dm strong { color: var(--black); }
 
-/* ── Three ways in ── */
-.mpc-ways { background: var(--purple-bg); }
-.mpc-ways__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.mpc-way {
-  position: relative;
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-radius: 20px;
-  padding: 32px;
-  display: flex; flex-direction: column; gap: 16px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-a.mpc-way:hover { border-color: var(--purple-300); box-shadow: var(--shadow-purple); }
-.mpc-way--current { border: 2px solid var(--purple); box-shadow: var(--shadow-purple); }
-.mpc-way__flag {
-  position: absolute;
-  top: -12px; left: 24px;
-  background: var(--purple); color: var(--white);
-  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 4px 10px; border-radius: 999px;
-}
-.mpc-way__icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: var(--purple-bg-2); color: var(--purple-dark);
-  display: flex; align-items: center; justify-content: center;
-}
-.mpc-way__icon--amber { background: #fdf0dc; color: #7a4400; }
-.mpc-way h3 { font-size: 1.4rem; font-weight: 800; color: var(--black); margin: 0; }
-.mpc-way dl { margin: 0; display: flex; flex-direction: column; }
-.mpc-way dt { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-500); }
-.mpc-way dd { font-size: 1.05rem; font-weight: 600; color: var(--slate-900); margin: 4px 0 16px; }
-.mpc-way dd:last-child { margin-bottom: 0; }
-.mpc-ways__close { text-align: center; max-width: 720px; margin: 40px auto 0; }
 
 /* ── Who + FAQ ── */
 .mpc-who { background: var(--white); }
@@ -798,10 +736,10 @@ a.mpc-way:hover { border-color: var(--purple-300); box-shadow: var(--shadow-purp
   .container { padding: 0 16px; }
   .mpc-split, .mpc-tradeoff__grid, .mpc-mails, .mpc-faq__grid, .mpc-match__grid { grid-template-columns: 1fr; }
   .mpc-split { gap: 16px; margin-bottom: 40px; }
-  .mpc-steps, .mpc-ways__grid, .mpc-pitch__grid, .mpc-who__grid { grid-template-columns: 1fr; }
+  .mpc-steps, .mpc-pitch__grid, .mpc-who__grid { grid-template-columns: 1fr; }
   .mpc-hero { padding: 64px 0; }
   .mpc-hero__visual { padding: 20px; border-radius: 24px; }
-  .mpc-card, .mpc-mail, .mpc-company, .mpc-way { padding: 24px; }
+  .mpc-card, .mpc-mail, .mpc-company { padding: 24px; }
   .mpc-cta { padding: 64px 0; }
 }
 </style>

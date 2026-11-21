@@ -1,0 +1,86 @@
+---
+// "Built into the whole system" — where leads go after a search. Shown on
+// every search page. `intro` is the page's own sentence beside the heading.
+interface Props {
+  intro: string;
+}
+const { intro } = Astro.props;
+---
+
+<section class="section fx-system">
+  <div class="container">
+    <div class="fx-system__split">
+      <div class="fx-system__head">
+        <div class="tag">One system</div>
+        <h2 class="fx-system__h2">Finding the lead is half the job. <span class="fx-hl">Flynt does the other half too.</span></h2>
+      </div>
+      <div class="fx-system__body">
+        <p>{intro}</p>
+      </div>
+    </div>
+
+    <div class="fx-system__grid">
+      <a href="/features/campaigns" class="fx-system__card">
+        <h3>Flynt Campaigns</h3>
+        <p>Prebuilt or custom sequences, with AI personalization on every message.</p>
+      </a>
+      <a href="/features/crm" class="fx-system__card">
+        <h3>Flynt Pipeline (CRM)</h3>
+        <p>Every reply tracked from first touch to placement.</p>
+      </a>
+      <div class="fx-system__card">
+        <h3>Unified Inbox</h3>
+        <p>All your conversations in one place.</p>
+      </div>
+      <div class="fx-system__card">
+        <h3>Performance Dashboard</h3>
+        <p>See what is working, by search, by agent and by market.</p>
+      </div>
+      <div class="fx-system__card">
+        <h3>Slack integration</h3>
+        <p>Share results and updates with your team in Slack.</p>
+      </div>
+      <div class="fx-system__card fx-system__card--li">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          Email and LinkedIn together
+        </h3>
+        <p>LinkedIn messaging is included on every plan, in the same sequence as email.</p>
+      </div>
+    </div>
+
+    <p class="fx-system__close">From the first search to the sent confirmation, the intelligence that found the lead powers the message that reaches them.</p>
+  </div>
+</section>
+
+<style>
+.fx-system { background: var(--white); }
+.fx-system__split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 80px; align-items: end; margin-bottom: 56px; }
+.fx-system__head { display: flex; flex-direction: column; }
+.fx-system__body { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+.fx-system__body p { margin: 0; font-size: 1.1rem; }
+.fx-system__h2 { font-size: clamp(2rem, 3.6vw, 3.25rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0; }
+.fx-hl { color: var(--purple); -webkit-text-stroke: 0; }
+.fx-system__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.fx-system__card {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+a.fx-system__card:hover { border-color: var(--purple-300); box-shadow: var(--shadow-purple); }
+.fx-system__card h3 { font-size: 1.2rem; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 8px; }
+.fx-system__card p { margin: 0; font-size: 1rem; }
+.fx-system__card--li { background: var(--purple-bg-2); border-color: var(--purple-300); }
+.fx-system__card--li svg { color: #0a66c2; }
+.fx-system__close { text-align: center; max-width: 760px; margin: 40px auto 0; }
+
+@media (max-width: 768px) {
+  .fx-system__split { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  .fx-system__grid { grid-template-columns: 1fr; }
+}
+</style>

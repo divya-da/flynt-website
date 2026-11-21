@@ -17,6 +17,8 @@ flynt-website/
 ├── src/
 │   ├── layouts/
 │   │   └── Layout.astro        # Base layout (nav, footer, SEO head)
+│   ├── components/
+│   │   └── features/           # Blocks shared by the feature pages (see below)
 │   ├── lib/
 │   │   └── sanity.js           # Sanity client (blog content fetching)
 │   ├── pages/
@@ -25,10 +27,11 @@ flynt-website/
 │   │   ├── about.astro         # About page
 │   │   ├── faq.astro           # FAQ page
 │   │   ├── features/
-│   │   │   ├── agent.astro         # Hiring Agent feature page
-│   │   │   ├── signal-agent.astro  # Signal Agent feature page
+│   │   │   ├── hiring-search.astro # Hiring search feature page
+│   │   │   ├── signal-search.astro # Signal search feature page
+│   │   │   ├── mpc-search.astro    # MPC search feature page
+│   │   │   ├── agents.astro        # Agents page (search vs agent lives here only)
 │   │   │   ├── campaigns.astro     # Campaigns feature page
-│   │   │   ├── mpc-campaigns.astro # MPC Campaigns feature page
 │   │   │   └── crm.astro           # CRM feature page
 │   │   ├── blog/
 │   │   │   ├── index.astro     # Blog listing page (/blog)
@@ -46,6 +49,30 @@ flynt-website/
 ├── firebase.json
 └── package.json
 ```
+
+## Feature pages
+
+Flynt is search-first: a recruiter runs a **search** step by step, and an
+**agent** runs a saved search every day. The site mirrors that.
+
+- `/features/hiring-search`, `/features/signal-search`, `/features/mpc-search`
+  describe only what each search does. They do not compare search with agents.
+- `/features/agents` is the only page that explains agents and compares them with
+  search.
+- Old URLs (`/features/search`, `/features/agent`, `/features/signal-agent`,
+  `/features/mpc-campaigns`) 301-redirect to the new ones (`redirects` in
+  `firebase.json`).
+
+Shared blocks in `src/components/features/` — change them once, every page
+follows:
+
+| Component | Used on | What it is |
+|---|---|---|
+| `SearchWays` | all three search pages | "Three ways in" — the three search types, `current` marks this page |
+| `FlyntSystem` | all three search pages | Campaigns, CRM, Inbox, Dashboard, Slack, LinkedIn |
+| `AgentsStrip` | all three search pages | One-line link to the Agents page |
+| `CreditsBlock` | search pages + Agents | Credits note with a link to pricing |
+| `WhoFaq` | Hiring search, Agents | Who it is for + FAQ (Signal and MPC keep their own) |
 
 ## Getting Started
 

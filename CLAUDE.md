@@ -106,6 +106,8 @@ In `index.astro` (and feature pages), the `<source>` order is:
   `channel_links` Firestore collection.
 - Links are created and repointed in the app's admin console → Channel links.
   No deploy is involved; do not add link data here.
+- `redirects` holds only the 301s from the old feature-page URLs (see
+  README → Feature pages).
 - ⚠️ **Never put a `/go` rule in `redirects`.** Redirects are evaluated before
   rewrites and would shadow the function, freezing every short link.
 - The function must be deployed (from the app repo) before a hosting deploy that
