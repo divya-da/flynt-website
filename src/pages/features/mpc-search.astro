@@ -3,7 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 import FlyntSystem from '../../components/features/FlyntSystem.astro';
 import SearchWays from '../../components/features/SearchWays.astro';
 import CreditsBlock from '../../components/features/CreditsBlock.astro';
-import AgentsStrip from '../../components/features/AgentsStrip.astro';
 ---
 
 <Layout
@@ -131,37 +130,25 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
     <div class="mpc-steps">
       <div class="mpc-step">
         <div class="mpc-step__num">Step 1</div>
-        <div class="mpc-step__head">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg>
-          <h3>Upload the candidate</h3>
-        </div>
+        <h3>Upload the candidate</h3>
         <p>Drop in a resume or paste a profile. Flynt reads the titles, seniority, industries, tools, locations and what the person actually shipped.</p>
       </div>
 
       <div class="mpc-step">
         <div class="mpc-step__num">Step 2</div>
-        <div class="mpc-step__head">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
-          <h3>Flynt finds who is hiring for them</h3>
-        </div>
+        <h3>Flynt finds who is hiring for them</h3>
         <p>It searches live postings for roles that fit that background in your markets, and scores each company on how well your candidate answers it.</p>
       </div>
 
       <div class="mpc-step mpc-step--active">
         <div class="mpc-step__num">Step 3</div>
-        <div class="mpc-step__head">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-          <h3>Every pitch written for that company</h3>
-        </div>
+        <h3>Every pitch written for that company</h3>
         <p>For each company, Flynt reads the posting and leads with the part of the background that matters there. Same candidate, a different case each time.</p>
       </div>
 
       <div class="mpc-step">
         <div class="mpc-step__num">Step 4</div>
-        <div class="mpc-step__head">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
-          <h3>Launch, then handle replies</h3>
-        </div>
+        <h3>Launch, then handle replies</h3>
         <p>Email and LinkedIn run in one sequence. A reply on either channel stops it and lands in your unified inbox, where you take over.</p>
       </div>
     </div>
@@ -361,7 +348,11 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
         <p>Volume that still reads like you wrote it.</p>
       </div>
     </div>
+  </div>
+</section>
 
+<section class="section mpc-faq-section">
+  <div class="container">
     <div class="mpc-faq">
       <h3 class="mpc-faq__title">Questions recruiters ask</h3>
       <div class="mpc-faq__grid">
@@ -378,7 +369,7 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
           <p>Every company in your market hiring for that profile right now, as long as the market is big enough. A narrow niche or a small city returns fewer, and Flynt would rather show you ten real matches than thirty padded ones.</p>
         </div>
         <div class="mpc-faq__item">
-          <h4>What if the matches are wrong?</h4>
+          <h4>What if the matches don't match what I'm looking for?</h4>
           <p>Untick the ones that miss, change a filter and search again. Every search is saved, so you can come back and fine-tune it any time.</p>
         </div>
         <div class="mpc-faq__item">
@@ -408,8 +399,6 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
   body="Every plan comes with a monthly credit balance. Each step shows its cost before you spend it, so you only pay for the companies and people you keep, and you can top up any time."
 />
 
-<!-- SECTION 10 — RUN IT DAILY (shared) -->
-<AgentsStrip />
 
 <!-- ─────────────────────────────────────────────
   SECTION 11 — FINAL CTA
@@ -563,7 +552,7 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
 .mpc-tradeoff__close { text-align: center; margin: 40px auto 0; font-size: 1.15rem; font-weight: 700; color: var(--black); }
 
 /* ── How it works ── */
-.mpc-how { background: var(--white); }
+.mpc-how { background: var(--slate-50); }
 .mpc-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .mpc-step {
   background: var(--purple-bg);
@@ -579,13 +568,6 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
   border-bottom: 1px solid var(--slate-200);
   padding-bottom: 12px;
 }
-.mpc-step__head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--purple-dark);
-}
-.mpc-step__head svg { flex-shrink: 0; }
 .mpc-step h3 { font-size: 1.1rem; font-weight: 800; line-height: 1.25; margin: 0; }
 .mpc-step p { margin: 0; font-size: 0.95rem; line-height: 1.6; }
 .mpc-step--active { background: var(--purple-bg-2); border-color: var(--purple-300); }
@@ -707,10 +689,11 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
 
 
 /* ── Who + FAQ ── */
-.mpc-who { background: var(--white); }
+.mpc-who { background: var(--slate-50); }
+.mpc-faq-section { background: var(--white); }
 .mpc-who__head { max-width: 900px; margin-bottom: 40px; display: flex; flex-direction: column; }
 .mpc-who__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 64px; }
-.mpc-who__card { background: var(--purple-bg); border: 1px solid var(--slate-200); border-radius: 16px; padding: 26px; }
+.mpc-who__card { background: var(--white); border: 1px solid var(--slate-200); border-radius: 16px; padding: 26px; }
 .mpc-who__card h3 { font-size: 1.1rem; font-weight: 800; margin: 0 0 8px; }
 .mpc-who__card p { margin: 0; font-size: 0.95rem; }
 .mpc-faq__title { font-size: 1.9rem; font-weight: 800; margin-bottom: 28px; }

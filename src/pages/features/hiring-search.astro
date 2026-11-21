@@ -4,17 +4,16 @@ import FlyntSystem from '../../components/features/FlyntSystem.astro';
 import SearchWays from '../../components/features/SearchWays.astro';
 import WhoFaq from '../../components/features/WhoFaq.astro';
 import CreditsBlock from '../../components/features/CreditsBlock.astro';
-import AgentsStrip from '../../components/features/AgentsStrip.astro';
 
 const personas = [
   { title: 'Solo recruiters', body: "Find this week's clients in an hour, without a research team." },
   { title: 'Agency owners', body: 'Try a new market or niche before you commit a recruiter to it.' },
-  { title: 'Recruiters on live roles', body: 'Search when a client calls and have the hiring managers in front of you the same day.' },
+  { title: 'Recruiters working a live role', body: 'See who else is hiring for the same role, and pitch your shortlist to their hiring managers the same day.' },
 ];
 
 const faqs = [
   { title: 'Where do the jobs come from?', body: 'Live job postings in your market from the last 24 hours, not a database snapshot.' },
-  { title: 'What if a search returns the wrong companies?', body: 'Untick the ones that miss, change a filter and search again. Every search is saved, so you can come back and fine-tune it any time.' },
+  { title: "What if the results don't match what I'm looking for?", body: 'Untick the ones that miss, change a filter and search again. Every search is saved, so you can come back and fine-tune it any time.' },
   { title: 'Will I contact the same company twice?', body: "No. Companies you've already contacted are skipped on every search." },
   { title: 'Does it work with LinkedIn?', body: 'Yes. LinkedIn messaging is included on every plan, and your leads can be reached on email and LinkedIn in one sequence.' },
   { title: 'Can it run automatically?', body: "Yes. Once a search is returning companies you'd call, run it daily with an agent. The Agents page explains how." },
@@ -149,34 +148,29 @@ const faqs = [
     </div>
     <div class="fs-steps-grid">
       <div class="fs-step-card">
-        <span class="fs-step-num">Step 1</span>
-        <div class="fs-step-title">Search jobs and choose the companies</div>
-        <div class="fs-step-desc">Set the job titles, locations, industries and company size you recruit for. Flynt searches postings from the last 24 hours and lists the companies behind them.</div>
-        <span class="fs-step-action">You pick the ones worth pursuing</span>
+        <div class="fs-step-num">Step 1</div>
+        <h3 class="fs-step-title">Search jobs and choose the companies</h3>
+        <p class="fs-step-desc">Set the job titles, locations, industries and company size you recruit for. Flynt searches postings from the last 24 hours and lists the companies behind them.</p>
       </div>
       <div class="fs-step-card">
-        <span class="fs-step-num">Step 2</span>
-        <div class="fs-step-title">Find the hiring managers</div>
-        <div class="fs-step-desc">Flynt finds the people most likely to own the hire at each company you chose, scored against your criteria with the reasoning written out.</div>
-        <span class="fs-step-action">You choose who to go after</span>
+        <div class="fs-step-num">Step 2</div>
+        <h3 class="fs-step-title">Find the hiring managers</h3>
+        <p class="fs-step-desc">Flynt finds the people most likely to own the hire at each company you chose, scored against your criteria with the reasoning written out.</p>
       </div>
       <div class="fs-step-card">
-        <span class="fs-step-num">Step 3</span>
-        <div class="fs-step-title">Get contact details and context</div>
-        <div class="fs-step-desc">Verified email, LinkedIn and recent company news, pulled only for the people you selected. Phone numbers too, with the phone add-on.</div>
-        <span class="fs-step-action">You spend only on who you keep</span>
+        <div class="fs-step-num">Step 3</div>
+        <h3 class="fs-step-title">Get contact details and context</h3>
+        <p class="fs-step-desc">Verified email, LinkedIn and recent company news, pulled only for the people you selected. Phone numbers too, with the phone add-on.</p>
       </div>
       <div class="fs-step-card">
-        <span class="fs-step-num">Step 4</span>
-        <div class="fs-step-title">Personalise and review</div>
-        <div class="fs-step-desc">AI writes a personalised angle for every lead from their own job posting and recent company news, shown to you before anything leaves.</div>
-        <span class="fs-step-action">You read and edit it first</span>
+        <div class="fs-step-num">Step 4</div>
+        <h3 class="fs-step-title">Personalise and review</h3>
+        <p class="fs-step-desc">AI writes a personalised angle for every lead from their own job posting and recent company news, shown to you before anything leaves.</p>
       </div>
-      <div class="fs-step-card">
-        <span class="fs-step-num fs-step-num--accent">Step 5</span>
-        <div class="fs-step-title">Add to a campaign</div>
-        <div class="fs-step-desc">Add the leads you kept to a sequence on email and LinkedIn in one click. Not ready? Skip it and come back. The search keeps your place.</div>
-        <span class="fs-step-action fs-step-action--green">You decide what goes out</span>
+      <div class="fs-step-card fs-step-card--active">
+        <div class="fs-step-num">Step 5</div>
+        <h3 class="fs-step-title">Add to a campaign</h3>
+        <p class="fs-step-desc">Add the leads you kept to a sequence on email and LinkedIn in one click. Not ready? Skip it and come back. The search keeps your place.</p>
       </div>
     </div>
     <div class="fs-steps-close">
@@ -226,7 +220,6 @@ const faqs = [
         <h3>Companies you've already contacted are skipped.</h3>
         <p>Automatically, on every search. You never approach the same company twice, and you never have to remember who you emailed last month.</p>
       </div>
-      <span class="fs-new-badge">NEW IN 3.0</span>
     </div>
   </div>
 </section>
@@ -337,8 +330,6 @@ const faqs = [
   body="No daily search limit and no per-search fee. Every plan comes with a monthly credit balance, every step shows its cost before you spend it, and you can top up any time. On Lite's 2,500 credits that's around 528 fully worked leads a month: found, enriched, written and sent on email and LinkedIn."
 />
 
-<!-- SECTION 11 — RUN IT DAILY (shared) -->
-<AgentsStrip />
 
 <!-- ─────────────────────────────────────────────
   SECTION 12 — FINAL CTA
@@ -348,7 +339,7 @@ const faqs = [
     <div class="final-cta__inner">
       <h2>Your market is hiring right now.<br />Go look.</h2>
       <p>One search, five minutes, no setup. See the companies, the hiring managers and the outreach before you spend a minute on research.</p>
-      <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Search Your Market Free →</a>
+      <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--white);color:var(--purple-900);border-color:var(--white);">Search Your Market Free →</a>
       <span class="final-cta__disclaimer">7 days free with 500 credits. Cancel anytime.</span>
     </div>
   </div>
@@ -499,7 +490,7 @@ const faqs = [
 
 .final-cta {
   position: relative;
-  background: var(--slate-50);
+  background: linear-gradient(160deg, #6234c8 0%, #4c2aa0 50%, #35197a 100%);
   padding: 96px 24px;
 }
 
@@ -514,13 +505,14 @@ const faqs = [
 }
 
 .final-cta__inner h2 {
-  color: var(--black);
+  color: var(--white);
+  -webkit-text-stroke: 0;
   font-size: clamp(2rem, 4vw, 3.2rem);
   max-width: 680px;
 }
 
 .final-cta__inner p {
-  color: var(--slate-600);
+  color: #e6dcfa;
   font-size: 1.125rem;
   max-width: 480px;
   line-height: 1.625;
@@ -528,7 +520,7 @@ const faqs = [
 
 .final-cta__disclaimer {
   font-size: 0.875rem;
-  color: var(--slate-500);
+  color: #cbbcf0;
 }
 
 /* ────────────────────────────────────────────
@@ -814,67 +806,47 @@ const faqs = [
 }
 
 .fs-step-card {
-  background: #fff;
+  background: var(--purple-bg);
   border: 1px solid var(--slate-200);
-  border-radius: 14px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+}
+
+.fs-step-card--active {
+  background: var(--purple-bg-2);
+  border-color: var(--purple-300);
 }
 
 .fs-step-num {
-  flex-shrink: 0;
-  width: fit-content;
-  height: 26px;
-  padding: 0 10px;
-  border-radius: 7px;
-  background: var(--slate-900);
-  color: #fff;
-  font-family: var(--font-display);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  color: var(--purple-dark);
+  border-bottom: 1px solid var(--slate-200);
+  padding-bottom: 12px;
 }
 
-.fs-step-num--accent {
-  background: var(--purple);
+.fs-step-card--active .fs-step-num {
+  border-bottom-color: var(--purple-300);
 }
 
 .fs-step-title {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 800;
   color: var(--slate-900);
-  line-height: 1.35;
+  line-height: 1.25;
+  margin: 0;
 }
 
 .fs-step-desc {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   color: var(--slate-600);
-  flex: 1;
-}
-
-.fs-step-action {
-  margin-top: auto;
-  display: inline-block;
-  padding: 7px 12px;
-  border-radius: 8px;
-  background: var(--purple-bg-2);
-  color: var(--purple-900);
-  font-size: 0.775rem;
-  font-weight: 700;
-  line-height: 1.4;
-  align-self: flex-start;
-}
-
-.fs-step-action--green {
-  background: #f0fdf4;
-  color: #166534;
+  margin: 0;
 }
 
 .fs-steps-close {

@@ -28,7 +28,11 @@ const { heading, accent, personas, faqs } = Astro.props;
         </div>
       ))}
     </div>
+  </div>
+</section>
 
+<section class="section fx-faq-section">
+  <div class="container">
     <div class="fx-faq">
       <h3 class="fx-faq__title">Questions</h3>
       <div class="fx-faq__grid">
@@ -45,6 +49,7 @@ const { heading, accent, personas, faqs } = Astro.props;
 
 <style>
 .fx-who { background: var(--slate-50); }
+.fx-faq-section { background: var(--white); }
 .fx-who__head { max-width: 860px; margin-bottom: 40px; display: flex; flex-direction: column; }
 .fx-who__h2 { font-size: clamp(2rem, 3.6vw, 3.25rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0; }
 .fx-hl { color: var(--purple); -webkit-text-stroke: 0; }
@@ -54,7 +59,7 @@ const { heading, accent, personas, faqs } = Astro.props;
 .fx-who__card p { margin: 0; font-size: 1rem; }
 .fx-faq__title { font-size: 1.6rem; font-weight: 800; margin-bottom: 24px; }
 .fx-faq__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.fx-faq__item { background: var(--white); border: 1px solid var(--slate-200); border-radius: 16px; padding: 24px 28px; }
+.fx-faq__item { padding: 4px 0; }
 .fx-faq__item h4 { font-size: 1.05rem; margin: 0 0 8px; -webkit-text-stroke: 0; }
 .fx-faq__item p { margin: 0; font-size: 0.98rem; }
 
