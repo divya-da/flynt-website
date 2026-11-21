@@ -32,29 +32,88 @@ const faqs = [
 ───────────────────────────────────────────── -->
 <section class="fp-hero">
   <div class="container">
-    <div class="fp-hero__inner fade-up fade-up-1">
-      <div class="tag fade-up fade-up-1">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        Hiring Search
+    <div class="fp-hero__layout">
+      <div class="fp-hero__copy fade-up fade-up-1">
+        <div class="tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Hiring Search
+        </div>
+        <h1 class="fp-hero__headline">
+          Find the companies<br />hiring in your market,<br /><span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">step by step.</span>
+        </h1>
+        <p class="fp-hero__sub">
+          Search live job postings in your market, choose the companies worth pursuing, find their hiring managers, get their contact details and send personalised outreach on email and LinkedIn. Flynt does the research. You decide at every step.
+        </p>
+        <div class="fp-hero__ctas">
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Search Your Market Free →</a>
+          <button class="btn btn--outline btn--lg" data-demo-trigger>See How It Works →</button>
+        </div>
+        <div class="fp-trust">
+          <span>✓ Postings from the last 24 hours</span>
+          <span class="fp-trust__dot">·</span>
+          <span>✓ You choose at every step</span>
+          <span class="fp-trust__dot">·</span>
+          <span>✓ Results in minutes</span>
+          <span class="fp-trust__dot">·</span>
+          <span>✓ Every plan including Lite</span>
+        </div>
       </div>
-      <h1 class="fp-hero__headline fade-up fade-up-2">
-        Find the companies<br />hiring in your market,<br /><span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">step by step.</span>
-      </h1>
-      <p class="fp-hero__sub fade-up fade-up-3">
-        Search live job postings in your market, choose the companies worth pursuing, find their hiring managers, get their contact details and send personalised outreach on email and LinkedIn. Flynt does the research. You decide at every step.
-      </p>
-      <div class="fp-hero__ctas fade-up fade-up-4">
-        <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Search Your Market Free →</a>
-        <button class="btn btn--outline btn--lg" data-demo-trigger>See How It Works →</button>
-      </div>
-      <div class="fp-trust fade-up fade-up-4">
-        <span>✓ Postings from the last 24 hours</span>
-        <span class="fp-trust__dot">·</span>
-        <span>✓ You choose at every step</span>
-        <span class="fp-trust__dot">·</span>
-        <span>✓ Results in minutes</span>
-        <span class="fp-trust__dot">·</span>
-        <span>✓ Every plan including Lite</span>
+
+      <div class="fp-hero__visual">
+
+        <!-- Profile card 1 — based on job posting activity -->
+        <div class="hs-profile">
+          <div class="hs-profile__top">
+            <span class="hs-pill hs-pill--hiring">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Actively hiring · 8 open roles
+            </span>
+            <span class="hs-pill hs-pill--fit">Strong fit</span>
+          </div>
+          <div>
+            <div class="hs-profile__company">Vantara Systems</div>
+            <div class="hs-profile__meta">SaaS · Austin, TX · Series B</div>
+          </div>
+          <div class="hs-profile__dm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            <span class="hs-profile__name">Sarah Chen</span>
+            <span class="hs-profile__title">· VP of Product</span>
+            <span class="hs-contact-icons">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+          </div>
+          <div class="hs-profile__quote">"Saw Vantara is scaling fast — 8 open roles posted this week. We place senior engineers in SaaS at exactly this stage. Worth a quick chat?"</div>
+        </div>
+
+        <!-- Profile card 2 — based on recent promotion -->
+        <div class="hs-profile">
+          <div class="hs-profile__top">
+            <span class="hs-pill hs-pill--promo">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              Recently promoted
+            </span>
+            <span class="hs-pill hs-pill--fit">Strong fit</span>
+          </div>
+          <div>
+            <div class="hs-profile__company">Meridian Capital</div>
+            <div class="hs-profile__meta">Financial services · New York, NY</div>
+          </div>
+          <div class="hs-profile__dm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            <span class="hs-profile__name">James Okafor</span>
+            <span class="hs-profile__title">· VP of Engineering</span>
+            <span class="hs-contact-icons">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+          </div>
+          <div class="hs-profile__quote">"Congrats on the VP move, James. New leadership roles usually mean a hiring push — if you're building the team, we know fintech eng in New York well."</div>
+        </div>
+
+        <div class="fp-hero__note">Sample profiles for illustration. Companies and people shown are fictional.</div>
       </div>
     </div>
   </div>
@@ -65,9 +124,11 @@ const faqs = [
 ───────────────────────────────────────────── -->
 <section class="section fs-problem">
   <div class="container">
-    <div class="fs-problem__inner">
-      <div class="tag" style="margin-bottom: 20px;">The Problem</div>
-      <h2>Finding clients by hand<br />takes the whole morning.</h2>
+    <div class="fs-problem__split">
+      <div class="fs-problem__head">
+        <div class="tag">The Problem</div>
+        <h2 class="fs-problem__h2">Finding clients by hand takes <span class="fs-hl">the whole morning.</span></h2>
+      </div>
       <div class="fs-problem__body">
         <p>Open eight tabs. Scroll the job boards. Work out who owns the hire, hunt down their email, then read the posting for something worth saying. Thirty minutes to find one personalisation angle, two hours before you make a single call, and by Monday the list is stale and you start over.</p>
         <p>Hiring search does the same research in minutes, and stops after each step so you choose what happens next. <strong>Your judgement, without the busywork.</strong></p>
@@ -86,45 +147,35 @@ const faqs = [
       <h2>Five steps from a job posting<br />to a sent message.</h2>
       <p style="max-width: 720px;">You see the companies before you pick them, the hiring managers before you target them, and the message before it sends.</p>
     </div>
-    <div class="fs-steps-list">
-      <div class="fs-step-row">
-        <span class="fs-step-num">01</span>
-        <div class="fs-step-content">
-          <div class="fs-step-title">Search jobs and choose the companies</div>
-          <div class="fs-step-desc">Set the job titles, locations, industries and company size you recruit for. Flynt searches postings that went live in the last 24 hours and lists the companies behind them.</div>
-        </div>
+    <div class="fs-steps-grid">
+      <div class="fs-step-card">
+        <span class="fs-step-num">Step 1</span>
+        <div class="fs-step-title">Search jobs and choose the companies</div>
+        <div class="fs-step-desc">Set the job titles, locations, industries and company size you recruit for. Flynt searches postings from the last 24 hours and lists the companies behind them.</div>
         <span class="fs-step-action">You pick the ones worth pursuing</span>
       </div>
-      <div class="fs-step-row">
-        <span class="fs-step-num">02</span>
-        <div class="fs-step-content">
-          <div class="fs-step-title">Find the hiring managers</div>
-          <div class="fs-step-desc">At the companies you chose, Flynt finds the people most likely to own the hire, each scored against your criteria with the reasoning written out.</div>
-        </div>
+      <div class="fs-step-card">
+        <span class="fs-step-num">Step 2</span>
+        <div class="fs-step-title">Find the hiring managers</div>
+        <div class="fs-step-desc">Flynt finds the people most likely to own the hire at each company you chose, scored against your criteria with the reasoning written out.</div>
         <span class="fs-step-action">You choose who to go after</span>
       </div>
-      <div class="fs-step-row">
-        <span class="fs-step-num">03</span>
-        <div class="fs-step-content">
-          <div class="fs-step-title">Get contact details and context</div>
-          <div class="fs-step-desc">Verified email, LinkedIn and recent company news, pulled only for the people you selected. Phone numbers too, with the phone add-on.</div>
-        </div>
+      <div class="fs-step-card">
+        <span class="fs-step-num">Step 3</span>
+        <div class="fs-step-title">Get contact details and context</div>
+        <div class="fs-step-desc">Verified email, LinkedIn and recent company news, pulled only for the people you selected. Phone numbers too, with the phone add-on.</div>
         <span class="fs-step-action">You spend only on who you keep</span>
       </div>
-      <div class="fs-step-row">
-        <span class="fs-step-num">04</span>
-        <div class="fs-step-content">
-          <div class="fs-step-title">Personalise and review</div>
-          <div class="fs-step-desc">AI writes a personalised angle for every lead from their own job posting and recent company news, shown to you in full before anything leaves.</div>
-        </div>
+      <div class="fs-step-card">
+        <span class="fs-step-num">Step 4</span>
+        <div class="fs-step-title">Personalise and review</div>
+        <div class="fs-step-desc">AI writes a personalised angle for every lead from their own job posting and recent company news, shown to you before anything leaves.</div>
         <span class="fs-step-action">You read and edit it first</span>
       </div>
-      <div class="fs-step-row fs-step-row--last">
-        <span class="fs-step-num fs-step-num--accent">05</span>
-        <div class="fs-step-content">
-          <div class="fs-step-title">Add to a campaign</div>
-          <div class="fs-step-desc">Add the leads you kept to a sequence on email and LinkedIn in one click. Not ready yet? Skip it and come back later. The search keeps your place.</div>
-        </div>
+      <div class="fs-step-card">
+        <span class="fs-step-num fs-step-num--accent">Step 5</span>
+        <div class="fs-step-title">Add to a campaign</div>
+        <div class="fs-step-desc">Add the leads you kept to a sequence on email and LinkedIn in one click. Not ready? Skip it and come back. The search keeps your place.</div>
         <span class="fs-step-action fs-step-action--green">You decide what goes out</span>
       </div>
     </div>
@@ -271,11 +322,11 @@ const faqs = [
   </div>
 </section>
 
-<!-- SECTION 7 — BUILT INTO THE WHOLE SYSTEM (shared) -->
-<FlyntSystem intro="A hiring search is not a standalone list. Every lead you keep flows straight into the tools you already use in Flynt." />
-
-<!-- SECTION 8 — THREE WAYS IN (shared) -->
+<!-- SECTION 7 — THREE WAYS IN (shared) -->
 <SearchWays current="hiring" />
+
+<!-- SECTION 8 — BUILT INTO THE WHOLE SYSTEM (shared) -->
+<FlyntSystem intro="A hiring search is not a standalone list. Every lead you keep flows straight into the tools you already use in Flynt." />
 
 <!-- SECTION 9 — WHO IT IS FOR + FAQ -->
 <WhoFaq heading="Built for recruiters who want to" accent="see the market first." personas={personas} faqs={faqs} />
@@ -491,15 +542,27 @@ const faqs = [
     #fff;
 }
 
-.fp-hero__inner {
-  max-width: 760px;
+.fp-hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 64px;
+  align-items: center;
 }
+
+.fp-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.fp-hero__copy .tag { margin-bottom: 0; }
 
 .fp-hero__headline {
   font-size: clamp(2.5rem, 5vw, 3.75rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin: 20px 0 24px;
+  margin: 0;
   color: var(--black);
 }
 
@@ -508,15 +571,14 @@ const faqs = [
   font-weight: 500;
   color: var(--slate-600);
   line-height: 1.7;
-  margin: 0 0 32px;
-  max-width: 680px;
+  margin: 0;
+  max-width: 580px;
 }
 
 .fp-hero__ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
 }
 
 .fp-trust {
@@ -533,27 +595,150 @@ const faqs = [
   color: var(--slate-300);
 }
 
+/* ── Hero visual (profile cards) ── */
+.fp-hero__visual {
+  border-radius: 24px;
+  background: linear-gradient(145deg, #f4ecff, #e8defa);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fp-hero__note {
+  font-size: 0.8rem;
+  color: #5a4a86;
+  text-align: center;
+}
+
+.hs-profile {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 18px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(60, 40, 120, 0.08);
+}
+
+.hs-profile__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.hs-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.775rem;
+  font-weight: 700;
+}
+
+.hs-pill--hiring { background: var(--purple-bg-2); color: var(--purple-900); }
+.hs-pill--recent { background: #fdf0dc; color: #7a4400; }
+.hs-pill--promo  { background: #e3f5ec; color: #1f6b4a; }
+.hs-pill--fit    { background: #e3f5ec; color: #1f6b4a; }
+
+.hs-profile__company {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.hs-profile__meta {
+  font-size: 0.85rem;
+  color: var(--slate-500);
+  margin-top: 2px;
+}
+
+.hs-profile__dm {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--slate-700);
+  flex-wrap: wrap;
+}
+
+.hs-profile__dm > svg { color: var(--purple); flex-shrink: 0; }
+
+.hs-profile__name { font-weight: 700; color: var(--slate-800); }
+
+.hs-profile__title {
+  font-weight: 400;
+  color: var(--slate-500);
+}
+
+.hs-contact-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 4px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: var(--slate-100);
+  flex-shrink: 0;
+}
+
+.hs-contact-icons svg {
+  color: var(--slate-500);
+  display: block;
+  flex-shrink: 0;
+}
+
+.hs-profile__quote {
+  background: var(--purple-bg);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--slate-700);
+  font-style: italic;
+}
+
 /* ────────────────────────────────────────────
    HONEST PROBLEM
 ──────────────────────────────────────────── */
 .fs-problem {
-  background: var(--slate-50);
+  background: var(--purple-bg);
 }
 
-.fs-problem__inner {
-  max-width: 760px;
+.fs-problem__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
 }
 
-.fs-problem__inner h2 {
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  line-height: 1.15;
-  margin: 0 0 28px;
+.fs-problem__head {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fs-problem__h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.fs-hl {
+  color: var(--purple);
+  -webkit-text-stroke: 0;
 }
 
 .fs-problem__body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding-top: 8px;
 }
 
 .fs-problem__body p {
@@ -618,41 +803,40 @@ const faqs = [
    STEP BY STEP
 ──────────────────────────────────────────── */
 .fs-steps-section {
-  background: #fff;
+  background: var(--slate-50);
 }
 
-.fs-steps-list {
-  background: #fff;
-  border: 1px solid var(--slate-200);
-  border-radius: 14px;
-  overflow: hidden;
+.fs-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
   margin-bottom: 20px;
 }
 
-.fs-step-row {
+.fs-step-card {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: 14px;
+  padding: 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 22px 28px;
-  border-bottom: 1px solid var(--slate-200);
-}
-
-.fs-step-row--last {
-  border-bottom: none;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .fs-step-num {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: #25153e;
+  width: fit-content;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 7px;
+  background: var(--slate-900);
   color: #fff;
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  display: flex;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
@@ -661,36 +845,31 @@ const faqs = [
   background: var(--purple);
 }
 
-.fs-step-content {
-  flex: 999 1 200px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
 .fs-step-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--slate-900);
+  line-height: 1.35;
 }
 
 .fs-step-desc {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--slate-600);
+  flex: 1;
 }
 
 .fs-step-action {
-  flex: 0 0 190px;
-  padding: 9px 14px;
+  margin-top: auto;
+  display: inline-block;
+  padding: 7px 12px;
   border-radius: 8px;
   background: var(--purple-bg-2);
   color: var(--purple-900);
-  font-size: 0.8rem;
+  font-size: 0.775rem;
   font-weight: 700;
   line-height: 1.4;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .fs-step-action--green {
@@ -883,6 +1062,20 @@ const faqs = [
    RESPONSIVE
 ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .fp-hero__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .fs-problem__split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .fs-steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .fp-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -916,9 +1109,8 @@ const faqs = [
     grid-template-columns: 1fr;
   }
 
-  .fs-step-action {
-    flex: 0 0 auto;
-    width: 100%;
+  .fs-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .fp-scoring__header {

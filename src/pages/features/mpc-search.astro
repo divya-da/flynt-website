@@ -130,38 +130,38 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
 
     <div class="mpc-steps">
       <div class="mpc-step">
-        <div class="mpc-step__num">01</div>
-        <div class="mpc-step__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg>
+        <div class="mpc-step__num">Step 1</div>
+        <div class="mpc-step__head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3-3 3 3"/></svg>
+          <h3>Upload the candidate</h3>
         </div>
-        <h3>Upload the candidate</h3>
         <p>Drop in a resume or paste a profile. Flynt reads the titles, seniority, industries, tools, locations and what the person actually shipped.</p>
       </div>
 
       <div class="mpc-step">
-        <div class="mpc-step__num">02</div>
-        <div class="mpc-step__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        <div class="mpc-step__num">Step 2</div>
+        <div class="mpc-step__head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+          <h3>Flynt finds who is hiring for them</h3>
         </div>
-        <h3>Flynt finds who is hiring for them</h3>
         <p>It searches live postings for roles that fit that background in your markets, and scores each company on how well your candidate answers it.</p>
       </div>
 
       <div class="mpc-step mpc-step--active">
-        <div class="mpc-step__num">03</div>
-        <div class="mpc-step__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        <div class="mpc-step__num">Step 3</div>
+        <div class="mpc-step__head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          <h3>Every pitch written for that company</h3>
         </div>
-        <h3>Every pitch written for that company</h3>
         <p>For each company, Flynt reads the posting and leads with the part of the background that matters there. Same candidate, a different case each time.</p>
       </div>
 
       <div class="mpc-step">
-        <div class="mpc-step__num">04</div>
-        <div class="mpc-step__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+        <div class="mpc-step__num">Step 4</div>
+        <div class="mpc-step__head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+          <h3>Launch, then handle replies</h3>
         </div>
-        <h3>Launch, then handle replies</h3>
         <p>Email and LinkedIn run in one sequence. A reply on either channel stops it and lands in your unified inbox, where you take over.</p>
       </div>
     </div>
@@ -573,13 +573,20 @@ import AgentsStrip from '../../components/features/AgentsStrip.astro';
   display: flex; flex-direction: column; gap: 12px;
 }
 .mpc-step__num {
-  font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--purple-dark);
   border-bottom: 1px solid var(--slate-200);
   padding-bottom: 12px;
 }
-.mpc-step__icon { color: var(--purple-dark); }
-.mpc-step h3 { font-size: 1.2rem; font-weight: 800; line-height: 1.25; margin: 0; }
+.mpc-step__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--purple-dark);
+}
+.mpc-step__head svg { flex-shrink: 0; }
+.mpc-step h3 { font-size: 1.1rem; font-weight: 800; line-height: 1.25; margin: 0; }
 .mpc-step p { margin: 0; font-size: 0.95rem; line-height: 1.6; }
 .mpc-step--active { background: var(--purple-bg-2); border-color: var(--purple-300); }
 .mpc-step--active p { color: var(--purple-900); }
