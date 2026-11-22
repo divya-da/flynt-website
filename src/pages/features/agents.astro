@@ -10,10 +10,10 @@ const personas = [
 ];
 
 const faqs = [
-  { title: 'Does an agent find different leads from a search?', body: 'No. An agent runs the search you built, with the same scoring and the same written outreach, on the days you are not thinking about it.' },
+  { title: 'Does an agent find different leads from a search?', body: 'Yes. An agent runs your search every day and surfaces new companies that weren\'t there the day before — always fresh, scored with unique personalised outreach written, all delivered without you having to trigger it.' },
   { title: 'Do I have to search first?', body: 'No. You can set up an agent from scratch and Flynt saves the search behind it for you. Most recruiters search first, then run the search that works.' },
   { title: 'Can I change what an agent looks for?', body: "Yes. Open the agent, see the search behind it and change a filter. Tomorrow's leads change with it." },
-  { title: 'Are the leads contacted automatically?', body: 'When the agent is connected to a campaign, yes. New leads go into your sequence on email and LinkedIn as soon as they are found.' },
+  { title: 'Are the leads contacted automatically?', body: 'Only if you have opted in to automatic outreach. If your agent is connected to a campaign and you have turned on automatic sending, new leads go into your sequence on email and LinkedIn as soon as they are found. If not, they land in your list for you to review and send manually.' },
   { title: 'Which kinds of agent are there?', body: 'One for each kind of search: hiring, signal and MPC. Run as many as your plan allows, each on its own market.' },
   { title: 'Which plans include agents?', body: 'Starter and above. Search is on every plan, including Lite.' },
 ];
@@ -219,7 +219,7 @@ const faqs = [
         <div class="fp-time-stat-desc">LinkedIn, Crunchbase, Alerts, and job boards — in one agent.</div>
       </div>
       <div class="fp-time-stat">
-        <div class="fp-time-stat-num fp-time-stat-num--accent">$500<sup>+</sup></div>
+        <div class="fp-time-stat-num fp-time-stat-num--accent">$1,500<sup>+</sup></div>
         <div class="fp-time-stat-title">Saved per month</div>
         <div class="fp-time-stat-desc">vs. paying for each tool separately.</div>
       </div>
@@ -462,18 +462,18 @@ const faqs = [
     <div class="fp-steps">
       <div class="fp-step">
         <div class="fp-step__num">01</div>
-        <h3 class="fp-step__title">Search</h3>
-        <p class="fp-step__body">Set what you're after. Adjust industries, titles, company size, geography. Run it again as many times as you want.</p>
+        <h3 class="fp-step__title">Search Your Market</h3>
+        <p class="fp-step__body">Type who you're after and see real companies and decision makers come back. Adjust the industries, titles, company size and geography until the results look right. Run it as many times as you like.</p>
       </div>
       <div class="fp-step">
         <div class="fp-step__num">02</div>
-        <h3 class="fp-step__title">Save it</h3>
-        <p class="fp-step__body">Keep any search you want to come back to. Fine-tune it later as your market shifts.</p>
+        <h3 class="fp-step__title">Save It As An Agent</h3>
+        <p class="fp-step__body">One click turns that search into an agent. It runs every morning, finds the right decision makers, and builds an intelligence package on each company. Open the search and fine-tune it whenever your market shifts.</p>
       </div>
       <div class="fp-step">
         <div class="fp-step__num">03</div>
-        <h3 class="fp-step__title">Run daily with an agent</h3>
-        <p class="fp-step__body">One click and that saved search runs every day, scoring, personalising and adding new leads to your campaign. You can still open it and change it whenever you like.</p>
+        <h3 class="fp-step__title">Leads Land Every Day</h3>
+        <p class="fp-step__body">Before you open your laptop, a fresh list of scored, matched and personalized leads is waiting. Need more before then? Run the agent again, any time.</p>
       </div>
     </div>
     <p class="fs-agent-note">Every agent in Flynt is a saved search. Prefer to start from scratch? Set up an agent directly and Flynt saves the search behind it for you.</p>
@@ -559,14 +559,14 @@ const faqs = [
   </div>
 </section>
 
-<!-- SECTION 9 — CREDITS -->
+<!-- SECTION 9 — WHO IT IS FOR + FAQ -->
+<WhoFaq heading="Built for recruiters who want" accent="a pipeline that never stops." personas={personas} faqs={faqs} />
+
+<!-- SECTION 10 — CREDITS -->
 <CreditsBlock
   title="Run it every day.<br />Run it again any time."
   body="An agent spends credits from the same monthly balance as your searches. There is no daily run limit: hit Run now whenever you want a fresh batch, and you can top up any time."
 />
-
-<!-- SECTION 10 — WHO IT IS FOR + FAQ -->
-<WhoFaq heading="Built for recruiters who want" accent="a pipeline that never stops." personas={personas} faqs={faqs} />
 
 <!-- ─────────────────────────────────────────────
   SECTION 11 — FINAL CTA
@@ -574,9 +574,9 @@ const faqs = [
 <section class="final-cta">
   <div class="container">
     <div class="final-cta__inner">
-      <h2>Right now, someone is posting a job you should know about.</h2>
+      <h2>Right now, <span style="color:#dcc2ff;-webkit-text-stroke:0;">someone is posting a job</span> you should know about.</h2>
       <p>Run your search daily with an agent and Flynt makes sure you're first to know, and first to reach out.</p>
-      <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Start Free Trial →</a>
+      <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--white);color:var(--purple-900);border-color:var(--white);">Start Free Trial →</a>
       <span class="final-cta__disclaimer">Cancel anytime.</span>
     </div>
   </div>
@@ -608,7 +608,7 @@ const faqs = [
 ──────────────────────────────────────────── */
 .final-cta {
   position: relative;
-  background: var(--slate-50);
+  background: linear-gradient(160deg, #6234c8 0%, #4c2aa0 50%, #35197a 100%);
   padding: 96px 24px;
 }
 
@@ -623,13 +623,14 @@ const faqs = [
 }
 
 .final-cta__inner h2 {
-  color: var(--black);
+  color: var(--white);
+  -webkit-text-stroke: 0;
   font-size: clamp(2rem, 4vw, 3.2rem);
   max-width: 680px;
 }
 
 .final-cta__inner p {
-  color: var(--slate-600);
+  color: #e6dcfa;
   font-size: 1.125rem;
   max-width: 480px;
   line-height: 1.625;
@@ -637,7 +638,7 @@ const faqs = [
 
 .final-cta__disclaimer {
   font-size: 0.875rem;
-  color: var(--slate-500);
+  color: #cbbcf0;
 }
 
 /* ────────────────────────────────────────────
@@ -850,7 +851,43 @@ const faqs = [
    AGENT CAPABILITIES (dark)
 ──────────────────────────────────────────── */
 .fp-agent-section {
-  /* extends .positioning */
+  background: var(--purple-bg);
+}
+
+.fp-agent-section .fp-dark-tag {
+  background: var(--purple-bg-2);
+  color: var(--purple-dark);
+}
+
+.fp-agent-section .fp-dark-h2 {
+  color: var(--slate-900);
+  -webkit-text-stroke: 0.6px var(--slate-900);
+}
+
+.fp-agent-section .fp-dark-sub {
+  color: var(--slate-600);
+}
+
+.fp-agent-section .fp-agent-card {
+  background: var(--white);
+  border-color: var(--slate-200);
+}
+
+.fp-agent-section .fp-agent-card:hover {
+  background: var(--white);
+  border-color: var(--purple-300);
+}
+
+.fp-agent-section .fp-agent-card__title {
+  color: var(--slate-900);
+}
+
+.fp-agent-section .fp-agent-card__tagline {
+  color: var(--purple-dark);
+}
+
+.fp-agent-section .fp-agent-card__body {
+  color: var(--slate-600);
 }
 
 .fp-agent-cards {
@@ -906,6 +943,7 @@ const faqs = [
     so we re-declare what we need here)
 ──────────────────────────────────────────── */
 .new-shift {
+  background: var(--slate-50);
   padding-bottom: 120px;
 }
 
@@ -1209,7 +1247,7 @@ const faqs = [
    THE TIME YOU GET BACK
 ──────────────────────────────────────────── */
 .fp-time-section {
-  background: var(--slate-50);
+  background: var(--purple-bg);
 }
 
 .fp-time-header {
@@ -1602,7 +1640,7 @@ const faqs = [
    HONEST PROBLEM
 ──────────────────────────────────────────── */
 .fs-problem {
-  background: var(--slate-50);
+  background: var(--white);
 }
 
 .fs-problem__inner {
@@ -1636,7 +1674,7 @@ const faqs = [
    SEARCH vs AGENT COMPARE
 ──────────────────────────────────────────── */
 .fs-compare-section {
-  background: #fff;
+  background: var(--slate-50);
 }
 
 .fs-compare {
@@ -1647,21 +1685,24 @@ const faqs = [
 }
 
 .fs-compare__card {
-  border-radius: 14px;
-  padding: 28px;
+  border-radius: 20px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .fs-compare__card--light {
-  background: var(--slate-50);
+  background: var(--white);
   border: 1px solid var(--slate-200);
 }
 
 .fs-compare__card--dark {
-  background: #25153e;
-  border: 1px solid #25153e;
+  background:
+    linear-gradient(to bottom, rgba(199, 182, 250, 0.18) 0%, transparent 40%),
+    var(--white);
+  border: 1px solid var(--purple-300);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.1), 0 6px 24px rgba(0,0,0,0.06);
 }
 
 .fs-compare__card-header {
@@ -1671,9 +1712,9 @@ const faqs = [
 }
 
 .fs-compare__icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1685,7 +1726,7 @@ const faqs = [
 }
 
 .fs-compare__icon--ghost {
-  background: rgba(255,255,255,0.16);
+  background: var(--purple);
 }
 
 .fs-compare__card-title {
@@ -1698,7 +1739,7 @@ const faqs = [
 }
 
 .fs-compare__card-title--white {
-  color: #fff;
+  color: var(--slate-900);
 }
 
 .fs-compare__card-sub {
@@ -1709,47 +1750,58 @@ const faqs = [
 }
 
 .fs-compare__card-sub--green {
-  color: #4ade80;
+  color: var(--purple-dark);
 }
 
 .fs-compare__list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0;
   margin: 0;
 }
 
 .fs-compare__row {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px 16px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--slate-100);
 }
 
+.fs-compare__row:first-child { padding-top: 0; }
+.fs-compare__row:last-child { border-bottom: none; padding-bottom: 0; }
+
 .fs-compare__list dt {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--slate-500);
+  color: var(--slate-400);
+  padding-top: 3px;
 }
 
 .fs-compare__list dd {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--slate-700);
   margin: 0;
 }
 
+.fs-compare__list--dark .fs-compare__row {
+  border-bottom-color: var(--purple-200);
+}
+
 .fs-compare__list--dark dt {
-  color: rgba(255,255,255,0.45);
+  color: var(--purple-dark);
 }
 
 .fs-compare__list--dark dd {
-  color: rgba(255,255,255,0.8);
+  color: var(--slate-700);
 }
 
 .fs-compare__list--dark strong {
-  color: #fff;
+  color: var(--purple-900);
 }
 
 .fs-compare__note {
