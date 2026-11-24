@@ -58,7 +58,181 @@ const faqs = [
 </section>
 
 <!-- ─────────────────────────────────────────────
-  SECTION 2 — THE TIME YOU GET BACK
+  SECTION 2 — PREDICTABLE BY DESIGN
+───────────────────────────────────────────── -->
+<section class="section fp-predictable">
+  <div class="container">
+    <div class="fp-predictable__inner">
+      <div class="fp-predictable__left">
+        <div class="tag">Predictable by Design</div>
+        <h2 class="fp-predictable__h2">30 leads today.<br />30 tomorrow.<br />30 the day after.</h2>
+      </div>
+      <div class="fp-predictable__right">
+        <p>Prospecting by hand is feast or famine. You push hard for a week, land a placement, stop, and six weeks later the pipeline is empty and you're starting cold.</p>
+        <p>An agent doesn't have good weeks and bad weeks. It has days, and they all look the same.</p>
+      </div>
+    </div>
+
+    <!-- ONE AGENT, ONE MONTH card -->
+    <div class="fp-oaom">
+      <div class="fp-oaom__header">
+        <span class="fp-oaom__label">One Agent, One Month</span>
+        <span class="fp-oaom__meta">30 runs · 30 batches · no gaps</span>
+      </div>
+      <div class="fp-oaom__bars">
+        {(() => {
+          const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+          return Array.from({length: 30}).map((_, i) => {
+            const isWeekend = i % 7 === 5 || i % 7 === 6;
+            return (
+              <span class={`fp-oaom__bar${isWeekend ? ' fp-oaom__bar--dim' : ''}`}>
+                <span class="fp-oaom__bar-num">30</span>
+                <span class="fp-oaom__bar-day">{days[i % 7]}</span>
+              </span>
+            );
+          });
+        })()}
+      </div>
+      <div class="fp-oaom__stats">
+        <div class="fp-oaom__stat">
+          <span class="fp-oaom__stat-num">~900</span>
+          <span class="fp-oaom__stat-label">new opportunities a month, per agent</span>
+        </div>
+        <div class="fp-oaom__stat">
+          <span class="fp-oaom__stat-num">0</span>
+          <span class="fp-oaom__stat-label">days you had to remember to prospect</span>
+        </div>
+        <p class="fp-oaom__note">Whether you were busy, travelling, on a client call or closing a placement. Consistency is the genuinely hard part of business development, and it's the part an agent is best at.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION: FULLY AUTOMATED VOLUME
+───────────────────────────────────────────── -->
+<section class="section fp-volume">
+  <div class="container">
+    <div class="section-header section-header--center" style="margin-bottom: 40px;">
+      <div class="tag" style="margin: 0 auto 16px;">Fully Automated Volume</div>
+      <h2>Thirty a day is one agent.<br />Add another for sixty.</h2>
+      <p style="max-width: 720px;">Thirty leads a day is what a single agent delivers on its own, while you're doing something else entirely. Want more arriving the same way? Add an agent. Each one runs its own search on its own schedule.</p>
+    </div>
+
+    <div class="fp-volume__cards">
+      <div class="fp-volume__card">
+        <div class="fp-volume__dots">
+          <span class="fp-volume__dot fp-volume__dot--on"></span>
+          <span class="fp-volume__dot fp-volume__dot--off"></span>
+          <span class="fp-volume__dot fp-volume__dot--off"></span>
+        </div>
+        <div class="fp-volume__label">1 Agent</div>
+        <div><span class="fp-volume__num">30</span><span class="fp-volume__per">/day</span></div>
+        <div class="fp-volume__sub">around 900 a month, hands off</div>
+        <span class="fp-volume__plan">Starter and above</span>
+      </div>
+      <div class="fp-volume__card">
+        <div class="fp-volume__dots">
+          <span class="fp-volume__dot fp-volume__dot--on"></span>
+          <span class="fp-volume__dot fp-volume__dot--on"></span>
+          <span class="fp-volume__dot fp-volume__dot--off"></span>
+        </div>
+        <div class="fp-volume__label fp-volume__label--accent">2 Agents</div>
+        <div><span class="fp-volume__num">60</span><span class="fp-volume__per">/day</span></div>
+        <div class="fp-volume__sub">around 1,800 a month, hands off</div>
+        <span class="fp-volume__plan">Second agent from $44/mo</span>
+      </div>
+      <div class="fp-volume__card fp-volume__card--dark">
+        <div class="fp-volume__dots">
+          <span class="fp-volume__dot fp-volume__dot--green"></span>
+          <span class="fp-volume__dot fp-volume__dot--green"></span>
+          <span class="fp-volume__dot fp-volume__dot--green"></span>
+        </div>
+        <div class="fp-volume__label fp-volume__label--green">3 Agents</div>
+        <div><span class="fp-volume__num fp-volume__num--white">90</span><span class="fp-volume__per fp-volume__per--dim">/day</span></div>
+        <div class="fp-volume__sub fp-volume__sub--light">around 2,700 a month, hands off</div>
+        <span class="fp-volume__plan fp-volume__plan--dark">Pro includes 3</span>
+      </div>
+    </div>
+
+    <div class="fp-volume__info">
+      <div class="fp-volume__info-col">
+        <div class="fp-volume__info-title">
+          <span class="fp-volume__info-icon">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.6" stroke="#ffffff" stroke-width="1.7"/><path d="M10.5 10.5L14 14" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          By hand, there's no limit at all
+        </div>
+        <p>Run as many searches as you want, whenever you want. Hit <strong>Run now</strong> on any agent for another batch on the spot. Nothing caps you except your credit balance, and you can top that up any time.</p>
+      </div>
+      <div class="fp-volume__info-divider" aria-hidden="true"></div>
+      <div class="fp-volume__info-col">
+        <div class="fp-volume__info-title">
+          <span class="fp-volume__info-icon fp-volume__info-icon--dark">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.8" stroke="#ffffff" stroke-width="1.7"/><path d="M8 4.8V8l2.3 1.5" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          On schedule, it's 30 a day per agent
+        </div>
+        <p>That's the figure for genuine autopilot: what lands while you're asleep, in a meeting or on holiday, without you clicking anything. More hands-off volume means more agents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION: ON AUTOPILOT
+───────────────────────────────────────────── -->
+<section class="section fp-autopilot">
+  <div class="container">
+    <div class="section-header section-header--center" style="margin-bottom: 40px;">
+      <div class="tag" style="margin: 0 auto 16px;">On Autopilot</div>
+      <h2>Found, written and sent<br />before you're awake.</h2>
+      <p style="max-width: 720px;">An agent connected to a campaign doesn't stop at the lead. It writes the outreach from that company's own posting, drops it into your sequence on email and LinkedIn, and sends. You wake up to replies, not to a to-do list.</p>
+    </div>
+
+    <div class="fp-autopilot__card">
+      <div class="fp-autopilot__steps">
+        <div class="fp-autopilot__step">
+          <span class="fp-autopilot__time">03:00</span>
+          <span class="fp-autopilot__action">Scans</span>
+          <span class="fp-autopilot__desc">Every posting, round and deal that went live overnight</span>
+        </div>
+        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
+        <div class="fp-autopilot__step">
+          <span class="fp-autopilot__time">04:20</span>
+          <span class="fp-autopilot__action">Scores</span>
+          <span class="fp-autopilot__desc">Against your criteria, with the reasoning written out</span>
+        </div>
+        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
+        <div class="fp-autopilot__step">
+          <span class="fp-autopilot__time">05:45</span>
+          <span class="fp-autopilot__action">Writes</span>
+          <span class="fp-autopilot__desc">A different message per company, from their own posting</span>
+        </div>
+        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
+        <div class="fp-autopilot__step fp-autopilot__step--send">
+          <span class="fp-autopilot__time">06:30</span>
+          <span class="fp-autopilot__action">Sends</span>
+          <span class="fp-autopilot__desc">Into your sequence, email and LinkedIn together</span>
+        </div>
+        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
+        <div class="fp-autopilot__step fp-autopilot__step--you">
+          <span class="fp-autopilot__time fp-autopilot__time--you">09:00</span>
+          <span class="fp-autopilot__action fp-autopilot__action--you">You read</span>
+          <span class="fp-autopilot__desc fp-autopilot__desc--you">Replies in your inbox. Nothing left to do first.</span>
+        </div>
+      </div>
+      <div class="fp-autopilot__note">
+        <p><strong>Automatic sending is a switch, not a default.</strong> Leave it off and the same leads land in your list for you to review and send yourself. The agent still does everything up to that point.</p>
+        <span class="fp-autopilot__control">You stay in control</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+  SECTION 3 — THE TIME YOU GET BACK
 ───────────────────────────────────────────── -->
 <section class="section fp-time-section">
   <div class="container">
@@ -225,136 +399,6 @@ const faqs = [
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- ─────────────────────────────────────────────
-  SECTION 3 — BEFORE / AFTER
-───────────────────────────────────────────── -->
-<section class="section new-shift">
-  <div class="container">
-
-    <div class="new-shift__header">
-      <div class="new-shift__header-left">
-        <div class="tag">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-          Before &amp; After
-        </div>
-        <h2 class="new-shift__headline">Hours of research every day. <span class="new-shift__accent">Or none at all.</span></h2>
-      </div>
-      <div class="new-shift__header-right">
-        <p class="new-shift__lead">This is how most recruiters find clients. And this is how Flynt changes it.</p>
-      </div>
-    </div>
-
-    <div class="new-shift__compare">
-
-      <div class="new-shift__card new-shift__card--old">
-        <div class="ns-badge ns-badge--old">
-          <span class="ns-badge-icon ns-badge-icon--x">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-          </span>
-          The Old Way
-        </div>
-        <h3 class="ns-card-title">"The pipeline stalls every time you do."</h3>
-        <hr class="ns-divider" />
-        <ul class="ns-list ns-list--old">
-          <li>
-            <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
-            Open 8 tabs. Start researching. Data is already stale.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
-            30 minutes just to find one personalisation angle.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
-            Two hours in. You haven't made a single call.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
-            Land a placement. Stop prospecting. Pipeline goes quiet.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--x"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
-            Monday morning. Start over.
-          </li>
-        </ul>
-      </div>
-
-      <div class="new-shift__shift-col" aria-hidden="true">
-        <div class="new-shift__shift-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </div>
-        <span class="new-shift__shift-label">The Shift</span>
-      </div>
-
-      <div class="new-shift__card new-shift__card--new">
-        <div class="ns-badge ns-badge--new">
-          <span class="ns-badge-icon ns-badge-icon--check">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </span>
-          The Flynt Way
-        </div>
-        <h3 class="ns-card-title">"From signal to ready-to-send before you open your laptop."</h3>
-        <hr class="ns-divider" />
-        <ul class="ns-list ns-list--new">
-          <li>
-            <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            30 scored, matched leads waiting every morning.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Decision-maker contacts, fit scores, and AI hooks already written.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Open your leads. Start your calls. Zero research required.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Land a placement. Pipeline keeps filling automatically.
-          </li>
-          <li>
-            <span class="ns-item-icon ns-item-icon--check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Monday morning. 30 new leads already in your inbox.
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="new-shift__close">
-      <div class="new-shift__close-divider">
-        <span class="new-shift__close-line"></span>
-        <div class="new-shift__close-icon">
-          <img src="/images/logo-mark.svg" alt="" width="28" height="28" />
-        </div>
-        <span class="new-shift__close-line new-shift__close-line--right"></span>
-      </div>
-      <p>This is what BD looks like without Flynt. And with it.</p>
-      <strong class="new-shift__close-headline">The difference between struggling to find clients and having them flow consistently isn't effort, it's whether you have an <span class="new-shift__accent">engine running behind you.</span></strong>
-    </div>
-    <div class="new-shift__spacer"></div>
-
-  </div>
-</section>
-
-
-<!-- ─────────────────────────────────────────────
-  SECTION 4 — WHY NOT JUST LET IT RUN
-───────────────────────────────────────────── -->
-<section class="section fs-problem">
-  <div class="container">
-    <div class="fs-problem__inner">
-      <div class="tag" style="margin-bottom: 20px;">Search First, Then Automate</div>
-      <h2>Nobody wants to configure<br />a robot on faith.</h2>
-      <div class="fs-problem__body">
-        <p>Every automated prospecting tool asks for the same leap: tell it what you want, trust it to go find it, come back tomorrow. If you've been burned by a data vendor, that's a lot to ask before you've seen a single company.</p>
-        <p>So Flynt lets you do it by hand first. Search your market, look at what comes back, change the filters, search again. When it's returning companies you'd actually call, run it daily with an agent. <strong>The automation is the reward, not the entry fee.</strong></p>
-        <p>That's what makes the agent trustworthy. It runs the search you already tuned by hand.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -695,6 +739,49 @@ const faqs = [
 }
 
 /* ────────────────────────────────────────────
+   PREDICTABLE BY DESIGN
+──────────────────────────────────────────── */
+.fp-predictable {
+  background: var(--slate-50);
+}
+
+.fp-predictable__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: end;
+}
+
+.fp-predictable__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fp-predictable__h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--black);
+  font-weight: 800;
+}
+
+.fp-predictable__right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fp-predictable__right p {
+  font-size: 1.1rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ────────────────────────────────────────────
    CONFIGURATION SECTION (dark) — overrides on .positioning
 ──────────────────────────────────────────── */
 .fp-config {
@@ -935,312 +1022,6 @@ const faqs = [
   line-height: 1.7;
   margin: 0;
   font-weight: 400;
-}
-
-/* ────────────────────────────────────────────
-   NEW SHIFT — page-specific overrides
-   (global .new-shift styles come from index.astro scope,
-    so we re-declare what we need here)
-──────────────────────────────────────────── */
-.new-shift {
-  background: var(--slate-50);
-  padding-bottom: 120px;
-}
-
-.new-shift__header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
-  margin-bottom: 64px;
-}
-
-.new-shift__header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.new-shift .tag {
-  background: var(--purple-bg-2);
-  align-self: flex-start;
-}
-
-.new-shift__header-right {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-top: 92px;
-}
-
-.new-shift__headline {
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
-  line-height: 1.15;
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.new-shift__accent {
-  color: var(--purple);
-  -webkit-text-stroke: 0;
-}
-
-.new-shift__lead {
-  font-size: 1.25rem;
-  line-height: 1.65;
-  color: var(--slate-700);
-  margin: 0;
-  font-weight: 500;
-}
-
-.new-shift__spacer {
-  display: none;
-}
-
-/* Compare grid */
-.new-shift__compare {
-  display: grid;
-  grid-template-columns: 1fr 120px 1fr;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.new-shift__card {
-  border-radius: var(--radius-lg);
-  padding: 36px;
-}
-
-.new-shift__card--old {
-  background: var(--white);
-  border: 1px dashed #b0bec9;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-}
-
-.new-shift__card--new {
-  background:
-    linear-gradient(to bottom, rgba(199, 182, 250, 0.13) 0%, transparent 38%),
-    var(--white);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16), 0 6px 24px rgba(0, 0, 0, 0.09);
-  align-self: start;
-}
-
-/* Shift column */
-.new-shift__shift-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  z-index: 5;
-}
-
-@keyframes shift-ring-grow {
-  0%   { transform: scale(1);    opacity: 0.7; }
-  100% { transform: scale(1.55); opacity: 0; }
-}
-
-.new-shift__shift-btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--purple);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-shadow:
-    0 0 0 6px rgba(255, 255, 255, 0.8),
-    0 4px 20px rgba(124, 58, 237, 0.35);
-}
-
-.new-shift__shift-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(124, 58, 237, 0.45);
-  animation: shift-ring-grow 2.5s ease-out infinite;
-}
-
-.new-shift__shift-label {
-  font-family: var(--font-display);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--purple-900);
-}
-
-/* Badges */
-.ns-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border-radius: 100px;
-  padding: 5px 12px 5px 5px;
-  margin-bottom: 20px;
-  width: fit-content;
-}
-
-.ns-badge--old {
-  background: var(--slate-100);
-  color: var(--slate-500);
-}
-
-.ns-badge--new {
-  background: var(--purple-bg-2);
-  color: var(--purple-900);
-}
-
-.ns-badge-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.ns-badge-icon--x {
-  background: var(--slate-200);
-  color: var(--slate-500);
-}
-
-.ns-badge-icon--check {
-  background: var(--purple-bg);
-  color: var(--purple);
-}
-
-/* Card content */
-.ns-card-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0 0 10px;
-  color: var(--slate-900);
-  -webkit-text-stroke: 0.4px var(--slate-900);
-}
-
-.ns-divider {
-  border: none;
-  border-top: 1px solid var(--slate-200);
-  margin: 0 0 24px;
-}
-
-/* Lists */
-.ns-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.ns-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.ns-list--old li {
-  color: var(--slate-600);
-}
-
-.ns-list--new li {
-  color: var(--slate-700);
-  font-weight: 500;
-}
-
-.ns-item-icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.ns-item-icon--x {
-  border: 1px solid var(--slate-200);
-  background: var(--white);
-  color: var(--slate-400);
-}
-
-.ns-item-icon--check {
-  background: var(--purple);
-  color: var(--white);
-}
-
-/* Closing block */
-.new-shift__close {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0;
-  background: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
-}
-
-.new-shift__close-divider {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 480px;
-  margin-bottom: 4px;
-}
-
-.new-shift__close-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(124, 58, 237, 0.25));
-}
-
-.new-shift__close-line--right {
-  background: linear-gradient(to left, transparent, rgba(124, 58, 237, 0.25));
-}
-
-.new-shift__close-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin: 0 20px;
-}
-
-.new-shift__close p {
-  font-size: 1rem;
-  color: var(--slate-500);
-  margin: 0;
-  line-height: 1.65;
-  font-weight: 400;
-}
-
-.new-shift__close-headline {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  font-weight: 800;
-  color: var(--black);
-  letter-spacing: -0.02em;
-  -webkit-text-stroke: 0;
-  line-height: 1.4;
-  display: block;
 }
 
 /* ────────────────────────────────────────────
@@ -1637,40 +1418,6 @@ const faqs = [
 
 /* ────────────────────────────────────────────
 /* ────────────────────────────────────────────
-   HONEST PROBLEM
-──────────────────────────────────────────── */
-.fs-problem {
-  background: var(--white);
-}
-
-.fs-problem__inner {
-  max-width: 760px;
-}
-
-.fs-problem__inner h2 {
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  line-height: 1.15;
-  margin: 0 0 28px;
-}
-
-.fs-problem__body {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.fs-problem__body p {
-  font-size: 1.1rem;
-  line-height: 1.75;
-  color: var(--slate-600);
-  margin: 0;
-}
-
-.fs-problem__body strong {
-  color: var(--slate-900);
-}
-
-/* ────────────────────────────────────────────
    SEARCH vs AGENT COMPARE
 ──────────────────────────────────────────── */
 .fs-compare-section {
@@ -1857,6 +1604,399 @@ const faqs = [
 }
 
 /* ────────────────────────────────────────────
+   ONE AGENT, ONE MONTH (inside fp-predictable)
+──────────────────────────────────────────── */
+.fp-oaom {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.fp-oaom__header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.fp-oaom__label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  flex: 1;
+}
+
+.fp-oaom__meta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+  flex-shrink: 0;
+}
+
+.fp-oaom__bars {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 4px;
+}
+
+.fp-oaom__bar {
+  height: 60px;
+  border-radius: 6px;
+  background: var(--purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.fp-oaom__bar--dim {
+  opacity: 0.28;
+}
+
+.fp-oaom__bar-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+
+.fp-oaom__bar-day {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.fp-oaom__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--slate-200);
+}
+
+.fp-oaom__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.fp-oaom__stat-num {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--purple-900);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.fp-oaom__stat-label {
+  font-size: 0.75rem;
+  color: var(--slate-500);
+  line-height: 1.4;
+}
+
+.fp-oaom__note {
+  flex: 1;
+  min-width: 220px;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--slate-600);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ────────────────────────────────────────────
+   FULLY AUTOMATED VOLUME
+──────────────────────────────────────────── */
+.fp-volume {
+  background: var(--white);
+}
+
+.fp-volume__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.fp-volume__card {
+  background: var(--slate-50);
+  border: 1px solid var(--purple-bg-2);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fp-volume__card--dark {
+  background: #25153e;
+  border-color: #25153e;
+}
+
+.fp-volume__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.fp-volume__dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.fp-volume__dot--on { background: var(--purple); }
+.fp-volume__dot--off { background: var(--purple-bg-2); }
+.fp-volume__dot--green { background: #5cb88a; }
+
+.fp-volume__label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+
+.fp-volume__label--accent { color: var(--purple-dark); }
+.fp-volume__label--green { color: #5cb88a; }
+
+.fp-volume__num {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.fp-volume__num--white { color: var(--white); }
+
+.fp-volume__per {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--slate-500);
+}
+
+.fp-volume__per--dim { color: rgba(255,255,255,0.4); }
+
+.fp-volume__sub {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  margin: 0;
+}
+
+.fp-volume__sub--light { color: var(--purple-300); }
+
+.fp-volume__plan {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 7px;
+  background: var(--white);
+  border: 1px solid var(--purple-bg-2);
+  color: var(--purple-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+.fp-volume__plan--dark {
+  background: rgba(255,255,255,0.14);
+  border-color: transparent;
+  color: var(--white);
+}
+
+.fp-volume__info {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--purple-bg);
+  border: 1px solid var(--purple-bg-2);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.fp-volume__info-divider {
+  width: 1px;
+  background: var(--purple-bg-2);
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.fp-volume__info-col {
+  flex: 1 1 300px;
+  padding: 26px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fp-volume__info-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.fp-volume__info-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fp-volume__info-icon--dark {
+  background: #25153e;
+}
+
+.fp-volume__info-col p {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: var(--slate-600);
+  margin: 0;
+  font-weight: 400;
+}
+
+.fp-volume__info-col strong {
+  color: var(--black);
+}
+
+/* ────────────────────────────────────────────
+   ON AUTOPILOT
+──────────────────────────────────────────── */
+.fp-autopilot {
+  background: var(--slate-50);
+}
+
+.fp-autopilot__card {
+  background: #25153e;
+  border-radius: 14px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fp-autopilot__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.fp-autopilot__step {
+  flex: 1 1 120px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 11px;
+  background: rgba(255,255,255,0.08);
+}
+
+.fp-autopilot__step--send {
+  background: rgba(92,184,138,0.16);
+}
+
+.fp-autopilot__step--you {
+  background: var(--white);
+}
+
+.fp-autopilot__arrow {
+  align-self: center;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.3);
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.fp-autopilot__time {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #5cb88a;
+}
+
+.fp-autopilot__time--you {
+  color: var(--purple-dark);
+}
+
+.fp-autopilot__action {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  -webkit-text-stroke: 0;
+}
+
+.fp-autopilot__action--you {
+  color: var(--black);
+}
+
+.fp-autopilot__desc {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--purple-300);
+  font-weight: 400;
+}
+
+.fp-autopilot__desc--you {
+  color: var(--slate-600);
+}
+
+.fp-autopilot__note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201,189,240,0.25);
+}
+
+.fp-autopilot__note p {
+  flex: 1;
+  min-width: 300px;
+  margin: 0;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+}
+
+.fp-autopilot__note strong {
+  color: var(--white);
+}
+
+.fp-autopilot__control {
+  flex-shrink: 0;
+  padding: 9px 15px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ────────────────────────────────────────────
    RESPONSIVE
 ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
@@ -1927,39 +2067,6 @@ const faqs = [
     display: none;
   }
 
-  /* Before/After mobile */
-  .new-shift__header {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .new-shift__header-right {
-    padding-top: 0;
-  }
-  .new-shift__compare {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .new-shift__card--old {
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    border-style: solid;
-    border-bottom: none;
-  }
-  .new-shift__card--new {
-    align-self: stretch;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  }
-  .new-shift__shift-col {
-    flex-direction: row;
-    gap: 10px;
-    padding: 14px 24px;
-    background: var(--purple-bg-2);
-    justify-content: center;
-  }
-  .new-shift__card {
-    padding: 28px 24px;
-  }
-
   /* Config steps */
   .fp-steps {
     grid-template-columns: 1fr;
@@ -1983,6 +2090,53 @@ const faqs = [
 
   .fp-dark-h2 {
     font-size: 1.85rem;
+  }
+
+  .fp-predictable__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* One Agent, One Month */
+  .fp-oaom__bars {
+    grid-template-columns: repeat(15, 1fr);
+    gap: 5px;
+  }
+
+  .fp-oaom__bar {
+    height: 52px;
+  }
+
+  /* Fully Automated Volume */
+  .fp-volume__cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .fp-volume__info-divider {
+    display: none;
+  }
+
+  .fp-volume__info-col {
+    padding: 20px 24px;
+  }
+
+  /* On Autopilot */
+  .fp-autopilot__steps {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .fp-autopilot__step {
+    flex: none;
+    border-radius: 0;
+  }
+
+  .fp-autopilot__step:first-child { border-radius: 11px 11px 0 0; }
+  .fp-autopilot__step--you { border-radius: 0 0 11px 11px; }
+
+  .fp-autopilot__arrow {
+    display: none;
   }
 }
 </style>
