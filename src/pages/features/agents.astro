@@ -141,7 +141,7 @@ const faqs = [
         <div class="fp-volume__label fp-volume__label--accent">2 Agents</div>
         <div><span class="fp-volume__num">60</span><span class="fp-volume__per">/day</span></div>
         <div class="fp-volume__sub">around 1,800 a month, hands off</div>
-        <span class="fp-volume__plan">Second agent from $44/mo</span>
+        <span class="fp-volume__plan">Add a second agent</span>
       </div>
       <div class="fp-volume__card fp-volume__card--dark">
         <div class="fp-volume__dots">
@@ -152,7 +152,7 @@ const faqs = [
         <div class="fp-volume__label fp-volume__label--green">3 Agents</div>
         <div><span class="fp-volume__num fp-volume__num--white">90</span><span class="fp-volume__per fp-volume__per--dim">/day</span></div>
         <div class="fp-volume__sub fp-volume__sub--light">around 2,700 a month, hands off</div>
-        <span class="fp-volume__plan fp-volume__plan--dark">Pro includes 3</span>
+        <span class="fp-volume__plan fp-volume__plan--dark">Pro and above</span>
       </div>
     </div>
 
@@ -187,46 +187,53 @@ const faqs = [
   <div class="container">
     <div class="section-header section-header--center" style="margin-bottom: 40px;">
       <div class="tag" style="margin: 0 auto 16px;">On Autopilot</div>
-      <h2>Found, written and sent<br />before you're awake.</h2>
+      <h2>Found, written and sent<br /><span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">before you're awake.</span></h2>
       <p style="max-width: 720px;">An agent connected to a campaign doesn't stop at the lead. It writes the outreach from that company's own posting, drops it into your sequence on email and LinkedIn, and sends. You wake up to replies, not to a to-do list.</p>
     </div>
 
-    <div class="fp-autopilot__card">
-      <div class="fp-autopilot__steps">
-        <div class="fp-autopilot__step">
-          <span class="fp-autopilot__time">03:00</span>
-          <span class="fp-autopilot__action">Scans</span>
-          <span class="fp-autopilot__desc">Every posting, round and deal that went live overnight</span>
-        </div>
-        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
-        <div class="fp-autopilot__step">
-          <span class="fp-autopilot__time">04:20</span>
-          <span class="fp-autopilot__action">Scores</span>
-          <span class="fp-autopilot__desc">Against your criteria, with the reasoning written out</span>
-        </div>
-        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
-        <div class="fp-autopilot__step">
-          <span class="fp-autopilot__time">05:45</span>
-          <span class="fp-autopilot__action">Writes</span>
-          <span class="fp-autopilot__desc">A different message per company, from their own posting</span>
-        </div>
-        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
-        <div class="fp-autopilot__step fp-autopilot__step--send">
-          <span class="fp-autopilot__time">06:30</span>
-          <span class="fp-autopilot__action">Sends</span>
-          <span class="fp-autopilot__desc">Into your sequence, email and LinkedIn together</span>
-        </div>
-        <span class="fp-autopilot__arrow" aria-hidden="true">›</span>
-        <div class="fp-autopilot__step fp-autopilot__step--you">
-          <span class="fp-autopilot__time fp-autopilot__time--you">09:00</span>
-          <span class="fp-autopilot__action fp-autopilot__action--you">You read</span>
-          <span class="fp-autopilot__desc fp-autopilot__desc--you">Replies in your inbox. Nothing left to do first.</span>
-        </div>
+    <div class="fp-autopilot__steps">
+      <div class="fp-autopilot__step">
+        <span class="fp-autopilot__time">03:00</span>
+        <span class="fp-autopilot__action">Scans</span>
+        <span class="fp-autopilot__desc">Every posting, round and deal that went live overnight</span>
       </div>
-      <div class="fp-autopilot__note">
-        <p><strong>Automatic sending is a switch, not a default.</strong> Leave it off and the same leads land in your list for you to review and send yourself. The agent still does everything up to that point.</p>
-        <span class="fp-autopilot__control">You stay in control</span>
+      <span class="fp-autopilot__arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </span>
+      <div class="fp-autopilot__step">
+        <span class="fp-autopilot__time">03:12</span>
+        <span class="fp-autopilot__action">Scores</span>
+        <span class="fp-autopilot__desc">Against your criteria, with the reasoning written out</span>
       </div>
+      <span class="fp-autopilot__arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </span>
+      <div class="fp-autopilot__step">
+        <span class="fp-autopilot__time">03:25</span>
+        <span class="fp-autopilot__action">Writes</span>
+        <span class="fp-autopilot__desc">A different message per company, from their own posting</span>
+      </div>
+      <span class="fp-autopilot__arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </span>
+      <div class="fp-autopilot__step">
+        <span class="fp-autopilot__time">03:40</span>
+        <span class="fp-autopilot__action">Sends</span>
+        <span class="fp-autopilot__desc">Into your sequence, email and LinkedIn together</span>
+      </div>
+      <span class="fp-autopilot__arrow" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </span>
+      <div class="fp-autopilot__step fp-autopilot__step--you">
+        <span class="fp-autopilot__time fp-autopilot__time--you">09:00</span>
+        <span class="fp-autopilot__action">You read</span>
+        <span class="fp-autopilot__desc">Replies in your inbox. Nothing left to do first.</span>
+      </div>
+    </div>
+
+    <div class="fp-autopilot__note">
+      <p><strong>Automatic sending is a switch, not a default.</strong> Leave it off and the same leads land in your list for you to review and send yourself. The agent still does everything up to that point.</p>
+      <span class="fp-autopilot__control">You stay in control</span>
     </div>
   </div>
 </section>
@@ -1742,8 +1749,11 @@ const faqs = [
 }
 
 .fp-volume__card--dark {
-  background: #25153e;
-  border-color: #25153e;
+  background:
+    linear-gradient(to bottom, rgba(199, 182, 250, 0.2) 0%, transparent 50%),
+    var(--white);
+  border-color: var(--purple-300);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.08);
 }
 
 .fp-volume__dots {
@@ -1760,7 +1770,7 @@ const faqs = [
 
 .fp-volume__dot--on { background: var(--purple); }
 .fp-volume__dot--off { background: var(--purple-bg-2); }
-.fp-volume__dot--green { background: #5cb88a; }
+.fp-volume__dot--green { background: var(--purple); }
 
 .fp-volume__label {
   font-size: 0.72rem;
@@ -1771,7 +1781,7 @@ const faqs = [
 }
 
 .fp-volume__label--accent { color: var(--purple-dark); }
-.fp-volume__label--green { color: #5cb88a; }
+.fp-volume__label--green { color: var(--purple-dark); }
 
 .fp-volume__num {
   font-family: var(--font-display);
@@ -1782,7 +1792,7 @@ const faqs = [
   line-height: 1;
 }
 
-.fp-volume__num--white { color: var(--white); }
+.fp-volume__num--white { color: var(--black); }
 
 .fp-volume__per {
   font-size: 1rem;
@@ -1790,7 +1800,7 @@ const faqs = [
   color: var(--slate-500);
 }
 
-.fp-volume__per--dim { color: rgba(255,255,255,0.4); }
+.fp-volume__per--dim { color: var(--slate-500); }
 
 .fp-volume__sub {
   font-size: 0.875rem;
@@ -1798,7 +1808,7 @@ const faqs = [
   margin: 0;
 }
 
-.fp-volume__sub--light { color: var(--purple-300); }
+.fp-volume__sub--light { color: var(--slate-600); }
 
 .fp-volume__plan {
   display: inline-block;
@@ -1813,9 +1823,9 @@ const faqs = [
 }
 
 .fp-volume__plan--dark {
-  background: rgba(255,255,255,0.14);
-  border-color: transparent;
-  color: var(--white);
+  background: var(--purple-bg-2);
+  border-color: var(--purple-300);
+  color: var(--purple-dark);
 }
 
 .fp-volume__info {
@@ -1864,7 +1874,7 @@ const faqs = [
 }
 
 .fp-volume__info-icon--dark {
-  background: #25153e;
+  background: var(--purple-dark);
 }
 
 .fp-volume__info-col p {
@@ -1886,55 +1896,42 @@ const faqs = [
   background: var(--slate-50);
 }
 
-.fp-autopilot__card {
-  background: #25153e;
-  border-radius: 14px;
-  padding: 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
 .fp-autopilot__steps {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
   align-items: stretch;
+  gap: 0;
+  margin-bottom: 20px;
 }
 
 .fp-autopilot__step {
-  flex: 1 1 120px;
-  min-width: 100px;
+  flex: 1;
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 12px;
+  padding: 20px 18px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 16px;
-  border-radius: 11px;
-  background: rgba(255,255,255,0.08);
-}
-
-.fp-autopilot__step--send {
-  background: rgba(92,184,138,0.16);
+  gap: 8px;
 }
 
 .fp-autopilot__step--you {
-  background: var(--white);
+  background: linear-gradient(to bottom, var(--purple-bg) 0%, var(--white) 60%);
+  border-color: var(--purple-300);
 }
 
 .fp-autopilot__arrow {
   align-self: center;
-  font-size: 1.4rem;
-  color: rgba(255,255,255,0.3);
-  font-weight: 700;
   flex-shrink: 0;
-  line-height: 1;
+  padding: 0 6px;
+  color: var(--slate-300);
+  display: flex;
 }
 
 .fp-autopilot__time {
   font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #5cb88a;
+  letter-spacing: 0.1em;
+  color: var(--purple);
 }
 
 .fp-autopilot__time--you {
@@ -1944,23 +1941,16 @@ const faqs = [
 .fp-autopilot__action {
   font-size: 1rem;
   font-weight: 800;
-  color: var(--white);
+  color: var(--black);
   -webkit-text-stroke: 0;
 }
 
-.fp-autopilot__action--you {
-  color: var(--black);
-}
-
 .fp-autopilot__desc {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   line-height: 1.55;
-  color: var(--purple-300);
-  font-weight: 400;
-}
-
-.fp-autopilot__desc--you {
   color: var(--slate-600);
+  font-weight: 400;
+  margin: 0;
 }
 
 .fp-autopilot__note {
@@ -1968,30 +1958,33 @@ const faqs = [
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(201,189,240,0.25);
+  padding: 20px 24px;
+  background: var(--purple-bg);
+  border: 1px solid var(--purple-bg-2);
+  border-radius: 12px;
 }
 
 .fp-autopilot__note p {
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
   margin: 0;
   font-size: 0.925rem;
   line-height: 1.6;
-  color: rgba(255,255,255,0.65);
+  color: var(--slate-600);
   font-weight: 400;
 }
 
 .fp-autopilot__note strong {
-  color: var(--white);
+  color: var(--black);
 }
 
 .fp-autopilot__control {
   flex-shrink: 0;
-  padding: 9px 15px;
-  border-radius: 9px;
-  background: rgba(255,255,255,0.12);
-  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid var(--purple-bg-2);
+  color: var(--purple-dark);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -2123,17 +2116,13 @@ const faqs = [
 
   /* On Autopilot */
   .fp-autopilot__steps {
-    flex-direction: column;
-    gap: 0;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .fp-autopilot__step {
-    flex: none;
-    border-radius: 0;
+    flex: 1 1 140px;
   }
-
-  .fp-autopilot__step:first-child { border-radius: 11px 11px 0 0; }
-  .fp-autopilot__step--you { border-radius: 0 0 11px 11px; }
 
   .fp-autopilot__arrow {
     display: none;
