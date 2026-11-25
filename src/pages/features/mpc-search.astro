@@ -152,6 +152,7 @@ import CreditsBlock from '../../components/features/CreditsBlock.astro';
         <p>Email and LinkedIn run in one sequence. A reply on either channel stops it and lands in your unified inbox, where you take over.</p>
       </div>
     </div>
+    <p class="mpc-steps__note">Like every search in Flynt, you see the matched companies before you commit to any of them. Keep the ones worth pursuing.</p>
   </div>
 </section>
 
@@ -362,11 +363,11 @@ import CreditsBlock from '../../components/features/CreditsBlock.astro';
         </div>
         <div class="mpc-faq__item">
           <h4>Can I pitch a candidate without naming them?</h4>
-          <p>Many recruiters keep a candidate unnamed until a client engages.</p>
+          <p>Yes, and that's the default. Flynt writes every pitch around what the person has done, not who they are: the background, the stack, the outcomes, the location. No name, no current employer and no contact details leave Flynt until you decide to share them.</p>
         </div>
         <div class="mpc-faq__item">
           <h4>How many companies will it find?</h4>
-          <p>Every company in your market hiring for that profile right now, as long as the market is big enough. A narrow niche or a small city returns fewer, and Flynt would rather show you ten real matches than thirty padded ones.</p>
+          <p>Every company in your market hiring for that profile right now, as long as the market is big enough. A narrow niche or a small city returns fewer, and Flynt would rather show you ten real matches than thirty padded ones. There's no daily cap: run it again whenever you have a new candidate worth placing.</p>
         </div>
         <div class="mpc-faq__item">
           <h4>What if the matches don't match what I'm looking for?</h4>
@@ -378,7 +379,7 @@ import CreditsBlock from '../../components/features/CreditsBlock.astro';
         </div>
         <div class="mpc-faq__item">
           <h4>Is MPC included in the trial?</h4>
-          <p>Upload a resume on day one and see the matches for yourself.</p>
+          <p>Yes. Upload a resume on day one and see the matches for yourself. The trial includes 500 credits, which is enough to run a search end to end.</p>
         </div>
         <div class="mpc-faq__item">
           <h4>Will I pitch the same company twice?</h4>
@@ -573,6 +574,8 @@ import CreditsBlock from '../../components/features/CreditsBlock.astro';
 .mpc-step--active { background: var(--purple-bg-2); border-color: var(--purple-300); }
 .mpc-step--active p { color: var(--purple-900); }
 .mpc-step--active .mpc-step__num { border-bottom-color: var(--purple-300); }
+
+.mpc-steps__note { text-align: center; margin: 32px auto 0; font-size: 1rem; color: var(--slate-600); max-width: 600px; }
 
 /* ── A different pitch ── */
 .mpc-pitch { background: linear-gradient(180deg, var(--white) 0%, var(--purple-bg) 100%); }
