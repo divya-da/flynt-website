@@ -13,8 +13,8 @@ import Layout from '../layouts/Layout.astro';
   <section class="page-hero">
     <div class="container">
       <div class="tag">Pricing</div>
-      <h1><span class="accent">AI agents</span> for every stage.</h1>
-      <p>Three plans. Every tier includes Flynt's core intelligence system.</br>Upgrade as your operation scales.</p>
+      <h1>Start by hand. <span class="accent">Scale with agents.</span></h1>
+      <p>Every plan includes the full intelligence engine: live hiring, funding and M&A signals, decision makers, contacts, AI-written outreach on email and LinkedIn. What changes is how much runs without you.</p>
     </div>
   </section>
 
@@ -26,142 +26,214 @@ import Layout from '../layouts/Layout.astro';
       <div class="billing-toggle">
         <button class="toggle-btn" id="toggle-monthly" onclick="setBilling('monthly')">Monthly</button>
         <button class="toggle-btn toggle-btn--active" id="toggle-annual" onclick="setBilling('annual')">
-          Annual <span class="toggle-badge">Save up to $1,200/yr</span>
+          Annual <span class="toggle-badge">Save up to 17%</span>
         </button>
       </div>
 
       <div class="pricing-grid">
 
-        <!-- Starter -->
-        <div class="plan">
+        <!-- Lite -->
+        <div class="plan" data-plan="lite">
           <div class="plan__header">
-            <h3>Starter</h3>
-            <p class="plan__tagline">For solo recruiters building their first automated BD pipeline.</p>
+            <h3>Lite</h3>
+            <p class="plan__tagline">Search and send, by hand. For recruiters who want to pick every company themselves.</p>
+            <div class="plan__credit-opts">
+              <label class="credit-opt"><input type="radio" name="lite-cr" value="2500" checked /><span>2,500 cr</span></label>
+              <label class="credit-opt"><input type="radio" name="lite-cr" value="4000" /><span>4,000 cr</span></label>
+            </div>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="139" data-annual="99">99</span>
+              <span class="plan__dollar">$</span><span class="plan__amount">77</span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Switch to annual — save $480/yr</div>
+            <div class="plan__annual-teaser">Switch to annual — save $120/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline">Billed $1,188/yr</span>
+                <span class="plan__billed-inline">Billed $924/yr</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$99/mo per agent</span><span>≈ 3 months free</span><span>Save $480/yr</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$77/mo on annual</span><span>Save $120/yr</span></span>
                 </span>
               </div>
             </div>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Subscribe</a>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta plan__cta--try">Try Now</a>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start free trial</a>
             <p class="plan__sub-cta">7-day trial · Cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
-            <li><span class="check">✓</span> 1 AI Agent</li>
-            <li><span class="check">✓</span> Funding &amp; M&amp;A opportunities (Signal search)</li>
-            <li><span class="check">✓</span> LinkedIn outreach included</li>
-            <li><span class="check">✓</span> Up to 30 scored, researched leads daily (~900/mo)</li>
-            <li><span class="check">✓</span> Match scoring + written fit breakdown per lead</li>
-            <li><span class="check">✓</span> Decision-maker contacts + company signals</li>
-            <li><span class="check">✓</span> 3 AI-written personalization hooks per lead</li>
-            <li><span class="check">✓</span> Flynt Campaigns</li>
-            <li><span class="check">✓</span> AI-written emails + MPC search</li>
-            <li><span class="check">✓</span> Flynt Pipeline (CRM)</li>
-            <li><span class="check">✓</span> Unified Inbox</li>
-            <li><span class="check">✓</span> Performance Dashboard</li>
-            <li><span class="check">✓</span> Email Support</li>
+            <li><span class="check">✓</span> Manual search across jobs, funding and M&A</li>
+            <li><span class="check">✓</span> Scored hiring managers, verified contacts</li>
+            <li><span class="check">✓</span> Email and LinkedIn in one sequence</li>
+            <li><span class="check">✓</span> AI personalisation & outreach</li>
+            <li><span class="check">✓</span> MPC campaigns — pitch candidates</li>
+            <li><span class="check">✓</span> CRM, Unified Inbox, Dashboard</li>
+            <li><span class="check">✓</span> Saved searches</li>
+            <li class="plan__note-item">No daily agent. You run the searches.</li>
           </ul>
         </div>
 
-        <!-- Pro (highlighted) -->
-        <div class="plan plan--featured">
+        <!-- Starter (featured) -->
+        <div class="plan plan--featured" data-plan="starter">
           <div class="plan__badge">Most Popular</div>
           <div class="plan__header">
-            <h3>Pro</h3>
-            <p class="plan__tagline">For recruitment agencies running research and outreach in one place.</p>
+            <h3>Starter</h3>
+            <p class="plan__tagline">One agent, running every morning. For one recruiter who wants pipeline arriving without asking.</p>
+            <div class="plan__credit-opts">
+              <label class="credit-opt"><input type="radio" name="starter-cr" value="4000" checked /><span>4,000 cr</span></label>
+              <label class="credit-opt"><input type="radio" name="starter-cr" value="6000" /><span>6,000 cr</span></label>
+              <label class="credit-opt"><input type="radio" name="starter-cr" value="8000" /><span>8,000 cr</span></label>
+            </div>
             <div class="plan__price">
-              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured plan__annual-only" data-monthly="267" data-annual="199">199</span>
+              <span class="plan__dollar plan__dollar--featured">$</span><span class="plan__amount plan__amount--featured">127</span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Switch to annual — save $816/yr</div>
+            <div class="plan__annual-teaser">Switch to annual — save $240/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline">Billed $2,388/yr</span>
+                <span class="plan__billed-inline">Billed $1,524/yr</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$99/mo per agent</span><span>≈ 3 months free</span><span>Save $816/yr</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$127/mo on annual</span><span>Save $240/yr</span></span>
                 </span>
               </div>
             </div>
-            <a href="https://app.tryflynt.ai/" class="btn btn--primary plan__cta">Subscribe</a>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta plan__cta--try">Try Now</a>
+            <a href="https://app.tryflynt.ai/" class="btn btn--primary plan__cta">Start free trial</a>
             <p class="plan__sub-cta">7-day trial · Cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
-            <li><span class="check">✓</span> Everything in Starter, including Signal search and LinkedIn</li>
-            <li><span class="check">✓</span> 2 AI Agents</li>
-            <li><span class="check">✓</span> Up to 60 scored, researched leads daily (~1,800/mo)</li>
-            <li><span class="check">✓</span> 8 AI-written personalization hooks per lead</li>
-            <li><span class="check">✓</span> AI-written emails + MPC search</li>
-            <li><span class="check">✓</span> Advanced targeting and filtering</li>
-            <li><span class="check">✓</span> Option to purchase 1 Extra Agent</li>
-            <li><span class="check">✓</span> Premium Support</li>
+            <li><span class="check">✓</span> Everything in Lite</li>
+            <li><span class="check">✓</span> 1 daily hiring agent</li>
+            <li><span class="check">✓</span> Up to 30 scored leads per run, no limit on runs</li>
+            <li><span class="check">✓</span> Add a second agent sharing credits, $44/mo</li>
+            <li><span class="check">✓</span> Signal agent add-on, $49/mo with 1,000 credits</li>
           </ul>
         </div>
 
-        <!-- Growth -->
-        <div class="plan">
+        <!-- Pro -->
+        <div class="plan" data-plan="pro">
           <div class="plan__header">
-            <h3>Growth</h3>
-            <p class="plan__tagline">For agencies and teams scaling across multiple markets.</p>
+            <h3>Pro</h3>
+            <p class="plan__tagline">Three agents, two kinds of signal. For teams running several searches across several markets.</p>
+            <div class="plan__credit-opts">
+              <label class="credit-opt"><input type="radio" name="pro-cr" value="8000" checked /><span>8,000 cr</span></label>
+              <label class="credit-opt"><input type="radio" name="pro-cr" value="12000" /><span>12,000 cr</span></label>
+              <label class="credit-opt"><input type="radio" name="pro-cr" value="16000" /><span>16,000 cr</span></label>
+            </div>
             <div class="plan__price">
-              <span class="plan__dollar">$</span><span class="plan__amount plan__annual-only" data-monthly="499" data-annual="399">399</span>
+              <span class="plan__dollar">$</span><span class="plan__amount">247</span>
               <span class="plan__period">/mo</span>
             </div>
-            <div class="plan__annual-teaser">Switch to annual — save $1,200/yr</div>
+            <div class="plan__annual-teaser">Switch to annual — save $600/yr</div>
             <div class="plan__annual-info">
               <div class="plan__billing-row">
-                <span class="plan__billed-inline">Billed $4,788/yr</span>
+                <span class="plan__billed-inline">Billed $2,964/yr</span>
                 <span class="plan__info-btn plan__has-tip" tabindex="0" onclick="toggleTip(this)">
                   <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="5.5" r="1" fill="currentColor"/></svg>
-                  <span class="plan__tip plan__tip--multi"><span>$99/mo per agent</span><span>≈ 2 months free</span><span>Save $1,200/yr</span></span>
+                  <span class="plan__tip plan__tip--multi"><span>$247/mo on annual</span><span>Save $600/yr</span></span>
                 </span>
               </div>
             </div>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Subscribe</a>
-            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta plan__cta--try">Try Now</a>
+            <a href="https://app.tryflynt.ai/" class="btn btn--outline plan__cta">Start free trial</a>
             <p class="plan__sub-cta">7-day trial · Cancel anytime</p>
           </div>
           <div class="plan__features-label">What's Included</div>
           <ul class="plan__features">
-            <li><span class="check">✓</span> Everything in Pro, including Signal search and LinkedIn</li>
-            <li><span class="check">✓</span> 4 AI Agents</li>
-            <li><span class="check">✓</span> Up to 120 scored, researched leads daily (~3,600/mo)</li>
-            <li><span class="check">✓</span> AI-written emails + MPC search</li>
-            <li><span class="check">✓</span> Option to purchase up to 4 Extra Agents</li>
-            <li><span class="check">✓</span> Premium Support</li>
+            <li><span class="check">✓</span> Everything in Starter</li>
+            <li><span class="check">✓</span> 2 hiring agents + 1 Signal agent</li>
+            <li><span class="check">✓</span> Funding and M&amp;A included, no add-on</li>
+            <li><span class="check">✓</span> Up to 6 full agents with 4,000 credits, $147/agent/mo</li>
+            <li><span class="check">✓</span> Up to 4 agents sharing credits, $44/agent/mo</li>
+            <li><span class="check">✓</span> Premium support</li>
           </ul>
         </div>
 
       </div>
 
-      <!-- Scale / Enterprise banner -->
+      <!-- Scale banner -->
       <div class="enterprise-banner">
         <div class="enterprise-banner__left">
           <div class="enterprise-banner__title">
             <span class="enterprise-banner__name">Scale</span>
             <span class="enterprise-banner__tag">Enterprise</span>
           </div>
-          <p class="enterprise-banner__desc">For agencies and high-volume operations. Unlimited agents, custom pricing.</p>
+          <p class="enterprise-banner__desc">For agencies and high-volume teams. Everything in Pro, 12+ agents, unlimited extra agents, custom credit volumes, dedicated onboarding.</p>
         </div>
         <a href="mailto:info@tryflynt.ai" class="btn btn--outline enterprise-banner__cta">Get in Touch</a>
       </div>
 
       <p class="pricing-disclaimer">
-        Pricing reflects time saved and consistency gained — not guaranteed outcomes.</br>Flynt prepares opportunity. Results depend on your execution.
+        Pricing reflects time saved and consistency gained — not guaranteed outcomes. Flynt prepares opportunity. Results depend on your execution.
       </p>
 
+    </div>
+  </section>
+
+  <!-- Credits Explainer -->
+  <section class="section credits-section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <div class="tag" style="display: inline-flex; margin-bottom: 16px;">What a credit actually buys</div>
+        <h2>Credits cover <span class="accent-word">everything.</span></h2>
+        <p>Finding leads, enriching them, writing the outreach, and sending on email and LinkedIn. One balance, no separate fees. Here's what a month looks like.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table credits-table">
+          <thead>
+            <tr>
+              <th class="compare-table__feature">What you do with each lead</th>
+              <th>Credits</th>
+              <th>Lite <span class="th-cr">2,500</span></th>
+              <th class="compare-table__featured">Starter <span class="th-cr">4,000</span></th>
+              <th>Pro <span class="th-cr">8,000</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="compare-table__feature">Find and score it</td>
+              <td>1.73</td>
+              <td>~1,445</td>
+              <td class="compare-table__featured">~2,312</td>
+              <td>~4,624</td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">Plus contact details and personalization angles</td>
+              <td>3.73</td>
+              <td>~670</td>
+              <td class="compare-table__featured">~1,072</td>
+              <td>~2,144</td>
+            </tr>
+            <tr class="credits-table__highlight">
+              <td class="compare-table__feature">
+                <strong>Plus email and LinkedIn outreach</strong>
+                <span class="credits-table__sub">The typical working pattern</span>
+              </td>
+              <td><strong>4.73</strong></td>
+              <td><strong>~528</strong></td>
+              <td class="compare-table__featured"><strong>~845</strong></td>
+              <td><strong>~1,691</strong></td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">Plus AI writing every message on both channels</td>
+              <td>6.73</td>
+              <td>~371</td>
+              <td class="compare-table__featured">~594</td>
+              <td>~1,188</td>
+            </tr>
+            <tr>
+              <td class="compare-table__feature">Plus a verified phone number</td>
+              <td>14.73</td>
+              <td>~169</td>
+              <td class="compare-table__featured">~271</td>
+              <td>~543</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="credits-note">Most recruiters run the highlighted row: find the lead, get the contact, let Flynt write and send on both channels. On Starter that's around <strong>845 fully worked leads a month</strong>. Run out and your agents pause, then pick up automatically when credits are back. Every action shows what it costs before you spend it.</p>
+      <div class="credits-topup">
+        <span class="credits-topup__label">Top up any time</span>
+        <span class="credits-topup__items">1,000 credits $34 · 2,000 $67 · 4,000 $129 · 8,000 $249 · 16,000 $489 · 32,000 $967</span>
+      </div>
     </div>
   </section>
 
@@ -176,9 +248,9 @@ import Layout from '../layouts/Layout.astro';
           <thead>
             <tr>
               <th class="compare-table__feature"></th>
-              <th>Starter<br /><span class="th-price" data-monthly="$139/mo" data-annual="$99/mo">$99/mo</span></th>
-              <th class="compare-table__featured">Pro<br /><span class="th-price" data-monthly="$267/mo" data-annual="$199/mo">$199/mo</span></th>
-              <th>Growth<br /><span class="th-price" data-monthly="$499/mo" data-annual="$399/mo">$399/mo</span></th>
+              <th>Lite<br /><span class="th-price" data-monthly="$87/mo" data-annual="$77/mo">$77/mo</span></th>
+              <th class="compare-table__featured">Starter<br /><span class="th-price" data-monthly="$147/mo" data-annual="$127/mo">$127/mo</span></th>
+              <th>Pro<br /><span class="th-price" data-monthly="$297/mo" data-annual="$247/mo">$247/mo</span></th>
               <th>Scale<br /><span class="th-price">Contact Sales</span></th>
             </tr>
           </thead>
@@ -189,16 +261,16 @@ import Layout from '../layouts/Layout.astro';
             </tr>
             <tr>
               <td>AI Agents Included</td>
-              <td>1</td>
-              <td class="compare-table__featured">2</td>
-              <td>4</td>
-              <td>Unlimited</td>
+              <td>None</td>
+              <td class="compare-table__featured">1</td>
+              <td>3</td>
+              <td>12+</td>
             </tr>
             <tr>
               <td>Max Leads Per Day</td>
-              <td>30 <span class="compare-sub">(~900/mo)</span></td>
-              <td class="compare-table__featured">60 <span class="compare-sub">(~1,800/mo)</span></td>
-              <td>120 <span class="compare-sub">(~3,600/mo)</span></td>
+              <td>Manual</td>
+              <td class="compare-table__featured">30/run · no daily limit</td>
+              <td>30/run per agent</td>
               <td>Unlimited</td>
             </tr>
             <tr>
@@ -209,7 +281,7 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
-              <td>Funding &amp; M&amp;A Signals <em class="compare-new">(NEW)</em></td>
+              <td>Funding &amp; M&amp;A Signals</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
@@ -238,7 +310,7 @@ import Layout from '../layouts/Layout.astro';
             </tr>
             <tr>
               <td>Advanced AI Targeting</td>
-              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
@@ -255,7 +327,7 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
-              <td>MPC search</td>
+              <td>MPC Search</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
@@ -269,7 +341,7 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
-              <td>Prebuilt 6-Email Sequences</td>
+              <td>Prebuilt Sequences</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
@@ -287,7 +359,7 @@ import Layout from '../layouts/Layout.astro';
               <td colspan="5">CRM &amp; Inbox</td>
             </tr>
             <tr>
-              <td>Flynt CRM / Pipeline</td>
+              <td>Flynt CRM</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
@@ -307,21 +379,49 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
+            <tr>
+              <td>Contacts in CRM</td>
+              <td>10–16K</td>
+              <td class="compare-table__featured">25–50K</td>
+              <td>50–100K</td>
+              <td>Custom</td>
+            </tr>
             <!-- Scale & Support -->
             <tr class="compare-table__section-header">
               <td colspan="5">Scale &amp; Support</td>
             </tr>
             <tr>
+              <td>Monthly Credits</td>
+              <td>2,500</td>
+              <td class="compare-table__featured">4,000</td>
+              <td>8,000</td>
+              <td>Custom</td>
+            </tr>
+            <tr>
+              <td>Run an agent on demand</td>
+              <td><span class="t-dash">✕</span></td>
+              <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
+              <td><span class="t-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Signal Agent</td>
+              <td><span class="t-dash">✕</span></td>
+              <td class="compare-table__featured">Add-on $49/mo</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
               <td>Add Extra Agents</td>
               <td><span class="t-dash">✕</span></td>
-              <td class="compare-table__featured">1 Add-on</td>
-              <td>4 Add-ons</td>
+              <td class="compare-table__featured">+$44/mo (sharing credits)</td>
+              <td>Up to 6</td>
               <td>Unlimited</td>
             </tr>
             <tr>
               <td>Premium Support</td>
               <td><span class="t-dash">✕</span></td>
-              <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td class="compare-table__featured"><span class="t-dash">✕</span></td>
               <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
@@ -342,77 +442,42 @@ import Layout from '../layouts/Layout.astro';
   <section class="section addons-section">
     <div class="container">
       <div class="section-header section-header--center">
-        <div class="tag">Extend your agent</div>
-        <h2>Give your agent <span class="accent-word">new capabilities.</span></h2>
-        <p>Your agent already works around the clock. These add-ons tell it to do more.</p>
+        <div class="tag">Add-ons</div>
+        <h2>Add what you need, <span class="accent-word">when you need it.</span></h2>
+        <p>Nothing here is a separate subscription or a separate tool. Add an agent for a busy quarter, top up credits for a big push, drop them when the month is quieter.</p>
       </div>
 
-      <div class="addon-card">
-        <div class="addon-card__header">
-          <div class="addon-card__title-row">
-            <h3 class="addon-card__name">Phone Number Discovery</h3>
+      <div class="addon-featured-card">
+        <div class="addon-featured-card__inner">
+          <div class="addon-featured-card__title-row">
+            <h3 class="addon-featured-card__name">Phone Number Discovery</h3>
             <span class="addon-badge">Most Requested</span>
           </div>
-          <p class="addon-card__value">Your agent finds the lead — then keeps going to surface a verified phone number for each one. No separate tool, no manual lookup. That's <strong>~900 direct dials per month</strong> at just <strong class="addon-card__highlight">$0.21/lead</strong> — <strong>10–15x cheaper</strong> than standalone enrichment tools.</p>
+          <p class="addon-featured-card__price">$197/mo · $187/mo annual</p>
+          <p class="addon-featured-card__desc">6,300 credits included — around <strong>787 verified direct dials a month</strong> at roughly $0.25 each. Your agent finds the lead, then keeps going for the number. No separate tool, no manual lookup. <strong class="addon-card__highlight">10–15x cheaper than standalone enrichment tools.</strong></p>
         </div>
+      </div>
 
-        <div class="addon-compare table-wrap">
-          <table class="compare-table compare-table--competitors">
-            <thead>
-              <tr>
-                <th class="compare-table__feature"></th>
-                <th class="compare-table__featured">Flynt Add-on</th>
-                <th>Lusha Pro</th>
-                <th>Kaspr Starter</th>
-                <th>Lead411 Spark</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="compare-table__feature">Phone Numbers</td>
-                <td class="compare-table__featured">~900/mo</td>
-                <td>~4/mo</td>
-                <td>~50/mo</td>
-                <td>200/mo</td>
-              </tr>
-              <tr>
-                <td class="compare-table__feature">Cost/Lead</td>
-                <td class="compare-table__featured"><strong>$0.21</strong></td>
-                <td>$5.61</td>
-                <td>$0.98</td>
-                <td>$0.50</td>
-              </tr>
-              <tr>
-                <td class="compare-table__feature">Equiv. cost for 900 numbers</td>
-                <td class="compare-table__featured"><strong>$189</strong></td>
-                <td><strong>$5,049</strong></td>
-                <td><strong>$882</strong></td>
-                <td><strong>$450</strong></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="addons-grid">
+        <div class="addon-mini">
+          <h3 class="addon-mini__name">Extra Credits</h3>
+          <span class="addon-mini__price">From $34 · all plans</span>
+          <p class="addon-mini__desc">1,000 credits for $34 up to 32,000 for $967. One-off when you need a push, or recurring so it refills every renewal.</p>
         </div>
-
-        <div class="addon-plan-pricing">
-          <div class="addon-plan-pricing__label">Add-on pricing by plan</div>
-          <div class="addon-plan-pricing__chips">
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Starter</span>
-              <span class="addon-chip__price">+$189<span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Pro</span>
-              <span class="addon-chip__price">+$179<span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Growth</span>
-              <span class="addon-chip__price">+$169<span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-            <div class="addon-chip">
-              <span class="addon-chip__plan">Scale</span>
-              <span class="addon-chip__price">+$119<span class="addon-chip__period">/agent/mo</span></span>
-            </div>
-          </div>
+        <div class="addon-mini">
+          <h3 class="addon-mini__name">Extra Agent, Sharing Credits</h3>
+          <span class="addon-mini__price">$44/mo</span>
+          <p class="addon-mini__desc">Another search running daily, drawing on the balance you already have. Starter: one more. Pro: up to four.</p>
+        </div>
+        <div class="addon-mini">
+          <h3 class="addon-mini__name">Extra Full Agent, With Its Own Credits</h3>
+          <span class="addon-mini__price">$147/mo · Pro only</span>
+          <p class="addon-mini__desc">A complete agent with 4,000 credits of its own, so a new market doesn't eat into an existing one. Up to six.</p>
+        </div>
+        <div class="addon-mini">
+          <h3 class="addon-mini__name">Signal Agent</h3>
+          <span class="addon-mini__price">$49/mo · Starter only</span>
+          <p class="addon-mini__desc">Funding rounds and acquisitions in your market, watched around the clock. Comes with 1,000 credits. Already included on Pro.</p>
         </div>
       </div>
 
@@ -554,7 +619,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="signal-time-note">With Flynt — runs overnight</span>
               </td>
               <td class="compare-table__featured signals-td--flynt">
-                <span class="signal-total-price"><span data-monthly="$139" data-annual="$99">$99</span><span class="signal-total-period">/mo</span></span>
+                <span class="signal-total-price"><span data-monthly="$87" data-annual="$77">$77</span><span class="signal-total-period">/mo</span></span>
                 <span class="signal-total-sub">With Flynt</span>
               </td>
             </tr>
@@ -619,8 +684,8 @@ import Layout from '../layouts/Layout.astro';
               <span class="stack-total-sub">Traditional stack</span>
             </div>
             <div class="stack-col stack-col--flynt">
-              <span class="stack-total-price stack-total-price--flynt"><span data-monthly="$139" data-annual="$99">$99</span><span class="stack-price-period">/mo</span></span>
-              <span class="stack-total-sub">With Flynt</span>
+              <span class="stack-total-price stack-total-price--flynt"><span data-monthly="$147" data-annual="$127">$127</span><span class="stack-price-period">/mo</span></span>
+              <span class="stack-total-sub">Flynt Starter</span>
             </div>
           </div>
         </div>
@@ -651,7 +716,7 @@ import Layout from '../layouts/Layout.astro';
           <tbody>
             <tr>
               <td>Starting Price*</td>
-              <td class="compare-table__featured" data-monthly="$139/mo" data-annual="$99/mo">$99/mo</td>
+              <td class="compare-table__featured" data-monthly="$87/mo" data-annual="$77/mo">$77/mo</td>
               <td>$1,000+/mo</td>
               <td>$169–$800/mo</td>
               <td>$150–$400/mo</td>
@@ -671,6 +736,15 @@ import Layout from '../layouts/Layout.astro';
               <td>Automated Daily Leads</td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-dash">✕</span></td>
+              <td>Partial</td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
+              <td><span class="t-dash">✕</span></td>
+            </tr>
+            <tr>
+              <td>Hiring, Funding &amp; M&amp;A Signals</td>
+              <td class="compare-table__featured"><span class="t-check">✓</span></td>
+              <td>Partial</td>
               <td>Partial</td>
               <td><span class="t-dash">✕</span></td>
               <td><span class="t-dash">✕</span></td>
@@ -724,7 +798,66 @@ import Layout from '../layouts/Layout.astro';
           </tbody>
         </table>
       </div>
-      <p class="table-footnote"><em>* Competitor pricing reflects estimated real-world total cost including credits, add-ons, and required tooling. Published starting prices vary.</em></p>
+      <p class="table-footnote"><em>* Competitor pricing reflects estimated real-world total cost including credits, add-ons, and required tooling. Published starting prices vary. Flynt's $87 is Lite; Starter with an agent is $147/mo.</em></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section pricing-faq-section">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <h2>Questions about <span class="accent-word">credits.</span></h2>
+        <p>A credit model launches with a predictable set of questions. Answering them here is cheaper than answering them in support.</p>
+      </div>
+      <div class="pricing-faq__grid">
+        <div class="pricing-faq__item">
+          <h4>What happens if I run out of credits?</h4>
+          <p>Your agents pause. Nothing is lost, nothing is deleted, and they pick up automatically the moment credits are back — either at your next renewal or when you top up.</p>
+        </div>
+        <div class="pricing-faq__item">
+          <h4>Do unused credits roll over?</h4>
+          <p>No. Your balance resets on your renewal date: unused credits don't carry over, and a fresh month's credits are added. If you regularly finish the month close to your limit, a recurring top-up refills automatically at every renewal.</p>
+        </div>
+        <div class="pricing-faq__item">
+          <h4>How do I know what something costs before I spend?</h4>
+          <p>Every credit-using action shows its cost up front, and the Credits page under Billing shows what you've used so far with a forecast for the rest of the month.</p>
+        </div>
+        <div class="pricing-faq__item">
+          <h4>Is there still a daily limit on leads?</h4>
+          <p>No. Your agents run on a schedule and you can run them again whenever you want. Your balance is the only limit.</p>
+        </div>
+        <div class="pricing-faq__item">
+          <h4>I'm on an older plan. Does my price change?</h4>
+          <p>Not yet. You stay on your current plan at your current price. You get the new credit allowances either way. We'll email you before anything changes.</p>
+        </div>
+        <div class="pricing-faq__item">
+          <h4>Which plan should I start on?</h4>
+          <p>Lite if you want to pick every company yourself. Starter if you want a search running every morning without you. You can move between them any time, and the free trial includes 500 credits and a real hiring agent.</p>
+        </div>
+        <div class="pricing-faq__item">
+          <h4>Do I need the phone add-on?</h4>
+          <p>Only if you call. Email and LinkedIn outreach work without it. Add it for a quarter when you're working the phones and drop it when you aren't.</p>
+        </div>
+        <div class="pricing-faq__item">
+          <h4>Does LinkedIn cost extra?</h4>
+          <p>No separate subscription and no add-on fee. LinkedIn steps run in the same campaign and draw on the same balance as everything else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="pricing-final-cta">
+    <div class="container">
+      <div class="pricing-final-cta__inner">
+        <h2>Don't pick a plan yet. <span class="pricing-final-cta__accent">Run a search first.</span></h2>
+        <p>Seven days and 500 credits, with a real hiring agent. Search your market, look at what comes back, and then decide which plan is right. You'll know in five minutes.</p>
+        <div class="pricing-final-cta__btns">
+          <a href="https://app.tryflynt.ai/" class="btn btn--lg pricing-final-cta__primary">Start your free trial</a>
+          <a href="mailto:info@tryflynt.ai" class="btn btn--lg pricing-final-cta__secondary">Talk to us about Scale</a>
+        </div>
+        <span class="pricing-final-cta__note">Cancel any time. No card charged until the trial ends.</span>
+      </div>
     </div>
   </section>
 
@@ -733,53 +866,93 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
+  const PLANS = {
+    lite:    { '2500': [87,  77],  '4000': [137, 117] },
+    starter: { '4000': [147, 127], '6000': [207, 177], '8000': [267, 237] },
+    pro:     { '8000': [297, 247], '12000': [417, 367], '16000': [537, 477] }
+  };
+
+  let billingMode = 'annual';
+
+  function getSelectedCredits(plan) {
+    const checked = document.querySelector(`[data-plan="${plan}"] input[type="radio"]:checked`);
+    return checked ? checked.value : Object.keys(PLANS[plan])[0];
+  }
+
+  function updateCard(plan) {
+    const credits = getSelectedCredits(plan);
+    const pair = PLANS[plan][credits];
+    const price = billingMode === 'annual' ? pair[1] : pair[0];
+    const annualTotal = pair[1] * 12;
+    const saving = (pair[0] - pair[1]) * 12;
+
+    const card = document.querySelector(`[data-plan="${plan}"]`);
+    if (!card) return;
+
+    card.querySelector('.plan__amount').textContent = price;
+
+    const billedEl = card.querySelector('.plan__billed-inline');
+    if (billedEl) billedEl.textContent = `Billed $${annualTotal.toLocaleString()}/yr`;
+
+    const teaserEl = card.querySelector('.plan__annual-teaser');
+    if (teaserEl) teaserEl.textContent = `Switch to annual — save $${saving}/yr`;
+
+    const tips = card.querySelectorAll('.plan__tip--multi span');
+    if (tips.length >= 2) {
+      tips[0].textContent = `$${pair[1]}/mo on annual`;
+      tips[1].textContent = `Save $${saving}/yr`;
+    }
+  }
+
+  function updateAllCards() {
+    ['lite', 'starter', 'pro'].forEach(updateCard);
+  }
+
   function setBilling(type) {
+    billingMode = type;
     const isMonthly = type === 'monthly';
 
     document.getElementById('toggle-monthly').classList.toggle('toggle-btn--active', isMonthly);
     document.getElementById('toggle-annual').classList.toggle('toggle-btn--active', !isMonthly);
 
-    // Update all price amount elements with data-monthly / data-annual
-    document.querySelectorAll('.plan__annual-only[data-monthly][data-annual]').forEach(el => {
-      el.textContent = isMonthly ? el.dataset.monthly : el.dataset.annual;
-    });
-
-    // Update comparison table th-price elements
-    document.querySelectorAll('.th-price[data-monthly][data-annual]').forEach(el => {
-      el.textContent = isMonthly ? el.dataset.monthly : el.dataset.annual;
-    });
-
-    // Update competitor table starting price cell
-    document.querySelectorAll('[data-monthly][data-annual]:not(.plan__annual-only):not(.th-price)').forEach(el => {
-      el.textContent = isMonthly ? el.dataset.monthly : el.dataset.annual;
-    });
-
-    // Show/hide annual billing info blocks
     document.querySelectorAll('.plan__annual-info').forEach(el => {
       (el as HTMLElement).style.display = isMonthly ? 'none' : 'block';
     });
 
-    // Show/hide monthly annual teasers
     document.querySelectorAll('.plan__annual-teaser').forEach(el => {
       (el as HTMLElement).style.display = isMonthly ? 'block' : 'none';
     });
+
+    document.querySelectorAll('.th-price[data-monthly][data-annual]').forEach(el => {
+      el.textContent = isMonthly ? (el as HTMLElement).dataset.monthly : (el as HTMLElement).dataset.annual;
+    });
+
+    document.querySelectorAll('[data-monthly][data-annual]:not(.th-price):not([data-plan] .plan__amount)').forEach(el => {
+      el.textContent = isMonthly ? (el as HTMLElement).dataset.monthly : (el as HTMLElement).dataset.annual;
+    });
+
+    updateAllCards();
   }
 
   function toggleTip(el) {
     const isOpen = el.classList.contains('tip--open');
-    // Close any other open tips
     document.querySelectorAll('.plan__info-btn.tip--open').forEach(b => b.classList.remove('tip--open'));
     if (!isOpen) el.classList.add('tip--open');
   }
 
-  // Close tip when clicking outside
   document.addEventListener('click', (e) => {
     if (!(e.target as Element).closest('.plan__info-btn')) {
       document.querySelectorAll('.plan__info-btn.tip--open').forEach(b => b.classList.remove('tip--open'));
     }
   });
 
-  // Expose globally for onclick handlers
+  document.querySelectorAll('.plan__credit-opts input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const card = (radio as HTMLElement).closest('[data-plan]') as HTMLElement;
+      if (card) updateCard(card.dataset.plan);
+    });
+  });
+
   (window as any).setBilling = setBilling;
   (window as any).toggleTip = toggleTip;
 
@@ -810,7 +983,7 @@ import Layout from '../layouts/Layout.astro';
 
 .page-hero p {
   font-size: 1.05rem;
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto;
   color: var(--slate-600);
 }
@@ -863,6 +1036,42 @@ import Layout from '../layouts/Layout.astro';
   letter-spacing: 0.02em;
 }
 
+/* ── Credit selector ── */
+.plan__credit-opts {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.credit-opt {
+  cursor: pointer;
+}
+
+.credit-opt input[type="radio"] {
+  display: none;
+}
+
+.credit-opt span {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--slate-200);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+  user-select: none;
+}
+
+.credit-opt input[type="radio"]:checked + span {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: var(--purple-bg);
+}
+
 /* ── Annual teaser (shown on monthly view) ── */
 .plan__annual-teaser {
   display: none;
@@ -892,7 +1101,6 @@ import Layout from '../layouts/Layout.astro';
   color: var(--slate-500);
 }
 
-
 .plan__has-tip .plan__tip {
   position: absolute;
   bottom: calc(100% + 14px);
@@ -912,14 +1120,10 @@ import Layout from '../layouts/Layout.astro';
   backdrop-filter: blur(4px);
 }
 
-.plan__has-tip .plan__tip::after {
-  display: none;
-}
+.plan__has-tip .plan__tip::after { display: none; }
 
 .plan__has-tip:hover .plan__tip,
-.plan__has-tip.tip--open .plan__tip {
-  opacity: 1;
-}
+.plan__has-tip.tip--open .plan__tip { opacity: 1; }
 
 .plan__info-btn {
   position: relative;
@@ -934,10 +1138,7 @@ import Layout from '../layouts/Layout.astro';
 
 .plan__info-btn:hover,
 .plan__info-btn:focus,
-.plan__info-btn.tip--open {
-  opacity: 1;
-  outline: none;
-}
+.plan__info-btn.tip--open { opacity: 1; outline: none; }
 
 .plan__tip--multi {
   display: flex;
@@ -947,13 +1148,8 @@ import Layout from '../layouts/Layout.astro';
   transform: translateX(-20%);
 }
 
-.plan__tip--multi span {
-  white-space: nowrap;
-}
-
-.plan__tip--multi span:last-child {
-  color: #86efac;
-}
+.plan__tip--multi span { white-space: nowrap; }
+.plan__tip--multi span:last-child { color: #86efac; }
 
 .pricing-section {
   background: var(--slate-50);
@@ -999,13 +1195,8 @@ import Layout from '../layouts/Layout.astro';
   white-space: nowrap;
 }
 
-.plan__header {
-  margin-bottom: 24px;
-}
-
-.plan__header h3 {
-  margin-bottom: 6px;
-}
+.plan__header { margin-bottom: 24px; }
+.plan__header h3 { margin-bottom: 6px; }
 
 .plan__tagline {
   font-size: 0.88rem;
@@ -1029,9 +1220,7 @@ import Layout from '../layouts/Layout.astro';
   padding-top: 6px;
 }
 
-.plan__dollar--featured {
-  color: var(--purple);
-}
+.plan__dollar--featured { color: var(--purple); }
 
 .plan__amount {
   position: relative;
@@ -1042,9 +1231,7 @@ import Layout from '../layouts/Layout.astro';
   cursor: default;
 }
 
-.plan__amount--featured {
-  color: var(--purple);
-}
+.plan__amount--featured { color: var(--purple); }
 
 .plan__period {
   font-size: 1rem;
@@ -1059,24 +1246,9 @@ import Layout from '../layouts/Layout.astro';
   margin-bottom: 0;
 }
 
-.plan__price--contact {
-  margin-bottom: 20px;
-}
-
-.plan__contact {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--slate-700);
-}
-
 .plan__cta {
   width: 100%;
   justify-content: center;
-}
-
-.plan__cta--try {
-  margin-top: 10px;
 }
 
 .plan__features-label {
@@ -1104,6 +1276,14 @@ import Layout from '../layouts/Layout.astro';
   font-size: 0.9rem;
   color: var(--slate-700);
   align-items: flex-start;
+}
+
+.plan__note-item {
+  font-size: 0.85rem !important;
+  color: var(--slate-500) !important;
+  font-style: italic;
+  padding-top: 4px;
+  border-top: 1px solid var(--slate-100);
 }
 
 .check {
@@ -1175,38 +1355,77 @@ import Layout from '../layouts/Layout.astro';
   font-style: italic;
 }
 
-.enterprise-block {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-radius: var(--radius-lg);
-  padding: 28px 32px;
+/* ── Credits Section ── */
+.credits-section { background: var(--white); }
+
+.th-cr {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.75;
+  margin-top: 2px;
 }
 
-.enterprise-block__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+.credits-table__highlight td {
+  background: var(--purple-bg) !important;
 }
 
-.enterprise-block h3 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
+.credits-table__highlight .compare-table__featured {
+  background: rgba(124, 58, 237, 0.12) !important;
 }
 
-.enterprise-block p {
-  font-size: 0.9rem;
+.credits-table__sub {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--purple);
+  margin-top: 3px;
+}
+
+.credits-note {
+  text-align: center;
+  max-width: 680px;
+  margin: 24px auto 0;
+  font-size: 0.95rem;
   color: var(--slate-600);
+  line-height: 1.7;
+}
+
+.credits-topup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 32px;
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: 14px;
+  padding: 20px 28px;
+  text-align: center;
+}
+
+.credits-topup__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.credits-topup__items {
+  font-size: 0.95rem;
+  color: var(--slate-700);
+  font-weight: 500;
+}
+
+.credits-topup__note {
+  font-size: 0.85rem;
+  color: var(--slate-500);
 }
 
 /* ── Comparison Tables ── */
-.comparison-section {
-  background: var(--white);
-}
-
-.competitor-section {
-  background: var(--white);
-}
+.comparison-section { background: var(--slate-50); }
+.competitor-section { background: var(--white); }
 
 .table-wrap {
   overflow-x: auto;
@@ -1221,9 +1440,7 @@ import Layout from '../layouts/Layout.astro';
   font-size: 1rem;
 }
 
-.compare-table thead tr {
-  background: #1e1340;
-}
+.compare-table thead tr { background: #1e1340; }
 
 .compare-table thead th {
   padding: 20px 20px 16px;
@@ -1259,17 +1476,11 @@ import Layout from '../layouts/Layout.astro';
   background: var(--white);
 }
 
-.compare-table tbody tr:last-child {
-  border-bottom: none;
-}
+.compare-table tbody tr:last-child { border-bottom: none; }
 
-.compare-table tbody tr:nth-child(even) {
-  background: var(--slate-50);
-}
+.compare-table tbody tr:nth-child(even) { background: var(--slate-50); }
 
-.compare-table--competitors tbody tr:nth-child(even) {
-  background: rgba(0,0,0,0.02);
-}
+.compare-table--competitors tbody tr:nth-child(even) { background: rgba(0,0,0,0.02); }
 
 .compare-table tbody td {
   padding: 14px 20px;
@@ -1291,17 +1502,8 @@ import Layout from '../layouts/Layout.astro';
   border-right: 1px solid rgba(124,58,237,0.15);
 }
 
-.t-check {
-  color: var(--purple);
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.t-dash {
-  color: #ef4444;
-  font-weight: 700;
-  font-size: 1rem;
-}
+.t-check { color: var(--purple); font-weight: 700; font-size: 1.1rem; }
+.t-dash  { color: #ef4444; font-weight: 700; font-size: 1rem; }
 
 .compare-table tbody tr.compare-table__section-header td {
   background: #ede9fa;
@@ -1316,21 +1518,105 @@ import Layout from '../layouts/Layout.astro';
   border-bottom: none;
 }
 
-.compare-sub {
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: var(--slate-500);
+.compare-sub { font-size: 0.78rem; font-weight: 400; color: var(--slate-500); }
+.compare-new { color: var(--purple); font-weight: 700; }
+
+/* ── Add-ons Section ── */
+.addons-section { background: var(--slate-50); }
+
+.addon-featured-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
-.compare-new {
-  color: var(--purple);
+.addon-featured-card__inner {
+  padding: 28px 32px;
+}
+
+.addon-featured-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.addon-featured-card__name {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.addon-featured-card__price {
+  font-size: 0.95rem;
   font-weight: 700;
+  color: var(--slate-700);
+  margin: 0 0 10px;
+}
+
+.addon-featured-card__desc {
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.addon-card__highlight {
+  color: var(--purple);
+}
+
+.addon-badge {
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.addon-mini {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.addon-mini__name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--slate-900);
+}
+
+.addon-mini__price {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--purple);
+}
+
+.addon-mini__desc {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* ── Stack Section ── */
-.stack-section {
-  background: var(--slate-50);
-}
+.stack-section { background: var(--slate-50); }
 
 .stack-card {
   max-width: 780px;
@@ -1341,9 +1627,7 @@ import Layout from '../layouts/Layout.astro';
   overflow: hidden;
 }
 
-.stack-table {
-  width: 100%;
-}
+.stack-table { width: 100%; }
 
 .stack-row {
   display: grid;
@@ -1351,13 +1635,8 @@ import Layout from '../layouts/Layout.astro';
   border-bottom: 1px solid var(--slate-100);
 }
 
-.stack-row:last-child {
-  border-bottom: none;
-}
-
-.stack-row--head {
-  background: #1e1340;
-}
+.stack-row:last-child { border-bottom: none; }
+.stack-row--head { background: #1e1340; }
 
 .stack-col {
   padding: 16px 24px;
@@ -1367,10 +1646,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .stack-col--cost,
-.stack-col--flynt {
-  align-items: center;
-  text-align: center;
-}
+.stack-col--flynt { align-items: center; text-align: center; }
 
 .stack-col--flynt {
   background: rgba(124, 58, 237, 0.04);
@@ -1395,17 +1671,8 @@ import Layout from '../layouts/Layout.astro';
   text-transform: uppercase;
 }
 
-.stack-tool-name {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--slate-800);
-}
-
-.stack-tool-desc {
-  font-size: 0.78rem;
-  color: var(--slate-400);
-  margin-top: 2px;
-}
+.stack-tool-name { font-weight: 600; font-size: 0.95rem; color: var(--slate-800); }
+.stack-tool-desc { font-size: 0.78rem; color: var(--slate-400); margin-top: 2px; }
 
 .stack-price {
   font-family: var(--font-display);
@@ -1414,25 +1681,16 @@ import Layout from '../layouts/Layout.astro';
   color: var(--slate-500);
 }
 
-.stack-price-period {
-  font-size: 0.8rem;
-  font-weight: 400;
-}
+.stack-price-period { font-size: 0.8rem; font-weight: 400; }
 
-.stack-check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.stack-check { display: flex; align-items: center; justify-content: center; }
 
 .stack-row--total {
   background: var(--slate-50);
   border-top: 2px solid var(--slate-200);
 }
 
-.stack-row--total .stack-col--flynt {
-  background: rgba(124, 58, 237, 0.06);
-}
+.stack-row--total .stack-col--flynt { background: rgba(124, 58, 237, 0.06); }
 
 .stack-total-label {
   font-family: var(--font-display);
@@ -1457,162 +1715,14 @@ import Layout from '../layouts/Layout.astro';
   text-decoration-thickness: 2px;
 }
 
-.stack-total-price--flynt {
-  color: var(--purple);
-}
+.stack-total-price--flynt { color: var(--purple); }
 
-.stack-total-sub {
-  font-size: 0.75rem;
-  color: var(--slate-400);
-  margin-top: 4px;
-}
+.stack-total-sub { font-size: 0.75rem; color: var(--slate-400); margin-top: 4px; }
 
-.table-footnote {
-  font-size: 0.8rem;
-  color: var(--slate-400);
-  margin-top: 16px;
-  font-style: italic;
-}
-
-/* ── Add-ons Section ── */
-.addons-section {
-  background: var(--slate-50);
-}
-
-.addon-card {
-  max-width: 820px;
-  margin: 40px auto 0;
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.addon-card__header {
-  padding: 28px 32px 24px;
-  border-bottom: 1px solid var(--slate-100);
-}
-
-.addon-card__title-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.addon-card__name {
-  font-size: 1.15rem;
-  margin: 0;
-}
-
-.addon-badge {
-  background: var(--purple);
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-
-.addon-card__value {
-  font-size: 0.95rem;
-  color: var(--slate-600);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.addon-card__highlight {
-  color: var(--purple);
-  font-size: 1.05rem;
-}
-
-.addon-card__note {
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--slate-500);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0 32px 24px;
-}
-
-/* Rides the page billing toggle via .plan__annual-teaser: the nudge only
-   shows while monthly is selected. */
-.addon-annual-note {
-  margin: 14px 0 0;
-  font-weight: 600;
-}
-
-/* Comparison table inside addon card */
-.addon-compare {
-  margin: 0;
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-}
-
-/* Per-plan pricing block */
-.addon-plan-pricing {
-  padding: 20px 24px;
-  background: var(--slate-50);
-  border-top: 2px solid var(--slate-200);
-}
-
-.addon-plan-pricing__label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--slate-400);
-  margin-bottom: 14px;
-}
-
-.addon-plan-pricing__chips {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.addon-chip {
-  background: var(--white);
-  border: 1px solid var(--slate-200);
-  border-radius: 10px;
-  padding: 12px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 140px;
-  flex: 1;
-}
-
-.addon-chip__plan {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--purple);
-}
-
-.addon-chip__price {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--slate-800);
-}
-
-.addon-chip__period {
-  font-size: 0.72rem;
-  font-weight: 400;
-  color: var(--slate-400);
-}
+.table-footnote { font-size: 0.8rem; color: var(--slate-400); margin-top: 16px; font-style: italic; }
 
 /* ── Signals Monitoring Table ── */
-.signals-section {
-  background: var(--white);
-}
+.signals-section { background: var(--white); }
 
 .signals-table thead th {
   font-size: 0.72rem;
@@ -1630,22 +1740,11 @@ import Layout from '../layouts/Layout.astro';
   color: rgba(255,255,255,0.95);
 }
 
-.signals-table thead th.compare-table__featured {
-  text-align: center;
-}
+.signals-table thead th.compare-table__featured { text-align: center; }
+.signals-table thead th:nth-child(1) { width: 300px; }
+.signals-table thead th:nth-child(2) { width: 260px; }
 
-.signals-table thead th:nth-child(1) {
-  width: 300px;
-}
-
-.signals-table thead th:nth-child(2) {
-  width: 260px;
-}
-
-.signals-table tbody .compare-table__feature {
-  vertical-align: top;
-  padding-top: 20px;
-}
+.signals-table tbody .compare-table__feature { vertical-align: top; padding-top: 20px; }
 
 .signals-table tbody td {
   vertical-align: top;
@@ -1654,10 +1753,7 @@ import Layout from '../layouts/Layout.astro';
   text-align: left;
 }
 
-.signals-table tbody td.compare-table__featured {
-  text-align: center;
-  vertical-align: middle;
-}
+.signals-table tbody td.compare-table__featured { text-align: center; vertical-align: middle; }
 
 .signal-sub {
   display: block;
@@ -1668,12 +1764,7 @@ import Layout from '../layouts/Layout.astro';
   font-style: italic;
 }
 
-.signal-tools {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  max-width: 240px;
-}
+.signal-tools { display: flex; flex-direction: column; gap: 3px; max-width: 240px; }
 
 .signal-tool-tag {
   display: inline-block;
@@ -1685,89 +1776,30 @@ import Layout from '../layouts/Layout.astro';
   padding: 0;
 }
 
-.signal-tools .signal-tool-tag::before {
-  content: '· ';
-  color: var(--slate-400);
-}
-
-.signal-tool-tag--warn {
-  background: transparent;
-  color: #dc2626;
-  border: none;
-  font-weight: 500;
-}
+.signal-tools .signal-tool-tag::before { content: '· '; color: var(--slate-400); }
+.signal-tool-tag--warn { background: transparent; color: #dc2626; border: none; font-weight: 500; }
 
 .signals-td--cost,
-.signals-td--time {
-  text-align: left !important;
-}
+.signals-td--time { text-align: left !important; }
 
-.signal-cost {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--slate-800);
-}
+.signal-cost { display: block; font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--slate-800); }
+.signal-cost--strike { color: var(--slate-400); text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 2px; }
+.signal-cost-note { display: block; font-size: 0.78rem; color: var(--slate-500); margin-top: 3px; }
+.signal-cost-note--warn { color: #ea580c; }
 
-.signal-cost--strike {
-  color: var(--slate-400);
-  text-decoration: line-through;
-  text-decoration-color: #ef4444;
-  text-decoration-thickness: 2px;
-}
+.signal-time { display: block; font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: #ea580c; }
+.signal-time--strike { color: var(--slate-400); text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 2px; }
+.signal-time--zero { color: var(--slate-800); text-decoration: none; }
+.signal-time-note { display: block; font-size: 0.78rem; color: var(--slate-500); margin-top: 3px; }
 
-.signal-cost-note {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--slate-500);
-  margin-top: 3px;
-}
-
-.signal-cost-note--warn {
-  color: #ea580c;
-}
-
-.signal-time {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #ea580c;
-}
-
-.signal-time--strike {
-  color: var(--slate-400);
-  text-decoration: line-through;
-  text-decoration-color: #ef4444;
-  text-decoration-thickness: 2px;
-}
-
-.signal-time--zero {
-  color: var(--slate-800);
-  text-decoration: none;
-}
-
-.signal-time-note {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--slate-500);
-  margin-top: 3px;
-}
-
-.signals-td--flynt {
-  vertical-align: middle !important;
-}
+.signals-td--flynt { vertical-align: middle !important; }
 
 .signals-total-row {
   background: var(--slate-100) !important;
   border-top: 2px solid var(--slate-200) !important;
 }
 
-.signals-total-row td {
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
-}
+.signals-total-row td { padding-top: 22px !important; padding-bottom: 22px !important; }
 
 .signals-total-label {
   font-family: var(--font-display);
@@ -1778,27 +1810,72 @@ import Layout from '../layouts/Layout.astro';
   color: var(--slate-400);
 }
 
-.signal-total-price {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--purple);
-  line-height: 1;
+.signal-total-price { display: block; font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--purple); line-height: 1; }
+.signal-total-period { font-size: 0.85rem; font-weight: 400; }
+.signal-total-sub { display: block; font-size: 0.75rem; color: var(--purple); opacity: 0.75; margin-top: 4px; }
+
+/* ── FAQ ── */
+.pricing-faq-section { background: var(--slate-50); }
+
+.pricing-faq__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 48px;
+  margin-top: 40px;
 }
 
-.signal-total-period {
-  font-size: 0.85rem;
-  font-weight: 400;
+.pricing-faq__item h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--slate-900);
+  -webkit-text-stroke: 0;
 }
 
-.signal-total-sub {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--purple);
-  opacity: 0.75;
-  margin-top: 4px;
+.pricing-faq__item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  line-height: 1.7;
 }
+
+/* ── Final CTA ── */
+.pricing-final-cta {
+  background: linear-gradient(160deg, #4c2aa0 0%, #35197a 55%, #24104f 100%);
+  padding: 96px 0;
+}
+
+.pricing-final-cta__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.pricing-final-cta__inner h2 {
+  color: var(--white);
+  -webkit-text-stroke: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.pricing-final-cta__accent { color: #dcc2ff; }
+
+.pricing-final-cta__inner p {
+  color: #e6dcfa;
+  max-width: 560px;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.pricing-final-cta__btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.pricing-final-cta__primary { background: var(--white); color: var(--purple-900); border-color: var(--white); }
+.pricing-final-cta__secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.5); }
+.pricing-final-cta__note { font-size: 0.875rem; color: #cbbcf0; }
 
 @media (max-width: 1100px) {
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1807,25 +1884,9 @@ import Layout from '../layouts/Layout.astro';
 @media (max-width: 900px) {
   .pricing-grid { grid-template-columns: 1fr; }
   .plan--featured { transform: none; }
-  .enterprise-block__inner { flex-direction: column; align-items: flex-start; }
-  .enterprise-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 24px;
-  }
-  .enterprise-banner__cta {
-    width: 100%;
-    justify-content: center;
-  }
-  .addon-plan-pricing__chips {
-    flex-wrap: wrap;
-  }
-  .addon-chip {
-    flex: 1 1 calc(50% - 6px);
-    min-width: unset;
-  }
-  .addon-card__header {
-    padding: 20px 20px 18px;
-  }
+  .enterprise-banner { flex-direction: column; align-items: flex-start; padding: 20px 24px; }
+  .enterprise-banner__cta { width: 100%; justify-content: center; }
+  .addons-grid { grid-template-columns: 1fr; }
+  .pricing-faq__grid { grid-template-columns: 1fr; }
 }
 </style>
