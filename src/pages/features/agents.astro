@@ -10,12 +10,12 @@ const personas = [
 ];
 
 const faqs = [
-  { title: 'Does an agent find different leads from a search?', body: 'Yes. An agent runs your search every day and surfaces new companies that weren\'t there the day before — always fresh, scored with unique personalised outreach written, all delivered without you having to trigger it.' },
+  { title: 'Does an agent find different leads from a search?', body: "It runs your search every day and surfaces the companies that weren't there yesterday. Always fresh, always scored, each with its own outreach written, delivered without you triggering it." },
   { title: 'Do I have to search first?', body: 'No. You can set up an agent from scratch and Flynt saves the search behind it for you. Most recruiters search first, then run the search that works.' },
   { title: 'Can I change what an agent looks for?', body: "Yes. Open the agent, see the search behind it and change a filter. Tomorrow's leads change with it." },
-  { title: 'Are the leads contacted automatically?', body: 'Only if you have opted in to automatic outreach. If your agent is connected to a campaign and you have turned on automatic sending, new leads go into your sequence on email and LinkedIn as soon as they are found. If not, they land in your list for you to review and send manually.' },
-  { title: 'Which kinds of agent are there?', body: 'One for each kind of search: hiring, signal and MPC. Run as many as your plan allows, each on its own market.' },
-  { title: 'Which plans include agents?', body: 'Starter and above. Search is on every plan, including Lite.' },
+  { title: 'Are the leads contacted automatically?', body: "Only if you turn it on. With a campaign connected and automatic sending enabled, new leads enter your sequence on email and LinkedIn as soon as they're found. Leave it off and they land in your list to review and send yourself." },
+  { title: 'Is 30 leads a day a hard cap?', body: 'Only for what arrives on schedule. One agent running on autopilot delivers up to 30 a day. Running searches yourself has no limit, and you can hit Run now on an agent any time for another batch. For more hands-off volume, add an agent: two is 60 a day, three is 90.' },
+  { title: 'Which plans include agents, and which kinds?', body: 'Starter and above, and search is on every plan including Lite. There is one agent for each kind of search: hiring, signal and MPC. Run as many as your plan allows, each on its own market.' },
 ];
 ---
 
@@ -29,29 +29,72 @@ const faqs = [
 ───────────────────────────────────────────── -->
 <section class="fp-hero">
   <div class="container">
-    <div class="fp-hero__inner fade-up fade-up-1">
-      <div class="tag">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-        Agents
+    <div class="fp-hero__layout">
+      <div class="fp-hero__copy fade-up fade-up-1">
+        <div class="tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+          Agents
+        </div>
+        <h1 class="fp-hero__headline">
+          Your search, run every day.<br /><span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">Fresh leads, already contacted.</span>
+        </h1>
+        <p class="fp-hero__sub">
+          An agent takes a search you trust and runs it for you every day, with all of your filters and settings. You don't have to be at your desk. Before you open your laptop, the new leads are scored, personalised and already in your campaign.
+        </p>
+        <div class="fp-hero__ctas">
+          <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Start Free Trial →</a>
+          <button class="btn btn--outline btn--lg" data-demo-trigger>See It In Action →</button>
+        </div>
+        <div class="fp-trust">
+          <span>✓ 30 leads per agent, hands off</span>
+          <span class="fp-trust__dot">·</span>
+          <span>✓ Every agent is a saved search</span>
+          <span class="fp-trust__dot">·</span>
+          <span>✓ Leads contacted automatically</span>
+          <span class="fp-trust__dot">·</span>
+          <span>✓ 5 min set up</span>
+        </div>
       </div>
-      <h1 class="fp-hero__headline fade-up fade-up-2">
-        Your search, run every day.<br /><span style="color: var(--purple); -webkit-text-stroke: 0.6px var(--purple);">Fresh leads, already contacted.</span>
-      </h1>
-      <p class="fp-hero__sub fade-up fade-up-3">
-        An agent takes a search you trust and runs it for you every day, with all of your filters and settings. You don't have to be at your desk. Before you open your laptop, the new leads are scored, personalised and already in your campaign.
-      </p>
-      <div class="fp-hero__ctas fade-up fade-up-4">
-        <a href="https://app.tryflynt.ai/" class="btn btn--primary btn--lg" style="background:var(--black);border-color:var(--black);">Start Free Trial →</a>
-        <button class="btn btn--outline btn--lg" data-demo-trigger>See It In Action →</button>
-      </div>
-      <div class="fp-trust fade-up fade-up-4">
-        <span>✓ Runs every day</span>
-        <span class="fp-trust__dot">·</span>
-        <span>✓ Every agent is a saved search</span>
-        <span class="fp-trust__dot">·</span>
-        <span>✓ Leads contacted automatically</span>
-        <span class="fp-trust__dot">·</span>
-        <span>✓ 5 min set up time</span>
+
+      <div class="fp-hero__visual fade-up fade-up-2">
+        <div class="ag-run-card">
+          <div class="ag-run-card__header">
+            <span class="ag-run-card__dot"></span>
+            <span class="ag-run-card__name">Nurse Managers, Washington</span>
+            <span class="ag-run-card__time">RAN 06:12</span>
+          </div>
+          <div class="ag-run-card__stats">
+            <div class="ag-run-stat">
+              <span class="ag-run-stat__num">270</span>
+              <span class="ag-run-stat__label">Scanned</span>
+            </div>
+            <div class="ag-run-stat">
+              <span class="ag-run-stat__num ag-run-stat__num--purple">30</span>
+              <span class="ag-run-stat__label">Qualified</span>
+            </div>
+            <div class="ag-run-stat">
+              <span class="ag-run-stat__num ag-run-stat__num--green">30</span>
+              <span class="ag-run-stat__label">Contacted</span>
+            </div>
+          </div>
+          <div class="ag-lead-card">
+            <div class="ag-lead-card__row">
+              <span class="ag-lead-card__company">Meridian Capital</span>
+              <span class="ag-lead-card__score">99%</span>
+            </div>
+            <span class="ag-lead-card__meta">Burst hire · 4 data roles · 18 days</span>
+            <span class="ag-lead-card__status">Sequence started 06:31</span>
+          </div>
+          <div class="ag-lead-card">
+            <div class="ag-lead-card__row">
+              <span class="ag-lead-card__company">Veritas Growth</span>
+              <span class="ag-lead-card__score">94%</span>
+            </div>
+            <span class="ag-lead-card__meta">Funding · Series B $22M</span>
+            <span class="ag-lead-card__status">Sequence started 06:31</span>
+          </div>
+        </div>
+        <div class="fp-hero__note">28 more delivered before 9am. Sample data.</div>
       </div>
     </div>
   </div>
@@ -117,7 +160,7 @@ const faqs = [
     <div class="section-header section-header--center" style="margin-bottom: 40px;">
       <div class="tag" style="margin: 0 auto 16px;">Fully Automated Volume</div>
       <h2>Thirty a day is one agent.<br />Add another for sixty.</h2>
-      <p style="max-width: 720px;">Thirty leads a day is what a single agent delivers on its own, while you're doing something else entirely. Want more arriving the same way? Add an agent. Each one runs its own search on its own schedule.</p>
+      <p style="max-width: 720px;">Thirty leads a day is what a single agent delivers on its own, while you're doing something else entirely. That's the number that matters for autopilot, because it arrives without you touching anything. Want more arriving the same way? Add an agent. Each one runs its own search on its own schedule.</p>
     </div>
 
     <div class="fp-volume__cards">
@@ -417,7 +460,7 @@ const faqs = [
     <div class="section-header section-header--center" style="margin-bottom: 40px;">
       <div class="tag" style="margin: 0 auto 16px;">Search and Agents</div>
       <h2>An agent is a search<br />you've stopped running by hand.</h2>
-      <p style="max-width: 720px;">They are not two products. They are the same engine, with you holding the controls or not. Most recruiters use both: Search when they want to look, agents for markets they already know work.</p>
+      <p style="max-width: 720px;">Nobody wants to configure a robot on faith. So Flynt lets you search by hand first, change the filters, search again. When it's returning companies you'd actually call, run it daily with an agent. The automation is the reward, not the entry fee, and that's what makes the agent trustworthy: it runs the search you already tuned yourself.</p>
     </div>
 
     <div class="fs-compare">
@@ -514,17 +557,17 @@ const faqs = [
       <div class="fp-step">
         <div class="fp-step__num">01</div>
         <h3 class="fp-step__title">Search Your Market</h3>
-        <p class="fp-step__body">Type who you're after and see real companies and decision makers come back. Adjust the industries, titles, company size and geography until the results look right. Run it as many times as you like.</p>
+        <p class="fp-step__body">Type who you're after and see real companies and decision makers come back. Adjust until the results look right.</p>
       </div>
       <div class="fp-step">
         <div class="fp-step__num">02</div>
-        <h3 class="fp-step__title">Save It As An Agent</h3>
-        <p class="fp-step__body">One click turns that search into an agent. It runs every morning, finds the right decision makers, and builds an intelligence package on each company. Open the search and fine-tune it whenever your market shifts.</p>
+        <h3 class="fp-step__title">Run it daily with an agent</h3>
+        <p class="fp-step__body">One click turns that search into an agent. Connect a campaign and the outreach sends itself too.</p>
       </div>
       <div class="fp-step">
         <div class="fp-step__num">03</div>
         <h3 class="fp-step__title">Leads Land Every Day</h3>
-        <p class="fp-step__body">Before you open your laptop, a fresh list of scored, matched and personalized leads is waiting. Need more before then? Run the agent again, any time.</p>
+        <p class="fp-step__body">Before you open your laptop, a fresh list of scored, matched and personalized leads is waiting. Need more before tomorrow? Run it again, any time.</p>
       </div>
     </div>
     <p class="fs-agent-note">Every agent in Flynt is a saved search. Prefer to start from scratch? Set up an agent directly and Flynt saves the search behind it for you.</p>
@@ -554,7 +597,7 @@ const faqs = [
       </a>
       <a href="/features/mpc-search" class="fp-card fp-card--link">
         <h3 class="fp-card__title">MPC agent</h3>
-        <p class="fp-card__desc">Runs your MPC search for a candidate and keeps finding new companies hiring for that profile, each with its own pitch.</p>
+        <p class="fp-card__desc">Runs your MPC search for a candidate and keeps finding new companies hiring for that profile, each with its own pitch written for them.</p>
         <span class="fp-card__more">About MPC search →</span>
       </a>
     </div>
@@ -703,15 +746,27 @@ const faqs = [
     #ffffff;
 }
 
-.fp-hero__inner {
-  max-width: 760px;
+.fp-hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: center;
 }
+
+.fp-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.fp-hero__copy .tag { margin-bottom: 0; }
 
 .fp-hero__headline {
   font-size: clamp(2.5rem, 5vw, 3.75rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin: 0 0 24px;
+  margin: 0;
   color: var(--black);
 }
 
@@ -720,15 +775,14 @@ const faqs = [
   font-weight: 500;
   color: var(--slate-600);
   line-height: 1.7;
-  margin: 0 0 32px;
-  max-width: 680px;
+  margin: 0;
+  max-width: 580px;
 }
 
 .fp-hero__ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
 }
 
 .fp-trust {
@@ -743,6 +797,142 @@ const faqs = [
 
 .fp-trust__dot {
   color: var(--slate-300);
+}
+
+/* ── Hero visual (agent run card) ── */
+.fp-hero__visual {
+  border-radius: 24px;
+  background: linear-gradient(145deg, #f4ecff, #e8defa);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fp-hero__note {
+  font-size: 0.8rem;
+  color: #5a4a86;
+  text-align: center;
+}
+
+.ag-run-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: 18px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 8px 24px rgba(60, 40, 120, 0.08);
+}
+
+.ag-run-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.ag-run-card__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.16);
+  flex-shrink: 0;
+}
+
+.ag-run-card__name {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.ag-run-card__time {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.ag-run-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.ag-run-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ag-run-stat__num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1;
+}
+
+.ag-run-stat__num--purple { color: var(--purple-dark); }
+.ag-run-stat__num--green  { color: #15803d; }
+
+.ag-run-stat__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+}
+
+.ag-lead-card {
+  border: 1px solid var(--slate-200);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ag-lead-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ag-lead-card__company {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.ag-lead-card__score {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #e3f5ec;
+  color: #1b6b3c;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.ag-lead-card__meta {
+  font-size: 0.78rem;
+  color: var(--slate-500);
+}
+
+.ag-lead-card__status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #e3f5ec;
+  color: #1b6b3c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  align-self: flex-start;
 }
 
 /* ────────────────────────────────────────────
@@ -1993,6 +2183,10 @@ const faqs = [
    RESPONSIVE
 ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .fp-hero__layout {
+    grid-template-columns: 1fr 360px;
+    gap: 40px;
+  }
   .fp-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2044,6 +2238,10 @@ const faqs = [
 
   .fp-hero {
     padding: 64px 0 56px;
+  }
+  .fp-hero__layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
   .fp-hero__headline {
     font-size: 2.25rem;
