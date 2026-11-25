@@ -37,6 +37,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="plan__header">
             <h3>Lite</h3>
             <p class="plan__tagline">Search and send, by hand. For recruiters who want to pick every company themselves.</p>
+            <div class="plan__credit-label">Credits</div>
             <div class="plan__credit-opts">
               <label class="credit-opt"><input type="radio" name="lite-cr" value="2500" checked /><span>2,500 cr</span></label>
               <label class="credit-opt"><input type="radio" name="lite-cr" value="4000" /><span>4,000 cr</span></label>
@@ -77,6 +78,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="plan__header">
             <h3>Starter</h3>
             <p class="plan__tagline">One agent, running every morning. For one recruiter who wants pipeline arriving without asking.</p>
+            <div class="plan__credit-label">Credits</div>
             <div class="plan__credit-opts">
               <label class="credit-opt"><input type="radio" name="starter-cr" value="4000" checked /><span>4,000 cr</span></label>
               <label class="credit-opt"><input type="radio" name="starter-cr" value="6000" /><span>6,000 cr</span></label>
@@ -114,6 +116,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="plan__header">
             <h3>Pro</h3>
             <p class="plan__tagline">Three agents, two kinds of signal. For teams running several searches across several markets.</p>
+            <div class="plan__credit-label">Credits</div>
             <div class="plan__credit-opts">
               <label class="credit-opt"><input type="radio" name="pro-cr" value="8000" checked /><span>8,000 cr</span></label>
               <label class="credit-opt"><input type="radio" name="pro-cr" value="12000" /><span>12,000 cr</span></label>
@@ -158,7 +161,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <p class="enterprise-banner__desc">For agencies and high-volume teams. Everything in Pro, 12+ agents, unlimited extra agents, custom credit volumes, dedicated onboarding.</p>
         </div>
-        <a href="mailto:info@tryflynt.ai" class="btn btn--outline enterprise-banner__cta">Get in Touch</a>
+        <a href="https://calendly.com/preston-tryflynt/30min" target="_blank" class="btn btn--outline enterprise-banner__cta">Get in Touch</a>
       </div>
 
       <p class="pricing-disclaimer">
@@ -189,18 +192,18 @@ import Layout from '../layouts/Layout.astro';
           </thead>
           <tbody>
             <tr>
-              <td class="compare-table__feature">Find and score it</td>
-              <td>1.73</td>
-              <td>~1,445</td>
-              <td class="compare-table__featured">~2,312</td>
-              <td>~4,624</td>
+              <td class="compare-table__feature">Find, score and summarize decision maker profile</td>
+              <td>0.73</td>
+              <td>~3,424</td>
+              <td class="compare-table__featured">~5,479</td>
+              <td>~10,958</td>
             </tr>
             <tr>
               <td class="compare-table__feature">Plus contact details and personalization angles</td>
-              <td>3.73</td>
-              <td>~670</td>
-              <td class="compare-table__featured">~1,072</td>
-              <td>~2,144</td>
+              <td>2.73</td>
+              <td>~915</td>
+              <td class="compare-table__featured">~1,465</td>
+              <td>~2,930</td>
             </tr>
             <tr class="credits-table__highlight">
               <td class="compare-table__feature">
@@ -232,7 +235,19 @@ import Layout from '../layouts/Layout.astro';
       <p class="credits-note">Most recruiters run the highlighted row: find the lead, get the contact, let Flynt write and send on both channels. On Starter that's around <strong>845 fully worked leads a month</strong>. Run out and your agents pause, then pick up automatically when credits are back. Every action shows what it costs before you spend it.</p>
       <div class="credits-topup">
         <span class="credits-topup__label">Top up any time</span>
-        <span class="credits-topup__items">1,000 credits $34 · 2,000 $67 · 4,000 $129 · 8,000 $249 · 16,000 $489 · 32,000 $967</span>
+        <div class="credits-topup__row">
+          <span class="credits-topup__item"><span class="ctu-vol">1,000</span><span class="ctu-price">$34</span></span>
+          <span class="ctu-divider"></span>
+          <span class="credits-topup__item"><span class="ctu-vol">2,000</span><span class="ctu-price">$67</span></span>
+          <span class="ctu-divider"></span>
+          <span class="credits-topup__item"><span class="ctu-vol">4,000</span><span class="ctu-price">$129</span></span>
+          <span class="ctu-divider"></span>
+          <span class="credits-topup__item"><span class="ctu-vol">8,000</span><span class="ctu-price">$249</span></span>
+          <span class="ctu-divider"></span>
+          <span class="credits-topup__item"><span class="ctu-vol">16,000</span><span class="ctu-price">$489</span></span>
+          <span class="ctu-divider"></span>
+          <span class="credits-topup__item"><span class="ctu-vol">32,000</span><span class="ctu-price">$967</span></span>
+        </div>
       </div>
     </div>
   </section>
@@ -251,33 +266,29 @@ import Layout from '../layouts/Layout.astro';
               <th>Lite<br /><span class="th-price" data-monthly="$87/mo" data-annual="$77/mo">$77/mo</span></th>
               <th class="compare-table__featured">Starter<br /><span class="th-price" data-monthly="$147/mo" data-annual="$127/mo">$127/mo</span></th>
               <th>Pro<br /><span class="th-price" data-monthly="$297/mo" data-annual="$247/mo">$247/mo</span></th>
-              <th>Scale<br /><span class="th-price">Contact Sales</span></th>
             </tr>
           </thead>
           <tbody>
             <!-- Signal Intelligence -->
             <tr class="compare-table__section-header">
-              <td colspan="5">Signal Intelligence</td>
+              <td colspan="4">Signal Intelligence</td>
             </tr>
             <tr>
               <td>AI Agents Included</td>
               <td>None</td>
               <td class="compare-table__featured">1</td>
               <td>3</td>
-              <td>12+</td>
             </tr>
             <tr>
               <td>Max Leads Per Day</td>
               <td>Manual</td>
               <td class="compare-table__featured">30/run · no daily limit</td>
               <td>30/run per agent</td>
-              <td>Unlimited</td>
             </tr>
             <tr>
               <td>Active Hiring Signal Detection</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -285,13 +296,11 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>AI Match Scoring</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -299,13 +308,11 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>AI Personalization Hooks</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -313,17 +320,15 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
             </tr>
             <!-- Outreach & Campaigns -->
             <tr class="compare-table__section-header">
-              <td colspan="5">Outreach &amp; Campaigns</td>
+              <td colspan="4">Outreach &amp; Campaigns</td>
             </tr>
             <tr>
               <td>Flynt Campaigns</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -331,13 +336,11 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>LinkedIn Outreach (Connection Requests + Messages)</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -345,24 +348,21 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>AI-Written Outreach Personalization (Email + LinkedIn)</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
             </tr>
             <!-- CRM & Inbox -->
             <tr class="compare-table__section-header">
-              <td colspan="5">CRM &amp; Inbox</td>
+              <td colspan="4">CRM &amp; Inbox</td>
             </tr>
             <tr>
               <td>Flynt CRM</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -370,13 +370,11 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
               <td>Performance Dashboard</td>
               <td><span class="t-check">✓</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -384,24 +382,21 @@ import Layout from '../layouts/Layout.astro';
               <td>10–16K</td>
               <td class="compare-table__featured">25–50K</td>
               <td>50–100K</td>
-              <td>Custom</td>
             </tr>
             <!-- Scale & Support -->
             <tr class="compare-table__section-header">
-              <td colspan="5">Scale &amp; Support</td>
+              <td colspan="4">Scale &amp; Support</td>
             </tr>
             <tr>
               <td>Monthly Credits</td>
               <td>2,500</td>
               <td class="compare-table__featured">4,000</td>
               <td>8,000</td>
-              <td>Custom</td>
             </tr>
             <tr>
               <td>Run an agent on demand</td>
               <td><span class="t-dash">✕</span></td>
               <td class="compare-table__featured"><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
             <tr>
@@ -409,27 +404,17 @@ import Layout from '../layouts/Layout.astro';
               <td><span class="t-dash">✕</span></td>
               <td class="compare-table__featured">Add-on $49/mo</td>
               <td>Included</td>
-              <td>Included</td>
             </tr>
             <tr>
               <td>Add Extra Agents</td>
               <td><span class="t-dash">✕</span></td>
               <td class="compare-table__featured">+$44/mo (sharing credits)</td>
               <td>Up to 6</td>
-              <td>Unlimited</td>
             </tr>
             <tr>
               <td>Premium Support</td>
               <td><span class="t-dash">✕</span></td>
               <td class="compare-table__featured"><span class="t-dash">✕</span></td>
-              <td><span class="t-check">✓</span></td>
-              <td><span class="t-check">✓</span></td>
-            </tr>
-            <tr>
-              <td>Dedicated Onboarding</td>
-              <td><span class="t-dash">✕</span></td>
-              <td class="compare-table__featured"><span class="t-dash">✕</span></td>
-              <td><span class="t-dash">✕</span></td>
               <td><span class="t-check">✓</span></td>
             </tr>
           </tbody>
@@ -853,7 +838,7 @@ import Layout from '../layouts/Layout.astro';
         <p>Seven days and 500 credits, with a real hiring agent. Search your market, look at what comes back, and then decide which plan is right. You'll know in five minutes.</p>
         <div class="pricing-final-cta__btns">
           <a href="https://app.tryflynt.ai/" class="btn btn--lg pricing-final-cta__primary">Start your free trial</a>
-          <a href="mailto:info@tryflynt.ai" class="btn btn--lg pricing-final-cta__secondary">Talk to us about Scale</a>
+          <a href="https://calendly.com/preston-tryflynt/30min" target="_blank" class="btn btn--lg pricing-final-cta__secondary">Talk to us about Scale</a>
         </div>
         <span class="pricing-final-cta__note">Cancel any time. No card charged until the trial ends.</span>
       </div>
@@ -1036,6 +1021,14 @@ import Layout from '../layouts/Layout.astro';
 }
 
 /* ── Credit selector ── */
+.plan__credit-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  margin-bottom: 6px;
+}
 .plan__credit-opts {
   display: flex;
   gap: 6px;
@@ -1394,7 +1387,7 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   margin-top: 32px;
   background: var(--slate-50);
   border: 1px solid var(--slate-200);
@@ -1411,10 +1404,38 @@ import Layout from '../layouts/Layout.astro';
   color: var(--purple);
 }
 
-.credits-topup__items {
-  font-size: 0.95rem;
-  color: var(--slate-700);
+.credits-topup__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+}
+
+.credits-topup__item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 0 20px;
+}
+
+.ctu-vol {
+  font-size: 0.9rem;
   font-weight: 500;
+  color: var(--slate-600);
+}
+
+.ctu-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.ctu-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--slate-200);
+  flex-shrink: 0;
 }
 
 .credits-topup__note {
@@ -1448,6 +1469,11 @@ import Layout from '../layouts/Layout.astro';
   font-size: 1.1rem;
   text-align: center;
   vertical-align: bottom;
+}
+
+.credits-table thead th {
+  vertical-align: middle;
+  font-size: 1rem;
 }
 
 .compare-table thead th.compare-table__feature {
